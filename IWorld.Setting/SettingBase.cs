@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Xml.Linq;
 using System.IO;
 
@@ -26,9 +27,13 @@ namespace IWorld.Setting
         /// 创建新的配置文件
         /// </summary>
         /// <param name="path">所要放置新的配置文件的路径</param>
-        protected virtual void SetFile(string path)
+        private void SetFile(string path)
         {
             XElement _e = new XElement("root");
+            typeof(T).GetProperties().ToList().ForEach(x =>
+                {
+                    
+                });
             _e.Save(path);
         }
 

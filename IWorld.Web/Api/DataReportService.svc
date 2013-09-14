@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="IWorld.Web.Api.DataReportService" CodeBehind="DataReportService.svc.cs" %>

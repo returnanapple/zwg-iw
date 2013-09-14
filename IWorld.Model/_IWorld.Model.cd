@@ -1,476 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="IWorld.Model.CategoryBase" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAIAAAAAEIAAAAAAAAAA=</HashCode>
-      <FileName>CategoryBase.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Author" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EQBQAEgEACAAAAgAgRAEAAAAAAEGgBCCAAAAAAAAAAE=</HashCode>
-      <FileName>Author.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.UserGroup" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>GgAAgAAACAAAAAAAAAEBAAQAABAAAAAAEgAAAAEAAAA=</HashCode>
-      <FileName>UserGroup.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.WithdrawalsRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQBAAACEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQQ=</HashCode>
-      <FileName>WithdrawalsRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.RechargeRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQBAAACEAEAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAQQ=</HashCode>
-      <FileName>RechargeRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.SubordinateDynamic" Collapsed="true" HideInheritanceLine="true">
-    <Position X="7.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgBAAAAAAAAAAAAAAAAAAAAACAAIAAAACAAAAAAAAAA=</HashCode>
-      <FileName>SubordinateDynamic.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Lottery" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAgAAAAAAAAAQAAAAAAAAAAAAJAA=</HashCode>
-      <FileName>Lottery.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.LotteryTicket" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAABAAAAAAABAAEgAAAAQAAAAAAEIAAAAAAAAAAAA=</HashCode>
-      <FileName>LotteryTicket.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.LotterySeat" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>LotterySeat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.LotteryTicketSeat" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAgIAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>LotteryTicketSeat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Betting" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAACEAAAAggAAEgAAAAAAAgAAAAAAACAAAAAABAQ=</HashCode>
-      <FileName>Betting.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="IWorld.Model.HowToPlay" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAACAEAiAwAAEgBAQATgBAAAAAAAAAAAAAAAAIA=</HashCode>
-      <FileName>HowToPlay.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.BettingSeat" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAgAAAAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>BettingSeat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.OptionalSeat" Collapsed="true" HideInheritanceLine="true">
-    <Position X="7.75" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAgAQAAAAAkQAAAAAAAYoAAAABAAAEAAgAAAAACA=</HashCode>
-      <FileName>OptionalSeat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Bulletin" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bulletin.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Notice" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAgAAAAAgAAAAAAAAAAAAAAAAAIAAAAAQAAAAABAAA=</HashCode>
-      <FileName>Notice.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Chasing" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAQCEAAAAgwAAkgAAAAAAQgAAAAAAACBAAAAAAAQ=</HashCode>
-      <FileName>Chasing.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="IWorld.Model.ChasingSeat" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>ChasingSeat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Message" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAgAAAEAAAAAAEAAAAAAIAAAAABAAAAAAAAA=</HashCode>
-      <FileName>Message.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.PlayTag" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="5.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAABAAAACEAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>PlayTag.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Administrator" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAgAAQAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
-      <FileName>Administrator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.AdministratorGroup" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAEAIBAAABAAAAAAAAQAgABABAABAgAAAAEICAA=</HashCode>
-      <FileName>AdministratorGroup.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Spread" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAgAAgAAAAAAAEAEAAAAAAAAAAAEA=</HashCode>
-      <FileName>Spread.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.UserLandingRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
-      <FileName>UserLandingRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.AdministratorLandingRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
-      <FileName>AdministratorLandingRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.OperateRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>OperateRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.TransferRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="7.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQ=</HashCode>
-      <FileName>TransferRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.LotteryTime" Collapsed="true" HideInheritanceLine="true">
-    <Position X="7.75" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAABQA=</HashCode>
-      <FileName>LotteryTime.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.BettingForCgasing" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAgAAAAAAAAAAAgBAAAAAEAAAAAAABAA=</HashCode>
-      <FileName>BettingForCgasing.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Activity" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAEAAABAAAAAAAAAAAAAAgQAQQAAAAQA=</HashCode>
-      <FileName>Activity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.RegularlyBase" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAAAAQAAAAAAAEAAAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>RegularlyBase.cs</FileName>
-    </TypeIdentifier>
-  </Class>
+  <Comment CommentText="基类">
+    <Position X="0.5" Y="0.5" Height="0.284" Width="0.7" />
+  </Comment>
+  <Comment CommentText="树状结构相关">
+    <Position X="7.521" Y="0.5" Height="0.284" Width="1.096" />
+  </Comment>
+  <Comment CommentText="枚举">
+    <Position X="0.5" Y="5.802" Height="0.284" Width="0.7" />
+  </Comment>
+  <Comment CommentText="用户">
+    <Position X="0.5" Y="2.229" Height="0.284" Width="0.7" />
+  </Comment>
   <Class Name="IWorld.Model.ModelBase" Collapsed="true">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.ActivityCondition" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="8.5" Width="1.5" />
+  <Class Name="IWorld.Model.CategoryModelBase" Collapsed="true" HideInheritanceLine="true">
+    <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAQAAAAAAAQAAAQAAAAAAAAA=</HashCode>
-      <FileName>ActivityCondition.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="IWorld.Model.ActivityParticipateRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAEAAAAA=</HashCode>
-      <FileName>ActivityParticipateRecord.cs</FileName>
+      <HashCode>AAgIAQAAAACAAAAAAAAACAAAAAAAAAAEAAAIAAAAAAA=</HashCode>
+      <FileName>CategoryModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.Exchange" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="8.5" Width="1.5" />
+  <Class Name="IWorld.Model.Relative" Collapsed="true" HideInheritanceLine="true">
+    <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAgAAAAAAAABAEAAQAAAAAAIAAAEgAAAABABA=</HashCode>
-      <FileName>Exchange.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Relative.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.Prize" Collapsed="true" HideInheritanceLine="true">
-    <Position X="7.75" Y="8.5" Width="1.5" />
+  <Class Name="IWorld.Model.TimeTasksModelBase" Collapsed="true" HideInheritanceLine="true">
+    <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAAAAAAQAAAAAAAQQ=</HashCode>
-      <FileName>Prize.cs</FileName>
+      <HashCode>AACAAAAEQAAAAAAAEAAAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>TimeTasksModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.ExchangeCondition" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="9.5" Width="1.5" />
+  <Class Name="IWorld.Model.SolidModel" Collapsed="true" HideInheritanceLine="true">
+    <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAQAAAAAAAQAAAQAAAAAAAAA=</HashCode>
-      <FileName>ExchangeCondition.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="IWorld.Model.ExchangeParticipateRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAQ=</HashCode>
-      <FileName>ExchangeParticipateRecord.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>SolidModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.GiftRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="9.5" Width="1.5" />
+  <Class Name="IWorld.Model.Author" Collapsed="true" HideInheritanceLine="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACEAQAgAAAAAAAAAAQAAAAAAAAAAQAQAAAAAQQ=</HashCode>
-      <FileName>GiftRecord.cs</FileName>
+      <HashCode>AAAAAAAEQAQAAAgAAQAAAgAAAAACABAGAAAAAAAAACE=</HashCode>
+      <FileName>Author.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.BankAccount" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="10.5" Width="1.5" />
+  <Class Name="IWorld.Model.UserData" Collapsed="true" HideInheritanceLine="true">
+    <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQFAAQAAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAQA=</HashCode>
-      <FileName>BankAccount.cs</FileName>
+      <HashCode>AAAAAAAAAABAAAACAAAIggAAAgEAGAQAAQAAAAIAAAE=</HashCode>
+      <FileName>UserData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.EmailAccount" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="10.5" Width="1.5" />
+  <Class Name="IWorld.Model.UserGroup" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAQAAAAAAAAAAAAAAAACAAAAAAAAAUQ=</HashCode>
-      <FileName>EmailAccount.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.EmailClient" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="10.5" Width="1.5" />
+  <Class Name="IWorld.Model.UserBinding" Collapsed="true" HideInheritanceLine="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAQAAAAAAAAACAAACAAAAAAAAAAAAQA=</HashCode>
-      <FileName>EmailClient.cs</FileName>
+      <HashCode>AABAAAAAACAAAACAAAQAAAAAAAAAAAAAAAIAACAAAAA=</HashCode>
+      <FileName>UserBinding.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.SiteDataAtDay" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="11.5" Width="1.5" />
+  <Enum Name="IWorld.Model.TimeTasksStatus" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAARAJAAAAAAAAAAAAwAAggAAEAQEAAAAAAJAAAE=</HashCode>
-      <FileName>SiteDataAtDay.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgAAEAAAAAAAAAAAAQAAAAAAAAAAAIA=</HashCode>
+      <FileName>TimeTasksStatus.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.SiteDataAtMonth" Collapsed="true" HideInheritanceLine="true">
-    <Position X="2.5" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAARABAAAAAAAAAAAAwAAggAAEAQEAAAAAAJAAAE=</HashCode>
-      <FileName>SiteDataAtMonth.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.PersonalDataAtDay" Collapsed="true" HideInheritanceLine="true">
-    <Position X="4.25" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAACAJAAAAAAAAAAAAgAAggAAkAQEAAAAAAIAAAE=</HashCode>
-      <FileName>PersonalDataAtDay.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.PersonalDataAtMonth" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="11.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAACABAAAAAAAAAAAAgAAggAAkAQEAAAAAAIAAAE=</HashCode>
-      <FileName>PersonalDataAtMonth.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.CustomerRecord" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAA=</HashCode>
-      <FileName>CustomerRecord.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.Waiter" Collapsed="true" HideInheritanceLine="true">
-    <Position X="0.75" Y="12.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Waiter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="IWorld.Model.VirtualTop" Collapsed="true" HideInheritanceLine="true">
-    <Position X="6" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
-      <FileName>VirtualTop.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Interface Name="IWorld.Model.ICondition" Collapsed="true">
-    <Position X="0.75" Y="17.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ICondition.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="IWorld.Model.IConsumption" Collapsed="true">
-    <Position X="2.5" Y="17.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
-      <FileName>IConsumption.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
+  </Enum>
   <Enum Name="IWorld.Model.Bank" Collapsed="true">
-    <Position X="2.5" Y="13.75" Width="1.5" />
+    <Position X="4" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAEEAAAAAAAAAABAQAAAAAAAAAAEAAQAAAAA=</HashCode>
       <FileName>Bank.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="IWorld.Model.WithdrawalsStatus" Collapsed="true">
-    <Position X="4.25" Y="13.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQA=</HashCode>
-      <FileName>WithdrawalsStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.RechargeStatus" Collapsed="true">
-    <Position X="6" Y="13.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAA=</HashCode>
-      <FileName>RechargeStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.Currency" Collapsed="true">
-    <Position X="7.75" Y="13.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
-      <FileName>Currency.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.LotterySources" Collapsed="true">
-    <Position X="0.75" Y="14.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>LotterySources.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.LotteryInterface" Collapsed="true">
-    <Position X="6" Y="14.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAUAAAA=</HashCode>
-      <FileName>LotteryInterface.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.BettingStatus" Collapsed="true">
-    <Position X="2.5" Y="14.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIAAAEAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
-      <FileName>BettingStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.ChasingStatus" Collapsed="true">
-    <Position X="4.25" Y="14.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAQIAAAAAAAAAAAIAAAQAAAAABAAAAAAA=</HashCode>
-      <FileName>ChasingStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="IWorld.Model.UserStatus" Collapsed="true">
-    <Position X="0.75" Y="13.75" Width="1.5" />
+    <Position X="2.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>UserStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.ActivityType" Collapsed="true">
-    <Position X="7.75" Y="14.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAEAAAAAAAgAAAAAAAAEAACAAAAAAAAAA=</HashCode>
-      <FileName>ActivityType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.ActivityRewardType" Collapsed="true">
-    <Position X="0.75" Y="15.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAIAAAAAA=</HashCode>
-      <FileName>ActivityRewardType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.ConditionType" Collapsed="true">
-    <Position X="2.5" Y="15.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAABAAAGAAAAAAAAAAA=</HashCode>
-      <FileName>ConditionType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.PrizeType" Collapsed="true">
-    <Position X="4.25" Y="15.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAIAAAAAAIAAAAAA=</HashCode>
-      <FileName>PrizeType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.GiftStatus" Collapsed="true">
-    <Position X="6" Y="15.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GiftStatus.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.CustomerType" Collapsed="true">
-    <Position X="7.75" Y="15.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>CustomerType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="IWorld.Model.NoticeType" Collapsed="true">
-    <Position X="0.75" Y="16.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAEAAAAA=</HashCode>
-      <FileName>NoticeType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Microsoft YaHei UI" Size="9" />

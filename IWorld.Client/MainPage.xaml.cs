@@ -17,33 +17,6 @@ namespace IWorld.Client
         public MainPage()
         {
             InitializeComponent();
-            if (!App.Current.IsRunningOutOfBrowser)
-            {
-                root.Children.Clear();
-                root.Children.Add(new DownloadPage());
-            }
-        }
-
-        /// <summary>
-        /// 窗体拖动
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DragMove(object sender, EventArgs e)
-        {
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.DragMove();
-            }
-        }
-
-        private void SetFirstValues(object sender, RoutedEventArgs e)
-        {
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.LeftOfInitia = App.Current.MainWindow.Left;
-                App.TopOfInitial = App.Current.MainWindow.Top;
-            }
         }
     }
 }

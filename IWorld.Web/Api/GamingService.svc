@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="IWorld.Web.Api.GamingService" CodeBehind="GamingService.svc.cs" %>

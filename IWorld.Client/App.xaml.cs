@@ -9,109 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using IWorld.Client.UsersService;
-using IWorld.Client.SystemSettingService;
-using IWorld.Client.GamingService;
-using IWorld.Client.BulletinService;
 
 namespace IWorld.Client
 {
     public partial class App : Application
     {
-        #region 参数
-
-        public static double LeftOfInitia = 0;
-        public static double TopOfInitial = 0;
-
-        /// <summary>
-        /// 身份标识
-        /// </summary>
-        public static string Token { get; set; }
-
-        /// <summary>
-        /// 用户信息
-        /// </summary>
-        public static UserInfoResult UserInfo { get; set; }
-
-        /// <summary>
-        /// 站点设置
-        /// </summary>
-        public static WebSettingResult Websetting { get; set; }
-
-        /// <summary>
-        /// 彩票信息和设置
-        /// </summary>
-        public static List<LotteryTicketResult> Ticktes { get; set; }
-
-        /// <summary>
-        /// 彩票信息刷新时间
-        /// </summary>
-        public static DateTime TicketsRefreshTime { get; set; }
-
-        /// <summary>
-        /// 公告列表
-        /// </summary>
-        public static List<BulletinResult> Bulletins { get; set; }
-
-        #endregion
-
-        #region 方法
-
-        /// <summary>
-        /// 跳转到登陆页
-        /// </summary>
-        public static void GoToLoginPage()
-        {
-            MainPage mp = (MainPage)App.Current.RootVisual;
-            mp.root.Children.Clear();
-            mp.root.Children.Add(new LoginPage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 320;
-                App.Current.MainWindow.Height = 200;
-                App.Current.MainWindow.Top = App.TopOfInitial;
-                App.Current.MainWindow.Left = App.LeftOfInitia;
-            }
-        }
-
-        /// <summary>
-        /// 跳转到操作页
-        /// </summary>
-        public static void GoToOperatePage()
-        {
-            MainPage mp = (MainPage)App.Current.RootVisual;
-            mp.root.Children.Clear();
-            mp.root.Children.Add(new OperatePage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 1000;
-                App.Current.MainWindow.Height = 680;
-                App.Current.MainWindow.Top = App.TopOfInitial - 240;
-                App.Current.MainWindow.Left = App.LeftOfInitia - 340;
-            }
-        }
-
-        /// <summary>
-        /// 跳转到用户信息绑定页
-        /// </summary>
-        public static void GoToBindingPage()
-        {
-            MainPage mp = (MainPage)App.Current.RootVisual;
-            mp.root.Children.Clear();
-            mp.root.Children.Add(new BindingPage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 420;
-                App.Current.MainWindow.Height = 400;
-                App.Current.MainWindow.Top = App.TopOfInitial - 100;
-                App.Current.MainWindow.Left = App.LeftOfInitia - 50;
-            }
-        }
-
-        #endregion
 
         public App()
         {

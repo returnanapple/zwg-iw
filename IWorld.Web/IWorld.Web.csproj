@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{610A37D9-C2D2-4248-8802-CE1E34DC3B87}</ProjectGuid>
+    <ProjectGuid>{8BA22E19-CE9D-4114-B90B-B7C01EA2B5DD}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -19,8 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SilverlightApplicationList>{9C4BBA66-B1AA-4A59-9AAF-B197AC0E12E1}|..\IWorld.Admin\IWorld.Admin.csproj|ClientBin|False,{65791BD7-0BDA-4CB1-AB02-4A49C380BD07}|..\IWorld.Client\IWorld.Client.csproj|ClientBin|False</SilverlightApplicationList>
-    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SilverlightApplicationList>{D21FA801-E854-4300-9B18-6FEF7E658329}|..\IWorld.Client\IWorld.Client.csproj|ClientBin|False,{44C9F223-D4E4-45EF-916B-39779D9A7528}|..\IWorld.Admin\IWorld.Admin.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,14 +39,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,127 +58,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Api\ActivityService.svc" />
-    <Content Include="Api\Admin\ActivityService.svc" />
-    <Content Include="Api\Admin\BulletinService.svc" />
-    <Content Include="Api\Admin\CollectionService.svc" />
-    <Content Include="Api\Admin\DataReportService.svc" />
-    <Content Include="Api\Admin\ExchangeService.svc" />
-    <Content Include="Api\Admin\LotteryTicketService.svc" />
-    <Content Include="Api\Admin\ManagerService.svc" />
-    <Content Include="Api\Admin\SystemSettingService.svc" />
-    <Content Include="Api\Admin\UserInfoService.svc" />
-    <Content Include="Api\BulletinService.svc" />
-    <Content Include="Api\CustomerService.svc" />
-    <Content Include="Api\DataReportService.svc" />
-    <Content Include="Api\FundsService.svc" />
-    <Content Include="Api\GamingService.svc" />
-    <Content Include="Api\MessageService.svc" />
-    <Content Include="Api\SystemSettingService.svc" />
-    <Content Include="Api\UsersService.svc" />
-    <Content Include="ClientBin\IWorld.Admin.xap" />
-    <Content Include="ClientBin\IWorld.Client.xap" />
-    <Content Include="Content\Assembly\SLVisifire.Charts.dll" />
-    <Content Include="Content\Xml\ComprehensiveInformation.xml" />
-    <Content Include="Content\Xml\Tickets.xml" />
-    <Content Include="Content\Xml\WebSetting.xml" />
-    <Content Include="Global.asax" />
+    <Content Include="IWorld.AdminTestPage.aspx" />
+    <Content Include="IWorld.AdminTestPage.html" />
+    <Content Include="IWorld.ClientTestPage.aspx" />
+    <Content Include="IWorld.ClientTestPage.html" />
     <Content Include="Silverlight.js" />
-    <Content Include="Index.html" />
     <Content Include="Web.config" />
-    <Content Include="Backstage.html" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\ActivityService.svc.cs">
-      <DependentUpon>ActivityService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\ActivityService.svc.cs">
-      <DependentUpon>ActivityService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\BulletinService.svc.cs">
-      <DependentUpon>BulletinService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\CollectionService.svc.cs">
-      <DependentUpon>CollectionService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\DataReportService.svc.cs">
-      <DependentUpon>DataReportService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\ExchangeService.svc.cs">
-      <DependentUpon>ExchangeService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\LotteryTicketService.svc.cs">
-      <DependentUpon>LotteryTicketService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\ManagerService.svc.cs">
-      <DependentUpon>ManagerService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\SystemSettingService.svc.cs">
-      <DependentUpon>SystemSettingService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\UserInfoService.svc.cs">
-      <DependentUpon>UserInfoService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\Admin\IActivityService.cs" />
-    <Compile Include="Api\Admin\IBulletinService.cs" />
-    <Compile Include="Api\Admin\ICollectionService.cs" />
-    <Compile Include="Api\Admin\IDataReportService.cs" />
-    <Compile Include="Api\Admin\IExchangeService.cs" />
-    <Compile Include="Api\Admin\ILotteryTicketService.cs" />
-    <Compile Include="Api\Admin\IManagerService.cs" />
-    <Compile Include="Api\Admin\ISystemSettingService.cs" />
-    <Compile Include="Api\Admin\IUserInfoService.cs" />
-    <Compile Include="Api\BulletinService.svc.cs">
-      <DependentUpon>BulletinService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\CustomerService.svc.cs">
-      <DependentUpon>CustomerService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\DataReportService.svc.cs">
-      <DependentUpon>DataReportService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\FundsService.svc.cs">
-      <DependentUpon>FundsService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\GamingService.svc.cs">
-      <DependentUpon>GamingService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\IActivityService.cs" />
-    <Compile Include="Api\IBulletinService.cs" />
-    <Compile Include="Api\ICustomerService.cs" />
-    <Compile Include="Api\IDataReportService.cs" />
-    <Compile Include="Api\IFundsService.cs" />
-    <Compile Include="Api\IGamingService.cs" />
-    <Compile Include="Api\IMessageService.cs" />
-    <Compile Include="Api\ISystemSettingService.cs" />
-    <Compile Include="Api\IUsersService.cs" />
-    <Compile Include="Api\MessageService.svc.cs">
-      <DependentUpon>MessageService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\SystemSettingService.svc.cs">
-      <DependentUpon>SystemSettingService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Api\UsersService.svc.cs">
-      <DependentUpon>UsersService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Content\WebHepler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include="ClientBin\System.ComponentModel.DataAnnotations.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.Input.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Input.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.SystemColors.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.Toolkit.zip" />
-    <Content Include="ClientBin\System.Windows.Data.zip" />
-    <None Include="Properties\PublishProfiles\发布到E盘.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,36 +76,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\IWorld.BLL\IWorld.BLL.csproj">
-      <Project>{e9398016-e3b8-40a9-ba10-29e03ee6275e}</Project>
-      <Name>IWorld.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Contract.Admin\IWorld.Contract.Admin.csproj">
-      <Project>{67baf7d1-1f1d-4f0d-9a31-0ce185a650b3}</Project>
-      <Name>IWorld.Contract.Admin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Contract.Client\IWorld.Contract.Client.csproj">
-      <Project>{d9d32afb-e14c-4705-9848-391738facd8e}</Project>
-      <Name>IWorld.Contract.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.DAL\IWorld.DAL.csproj">
-      <Project>{189af639-fde9-4a2a-95fa-216fb2e19c14}</Project>
-      <Name>IWorld.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Helper\IWorld.Helper.csproj">
-      <Project>{e73ea8c9-afd5-42d9-8e26-99b6c43aa017}</Project>
-      <Name>IWorld.Helper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Model\IWorld.Model.csproj">
-      <Project>{31a782b9-49b9-4926-a4db-0892b211ac79}</Project>
-      <Name>IWorld.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Setting\IWorld.Setting.csproj">
-      <Project>{7eec1e06-7fea-49b9-8b2c-c6bec2783595}</Project>
-      <Name>IWorld.Setting</Name>
-    </ProjectReference>
+    <Folder Include="ClientBin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -238,9 +92,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>13114</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55635/</IISUrl>
+          <IISUrl>http://localhost:45722/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

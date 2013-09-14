@@ -9,81 +9,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using IWorld.Admin.Class;
-using IWorld.Admin.SystemSettingService;
 
 namespace IWorld.Admin
 {
     public partial class App : Application
     {
-        #region 用户个人信息缓存区
-
-        /// <summary>
-        /// 私匙
-        /// </summary>
-        public static string Token { get; set; }
-
-        /// <summary>
-        /// 用户名
-        /// </summary>
-        public static UserInfoCaChe User { get; set; }
-
-        /// <summary>
-        /// 站点设置
-        /// </summary>
-        public static WebSettingResult WebSetting { get; set; }
-
-        /// <summary>
-        /// 信息缓存
-        /// </summary>
-        public static Dictionary<string, object> Cache
-        {
-            get { return cache; }
-            set { cache = value; }
-        }
-        #region 信息缓存
-
-        private static Dictionary<string, object> cache = new Dictionary<string, object>();
-
-        #endregion
-
-        #endregion
-
-        #region 动作
-
-        /// <summary>
-        /// 显示遮蔽层
-        /// </summary>
-        public static void ShowCover()
-        {
-            ((MainPage)App.Current.RootVisual).ShowCover();
-        }
-
-        /// <summary>
-        /// 隐藏遮蔽层
-        /// </summary>
-        public static void HideCover()
-        {
-            ((MainPage)App.Current.RootVisual).HideCover();
-        }
-
-        /// <summary>
-        /// 跳转到操作页
-        /// </summary>
-        public static void GoToSetUpPage()
-        {
-            ((MainPage)App.Current.RootVisual).GoToSetUpPage();
-        }
-
-        /// <summary>
-        /// 跳转到登陆页
-        /// </summary>
-        public static void GoToLoginPage()
-        {
-            ((MainPage)App.Current.RootVisual).GoToLoginPage();
-        }
-
-        #endregion
 
         public App()
         {

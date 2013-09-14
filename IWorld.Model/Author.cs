@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
 
 namespace IWorld.Model
 {
     /// <summary>
     /// 用户信息
     /// </summary>
-    public class Author : CategoryBase
+    public class Author : CategoryModelBase
     {
-        #region 公开属性
+        #region 属性
 
         /// <summary>
         /// 用户名
@@ -25,89 +29,19 @@ namespace IWorld.Model
         public string SafeCode { get; set; }
 
         /// <summary>
-        /// 安全邮箱
-        /// </summary>
-        public string Email { get; set; }
-
-        /// <summary>
-        /// 绑定安全邮箱
-        /// </summary>
-        public bool BindingEmail { get; set; }
-
-        /// <summary>
-        /// 代理（拥有创建下级用户的权限）
-        /// </summary>
-        public bool IsAgents { get; set; }
-
-        /// <summary>
         /// 正常返点数
         /// </summary>
-        public double NormalReturnPoints { get; set; }
+        public double Rebate_Normal { get; set; }
 
         /// <summary>
         /// 不定位返点数
         /// </summary>
-        public double UncertainReturnPoints { get; set; }
-
-        /// <summary>
-        /// 所属用户组
-        /// </summary>
-        public virtual UserGroup Group { get; set; }
-
-        /// <summary>
-        /// 帐户余额
-        /// </summary>
-        public double Money { get; set; }
-
-        /// <summary>
-        /// 被冻结的金额（提现中）
-        /// </summary>
-        public double MoneyBeFrozen { get; set; }
-
-        /// <summary>
-        /// 消费量
-        /// </summary>
-        public double Consumption { get; set; }
-
-        /// <summary>
-        /// 积分
-        /// </summary>
-        public double Integral { get; set; }
-
-        /// <summary>
-        /// 开户人
-        /// </summary>
-        public string Holder { get; set; }
-
-        /// <summary>
-        /// 银行卡
-        /// </summary>
-        public string Card { get; set; }
-
-        /// <summary>
-        /// 银行
-        /// </summary>
-        public Bank Bank { get; set; }
-
-        /// <summary>
-        /// 绑定银行卡
-        /// </summary>
-        public bool BindingCard { get; set; }
+        public double Rebate_UnLocate { get; set; }
 
         /// <summary>
         /// 用户状态
         /// </summary>
         public UserStatus Status { get; set; }
-
-        /// <summary>
-        /// 最多拥有直属下级数量限制
-        /// </summary>
-        public int MaxOfSubordinate { get; set; }
-
-        /// <summary>
-        /// 当前拥有直属下级数量
-        /// </summary>
-        public int Subordinate { get; set; }
 
         /// <summary>
         /// 上次登录时间
@@ -118,6 +52,16 @@ namespace IWorld.Model
         /// 上次登录的网络地址
         /// </summary>
         public string LastLoginIp { get; set; }
+
+        /// <summary>
+        /// 绑定信息
+        /// </summary>
+        public virtual UserBinding Binding { get; set; }
+
+        /// <summary>
+        /// 用户数据
+        /// </summary>
+        public virtual UserData Data { get; set; }
 
         #endregion
 
@@ -135,39 +79,38 @@ namespace IWorld.Model
         /// </summary>
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
-        /// <param name="isAgents">是否代理用户</param>
-        /// <param name="normalReturnPoints">正常返点数</param>
-        /// <param name="uncertainReturnPoints">不定位返点数</param>
-        /// <param name="group">所属用户组</param>
-        /// <param name="maxOfSubordinate">最多拥有直属下级数量限制</param>
-        public Author(string username, string password, bool isAgents, double normalReturnPoints, double uncertainReturnPoints
-            , UserGroup group, int maxOfSubordinate)
+        /// <param name="rebate_Normal">正常返点数</param>
+        /// <param name="rebate_UnLocate">不定位返点数</param>
+        /// <param name="relative">父祖节点</param>
+        /// <param name="tree">所从属的树</param>
+        public Author(string username, string password, double rebate_Normal, double rebate_UnLocate
+            , List<Relative> relative = null, string tree = "")
+            : base(relative, tree)
         {
             this.Username = username;
             this.Password = password;
             this.SafeCode = password;
-            this.Email = "";
-            this.BindingEmail = false;
-            this.IsAgents = isAgents;
-            this.NormalReturnPoints = normalReturnPoints;
-            this.UncertainReturnPoints = uncertainReturnPoints;
-            this.Group = group;
-            this.Money = 0;
-            this.MoneyBeFrozen = 0;
-            this.Consumption = 0;
-            this.Integral = 0;
-            this.Card = "";
-            this.Bank = Model.Bank.无;
-            this.BindingCard = false;
-            this.Holder = "";
-            this.LeftKey = 1;
-            this.RightKey = 2;
-            this.Layer = 1;
+            this.Rebate_Normal = rebate_Normal;
+            this.Rebate_UnLocate = rebate_UnLocate;
             this.Status = UserStatus.未激活;
-            this.MaxOfSubordinate = maxOfSubordinate;
-            this.Subordinate = 0;
             this.LastLoginTime = DateTime.Now;
-            this.LastLoginIp = "127.0.0.1";
+            this.LastLoginIp = "";
+            this.Binding = new UserBinding();
+            this.Data = new UserData();
+        }
+
+        #endregion
+
+        #region 方法
+
+        /// <summary>
+        /// 声明用户登陆
+        /// </summary>
+        /// <param name="ip">IP</param>
+        public void OnLogin(string ip)
+        {
+            this.LastLoginTime = DateTime.Now;
+            this.LastLoginIp = ip;
         }
 
         #endregion

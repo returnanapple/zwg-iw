@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("IWorld.Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("紫微阁")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("IWorld.Client")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则以下 GUID 用作类型库的 ID
-[assembly: Guid("65791bd7-0bda-4cb1-ab02-4a49c380bd07")]
+[assembly: Guid("d21fa801-e854-4300-9b18-6fef7e658329")]
 
 // 程序集的版本信息由下面四个值组成:
 //
