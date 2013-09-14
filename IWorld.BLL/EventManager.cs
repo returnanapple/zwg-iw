@@ -92,7 +92,8 @@ namespace IWorld.BLL
             BettingManager.CreatedEventHandler += SiteDataManager.HadBeted;
             ChasingManager.ChangedStatusEventHandler += SiteDataManager.HadBeted;
             BettingManager.ChangedStatusEventHandler += SiteDataManager.HadLottery;
-            BettingForCgasingManager.ChangedStatusEventHandler += SiteDataManager.HadLottery;
+            BettingManager.ChangedStatusEventHandler += SiteDataManager.HadRevoked;
+            //BettingForCgasingManager.ChangedStatusEventHandler += SiteDataManager.HadLottery;
             ActivityParticipateRecordManager.CreatedEventHandler += SiteDataManager.HadParticipatedActivity;
             ExchangeParticipateRecordManager.CreatedEventHandler += SiteDataManager.HadParticipatedExchange;
             RechargeRecordManager.ChangedStatusEventHandler += SiteDataManager.HadRecharged;
@@ -103,7 +104,8 @@ namespace IWorld.BLL
             BettingManager.CreatedEventHandler += PersonalDataManager.HadBeted;
             ChasingManager.ChangedStatusEventHandler += PersonalDataManager.HadBeted;
             BettingManager.ChangedStatusEventHandler += PersonalDataManager.HadLottery;
-            BettingForCgasingManager.ChangedStatusEventHandler += PersonalDataManager.HadLottery;
+            BettingManager.ChangedStatusEventHandler += PersonalDataManager.HadRevoked;
+            //BettingForCgasingManager.ChangedStatusEventHandler += PersonalDataManager.HadLottery;
             ActivityParticipateRecordManager.CreatedEventHandler += PersonalDataManager.HadParticipatedActivity;
             ExchangeParticipateRecordManager.CreatedEventHandler += PersonalDataManager.HadParticipatedExchange;
             RechargeRecordManager.ChangedStatusEventHandler += PersonalDataManager.HadRecharged;

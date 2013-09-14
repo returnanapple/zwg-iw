@@ -23,6 +23,7 @@ namespace IWorld.Client
             this._row = row;
 
             text_user.Text = result.User;
+            text_money.Text = result.Balance.ToString();
             text_returnPoints.Text = result.ReturnPoints.ToString();
             text_bet.Text = result.Bet.ToString();
             text_bonus.Text = result.Bonus.ToString();

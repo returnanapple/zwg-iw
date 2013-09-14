@@ -30,14 +30,15 @@ namespace IWorld.Client
         void InsertTable()
         {
             List<TableToolColumnImport> columns = new List<TableToolColumnImport>();
-            columns.Add(new TableToolColumnImport("用户", 90));
-            columns.Add(new TableToolColumnImport("充值", 90));
-            columns.Add(new TableToolColumnImport("提现", 90));
-            columns.Add(new TableToolColumnImport("投注", 90));
-            columns.Add(new TableToolColumnImport("中奖", 90));
-            columns.Add(new TableToolColumnImport("返点", 90));
-            columns.Add(new TableToolColumnImport("活动返还", 90));
-            columns.Add(new TableToolColumnImport("盈亏", 90));
+            columns.Add(new TableToolColumnImport("用户", 80));
+            columns.Add(new TableToolColumnImport("余额", 80));
+            columns.Add(new TableToolColumnImport("充值", 80));
+            columns.Add(new TableToolColumnImport("提现", 80));
+            columns.Add(new TableToolColumnImport("投注", 80));
+            columns.Add(new TableToolColumnImport("中奖", 80));
+            columns.Add(new TableToolColumnImport("返点", 80));
+            columns.Add(new TableToolColumnImport("活动返还", 80));
+            columns.Add(new TableToolColumnImport("盈亏", 80));
             List<ITableToolRow> rows = new List<Class.ITableToolRow>();
 
             DataReportServiceClient client = new DataReportServiceClient();

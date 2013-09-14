@@ -147,6 +147,29 @@ namespace IWorld.BLL
         }
 
         /// <summary>
+        /// 撤单时候移除投注额
+        /// </summary>
+        /// <param name="sender">触发对象</param>
+        /// <param name="e">监视对象</param>
+        public static void HadRevoked(object sender, BettingManager.ChangeStatusEventArgs e)
+        {
+            if (e.NewStatus == BettingStatus.用户撤单)
+            {
+                SiteDataAtDay siteDataAtDay = GetSiteDataAtDay(e.Db);
+                SiteDataAtMonth siteDataAtMonth = GetSiteDataAtMonth(e.Db);
+                ComprehensiveInformation comprehensiveInformation = new ComprehensiveInformation();
+                Betting betting = (Betting)e.State;
+
+                siteDataAtDay.AmountOfBets -= betting.Pay;
+                siteDataAtMonth.AmountOfBets -= betting.Pay;
+                comprehensiveInformation.AmountOfBets -= betting.Pay;
+
+                e.Db.SaveChanges();
+                comprehensiveInformation.Save();
+            }
+        }
+
+        /// <summary>
         /// 统计奖金
         /// </summary>
         /// <param name="sender">触发对象</param>

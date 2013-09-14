@@ -34,9 +34,9 @@
             <PasswordBox Name="input_newPassword_a" Height="23" Canvas.Left="152" Canvas.Top="119" Width="120"/>
             <PasswordBox Name="input_safeCode" Height="23" Canvas.Left="152" Canvas.Top="162" Width="120"/>
             <PasswordBox Name="input_safeCode_a" Height="23" Canvas.Left="152" Canvas.Top="190" Width="120"/>
-            <TextBox Name="input_email" Height="23" Canvas.Left="152" TextWrapping="Wrap" Canvas.Top="234" Width="120"/>
-            <TextBox Name="input_card" Height="23" Canvas.Left="152" TextWrapping="Wrap" Canvas.Top="284" Width="120"/>
-            <TextBox Name="input_holder" Height="23" Canvas.Left="152" TextWrapping="Wrap" Canvas.Top="312" Width="120"/>
+            <TextBox Name="input_email" Height="23" Canvas.Left="152" Canvas.Top="234" Width="120"/>
+            <TextBox Name="input_card" Height="23" Canvas.Left="152" Canvas.Top="284" Width="120"/>
+            <TextBox Name="input_holder" Height="23" Canvas.Left="152" Canvas.Top="312" Width="120"/>
             <TextBox Name="input_bank" Height="23" Canvas.Left="152" Text="工商银行" IsReadOnly="True" Canvas.Top="340" Width="120"/>
 
             <Button Content="确  定" Canvas.Left="335" Canvas.Top="63" Width="60" Click="Enter"/>

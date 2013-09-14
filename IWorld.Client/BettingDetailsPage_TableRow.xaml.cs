@@ -94,7 +94,7 @@ namespace IWorld.Client
             BettingDetailsPage_FullWindow fw = (BettingDetailsPage_FullWindow)sender;
             if (fw.DialogResult == true)
             {
-                NormalPromt np = new NormalPromt(string.Format("你确定要撤除订单号为 {0} 的投注吗？"));
+                NormalPromt np = new NormalPromt(string.Format("你确定要撤除订单号为 {0} 的投注吗？", Result.BettingId));
                 np.Closed += Remove_do;
                 np.Show();
             }

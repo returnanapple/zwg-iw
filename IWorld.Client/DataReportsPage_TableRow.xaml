@@ -17,23 +17,25 @@
                                  MouseEnter="Hover" MouseLeave="Unhover">
         <Grid x:Name="root" Width="720" Height="20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Name="text_user" Text="用户" Grid.Column="0"></TextBlock>
-            <TextBlock Name="text_recharge" Text="充值" Grid.Column="1"></TextBlock>
-            <TextBlock Name="text_withdrawal" Text="提现" Grid.Column="2"></TextBlock>
-            <TextBlock Name="text_bet" Text="投注" Grid.Column="3"></TextBlock>
-            <TextBlock Name="text_bonus" Text="中奖" Grid.Column="4"></TextBlock>
-            <TextBlock Name="text_returnPoints" Text="返点" Grid.Column="5"></TextBlock>
-            <TextBlock Name="text_expenditures" Text="活动返还" Grid.Column="6"></TextBlock>
-            <TextBlock Name="text_profit" Text="盈利" Grid.Column="7"></TextBlock>
+            <TextBlock Name="text_money" Text="余额" Grid.Column="1"></TextBlock>
+            <TextBlock Name="text_recharge" Text="充值" Grid.Column="2"></TextBlock>
+            <TextBlock Name="text_withdrawal" Text="提现" Grid.Column="3"></TextBlock>
+            <TextBlock Name="text_bet" Text="投注" Grid.Column="4"></TextBlock>
+            <TextBlock Name="text_bonus" Text="中奖" Grid.Column="5"></TextBlock>
+            <TextBlock Name="text_returnPoints" Text="返点" Grid.Column="6"></TextBlock>
+            <TextBlock Name="text_expenditures" Text="活动返还" Grid.Column="7"></TextBlock>
+            <TextBlock Name="text_profit" Text="盈利" Grid.Column="8"></TextBlock>
         </Grid>
     </toolkit:ExpressionDarkTheme>
 </UserControl>
