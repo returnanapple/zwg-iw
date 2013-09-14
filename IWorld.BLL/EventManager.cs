@@ -28,6 +28,8 @@ namespace IWorld.BLL
             ActivityParticipateRecordManager.CreatingEventHandler += AuthorManager.ParticipateInActivity;
             ExchangeParticipateRecordManager.CreatingEventHandler += AuthorManager.ParticipateInExchange;
 
+            AuthorManager.CreatedEventHandler += AuthorManager.AddSub;
+
             #endregion
 
             #region 登陆记录

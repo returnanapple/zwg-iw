@@ -1243,6 +1243,14 @@ namespace IWorld.BLL
             owner.Integral -= participateRecord.Exchange.UnitPrice * participateRecord.Sum;
         }
 
+        public static void AddSub(object sender, NEventArgs e)
+        {
+            Author sub = (Author)e.State;
+            Author user = new AuthorManager(e.Db).GetParent(sub);
+            user.Subordinate++;
+            e.Db.SaveChanges();
+        }
+
         #endregion
     }
 }
