@@ -963,77 +963,9 @@
         <name>不定位</name>
         <order>8</order>
         <plays>
-          <!--前三不定位-->
+          <!--不定位-->
           <play>
-            <name>前三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三不定位-->
-          <play>
-            <name>中三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三不定位-->
-          <play>
-            <name>后三不定位</name>
+            <name>不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>
@@ -1059,6 +991,18 @@
               </seat>
               <seat>
                 <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
                 <isRequired>False</isRequired>
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>10</upperOfPick>
@@ -2032,77 +1976,9 @@
         <name>不定位</name>
         <order>8</order>
         <plays>
-          <!--前三不定位-->
+          <!--不定位-->
           <play>
-            <name>前三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三不定位-->
-          <play>
-            <name>中三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三不定位-->
-          <play>
-            <name>后三不定位</name>
+            <name>不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>
@@ -2128,6 +2004,18 @@
               </seat>
               <seat>
                 <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
                 <isRequired>False</isRequired>
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>10</upperOfPick>
@@ -3101,77 +2989,9 @@
         <name>不定位</name>
         <order>8</order>
         <plays>
-          <!--前三不定位-->
+          <!--不定位-->
           <play>
-            <name>前三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三不定位-->
-          <play>
-            <name>中三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>10</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三不定位-->
-          <play>
-            <name>后三不定位</name>
+            <name>不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>
@@ -3197,6 +3017,18 @@
               </seat>
               <seat>
                 <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
                 <isRequired>False</isRequired>
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>10</upperOfPick>
@@ -4170,77 +4002,9 @@
         <name>不定位</name>
         <order>8</order>
         <plays>
-          <!--前三不定位-->
+          <!--不定位-->
           <play>
-            <name>前三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三不定位-->
-          <play>
-            <name>中三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三不定位-->
-          <play>
-            <name>后三不定位</name>
+            <name>不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>
@@ -4266,6 +4030,18 @@
               </seat>
               <seat>
                 <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
                 <isRequired>False</isRequired>
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>11</upperOfPick>
@@ -5239,77 +5015,9 @@
         <name>不定位</name>
         <order>8</order>
         <plays>
-          <!--前三不定位-->
+          <!--不定位-->
           <play>
-            <name>前三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三不定位-->
-          <play>
-            <name>中三不定位</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>1</lowerseats>
-            <upperseats>1</upperseats>
-            <interface>任N不定位</interface>
-            <isStackedBit>True</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>1</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>False</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三不定位-->
-          <play>
-            <name>后三不定位</name>
+            <name>不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>
@@ -5335,6 +5043,18 @@
               </seat>
               <seat>
                 <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
                 <isRequired>False</isRequired>
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>11</upperOfPick>

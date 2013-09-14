@@ -153,7 +153,7 @@
   <Class Name="IWorld.BLL.LotteryTicketManager" Collapsed="true" HideInheritanceLine="true">
     <Position X="2.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAgAAEAACAAAAAAAGAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAAgAAEAAAAAAAAAAGAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LotteryTicketManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -233,7 +233,7 @@
   <Class Name="IWorld.BLL.ActivityParticipateRecordManager" Collapsed="true" HideInheritanceLine="true">
     <Position X="2.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAEAAAAAAAAACACCAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>CAAAAEAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ActivityParticipateRecordManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -344,7 +344,7 @@
   <Class Name="IWorld.BLL.PersonalDataManager" Collapsed="true">
     <Position X="2.25" Y="15.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAAAAAAAAQAAIACAACIAAAMACAAAAgAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAIACAACIAAAMACAAAAgAA=</HashCode>
       <FileName>PersonalDataManager.cs</FileName>
     </TypeIdentifier>
   </Class>

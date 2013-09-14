@@ -45,7 +45,7 @@
   <Class Name="IWorld.Contract.Admin.ComprehensiveInformationResult" Collapsed="true" HideInheritanceLine="true">
     <Position X="7.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EoAAUAAITAAAAAAAAAIFIAAAIUEACCEBgAkAABAAAAA=</HashCode>
+      <HashCode>EuAAUAAITAAAAAAAQAIFIAAAIUEACCUBgA2AAQAAABA=</HashCode>
       <FileName>ComprehensiveInformationResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -248,7 +248,7 @@
   <Class Name="IWorld.Contract.Admin.ActivityResult" Collapsed="true">
     <Position X="0.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAEAAABAAAAAAAAAAAAAAgQAQQAAAAQA=</HashCode>
+      <HashCode>AACAAAAAQAAQAEAAEBAAAAAAAAAgAAAAwQAQQAAAAQA=</HashCode>
       <FileName>ActivityResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -297,7 +297,7 @@
   <Class Name="IWorld.Contract.Admin.ExchangeResult" Collapsed="true">
     <Position X="0.75" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAgAAAAAAAABAEAAQAAAAAAIAAAEgAAAABABA=</HashCode>
+      <HashCode>IACAAAAAwAAAAAAAEBAEAAQAAAAgAIAAQEgAAAABABA=</HashCode>
       <FileName>ExchangeResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -563,7 +563,7 @@
   <Enum Name="IWorld.Contract.Admin.RechargeStatusSelectType" Collapsed="true">
     <Position X="6" Y="21" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAEEAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAEEAAAAAA=</HashCode>
       <FileName>RechargeStatusSelectType.cs</FileName>
     </TypeIdentifier>
   </Enum>

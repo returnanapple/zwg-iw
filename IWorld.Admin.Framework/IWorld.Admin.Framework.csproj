@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{687B585E-7D00-4414-AC46-45129C830F75}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWorld.Admin.Framework</RootNamespace>
+    <AssemblyName>IWorld.Admin.Framework</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComAction.cs" />
+    <Compile Include="DataKey.cs" />
+    <Compile Include="EditAccountActionStatus.cs" />
+    <Compile Include="IEditAccountPackage.cs" />
+    <Compile Include="IMainPage.cs" />
+    <Compile Include="IMessage.cs" />
+    <Compile Include="IndexViewModel.cs" />
+    <Compile Include="IPop.cs" />
+    <Compile Include="LoginViewModel.cs" />
+    <Compile Include="LogoutActionStatus.cs" />
+    <Compile Include="ManagerViewModelBase.cs" />
+    <Compile Include="Messager.cs" />
+    <Compile Include="MonitorAttribute.cs" />
+    <Compile Include="MonitorCondition.cs" />
+    <Compile Include="NCommand.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Pop.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipientDelegate.cs" />
+    <Compile Include="Service References\ActivityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BulletinService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExchangeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LotteryTicketService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SystemSettingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserInfoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UsersViewModel.cs" />
+    <Compile Include="ViewAttribute.cs" />
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="ViewModelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActivityService\ActivityService.wsdl" />
+    <None Include="Service References\ActivityService\ActivityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.Framework.ActivityService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.Framework.ActivityService.PaginationListOfActivityParticipateRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.Framework.ActivityService.PaginationListOfActivityResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService.disco" />
+    <None Include="Service References\BulletinService\configuration91.svcinfo" />
+    <None Include="Service References\BulletinService\configuration.svcinfo" />
+    <None Include="Service References\BulletinService\IWorld.Admin.Framework.BulletinService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\IWorld.Admin.Framework.BulletinService.PaginationListOfBulletinResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService.disco" />
+    <None Include="Service References\DataReportService\configuration91.svcinfo" />
+    <None Include="Service References\DataReportService\configuration.svcinfo" />
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.ComprehensiveInformationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfBettingForChasingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfBettingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfChasingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfPersonalDataResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfRechargeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfSiteDataResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfTransferResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.PaginationListOfWithdrawalResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.UntreatedRecharCountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.Framework.DataReportService.UntreatedWithdrawalCountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService.disco" />
+    <None Include="Service References\ExchangeService\configuration91.svcinfo" />
+    <None Include="Service References\ExchangeService\configuration.svcinfo" />
+    <None Include="Service References\ExchangeService\IWorld.Admin.Framework.ExchangeService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.Framework.ExchangeService.PaginationListOfExchangeParticipateRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.Framework.ExchangeService.PaginationListOfExchangeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.Framework.ExchangeService.PaginationListOfGiftResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfHowToPlayResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfLotteryResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfLotteryTimeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfPlayTagResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfTicketResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.Framework.LotteryTicketService.PaginationListOfVirtualTopResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.disco" />
+    <None Include="Service References\LotteryTicketService\configuration91.svcinfo" />
+    <None Include="Service References\LotteryTicketService\configuration.svcinfo" />
+    <None Include="Service References\LotteryTicketService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.PaginationListOfLandingRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.PaginationListOfManagerGroupResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.PaginationListOfManagerInfoResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.Framework.ManagerService.PaginationListOfOperatedRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.disco" />
+    <None Include="Service References\ManagerService\configuration91.svcinfo" />
+    <None Include="Service References\ManagerService\configuration.svcinfo" />
+    <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.CollectionStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.PaginationListOfBankAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.PaginationListOfEmailAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.PaginationListOfEmailClientResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.Framework.SystemSettingService.WebSettingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService.disco" />
+    <None Include="Service References\SystemSettingService\configuration91.svcinfo" />
+    <None Include="Service References\SystemSettingService\configuration.svcinfo" />
+    <None Include="Service References\SystemSettingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.PaginationListOfLandingRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.PaginationListOfUserGroupResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.PaginationListOfUserInfoResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.ResetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.Framework.UserInfoService.ResetSafeWordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService.disco" />
+    <None Include="Service References\UserInfoService\configuration91.svcinfo" />
+    <None Include="Service References\UserInfoService\configuration.svcinfo" />
+    <None Include="Service References\UserInfoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\BulletinService\BulletinService.wsdl" />
+    <None Include="Service References\BulletinService\BulletinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService.wsdl" />
+    <None Include="Service References\DataReportService\DataReportService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService.wsdl" />
+    <None Include="Service References\ExchangeService\ExchangeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.wsdl" />
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.wsdl" />
+    <None Include="Service References\ManagerService\ManagerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService.wsdl" />
+    <None Include="Service References\SystemSettingService\SystemSettingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService.wsdl" />
+    <None Include="Service References\UserInfoService\UserInfoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_IWorld.Admin.Framework.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ActivityService\" />
+    <WCFMetadataStorage Include="Service References\BulletinService\" />
+    <WCFMetadataStorage Include="Service References\DataReportService\" />
+    <WCFMetadataStorage Include="Service References\ExchangeService\" />
+    <WCFMetadataStorage Include="Service References\LotteryTicketService\" />
+    <WCFMetadataStorage Include="Service References\ManagerService\" />
+    <WCFMetadataStorage Include="Service References\SystemSettingService\" />
+    <WCFMetadataStorage Include="Service References\UserInfoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActivityService\ActivityService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActivityService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActivityService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ActivityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

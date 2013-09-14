@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="206f50d7-1467-40a1-9dde-56e3f32de920" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/BulletinService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BulletinService.disco" MetadataType="Disco" ID="95eb559c-72e1-4fe0-88f1-77ada05be1cc" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/BulletinService.svc?disco" />
+    <MetadataFile FileName="BulletinService.xsd" MetadataType="Schema" ID="3e9ef98f-d25e-4798-aaf5-b3817b69c835" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/BulletinService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BulletinService1.xsd" MetadataType="Schema" ID="2ced2dd8-7a47-4c3b-b648-285682d5bf57" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/BulletinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BulletinService2.xsd" MetadataType="Schema" ID="452eeba7-5e22-41ef-b82a-40937dc19391" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/BulletinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BulletinService.wsdl" MetadataType="Wsdl" ID="180152aa-6b19-47ca-ac32-c3639972af38" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/BulletinService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1096,6 +1096,7 @@ namespace IWorld.BLL
             {
                 Author owner = e.Db.Set<Author>().Find(rr.Owner.Id);
                 owner.Money += rr.Sum;
+                owner.Integral += rr.Sum;
             }
         }
 

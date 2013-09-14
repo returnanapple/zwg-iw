@@ -19,7 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SilverlightApplicationList>{9C4BBA66-B1AA-4A59-9AAF-B197AC0E12E1}|..\IWorld.Admin\IWorld.Admin.csproj|ClientBin|False,{65791BD7-0BDA-4CB1-AB02-4A49C380BD07}|..\IWorld.Client\IWorld.Client.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{763A63DD-0124-4255-8715-E250796CBC85}|..\IWorld.Admin\IWorld.Admin.csproj|ClientBin|False</SilverlightApplicationList>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -85,16 +85,13 @@
     <Content Include="Api\SystemSettingService.svc" />
     <Content Include="Api\UsersService.svc" />
     <Content Include="ClientBin\IWorld.Admin.xap" />
-    <Content Include="ClientBin\IWorld.Client.xap" />
-    <Content Include="Content\Assembly\SLVisifire.Charts.dll" />
     <Content Include="Content\Xml\ComprehensiveInformation.xml" />
     <Content Include="Content\Xml\Tickets.xml" />
     <Content Include="Content\Xml\WebSetting.xml" />
     <Content Include="Global.asax" />
-    <Content Include="Silverlight.js" />
-    <Content Include="Index.html" />
-    <Content Include="Web.config" />
     <Content Include="Backstage.html" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ActivityService.svc.cs">
@@ -178,14 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ClientBin\System.ComponentModel.DataAnnotations.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.Input.zip" />
     <Content Include="ClientBin\System.Windows.Controls.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Input.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.SystemColors.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.Toolkit.zip" />
-    <Content Include="ClientBin\System.Windows.Data.zip" />
     <None Include="Properties\PublishProfiles\发布到E盘.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

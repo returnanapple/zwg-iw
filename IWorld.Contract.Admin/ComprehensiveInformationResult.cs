@@ -12,10 +12,40 @@ namespace IWorld.Contract.Admin
     public class ComprehensiveInformationResult : OperateResult
     {
         /// <summary>
-        /// 过往两周登入用户数量
+        /// 注册用户数（日）
         /// </summary>
         [DataMember]
-        public List<int> CountOfUserLoginAtLast2Week { get; set; }
+        public double SetUpAtDay { get; set; }
+
+        /// <summary>
+        /// 注册用户数（月）
+        /// </summary>
+        [DataMember]
+        public double SetUpAtMonth { get; set; }
+
+        /// <summary>
+        /// 注册用户数（总）
+        /// </summary>
+        [DataMember]
+        public double SetUpAtAll { get; set; }
+
+        /// <summary>
+        /// 登陆用户数（日）
+        /// </summary>
+        [DataMember]
+        public double SetInAtDay { get; set; }
+
+        /// <summary>
+        /// 登陆用户数（月）
+        /// </summary>
+        [DataMember]
+        public double SetInAtMonth { get; set; }
+
+        /// <summary>
+        /// 登陆用户数（总）
+        /// </summary>
+        [DataMember]
+        public double SetInAtAll { get; set; }
 
         /// <summary>
         /// 投注额（日）
@@ -34,6 +64,24 @@ namespace IWorld.Contract.Admin
         /// </summary>
         [DataMember]
         public double AmountOfBetsAtAll { get; set; }
+
+        /// <summary>
+        /// 返点（日）
+        /// </summary>
+        [DataMember]
+        public double RebateAtDay { get; set; }
+
+        /// <summary>
+        /// 返点（月）
+        /// </summary>
+        [DataMember]
+        public double RebateAtMonth { get; set; }
+
+        /// <summary>
+        /// 返点（总）
+        /// </summary>
+        [DataMember]
+        public double RebateAtAll { get; set; }
 
         /// <summary>
         /// 奖金（日）
@@ -168,12 +216,23 @@ namespace IWorld.Contract.Admin
         /// <param name="siteDataAtMonth">相关站点数据统计（月）</param>
         public ComprehensiveInformationResult(SiteDataAtDay siteDataAtDay, SiteDataAtMonth siteDataAtMonth)
         {
-            this.CountOfUserLoginAtLast2Week = new List<int>();
             ComprehensiveInformation comprehensiveInformation = new ComprehensiveInformation();
+
+            this.SetUpAtDay = siteDataAtDay.CountOfSetUp;
+            this.SetUpAtMonth = siteDataAtMonth.CountOfSetUp;
+            this.SetUpAtAll = comprehensiveInformation.CountOfSetUp;
+
+            this.SetInAtDay = siteDataAtDay.CountOfSetIn;
+            this.SetInAtMonth = siteDataAtMonth.CountOfSetIn;
+            this.SetInAtAll = comprehensiveInformation.CountOfSetIn;
 
             this.AmountOfBetsAtDay = siteDataAtDay.AmountOfBets;
             this.AmountOfBetsAtMonth = siteDataAtMonth.AmountOfBets;
             this.AmountOfBetsAtAll = comprehensiveInformation.AmountOfBets;
+
+            this.RebateAtDay = siteDataAtDay.ReturnPoints;
+            this.RebateAtMonth = siteDataAtMonth.ReturnPoints;
+            this.RebateAtAll = comprehensiveInformation.ReturnPoints;
 
             this.BonusAtDay = siteDataAtDay.Bonus;
             this.BonusAtMonth = siteDataAtMonth.Bonus;

@@ -171,8 +171,6 @@ namespace IWorld.BLL
                         , b.Pay);
                 ICreatePackage<SubordinateDynamic> _sdPfc = SubordinateDynamicManager.Factory
                         .CreatePackageForCreate(owner.Id, _done, owner.Id, _amount);
-                sdm.Create(_sdPfc);
-
 
                 #endregion
                 #region 上级

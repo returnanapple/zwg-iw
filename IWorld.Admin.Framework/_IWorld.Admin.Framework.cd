@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IWorld.Admin.Framework.ViewModelService" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgUAUAASAEAACAAAABAAAAAAACAAAIBQBAAAA=</HashCode>
+      <FileName>ViewModelService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.LoginViewModel" Collapsed="true" HideInheritanceLine="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAQAEAAAAAAAAIAACQAIQAACgAAA=</HashCode>
+      <FileName>LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.ViewAttribute" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.NCommand" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAACAAQAAEAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IWorld.Admin.Framework.ViewModelBase" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIEAAAABAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="IWorld.Admin.Framework.ManagerViewModelBase" Collapsed="true" HideInheritanceLine="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAACAEAAAgAAAAAACwAAKAMEAAgAggAABQAAEAAAAIA=</HashCode>
+      <FileName>ManagerViewModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.IndexViewModel" Collapsed="true" HideInheritanceLine="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>uuAQUAAMTgRwIABEQoIFIGIIOUEAGSUFgA2ACVAEABA=</HashCode>
+      <FileName>IndexViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.Messager" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAFAAIAAAAAAAAACAIAAAAAIAAAw=</HashCode>
+      <FileName>Messager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.MonitorCondition" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MonitorCondition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.MonitorAttribute" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>MonitorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Framework.UsersViewModel" Collapsed="true" HideInheritanceLine="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UsersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IWorld.Admin.Framework.IMainPage" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMainPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IWorld.Admin.Framework.IPop" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>IPop.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IWorld.Admin.Framework.IMessage" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAQAAUAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>IMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IWorld.Admin.Framework.IEditAccountPackage" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEditAccountPackage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="IWorld.Admin.Framework.Page" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAEAACAAAAAAAAA=</HashCode>
+      <FileName>Page.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Framework.Pop" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Pop.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Framework.ComAction" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ComAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Framework.LogoutActionStatus" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>LogoutActionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Framework.EditAccountActionStatus" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAEQBAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditAccountActionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Framework.DataKey" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataKey.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="IWorld.Admin.Framework.RecipientDelegate" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecipientDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

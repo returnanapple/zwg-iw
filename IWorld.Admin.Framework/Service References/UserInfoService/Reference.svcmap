@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef2edaaa-9ed1-456f-843d-6d8b7a53e115" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/UserInfoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserInfoService.wsdl" MetadataType="Wsdl" ID="cd8269a2-a586-43ea-9d4c-a3ff8f1538ed" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?wsdl" />
+    <MetadataFile FileName="UserInfoService.xsd" MetadataType="Schema" ID="dfa03478-3072-4268-84dc-308de0adf083" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserInfoService.disco" MetadataType="Disco" ID="98332775-8ed4-44ac-889f-4e86876b069e" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?disco" />
+    <MetadataFile FileName="UserInfoService1.xsd" MetadataType="Schema" ID="db89dd45-6f6b-40fd-8edb-3707ef51e463" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserInfoService2.xsd" MetadataType="Schema" ID="7daf57b3-4358-46d9-92e3-7b2c63bd442b" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserInfoService3.xsd" MetadataType="Schema" ID="a22c0489-854d-4bba-84c2-3f29556a9574" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

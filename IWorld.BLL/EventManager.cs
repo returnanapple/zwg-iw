@@ -52,8 +52,8 @@ namespace IWorld.BLL
             #region 开奖
 
             LotteryManager.CreatedEventHandler += BettingManager.GetResultOfLottery;
-            //LotteryManager.CreatedEventHandler += ChasingManager.UpdateChasingStatus;
-            //LotteryManager.CreatedEventHandler += BettingForCgasingManager.GetResultOfLottery;
+            LotteryManager.CreatedEventHandler += ChasingManager.UpdateChasingStatus;
+            LotteryManager.CreatedEventHandler += BettingForCgasingManager.GetResultOfLottery;
             LotteryManager.CreatedEventHandler += LotteryTicketManager.UpdateLotteryTime;
 
             #endregion
@@ -63,9 +63,7 @@ namespace IWorld.BLL
             AuthorManager.CreatedEventHandler += ActivityParticipateRecordManager.CreateRecordWhenUserCreated;
             RechargeRecordManager.ChangedStatusEventHandler += ActivityParticipateRecordManager.CreateRecordWhenRecharge;
             BettingManager.ChangedStatusEventHandler += ActivityParticipateRecordManager.CreateRecordWhenBetting;
-            BettingManager.ChangingStatusEventHandler += ActivityParticipateRecordManager.CreateRecordWhenLottery;
             ChasingManager.ChangedStatusEventHandler += ActivityParticipateRecordManager.CreateRecordWhenChasing;
-            PersonalDataManager.CountedForDayEventHandler += ActivityParticipateRecordManager.CreateRecordWhenCountedForDay;
 
             #endregion
 

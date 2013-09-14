@@ -623,7 +623,6 @@ namespace IWorld.BLL
                     bettingManager.ChangeStatus(betting.Id, BettingStatus.中奖, bonus);
                 }
             });
-            e.Db.SaveChanges();
         }
 
         /// <summary>

@@ -25,8 +25,7 @@
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
           <ProjectOutputReferences>
-            <Ref Project="{9C4BBA66-B1AA-4A59-9AAF-B197AC0E12E1}" Folder="ClientBin">IWorld.Admin.xap|System.ComponentModel.DataAnnotations.zip|System.Windows.Controls.Data.Input.zip|System.Windows.Controls.Data.zip|System.Windows.Controls.Input.zip|System.Windows.Controls.Theming.SystemColors.zip|System.Windows.Controls.Theming.Toolkit.zip|System.Windows.Controls.zip|System.Windows.Data.zip</Ref>
-            <Ref Project="{65791BD7-0BDA-4CB1-AB02-4A49C380BD07}" Folder="ClientBin">IWorld.Client.xap</Ref>
+            <Ref Project="{763A63DD-0124-4255-8715-E250796CBC85}" Folder="ClientBin">IWorld.Admin.xap|System.Windows.Controls.zip</Ref>
           </ProjectOutputReferences>
         </WebProjectProperties>
       </FlavorProperties>

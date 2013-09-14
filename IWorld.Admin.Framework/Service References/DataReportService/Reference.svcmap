@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5bce4afb-4cba-4573-98c4-6629a16c3d76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/DataReportService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataReportService.wsdl" MetadataType="Wsdl" ID="ea5e70de-e231-4357-9ab9-91055c11d136" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?wsdl" />
+    <MetadataFile FileName="DataReportService.disco" MetadataType="Disco" ID="a4c1d383-b698-4232-9558-7ba60e1231bb" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?disco" />
+    <MetadataFile FileName="DataReportService1.xsd" MetadataType="Schema" ID="b4c4dfad-5d2f-4bbb-b99b-9f42d4b5b9c8" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataReportService2.xsd" MetadataType="Schema" ID="06271c7c-2f9a-4ff5-be3d-cc4962808331" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataReportService3.xsd" MetadataType="Schema" ID="920c3c9d-8bdb-4d34-a4b2-72c5e372d68f" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataReportService4.xsd" MetadataType="Schema" ID="f733a88d-478b-45f3-a076-a811b1ac7749" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

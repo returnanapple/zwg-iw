@@ -86,7 +86,7 @@ namespace IWorld.Contract.Client
             this.Odds = play.Odds;
             this.Interface = play.Interface;
             this.IsStackedBit = play.IsStackedBit;
-            this.Seats = play.Seats.OrderBy(x=>x.Order).ToList().ConvertAll(x => new OptionalSeatResult(x));
+            this.Seats = play.Seats.ConvertAll(x => new OptionalSeatResult(x));
             this.IsSingle = play.Parameter3 == 0;
         }
 

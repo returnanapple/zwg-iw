@@ -41,20 +41,7 @@ namespace IWorld.DAL
             SiteDataAtDay siteDataAtDay = sdadSet.Any(predicate1) ? sdadSet.FirstOrDefault(predicate1) : new SiteDataAtDay(now);
             SiteDataAtMonth siteDataAtMonth = sSet.Any(predicate2) ? sSet.FirstOrDefault(predicate2) : new SiteDataAtMonth(now);
 
-            ComprehensiveInformationResult result
-                = new ComprehensiveInformationResult(siteDataAtDay, siteDataAtMonth);
-
-            for (int i = 14; i >= 1; i--)
-            {
-                DateTime time = DateTime.Now.AddDays(-i);
-                int countOfUserLogin = ulrSet.Count(x => x.CreatedTime.Year == time.Year
-                    && x.CreatedTime.Month == time.Month
-                    && x.CreatedTime.Day == time.Day);
-
-                result.CountOfUserLoginAtLast2Week.Add(countOfUserLogin);
-            }
-
-            return result;
+            return new ComprehensiveInformationResult(siteDataAtDay, siteDataAtMonth); ;
         }
 
         /// <summary>

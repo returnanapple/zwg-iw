@@ -500,7 +500,6 @@ namespace IWorld.BLL
 
         #region 静态方法
 
-        static List<string> _hadUpdateTickets = new List<string>();
         /// <summary>
         /// 更新实际开奖时间
         /// </summary>
@@ -546,14 +545,13 @@ namespace IWorld.BLL
             {
                 return;
             }
-            if (!_hadUpdateTickets.Contains(lottery.Ticket.Name))
-            {
-                _hadUpdateTickets.Add(lottery.Ticket.Name);
-                return;
-            }
             LotteryTime lotteryTime = e.Db.Set<LotteryTime>().FirstOrDefault(x => x.TicketId == lottery.Ticket.Id
                 && x.Phases == phases);
             if (lotteryTime == null)
+            {
+                return;
+            }
+            if (Math.Abs((lotteryTime.Time - DateTime.Now).TotalMinutes) > 20)
             {
                 return;
             }

@@ -1,7 +1,10 @@
-<OutOfBrowserSettings ShortName="IWorld.Admin 应用程序" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+<OutOfBrowserSettings ShortName="IWorld.Admin 应用程序" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
   <OutOfBrowserSettings.Blurb>您的桌面上的 IWorld.Admin 应用程序；在家、工作或旅途中均可使用。</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="IWorld.Admin 应用程序" />
+    <WindowSettings Title="IWorld.Admin 应用程序" WindowStyle="BorderlessRoundCornersWindow" />
   </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="NotRequired" />
+  </OutOfBrowserSettings.SecuritySettings>
   <OutOfBrowserSettings.Icons />
 </OutOfBrowserSettings>

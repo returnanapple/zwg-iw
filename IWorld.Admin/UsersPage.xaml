@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="IWorld.Admin.UsersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:local="clr-namespace:IWorld.Admin.Controls;assembly=IWorld.Admin.Controls"
+    mc:Ignorable="d" RenderTransformOrigin="0.5,0.5">
+
+    <!--主体框架-->
+    <local:ManageFrame>
+        <Canvas Width="800" Height="800">
+            <!--标题-->
+            <TextBlock Text="{Binding SelectedText_Menu}" Style="{StaticResource ResourceKey=PageTitle}" Canvas.Left="-2"/>
+            <!--副标题-->
+            <TextBlock Text="你想要做点什么？" Canvas.Top="43"/>
+
+            <!--以下是导航按键-->
+            <local:MenuButton Text="查看用户列表" Icon="List" Canvas.Top="85" Canvas.Left="0"
+                              Command="{Binding JumpCommand}"/>
+            <local:MenuButton Text="添加新用户" Icon="Pen" Canvas.Top="85" Canvas.Left="140"
+                              Command="{Binding JumpCommand}"/>
+            <local:MenuButton Text="查看用户组" Icon="Women" Canvas.Top="85" Canvas.Left="280"
+                              Command="{Binding JumpCommand}"/>
+            <local:MenuButton Text="查看用户登入记录" Icon="Files" Canvas.Top="85" Canvas.Left="420"
+                              Command="{Binding JumpCommand}"/>
+            <!--以上是导航按键-->
+
+            <local:ContentBox Width="800" Height="300" Canvas.Top="241">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </local:ContentBox>
+            <Button Height="80" Canvas.Left="536" Canvas.Top="222"
+                    Style="{StaticResource ResourceKey=SearchButton}"/>
+            <TextBox HorizontalAlignment="Right" Canvas.Left="631" Canvas.Top="252"/>
+        </Canvas>
+    </local:ManageFrame>
+</UserControl>

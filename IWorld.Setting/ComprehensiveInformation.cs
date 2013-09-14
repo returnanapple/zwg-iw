@@ -17,6 +17,7 @@ namespace IWorld.Setting
         {
             XElement _e = new XElement("Websetting"
                 , new XElement("CountOfSetUp", 0)
+                , new XElement("CountOfSetIn", 0)
                 , new XElement("AmountOfBets", 0)
                 , new XElement("ReturnPoints", 0)
                 , new XElement("Bonus", 0)
@@ -38,6 +39,15 @@ namespace IWorld.Setting
         {
             get { return GetIntValue("CountOfSetUp", 0); }
             set { SetValue("CountOfSetUp", value); }
+        }
+
+        /// <summary>
+        /// 登陆人数
+        /// </summary>
+        public int CountOfSetIn
+        {
+            get { return GetIntValue("CountOfSetIn", 0); }
+            set { SetValue("CountOfSetIn", value); }
         }
 
         /// <summary>

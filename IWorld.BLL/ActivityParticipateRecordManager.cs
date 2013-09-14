@@ -65,6 +65,7 @@ namespace IWorld.BLL
                 /// 参与的活动的存储指针
                 /// </summary>
                 public int ActivityId { get; set; }
+                public virtual Activity Activity { get; set; }
 
                 /// <summary>
                 /// 目标对象的数额
@@ -100,6 +101,12 @@ namespace IWorld.BLL
                 {
                     NChecker.CheckEntity<Author>(this.OwnerId, "用户", db);
                     NChecker.CheckEntity<Author>(this.ActivityId, "活动", db);
+                    bool hadParticipated = db.Set<ActivityParticipateRecord>().Any(x => x.Owner.Id == this.OwnerId
+                        && x.Activity.Id == this.ActivityId);
+                    if (hadParticipated)
+                    {
+                        throw new Exception("该用户已经参与过这个活动");
+                    }
                 }
 
                 /// <summary>
@@ -133,14 +140,13 @@ namespace IWorld.BLL
         /// 用户注册时候自动创建活动参与记录（假如有相关活动的话）
         /// </summary>
         /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
+        /// <param name="e">监视</param>
         public static void CreateRecordWhenUserCreated(object sender, NEventArgs e)
         {
             Author owner = (Author)e.State;
             ActivityParticipateRecordManager aprManager = new ActivityParticipateRecordManager(e.Db);
             e.Db.Set<Activity>().Where(activity => activity.Type == ActivityType.注册返点
                 && activity.Hide == false
-                && activity.BeginTime < DateTime.Now
                 && activity.EndTime > DateTime.Now)
                 .ToList()
                 .ForEach(activity =>
@@ -155,7 +161,7 @@ namespace IWorld.BLL
         /// 成功充值时候自动创建活动参与记录（假如有相关活动的话）
         /// </summary>
         /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
+        /// <param name="e">监视</param>
         public static void CreateRecordWhenRecharge(object sender, RechargeRecordManager.ChangeStatusEventArgs e)
         {
             if (e.NewStatus == RechargeStatus.充值成功)
@@ -167,7 +173,6 @@ namespace IWorld.BLL
                     && activity.MinRestrictionValue <= rechargeRecord.Sum
                     && activity.MaxRestrictionValues >= rechargeRecord.Sum
                     && activity.Hide == false
-                    && activity.BeginTime < DateTime.Now
                     && activity.EndTime > DateTime.Now)
                     .ToList()
                     .ForEach(activity =>
@@ -183,7 +188,6 @@ namespace IWorld.BLL
                         && activity.MinRestrictionValue <= rechargeRecord.Sum
                         && activity.MaxRestrictionValues >= rechargeRecord.Sum
                         && activity.Hide == false
-                        && activity.BeginTime < DateTime.Now
                         && activity.EndTime > DateTime.Now)
                         .ToList()
                         .ForEach(activity =>
@@ -192,23 +196,6 @@ namespace IWorld.BLL
                                 .CreatePackageForCreate(parent.Id, activity.Id, rechargeRecord.Sum);
                             aprManager.Create(pfc);
                         });
-                    if (rechargeRecord.Owner.Layer > 2)
-                    {
-                        Author _parent = new AuthorManager(e.Db).GetParent(parent);
-                        aSet.Where(activity => activity.Type == ActivityType.下下级用户充值返点
-                            && activity.MinRestrictionValue <= rechargeRecord.Sum
-                            && activity.MaxRestrictionValues >= rechargeRecord.Sum
-                            && activity.Hide == false
-                            && activity.BeginTime < DateTime.Now
-                            && activity.EndTime > DateTime.Now)
-                            .ToList()
-                            .ForEach(activity =>
-                            {
-                                ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                    .CreatePackageForCreate(_parent.Id, activity.Id, rechargeRecord.Sum);
-                                aprManager.Create(pfc);
-                            });
-                    }
                 }
             }
         }
@@ -217,7 +204,7 @@ namespace IWorld.BLL
         /// 封单时候自动创建相应的消费活动记录（假如有相关活动的话）
         /// </summary>
         /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
+        /// <param name="e">监视</param>
         public static void CreateRecordWhenBetting(object sender, BettingManager.ChangeStatusEventArgs e)
         {
             if (e.NewStatus == BettingStatus.即将开奖)
@@ -229,7 +216,6 @@ namespace IWorld.BLL
                     && activity.MinRestrictionValue <= betting.Pay
                     && activity.MaxRestrictionValues >= betting.Pay
                     && activity.Hide == false
-                    && activity.BeginTime < DateTime.Now
                     && activity.EndTime > DateTime.Now)
                     .ToList()
                     .ForEach(activity =>
@@ -245,7 +231,6 @@ namespace IWorld.BLL
                         && activity.MinRestrictionValue <= betting.Pay
                         && activity.MaxRestrictionValues >= betting.Pay
                         && activity.Hide == false
-                        && activity.BeginTime < DateTime.Now
                         && activity.EndTime > DateTime.Now)
                         .ToList()
                         .ForEach(activity =>
@@ -254,85 +239,6 @@ namespace IWorld.BLL
                                 .CreatePackageForCreate(parent.Id, activity.Id, betting.Pay);
                             aprManager.Create(pfc);
                         });
-                    if (betting.Owner.Layer > 2)
-                    {
-                        Author _parent = new AuthorManager(e.Db).GetParent(parent);
-                        aSet.Where(activity => activity.Type == ActivityType.下下级用户消费返点
-                            && activity.MinRestrictionValue <= betting.Pay
-                            && activity.MaxRestrictionValues >= betting.Pay
-                            && activity.Hide == false
-                            && activity.BeginTime < DateTime.Now
-                            && activity.EndTime > DateTime.Now)
-                            .ToList()
-                            .ForEach(activity =>
-                            {
-                                ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                    .CreatePackageForCreate(_parent.Id, activity.Id, betting.Pay);
-                                aprManager.Create(pfc);
-                            });
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// 开奖之后自动创建相应的亏损补贴活动记录（假如有相关活动的话）
-        /// </summary>
-        /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
-        public static void CreateRecordWhenLottery(object sender, BettingManager.ChangeStatusEventArgs e)
-        {
-            if (e.NewStatus == BettingStatus.未中奖)
-            {
-                Betting betting = (Betting)e.State;
-                ActivityParticipateRecordManager aprManager = new ActivityParticipateRecordManager(e.Db);
-                var aSet = e.Db.Set<Activity>();
-                aSet.Where(activity => activity.Type == ActivityType.亏损返点
-                    && activity.MinRestrictionValue <= betting.Pay
-                    && activity.MaxRestrictionValues >= betting.Pay
-                    && activity.Hide == false
-                    && activity.BeginTime < DateTime.Now
-                    && activity.EndTime > DateTime.Now)
-                    .ToList()
-                    .ForEach(activity =>
-                    {
-                        ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                            .CreatePackageForCreate(betting.Owner.Id, activity.Id, betting.Pay);
-                        aprManager.Create(pfc);
-                    });
-                if (betting.Owner.Layer > 1)
-                {
-                    Author parent = new AuthorManager(e.Db).GetParent(betting.Owner);
-                    aSet.Where(activity => activity.Type == ActivityType.下级用户亏损返点
-                        && activity.MinRestrictionValue <= betting.Pay
-                        && activity.MaxRestrictionValues >= betting.Pay
-                        && activity.Hide == false
-                        && activity.BeginTime < DateTime.Now
-                        && activity.EndTime > DateTime.Now)
-                        .ToList()
-                        .ForEach(activity =>
-                        {
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(parent.Id, activity.Id, betting.Pay);
-                            aprManager.Create(pfc);
-                        });
-                    if (betting.Owner.Layer > 2)
-                    {
-                        Author _parent = new AuthorManager(e.Db).GetParent(parent);
-                        aSet.Where(activity => activity.Type == ActivityType.下下级用户亏损返点
-                            && activity.MinRestrictionValue <= betting.Pay
-                            && activity.MaxRestrictionValues >= betting.Pay
-                            && activity.Hide == false
-                            && activity.BeginTime < DateTime.Now
-                            && activity.EndTime > DateTime.Now)
-                            .ToList()
-                            .ForEach(activity =>
-                            {
-                                ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                    .CreatePackageForCreate(_parent.Id, activity.Id, betting.Pay);
-                                aprManager.Create(pfc);
-                            });
-                    }
                 }
             }
         }
@@ -341,7 +247,7 @@ namespace IWorld.BLL
         /// 追号终止时自动创建消费活动（假如有相关活动的话）
         /// </summary>
         /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
+        /// <param name="e">监视</param>
         public static void CreateRecordWhenChasing(object sender, ChasingManager.ChangeStatusEventArgs e)
         {
             if (e.NewStatus == ChasingStatus.追号结束
@@ -359,7 +265,6 @@ namespace IWorld.BLL
                     && activity.MinRestrictionValue <= chasing.Pay
                     && activity.MaxRestrictionValues >= chasing.Pay
                     && activity.Hide == false
-                    && activity.BeginTime < DateTime.Now
                     && activity.EndTime > DateTime.Now)
                     .ToList()
                     .ForEach(activity =>
@@ -375,7 +280,6 @@ namespace IWorld.BLL
                         && activity.MinRestrictionValue <= chasing.Pay
                         && activity.MaxRestrictionValues >= chasing.Pay
                         && activity.Hide == false
-                        && activity.BeginTime < DateTime.Now
                         && activity.EndTime > DateTime.Now)
                         .ToList()
                         .ForEach(activity =>
@@ -384,231 +288,8 @@ namespace IWorld.BLL
                                 .CreatePackageForCreate(parent.Id, activity.Id, sum);
                             aprManager.Create(pfc);
                         });
-                    if (chasing.Owner.Layer > 2)
-                    {
-                        Author _parent = new AuthorManager(e.Db).GetParent(parent);
-                        aSet.Where(activity => activity.Type == ActivityType.下级用户消费返点
-                            && activity.MinRestrictionValue <= chasing.Pay
-                            && activity.MaxRestrictionValues >= chasing.Pay
-                            && activity.Hide == false
-                            && activity.BeginTime < DateTime.Now
-                            && activity.EndTime > DateTime.Now)
-                            .ToList()
-                            .ForEach(activity =>
-                            {
-                                ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                    .CreatePackageForCreate(_parent.Id, activity.Id, sum);
-                                aprManager.Create(pfc);
-                            });
-                    }
                 }
             }
-        }
-
-        /// <summary>
-        /// 在当日统计更新后自动创建跟统计额有关的活动
-        /// </summary>
-        /// <param name="sender">触发对象</param>
-        /// <param name="e">监视对象</param>
-        public static void CreateRecordWhenCountedForDay(object sender, NEventArgs e)
-        {
-            PersonalDataAtDay pd = (PersonalDataAtDay)e.State;
-            ActivityParticipateRecordManager aprManager = new ActivityParticipateRecordManager(e.Db);
-            var aSet = e.Db.Set<Activity>();
-            #region 消费额相关
-
-            int _dayOfWeek = (int)DateTime.Now.DayOfWeek;
-            ActivityType _type_ = (_dayOfWeek == 6 || _dayOfWeek == 0)
-                ? ActivityType.当日累计消费奖励_周末 : ActivityType.当日累计消费奖励_非周末;
-            aSet.Where(x => x.Type == _type_
-                && x.MinRestrictionValue <= pd.AmountOfBets
-                && x.MaxRestrictionValues >= pd.AmountOfBets
-                && x.Hide == false
-                && x.BeginTime < DateTime.Now
-                && x.EndTime > DateTime.Now)
-                .ToList().ForEach(x =>
-                    {
-                        bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
-                        if (hadJoin) { return; }
-                        ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                            .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
-                        aprManager.Create(pfc);
-                    });
-            if (pd.Owner.Layer > 1)
-            {
-                Author p1 = new AuthorManager(e.Db).GetParent(pd.Owner);
-                aSet.Where(x => x.Type == ActivityType.下级用户当日累计消费奖励
-                    && x.MinRestrictionValue <= pd.AmountOfBets
-                    && x.MaxRestrictionValues >= pd.AmountOfBets
-                    && x.Hide == false
-                    && x.BeginTime < DateTime.Now
-                    && x.EndTime > DateTime.Now)
-                    .ToList().ForEach(x =>
-                        {
-                            bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
-                            if (hadJoin) { return; }
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
-                            aprManager.Create(pfc);
-                        });
-                if (pd.Owner.Layer > 2)
-                {
-                    Author p2 = new AuthorManager(e.Db).GetParent(p1);
-                    aSet.Where(x => x.Type == ActivityType.下下级用户当日累计消费奖励
-                        && x.MinRestrictionValue <= pd.AmountOfBets
-                        && x.MaxRestrictionValues >= pd.AmountOfBets
-                        && x.Hide == false
-                        && x.BeginTime < DateTime.Now
-                        && x.EndTime > DateTime.Now)
-                        .ToList().ForEach(x =>
-                        {
-                            bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
-                            if (hadJoin) { return; }
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
-                            aprManager.Create(pfc);
-                        });
-                }
-            }
-
-            #endregion
-            #region 充值额相关
-
-            aSet.Where(x => x.Type == ActivityType.当日累计充值奖励
-                && x.MinRestrictionValue <= pd.Recharge
-                && x.MaxRestrictionValues >= pd.Recharge
-                && x.Hide == false
-                && x.BeginTime < DateTime.Now
-                && x.EndTime > DateTime.Now)
-                .ToList().ForEach(x =>
-                {
-                    bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                        && x.CreatedTime.Year == DateTime.Now.Year
-                        && x.CreatedTime.Month == DateTime.Now.Month
-                        && x.CreatedTime.Day == DateTime.Now.Day);
-                    if (hadJoin) { return; }
-                    ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                        .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
-                    aprManager.Create(pfc);
-                });
-            if (pd.Owner.Layer > 1)
-            {
-                Author p1 = new AuthorManager(e.Db).GetParent(pd.Owner);
-                aSet.Where(x => x.Type == ActivityType.下级用户当日累计充值奖励
-                    && x.MinRestrictionValue <= pd.Recharge
-                    && x.MaxRestrictionValues >= pd.Recharge
-                    && x.Hide == false
-                    && x.BeginTime < DateTime.Now
-                    && x.EndTime > DateTime.Now)
-                    .ToList().ForEach(x =>
-                    {
-                        bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
-                        if (hadJoin) { return; }
-                        ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                            .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
-                        aprManager.Create(pfc);
-                    });
-                if (pd.Owner.Layer > 2)
-                {
-                    Author p2 = new AuthorManager(e.Db).GetParent(p1);
-                    aSet.Where(x => x.Type == ActivityType.下下级用户当日累计充值奖励
-                        && x.MinRestrictionValue <= pd.Recharge
-                        && x.MaxRestrictionValues >= pd.Recharge
-                        && x.Hide == false
-                        && x.BeginTime < DateTime.Now
-                        && x.EndTime > DateTime.Now)
-                        .ToList().ForEach(x =>
-                        {
-                            bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
-                            if (hadJoin) { return; }
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
-                            aprManager.Create(pfc);
-                        });
-                }
-            }
-
-            #endregion
-            #region 亏损额相关
-
-            if (pd.GainsAndLosses >= 0) { return; }
-            double _gainsAndLosses = -pd.GainsAndLosses;
-            aSet.Where(x => x.Type == ActivityType.当日累计亏损补贴
-                && x.MinRestrictionValue <= _gainsAndLosses
-                && x.MaxRestrictionValues >= _gainsAndLosses
-                && x.Hide == false
-                && x.BeginTime < DateTime.Now
-                && x.EndTime > DateTime.Now)
-                .ToList().ForEach(x =>
-                {
-                    bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                        && x.CreatedTime.Year == DateTime.Now.Year
-                        && x.CreatedTime.Month == DateTime.Now.Month
-                        && x.CreatedTime.Day == DateTime.Now.Day);
-                    if (hadJoin) { return; }
-                    ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                        .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
-                    aprManager.Create(pfc);
-                });
-            if (pd.Owner.Layer > 1)
-            {
-                Author p1 = new AuthorManager(e.Db).GetParent(pd.Owner);
-                aSet.Where(x => x.Type == ActivityType.下级用户当日累计亏损补贴
-                    && x.MinRestrictionValue <= _gainsAndLosses
-                    && x.MaxRestrictionValues >= _gainsAndLosses
-                    && x.Hide == false
-                    && x.BeginTime < DateTime.Now
-                    && x.EndTime > DateTime.Now)
-                    .ToList().ForEach(x =>
-                    {
-                        bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
-                        if (hadJoin) { return; }
-                        ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                            .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
-                        aprManager.Create(pfc);
-                    });
-                if (pd.Owner.Layer > 2)
-                {
-                    Author p2 = new AuthorManager(e.Db).GetParent(p1);
-                    aSet.Where(x => x.Type == ActivityType.下下级用户当日累计亏损补贴
-                        && x.MinRestrictionValue <= _gainsAndLosses
-                        && x.MaxRestrictionValues >= _gainsAndLosses
-                        && x.Hide == false
-                        && x.BeginTime < DateTime.Now
-                        && x.EndTime > DateTime.Now)
-                        .ToList().ForEach(x =>
-                        {
-                            bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
-                            if (hadJoin) { return; }
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
-                            aprManager.Create(pfc);
-                        });
-                }
-            }
-
-            #endregion
         }
 
         #endregion

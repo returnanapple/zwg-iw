@@ -29,10 +29,6 @@ namespace IWorld.BLL
             personalDataAtMonth.AmountOfBets += betting.Pay;
 
             e.Db.SaveChanges();
-            if (CountedForDayEventHandler != null)
-            {
-                CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-            }
         }
 
         /// <summary>
@@ -54,10 +50,6 @@ namespace IWorld.BLL
                 personalDataAtMonth.AmountOfBets += chasing.Pay;
 
                 e.Db.SaveChanges();
-                if (CountedForDayEventHandler != null)
-                {
-                    CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-                }
             }
         }
 
@@ -76,10 +68,6 @@ namespace IWorld.BLL
             personalDataAtMonth.ReturnPoints += sd.Give;
 
             e.Db.SaveChanges();
-            if (CountedForDayEventHandler != null)
-            {
-                CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-            }
         }
 
         /// <summary>
@@ -99,10 +87,6 @@ namespace IWorld.BLL
                 personalDataAtMonth.Bonus += e.Bonus;
 
                 e.Db.SaveChanges();
-                if (CountedForDayEventHandler != null)
-                {
-                    CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-                }
             }
         }
 
@@ -122,10 +106,6 @@ namespace IWorld.BLL
                 personalDataAtDay.Bonus += e.Bonus;
                 personalDataAtMonth.Bonus += e.Bonus;
                 e.Db.SaveChanges();
-                if (CountedForDayEventHandler != null)
-                {
-                    CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-                }
             }
         }
 
@@ -147,10 +127,6 @@ namespace IWorld.BLL
             personalDataAtMonth.Expenditures += sum;
 
             e.Db.SaveChanges();
-            if (CountedForDayEventHandler != null)
-            {
-                CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-            }
         }
 
         /// <summary>
@@ -171,10 +147,6 @@ namespace IWorld.BLL
             personalDataAtMonth.Expenditures += sum;
 
             e.Db.SaveChanges();
-            if (CountedForDayEventHandler != null)
-            {
-                CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-            }
         }
 
         /// <summary>
@@ -194,10 +166,6 @@ namespace IWorld.BLL
                 personalDataAtMonth.Recharge += record.Sum;
 
                 e.Db.SaveChanges();
-                if (CountedForDayEventHandler != null)
-                {
-                    CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-                }
             }
         }
 
@@ -214,14 +182,10 @@ namespace IWorld.BLL
                 PersonalDataAtDay personalDataAtDay = GetPersonalDataAtDay(e.Db, record.Owner.Id);
                 PersonalDataAtMonth personalDataAtMonth = GetPersonalDataAtMonth(e.Db, record.Owner.Id);
 
-                personalDataAtDay.Withdrawal += record.Sum;
-                personalDataAtMonth.Withdrawal += record.Sum;
+                personalDataAtDay.Recharge += record.Sum;
+                personalDataAtMonth.Recharge += record.Sum;
 
                 e.Db.SaveChanges();
-                if (CountedForDayEventHandler != null)
-                {
-                    CountedForDayEventHandler(null, new NEventArgs(e.Db, personalDataAtDay));
-                }
             }
         }
 
@@ -276,15 +240,6 @@ namespace IWorld.BLL
             result.Money = owner.Money;
             return result;
         }
-
-        #endregion
-
-        #region 事件
-
-        /// <summary>
-        /// 当日统计被更新的时候将触发的时间
-        /// </summary>
-        public static event NDelegate CountedForDayEventHandler;
 
         #endregion
     }

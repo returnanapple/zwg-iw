@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="IWorld.Admin.Controls.TechnicalSupport_Button"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <UserControl.Resources>
+        <Style TargetType="Grid" x:Key="normal">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush Stretch="Uniform" ImageSource="img/chinaz1.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Grid" x:Key="horver">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush Stretch="Uniform" ImageSource="img/chinaz2.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Grid" x:Key="trigger">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush Stretch="Uniform" ImageSource="img/chinaz3.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid x:Name="root" MinHeight="48" MinWidth="48" MaxHeight="256" MaxWidth="256"
+          Style="{StaticResource ResourceKey=normal}">
+    </Grid>
+</UserControl>
