@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="IWorld.Web.Api.Admin.UserInfoService" CodeBehind="UserInfoService.svc.cs" %>

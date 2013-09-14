@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8103608f-2272-4a8f-a061-a16f382199ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/ExchangeService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExchangeService.disco" MetadataType="Disco" ID="8a4970ee-b161-475a-a7b8-4e63e4407e66" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?disco" />
+    <MetadataFile FileName="ExchangeService.xsd" MetadataType="Schema" ID="b6633640-c28a-4297-829d-2a0f315ecd9e" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExchangeService1.xsd" MetadataType="Schema" ID="a85cc787-76d2-4f7a-ba23-dd2a59e0e9cf" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExchangeService2.xsd" MetadataType="Schema" ID="abb0a06d-068b-43a7-8e28-00311ec3bb94" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExchangeService3.xsd" MetadataType="Schema" ID="89d092d6-467f-43e4-b1df-bf8a397221b8" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExchangeService.wsdl" MetadataType="Wsdl" ID="546aa8a1-724c-4a27-ac55-94369dfeab95" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ExchangeService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

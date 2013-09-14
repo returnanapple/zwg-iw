@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IWorld.Helper.ControllerHelper" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ControllerHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Helper.EncryptHelper" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>EncryptHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Helper.EnumHelper" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Helper.DigitalHelper" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>DigitalHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Helper.TextHelper" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAAAAAAAAAAAAAAAAAABAABAAgAAAAQAIAAAA=</HashCode>
+      <FileName>TextHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

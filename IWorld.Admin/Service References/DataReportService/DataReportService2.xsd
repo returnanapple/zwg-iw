@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:55635/Api/Admin/DataReportService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IWorld.Model" />
+  <xs:complexType name="ComprehensiveInformationResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountOfBetsAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountOfBetsAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountOfBetsAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="BonusAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="BonusAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="BonusAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="CashAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="CashAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="CashAtMonth" type="xs:double" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountOfUserLoginAtLast2Week" nillable="true" type="q1:ArrayOfint" />
+          <xs:element minOccurs="0" name="ExpendituresAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="ExpendituresAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="ExpendituresAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="GainsAndLossesAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="GainsAndLossesAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="GainsAndLossesAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="RechargeAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="RechargeAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="RechargeAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="TransferAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="TransferAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="TransferAtMonth" type="xs:double" />
+          <xs:element minOccurs="0" name="WithdrawalAtAll" type="xs:double" />
+          <xs:element minOccurs="0" name="WithdrawalAtDay" type="xs:double" />
+          <xs:element minOccurs="0" name="WithdrawalAtMonth" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ComprehensiveInformationResult" nillable="true" type="tns:ComprehensiveInformationResult" />
+  <xs:complexType name="OperateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperateResult" nillable="true" type="tns:OperateResult" />
+  <xs:simpleType name="TimePeriodSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="月" />
+      <xs:enumeration value="日" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimePeriodSelectType" nillable="true" type="tns:TimePeriodSelectType" />
+  <xs:complexType name="PaginationListOfSiteDataResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="SiteDataResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfSiteDataResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfSiteDataResultp9CVq9mK" nillable="true" type="tns:PaginationListOfSiteDataResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfSiteDataResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteDataResult" nillable="true" type="tns:SiteDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteDataResult" nillable="true" type="tns:ArrayOfSiteDataResult" />
+  <xs:complexType name="SiteDataResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfBets" type="xs:double" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="Cash" type="xs:double" />
+      <xs:element minOccurs="0" name="CountOfSetIn" type="xs:int" />
+      <xs:element minOccurs="0" name="CountOfSetUp" type="xs:int" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expenditures" type="xs:double" />
+      <xs:element minOccurs="0" name="GainsAndLosses" type="xs:double" />
+      <xs:element minOccurs="0" name="Recharge" type="xs:double" />
+      <xs:element minOccurs="0" name="Transfer" type="xs:double" />
+      <xs:element minOccurs="0" name="Withdrawal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteDataResult" nillable="true" type="tns:SiteDataResult" />
+  <xs:complexType name="PaginationListOfPersonalDataResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PersonalDataResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfPersonalDataResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfPersonalDataResultp9CVq9mK" nillable="true" type="tns:PaginationListOfPersonalDataResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfPersonalDataResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalDataResult" nillable="true" type="tns:PersonalDataResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalDataResult" nillable="true" type="tns:ArrayOfPersonalDataResult" />
+  <xs:complexType name="PersonalDataResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfBets" type="xs:double" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Expenditures" type="xs:double" />
+      <xs:element minOccurs="0" name="GainsAndLosses" type="xs:double" />
+      <xs:element minOccurs="0" name="Layer" type="xs:int" />
+      <xs:element minOccurs="0" name="Money" type="xs:double" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Recharge" type="xs:double" />
+      <xs:element minOccurs="0" name="Subordinate" type="xs:int" />
+      <xs:element minOccurs="0" name="Withdrawal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalDataResult" nillable="true" type="tns:PersonalDataResult" />
+  <xs:simpleType name="BettingStatusSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="全部" />
+      <xs:enumeration value="用户撤单" />
+      <xs:enumeration value="未中奖" />
+      <xs:enumeration value="等待开奖" />
+      <xs:enumeration value="即将开奖" />
+      <xs:enumeration value="中奖" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BettingStatusSelectType" nillable="true" type="tns:BettingStatusSelectType" />
+  <xs:complexType name="PaginationListOfBettingResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="BettingResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfBettingResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfBettingResultp9CVq9mK" nillable="true" type="tns:PaginationListOfBettingResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfBettingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BettingResult" nillable="true" type="tns:BettingResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBettingResult" nillable="true" type="tns:ArrayOfBettingResult" />
+  <xs:complexType name="BettingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BettingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="HowToPlay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowToPlayId" type="xs:int" />
+      <xs:element minOccurs="0" name="Multiple" type="xs:double" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Pay" type="xs:double" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:double" />
+      <xs:element minOccurs="0" name="Seats" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q2:BettingStatus" />
+      <xs:element minOccurs="0" name="Sum" type="xs:int" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagId" type="xs:int" />
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingResult" nillable="true" type="tns:BettingResult" />
+  <xs:simpleType name="ChasingStatusSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="全部" />
+      <xs:enumeration value="未开始" />
+      <xs:enumeration value="追号中" />
+      <xs:enumeration value="因为所追号码已经开出而终止" />
+      <xs:enumeration value="因为中奖而终止" />
+      <xs:enumeration value="用户中止追号" />
+      <xs:enumeration value="追号结束" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChasingStatusSelectType" nillable="true" type="tns:ChasingStatusSelectType" />
+  <xs:complexType name="PaginationListOfChasingResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ChasingResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfChasingResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfChasingResultp9CVq9mK" nillable="true" type="tns:PaginationListOfChasingResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfChasingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChasingResult" nillable="true" type="tns:ChasingResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChasingResult" nillable="true" type="tns:ArrayOfChasingResult" />
+  <xs:complexType name="ChasingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="ChasingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Continuance" type="xs:int" />
+      <xs:element minOccurs="0" name="EndIfLotteryAtGoing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndIfLotteryBeforeBegin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HowToPlay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowToPlayId" type="xs:int" />
+      <xs:element minOccurs="0" name="Multiple" type="xs:double" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Pay" type="xs:double" />
+      <xs:element minOccurs="0" name="Points" type="xs:double" />
+      <xs:element minOccurs="0" name="Postpone" type="xs:int" />
+      <xs:element minOccurs="0" name="Seats" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q3:ChasingStatus" />
+      <xs:element minOccurs="0" name="Sum" type="xs:int" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagId" type="xs:int" />
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChasingResult" nillable="true" type="tns:ChasingResult" />
+  <xs:complexType name="PaginationListOfBettingForChasingResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="BettingForChasingResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfBettingForChasingResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfBettingForChasingResultp9CVq9mK" nillable="true" type="tns:PaginationListOfBettingForChasingResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfBettingForChasingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BettingForChasingResult" nillable="true" type="tns:BettingForChasingResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBettingForChasingResult" nillable="true" type="tns:ArrayOfBettingForChasingResult" />
+  <xs:complexType name="BettingForChasingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BettingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="ChasingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Exponent" type="xs:double" />
+      <xs:element minOccurs="0" name="Pay" type="xs:double" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q4:BettingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingForChasingResult" nillable="true" type="tns:BettingForChasingResult" />
+  <xs:simpleType name="RechargeStatusSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="全部" />
+      <xs:enumeration value="失败" />
+      <xs:enumeration value="等待支付" />
+      <xs:enumeration value="充值成功" />
+      <xs:enumeration value="用户已经支付" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RechargeStatusSelectType" nillable="true" type="tns:RechargeStatusSelectType" />
+  <xs:complexType name="PaginationListOfRechargeResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RechargeResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfRechargeResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfRechargeResultp9CVq9mK" nillable="true" type="tns:PaginationListOfRechargeResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfRechargeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RechargeResult" nillable="true" type="tns:RechargeResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRechargeResult" nillable="true" type="tns:ArrayOfRechargeResult" />
+  <xs:complexType name="RechargeResult">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q5:Bank" />
+      <xs:element minOccurs="0" name="Card" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Payer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayerId" type="xs:int" />
+      <xs:element minOccurs="0" name="RechargeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q6:RechargeStatus" />
+      <xs:element minOccurs="0" name="Sum" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RechargeResult" nillable="true" type="tns:RechargeResult" />
+  <xs:complexType name="UntreatedRecharCountResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UntreatedRecharCountResult" nillable="true" type="tns:UntreatedRecharCountResult" />
+  <xs:simpleType name="WithdrawalsStatusSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="全部" />
+      <xs:enumeration value="失败" />
+      <xs:enumeration value="处理中" />
+      <xs:enumeration value="提现成功" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WithdrawalsStatusSelectType" nillable="true" type="tns:WithdrawalsStatusSelectType" />
+  <xs:complexType name="PaginationListOfWithdrawalResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WithdrawalResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfWithdrawalResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfWithdrawalResultp9CVq9mK" nillable="true" type="tns:PaginationListOfWithdrawalResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfWithdrawalResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WithdrawalResult" nillable="true" type="tns:WithdrawalResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWithdrawalResult" nillable="true" type="tns:ArrayOfWithdrawalResult" />
+  <xs:complexType name="WithdrawalResult">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q7:Bank" />
+      <xs:element minOccurs="0" name="Card" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q8:WithdrawalsStatus" />
+      <xs:element minOccurs="0" name="Sum" type="xs:double" />
+      <xs:element minOccurs="0" name="WithdrawalId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WithdrawalResult" nillable="true" type="tns:WithdrawalResult" />
+  <xs:complexType name="UntreatedWithdrawalCountResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UntreatedWithdrawalCountResult" nillable="true" type="tns:UntreatedWithdrawalCountResult" />
+  <xs:complexType name="PaginationListOfTransferResultp9CVq9mK">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TransferResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfTransferResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfTransferResultp9CVq9mK" nillable="true" type="tns:PaginationListOfTransferResultp9CVq9mK" />
+  <xs:complexType name="ArrayOfTransferResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransferResult" nillable="true" type="tns:TransferResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransferResult" nillable="true" type="tns:ArrayOfTransferResult" />
+  <xs:complexType name="TransferResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sum" type="xs:double" />
+      <xs:element minOccurs="0" name="TransferId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransferResult" nillable="true" type="tns:TransferResult" />
+</xs:schema>

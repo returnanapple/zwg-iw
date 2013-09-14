@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67BAF7D1-1F1D-4F0D-9A31-0CE185A650B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWorld.Contract.Admin</RootNamespace>
+    <AssemblyName>IWorld.Contract.Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivityParticipateRecordResult.cs" />
+    <Compile Include="ActivityResult.cs" />
+    <Compile Include="ActivityTypeSelectType.cs" />
+    <Compile Include="AddActivityImport.cs" />
+    <Compile Include="AddBankAccountImport.cs" />
+    <Compile Include="AddBulletinImport.cs" />
+    <Compile Include="AddEmailAccountImport.cs" />
+    <Compile Include="AddEmailClientImport.cs" />
+    <Compile Include="AddExchangeImport.cs" />
+    <Compile Include="AddManagerGroupImport.cs" />
+    <Compile Include="AddUserGroupImport.cs" />
+    <Compile Include="AddUserGroupImport_Basic.cs" />
+    <Compile Include="AddUserImport.cs" />
+    <Compile Include="AddVirtualTopImport.cs" />
+    <Compile Include="BettingForChasingResult.cs" />
+    <Compile Include="BettingResult.cs" />
+    <Compile Include="BettingStatusSelectType.cs" />
+    <Compile Include="BulletinResult.cs" />
+    <Compile Include="ChasingResult.cs" />
+    <Compile Include="ChasingStatusSelectType.cs" />
+    <Compile Include="CollectionResult.cs" />
+    <Compile Include="CollectionStatusResult.cs" />
+    <Compile Include="ComprehensiveInformationResult.cs" />
+    <Compile Include="ConditionResult.cs" />
+    <Compile Include="EditActivityImport.cs" />
+    <Compile Include="EditActivityImport_Basic.cs" />
+    <Compile Include="EditBankAccountImport.cs" />
+    <Compile Include="EditBulletinImport.cs" />
+    <Compile Include="EditConditionImport.cs" />
+    <Compile Include="EditEmailAccountImport.cs" />
+    <Compile Include="EditEmailClientImport.cs" />
+    <Compile Include="EditExchangeImport.cs" />
+    <Compile Include="EditExchangeImport_Basic.cs" />
+    <Compile Include="EditLotteryTimeImport.cs" />
+    <Compile Include="EditManagerGroupImport.cs" />
+    <Compile Include="EditPlayTagImport.cs" />
+    <Compile Include="EditPrizeImport.cs" />
+    <Compile Include="EditTicketImport.cs" />
+    <Compile Include="EditUserGroupImport.cs" />
+    <Compile Include="EditUserGroupImport_Basic.cs" />
+    <Compile Include="EditVirtualTopImport.cs" />
+    <Compile Include="EditWebSettingImport.cs" />
+    <Compile Include="EmailAccountResult.cs" />
+    <Compile Include="EmailClientResult.cs" />
+    <Compile Include="ExchangeParticipateRecordResult.cs" />
+    <Compile Include="ExchangeResult.cs" />
+    <Compile Include="GiftResult.cs" />
+    <Compile Include="GiftStatusSelectType.cs" />
+    <Compile Include="HideOrNotSelectType.cs" />
+    <Compile Include="HowToPlayResult.cs" />
+    <Compile Include="LandingRecordResult.cs" />
+    <Compile Include="LoginResult.cs" />
+    <Compile Include="LotteryResult.cs" />
+    <Compile Include="LotterySourcesSelectType.cs" />
+    <Compile Include="LotteryTimeResult.cs" />
+    <Compile Include="ManagerGroupResult.cs" />
+    <Compile Include="ManagerInfoResult.cs" />
+    <Compile Include="OperatedRecordResult.cs" />
+    <Compile Include="PersonalDataResult.cs" />
+    <Compile Include="PlayTagResult.cs" />
+    <Compile Include="PrizeResult.cs" />
+    <Compile Include="RechargeResult.cs" />
+    <Compile Include="RechargeStatusSelectType.cs" />
+    <Compile Include="RegularlyStatusSelectType.cs" />
+    <Compile Include="ResetPasswordResult.cs" />
+    <Compile Include="ResetSafeWordResult.cs" />
+    <Compile Include="SiteDataResult.cs" />
+    <Compile Include="TicketResult.cs" />
+    <Compile Include="TimePeriodSelectType.cs" />
+    <Compile Include="TransferResult.cs" />
+    <Compile Include="UntreatedRecharCountResult.cs" />
+    <Compile Include="UntreatedWithdrawalCountResult.cs" />
+    <Compile Include="UserGroupResult.cs" />
+    <Compile Include="UserInfoResult.cs" />
+    <Compile Include="EditHowToPlayImport.cs" />
+    <Compile Include="BankAccountResult.cs" />
+    <Compile Include="VirtualTopResult.cs" />
+    <Compile Include="WithdrawalResult.cs" />
+    <Compile Include="WithdrawalsStatusSelectType.cs" />
+    <Compile Include="OperateResult.cs" />
+    <Compile Include="PaginationList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSettingResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_IWorld.Contract.Admin.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IWorld.Model\IWorld.Model.csproj">
+      <Project>{31a782b9-49b9-4926-a4db-0892b211ac79}</Project>
+      <Name>IWorld.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IWorld.Setting\IWorld.Setting.csproj">
+      <Project>{7eec1e06-7fea-49b9-8b2c-c6bec2783595}</Project>
+      <Name>IWorld.Setting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

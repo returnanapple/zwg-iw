@@ -1,0 +1,30 @@
+﻿<UserControl xmlns:Admin="clr-namespace:IWorld.Admin" x:Class="IWorld.Admin.ParticipatedRecordOfExchangesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="912">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Width="912" Height="80" Grid.Row="0">
+            <TextBlock Text="至" Canvas.Left="125" Canvas.Top="10" FontSize="14"></TextBlock>
+            <toolkit:SystemColorsTheme Canvas.Top="10">
+                <sdk:DatePicker Name="input_beginTime" Height="23" Width="120"/>
+            </toolkit:SystemColorsTheme>
+            <toolkit:SystemColorsTheme  Canvas.Left="144" Canvas.Top="10">
+                <sdk:DatePicker Name="input_endTime" Height="23" Width="120"/>
+            </toolkit:SystemColorsTheme>
+            <Admin:SubmitButton Text="搜   索" Canvas.Left="279" Canvas.Top="6" Height="30" Width="70" 
+                                ClickEventHandler="SelcetForTime"/>
+            <Admin:SubmitButton Text="重   置" Canvas.Left="367" Canvas.Top="6" Height="30" Width="70" 
+                                ClickEventHandler="Reset"/>
+        </Canvas>
+        <Grid x:Name="tableBody" Width="912" Grid.Row="1"/>
+    </Grid>
+</UserControl>

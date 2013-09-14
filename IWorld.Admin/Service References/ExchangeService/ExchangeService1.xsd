@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55635/Api/Admin/ExchangeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+  <xs:element name="GetExchangeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="status" type="q1:RegularlyStatusSelectType" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExchangeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="GetExchangeListResult" nillable="true" type="q2:PaginationListOfExchangeResultp9CVq9mK" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParticipateRecordList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exchangeId" type="xs:int" />
+        <xs:element minOccurs="0" name="ownerId" type="xs:int" />
+        <xs:element minOccurs="0" name="beginTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParticipateRecordListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="GetParticipateRecordListResult" nillable="true" type="q3:PaginationListOfExchangeParticipateRecordResultp9CVq9mK" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="import" nillable="true" type="q4:AddExchangeImport" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="AddExchangeResult" nillable="true" type="q5:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditExchange_Basic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="import" nillable="true" type="q6:EditExchangeImport_Basic" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditExchange_BasicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="EditExchange_BasicResult" nillable="true" type="q7:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="import" nillable="true" type="q8:EditExchangeImport" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="EditExchangeResult" nillable="true" type="q9:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exchangeId" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="RemoveExchangeResult" nillable="true" type="q10:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HideExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exchangeId" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HideExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="HideExchangeResult" nillable="true" type="q11:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exchangeId" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="ShowExchangeResult" nillable="true" type="q12:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGiftList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="exchangeId" type="xs:int" />
+        <xs:element minOccurs="0" name="ownerId" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="status" type="q13:GiftStatusSelectType" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGiftListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="GetGiftListResult" nillable="true" type="q14:PaginationListOfGiftResultp9CVq9mK" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandselGift">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="giftId" type="xs:int" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HandselGiftResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="HandselGiftResult" nillable="true" type="q15:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+﻿<controls:ChildWindow x:Class="IWorld.Client.WithdrawTool"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  
+           HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
+
+    <toolkit:ExpressionDarkTheme>
+        <Canvas Background="Black" Width="360" Height="110">
+            <TextBlock Text="提现金额：" Canvas.Left="40" Canvas.Top="27"/>
+            <TextBlock Text="安全密码：" Canvas.Left="40" Canvas.Top="56"/>
+            
+            <TextBox Name="input_sum" Width="120" Canvas.Left="105" Canvas.Top="24"/>
+            <PasswordBox x:Name="input_safeCode" Width="120" Canvas.Left="105" Canvas.Top="53"/>
+
+            <Button Content="提  现" Canvas.Left="277" Canvas.Top="21" Width="60" Click="Withdraw"/>
+            <Button Content="取  消" Canvas.Left="277" Canvas.Top="55" Width="60" Click="Cancel"/>
+        </Canvas>
+    </toolkit:ExpressionDarkTheme>
+</controls:ChildWindow>

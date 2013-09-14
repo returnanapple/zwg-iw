@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="IWorld.Client.FunctionKey"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="140" Height="27" MouseLeftButtonDown="Click">
+        <Grid.Background>
+            <SolidColorBrush x:Name="bg" Color="Gray" Opacity="0"/>
+        </Grid.Background>
+        <i:Interaction.Triggers>
+            <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="False"/>
+        </i:Interaction.Triggers>
+        <Image Name="img" Width="24" Height="24" Source="img/icons_user.png" Margin="16,0,0,0"
+               HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock Name="keyText" Text="会员管理" FontSize="16" Margin="0,0,24,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>

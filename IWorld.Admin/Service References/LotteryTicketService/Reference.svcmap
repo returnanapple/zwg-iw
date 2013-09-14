@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd58016f-a2d6-4c04-856d-9ce45debc1f4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/LotteryTicketService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LotteryTicketService.xsd" MetadataType="Schema" ID="ad0ec763-e9e4-4752-ab63-0285ebf6f2de" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LotteryTicketService1.xsd" MetadataType="Schema" ID="8a6e6141-902e-4591-9b3d-9634de32e4f2" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LotteryTicketService2.xsd" MetadataType="Schema" ID="a7e34315-0265-40c7-bba0-2ba687fd80e2" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LotteryTicketService.wsdl" MetadataType="Wsdl" ID="f7ac3c8c-200e-4789-8ed7-e53320475ad1" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?wsdl" />
+    <MetadataFile FileName="LotteryTicketService.disco" MetadataType="Disco" ID="a3d6cb7a-3004-45d7-b49f-39f726a7062e" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?disco" />
+    <MetadataFile FileName="LotteryTicketService3.xsd" MetadataType="Schema" ID="9b6b870c-29a2-494b-b0c0-6d003117187b" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/LotteryTicketService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

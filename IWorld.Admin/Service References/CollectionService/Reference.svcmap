@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="10fc52ee-47d9-4f4b-b593-56260e7fd1cc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/CollectionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CollectionService.wsdl" MetadataType="Wsdl" ID="2d366970-a056-47fe-9d0a-a7d761429b47" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/CollectionService.svc?wsdl" />
+    <MetadataFile FileName="CollectionService.xsd" MetadataType="Schema" ID="5a784659-e023-4572-b499-9d2339e45591" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/CollectionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CollectionService1.xsd" MetadataType="Schema" ID="938211ab-489a-4999-b62d-7f1fbe29f574" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/CollectionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CollectionService.disco" MetadataType="Disco" ID="6eb49986-6380-4982-8506-fc15466d8bb9" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/CollectionService.svc?disco" />
+    <MetadataFile FileName="CollectionService2.xsd" MetadataType="Schema" ID="2bcc91e4-a286-4b32-9748-a1803e270d77" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/CollectionService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

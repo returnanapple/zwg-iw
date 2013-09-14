@@ -1,0 +1,27 @@
+﻿<controls:ChildWindow x:Class="IWorld.Admin.ExamineActivitiesPage_EditTool_Basic"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:Admin="clr-namespace:IWorld.Admin"
+           HasCloseButton="False">
+
+    <Canvas x:Name="root" Width="360" Height="120">
+        <TextBlock Text="持续天数：" Canvas.Left="37" Canvas.Top="17"/>
+        <TextBlock Text="过期自动删除：" Canvas.Left="13" Canvas.Top="49"/>
+        <TextBlock Text="暂停：" Canvas.Left="61" Canvas.Top="80"/>
+        <TextBox x:Name="input_days" Canvas.Left="122" Canvas.Top="13" Width="80"/>
+        <ComboBox x:Name="input_autoDelete" Canvas.Left="122" Canvas.Top="44" Width="80" Height="26"
+        	SelectedIndex="1">
+            <TextBlock Text="是"/>
+            <TextBlock Text="否"/>
+        </ComboBox>
+        <ComboBox x:Name="input_hide" Canvas.Left="122" Canvas.Top="75" Width="80" Height="26"
+        	SelectedIndex="1">
+            <TextBlock Text="是"/>
+            <TextBlock Text="否"/>
+        </ComboBox>
+
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="10" Text="修  改" ClickEventHandler="Edit" />
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="40" Text="取  消" ClickEventHandler="BackToList" />
+    </Canvas>
+</controls:ChildWindow>

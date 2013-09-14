@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="IWorld.Client.PlayTagButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="normal" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF212020" Offset="1"/>
+                        <GradientStop Color="#FF2D2D2D" Offset="0.28"/>
+                        <GradientStop Color="#FF252525" Offset="0.632"/>
+                        <GradientStop Color="#FF646464"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="selected" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF59306" Offset="0.586"/>
+                        <GradientStop Color="#FFF3D3AC"/>
+                        <GradientStop Color="#FFFBC273" Offset="0.149"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="root" Width="60" Height="25" MouseLeftButtonDown="Click">
+        <i:Interaction.Triggers>
+            <client:NButtonFeedbackTrigger NBTOffset="1"/>
+        </i:Interaction.Triggers>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="12"></Border>
+        <Border Name="bg" BorderBrush="Gray" BorderThickness="0.4" CornerRadius="12" Margin="1"
+                Style="{StaticResource ResourceKey=normal}">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="1" BlurRadius="12"/>
+            </Border.Effect>
+        </Border>
+        <TextBlock Name="text_content" Text="五星直选" Foreground="White" FontSize="11"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+    </Grid>
+</UserControl>

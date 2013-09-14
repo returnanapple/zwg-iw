@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55635/Api/GamingService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:55635/Api/GamingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IWorld.Model" />
+  <xs:complexType name="NormalListOfLotteryTicketResultL_PYu6_SAe">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="NormalListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="LotteryTicketResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfLotteryTicketResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NormalListOfLotteryTicketResultL_PYu6_SAe" nillable="true" type="tns:NormalListOfLotteryTicketResultL_PYu6_SAe" />
+  <xs:complexType name="OperateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperateResult" nillable="true" type="tns:OperateResult" />
+  <xs:complexType name="ArrayOfLotteryTicketResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LotteryTicketResult" nillable="true" type="tns:LotteryTicketResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLotteryTicketResult" nillable="true" type="tns:ArrayOfLotteryTicketResult" />
+  <xs:complexType name="LotteryTicketResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextPhases" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurplusTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfPlayTagResult" />
+      <xs:element minOccurs="0" name="TicketId" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeAtServer" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LotteryTicketResult" nillable="true" type="tns:LotteryTicketResult" />
+  <xs:complexType name="ArrayOfPlayTagResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayTagResult" nillable="true" type="tns:PlayTagResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayTagResult" nillable="true" type="tns:ArrayOfPlayTagResult" />
+  <xs:complexType name="PlayTagResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HowToPlays" nillable="true" type="tns:ArrayOfHowToPlayResult" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTagId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayTagResult" nillable="true" type="tns:PlayTagResult" />
+  <xs:complexType name="ArrayOfHowToPlayResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HowToPlayResult" nillable="true" type="tns:HowToPlayResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHowToPlayResult" nillable="true" type="tns:ArrayOfHowToPlayResult" />
+  <xs:complexType name="HowToPlayResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowToPlayId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Interface" type="q2:LotteryInterface" />
+      <xs:element minOccurs="0" name="IsSingle" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStackedBit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Odds" type="xs:double" />
+      <xs:element minOccurs="0" name="Rule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Seats" nillable="true" type="tns:ArrayOfOptionalSeatResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HowToPlayResult" nillable="true" type="tns:HowToPlayResult" />
+  <xs:complexType name="ArrayOfOptionalSeatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionalSeatResult" nillable="true" type="tns:OptionalSeatResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOptionalSeatResult" nillable="true" type="tns:ArrayOfOptionalSeatResult" />
+  <xs:complexType name="OptionalSeatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LimitOfPick" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="UpperOfPick" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValuesForDouble" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValuesForLarge" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValuesForSingle" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValuesForSmall" nillable="true" type="q7:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OptionalSeatResult" nillable="true" type="tns:OptionalSeatResult" />
+  <xs:complexType name="BettingImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BettingInfo" nillable="true" type="tns:BettingInfoImport" />
+      <xs:element minOccurs="0" name="ChasingInfo" nillable="true" type="tns:ChasingInfoImport" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Codes" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Values" nillable="true" type="tns:ArrayOfBettingValuesImport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingImport" nillable="true" type="tns:BettingImport" />
+  <xs:complexType name="BettingInfoImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HowToPlayId" type="xs:int" />
+      <xs:element minOccurs="0" name="Multiple" type="xs:double" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingInfoImport" nillable="true" type="tns:BettingInfoImport" />
+  <xs:complexType name="ChasingInfoImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bettings" nillable="true" type="tns:ArrayOfBettingForChasingInfo" />
+      <xs:element minOccurs="0" name="Continuance" type="xs:int" />
+      <xs:element minOccurs="0" name="EndIfLotteryAtGoing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndIfLotteryBeforeBegin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsChasing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Postpone" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChasingInfoImport" nillable="true" type="tns:ChasingInfoImport" />
+  <xs:complexType name="ArrayOfBettingForChasingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BettingForChasingInfo" nillable="true" type="tns:BettingForChasingInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBettingForChasingInfo" nillable="true" type="tns:ArrayOfBettingForChasingInfo" />
+  <xs:complexType name="BettingForChasingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Exponent" type="xs:double" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingForChasingInfo" nillable="true" type="tns:BettingForChasingInfo" />
+  <xs:complexType name="ArrayOfBettingValuesImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BettingValuesImport" nillable="true" type="tns:BettingValuesImport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBettingValuesImport" nillable="true" type="tns:ArrayOfBettingValuesImport" />
+  <xs:complexType name="BettingValuesImport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Seat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q9:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingValuesImport" nillable="true" type="tns:BettingValuesImport" />
+  <xs:complexType name="BettingActionResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BettingId" type="xs:int" />
+          <xs:element minOccurs="0" name="HowToPlay" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Money" type="xs:double" />
+          <xs:element minOccurs="0" name="Multiple" type="xs:double" />
+          <xs:element minOccurs="0" name="Values" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BettingActionResult" nillable="true" type="tns:BettingActionResult" />
+  <xs:simpleType name="BettingDetailsSelectType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="个人" />
+      <xs:enumeration value="团队" />
+      <xs:enumeration value="直属下级" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BettingDetailsSelectType" nillable="true" type="tns:BettingDetailsSelectType" />
+  <xs:complexType name="PaginationListOfBettingDetailsResultL_PYu6_SAe">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PaginationListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="BettingDetailsResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfBettingDetailsResult" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalOfPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaginationListOfBettingDetailsResultL_PYu6_SAe" nillable="true" type="tns:PaginationListOfBettingDetailsResultL_PYu6_SAe" />
+  <xs:complexType name="ArrayOfBettingDetailsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BettingDetailsResult" nillable="true" type="tns:BettingDetailsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBettingDetailsResult" nillable="true" type="tns:ArrayOfBettingDetailsResult" />
+  <xs:complexType name="BettingDetailsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BettingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="HowToPlay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotteryValues" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Multiple" type="xs:double" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pay" type="xs:double" />
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayTag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetutnPoints" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q10:BettingStatus" />
+      <xs:element minOccurs="0" name="Sum" type="xs:int" />
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Values" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BettingDetailsResult" nillable="true" type="tns:BettingDetailsResult" />
+  <xs:complexType name="NormalListOfRankingResultL_PYu6_SAe">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="NormalListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="RankingResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfRankingResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NormalListOfRankingResultL_PYu6_SAe" nillable="true" type="tns:NormalListOfRankingResultL_PYu6_SAe" />
+  <xs:complexType name="ArrayOfRankingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RankingResult" nillable="true" type="tns:RankingResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRankingResult" nillable="true" type="tns:ArrayOfRankingResult" />
+  <xs:complexType name="RankingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsRealBetting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RankingResult" nillable="true" type="tns:RankingResult" />
+  <xs:complexType name="NormalListOfHistoryOfLotteryResultL_PYu6_SAe">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="NormalListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="HistoryOfLotteryResult" Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="tns:ArrayOfHistoryOfLotteryResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NormalListOfHistoryOfLotteryResultL_PYu6_SAe" nillable="true" type="tns:NormalListOfHistoryOfLotteryResultL_PYu6_SAe" />
+  <xs:complexType name="ArrayOfHistoryOfLotteryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryOfLotteryResult" nillable="true" type="tns:HistoryOfLotteryResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryOfLotteryResult" nillable="true" type="tns:ArrayOfHistoryOfLotteryResult" />
+  <xs:complexType name="HistoryOfLotteryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Phases" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q11:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoryOfLotteryResult" nillable="true" type="tns:HistoryOfLotteryResult" />
+  <xs:complexType name="AddBettingValuesResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddBettingValuesResult" nillable="true" type="tns:AddBettingValuesResult" />
+</xs:schema>

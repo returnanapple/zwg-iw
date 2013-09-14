@@ -1,0 +1,36 @@
+﻿<UserControl xmlns:Admin="clr-namespace:IWorld.Admin" x:Class="IWorld.Admin.ExamineBulletinsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="912">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Width="912" Height="120" Grid.Row="0">
+            <TextBox Name="input_keyword" Height="30" Canvas.Left="10" Canvas.Top="10" Width="200"/>
+            <RadioButton Name="input_selecetType_all" GroupName="input_selecetType" Content="全部" 
+                         Canvas.Left="10" Canvas.Top="69" IsChecked="true" Checked="SelectForIsS"/>
+            <RadioButton Name="input_selecetType_unend" GroupName="input_selecetType" Content="未过期" 
+                         Canvas.Left="71" Canvas.Top="69" Checked="SelectForIsS"/>
+            <RadioButton Name="input_selecetType_normal" GroupName="input_selecetType" Content="正常" 
+                         Canvas.Left="143" Canvas.Top="69" Checked="SelectForIsS"/>
+            <RadioButton x:Name="input_selecetType_hide" GroupName="input_selecetType" Content="暂停" 
+            	Canvas.Left="211" Canvas.Top="69" Checked="SelectForIsS"/>
+            <RadioButton x:Name="input_selecetType_end" GroupName="input_selecetType" Content="已过期" 
+            	Canvas.Left="274" Canvas.Top="69" Checked="SelectForIsS"/>
+            <Admin:SubmitButton Name="button_select" Text="搜   索" Canvas.Left="234" Canvas.Top="10" Height="30" Width="70"
+                                ClickEventHandler="SelectForKeyword"/>
+            <Admin:SubmitButton Name="button_reset" Text="重   置" Canvas.Left="327" Canvas.Top="10" Height="30" Width="70"
+                                ClickEventHandler="Reset"/>
+            <Admin:SubmitButton x:Name="button_Create" Text="新  建" Canvas.Left="730" Canvas.Top="10" Height="30" Width="70"
+            	                ClickEventHandler="ViewCreatePage"/>
+        </Canvas>
+        <Grid Name="tableBody" Width="912" Grid.Row="1">
+
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5699c6de-8a49-47d2-8e2f-c6b3d595fe81" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/ManagerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ManagerService.xsd" MetadataType="Schema" ID="3b1246be-3c88-4948-a49e-7fa9a358fd24" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ManagerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ManagerService1.xsd" MetadataType="Schema" ID="21ce7fd3-a1f8-4907-9f5f-7d8df194aac0" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ManagerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ManagerService.disco" MetadataType="Disco" ID="96675fbd-c4a4-4de9-945d-c8b3ac89541b" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ManagerService.svc?disco" />
+    <MetadataFile FileName="ManagerService.wsdl" MetadataType="Wsdl" ID="b2ca2d53-c849-4175-b3e2-98e3c94c32fc" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ManagerService.svc?wsdl" />
+    <MetadataFile FileName="ManagerService2.xsd" MetadataType="Schema" ID="4777615e-306b-44bc-8766-0903470c936a" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/ManagerService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

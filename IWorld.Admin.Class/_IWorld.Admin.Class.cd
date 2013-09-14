@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IWorld.Admin.Class.TextHelper" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAAAAAAAAAAAAAAAAAABAABAAgAAAAAAIAAAA=</HashCode>
+      <FileName>TextHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.UserInfoCaChe" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAIBAAABgABQAAAAAAgABABAABAgAAAAAICAE=</HashCode>
+      <FileName>UserInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.OOBHyperLinkButton" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>OOBHyperLinkButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.UIHelper" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAABAAAAQAAAAAAAAAAAAAAgAAAAAAAAAEgQA=</HashCode>
+      <FileName>UIHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.NextPageEventArgs" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NextPageEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.TableToolColumnImport" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TableToolColumnImport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.TableToolBodyHoverEventArgs" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>TableToolBodyHoverEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.ReportFigure" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAASAAAA=</HashCode>
+      <FileName>ReportFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.NButtonFeedbackTrigger" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAFAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>NButtonFeedbackTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.SiteMapToolButtonFeedbackTrigger" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAFAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>SiteMapToolButtonFeedbackTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Admin.Class.SiteMapTool_ConditionButtonClickedEventArgs" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>SiteMapTool_ConditionButtonClickedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IWorld.Admin.Class.ITableToolRow" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAIAAI=</HashCode>
+      <FileName>ITableToolRow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="IWorld.Admin.Class.SetUpPageTopButtonS" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAggBAAAQAECAEAAAEAAAAA=</HashCode>
+      <FileName>SetUpPageTopButtonS.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="IWorld.Admin.Class.SetUpPageSideButtons" Collapsed="true">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAABgBAkAgMAAARAAACEAAlAAIQAAIQIAAAgCEAQQ=</HashCode>
+      <FileName>SetUpPageSideButtons.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="IWorld.Admin.Class.NextPageDelegate" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>NextPageDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="IWorld.Admin.Class.TableToolBodyHoverDelegate" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>TableToolBodyHoverDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="IWorld.Admin.Class.NDelegate" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NDelegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="IWorld.Admin.Class.SiteMapTool_ConditionButtonClickedDalegate" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SiteMapTool_ConditionButtonClickedEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

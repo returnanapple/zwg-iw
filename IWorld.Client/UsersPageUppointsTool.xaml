@@ -1,0 +1,22 @@
+﻿<controls:ChildWindow x:Class="IWorld.Client.UsersPageUppointsTool"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  
+           HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
+
+    <toolkit:ExpressionDarkTheme>
+        <Canvas Background="Black" Width="360" Height="140">
+            <TextBlock Text="目标用户：" Canvas.Left="38" Canvas.Top="31"/>
+            <TextBlock Text="正常返点：" Canvas.Left="38" Canvas.Top="56"/>
+            <TextBlock Text="不定位返点：" Canvas.Left="26" Canvas.Top="85"/>
+
+            <TextBlock Name="text_user" Text="admin" Canvas.Left="103" Canvas.Top="31"/>
+            <TextBox Name="input_nrp" Width="120" Canvas.Left="103" Canvas.Top="53"/>
+            <TextBox x:Name="input_urp" Width="120" Canvas.Left="103" Canvas.Top="82"/>
+
+            <Button Content="确  定" Canvas.Left="277" Canvas.Top="25" Width="60" Click="UpPoints"/>
+            <Button Content="取  消" Canvas.Left="277" Canvas.Top="54" Width="60" Click="Cancel"/>
+        </Canvas>
+    </toolkit:ExpressionDarkTheme>
+</controls:ChildWindow>

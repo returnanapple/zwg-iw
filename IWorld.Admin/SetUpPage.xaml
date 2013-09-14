@@ -1,0 +1,554 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="IWorld.Admin.SetUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style TargetType="Grid" x:Key="bg_selected">
+            <Setter Property="Margin" Value="-1,-1,-1,-1"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Grid" x:Key="bg_hover">
+            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+            <Setter Property="Background" Value="#49403D"></Setter>
+        </Style>
+        <Style TargetType="sdk:Label" x:Key="top_normal">
+            <Setter Property="Foreground" Value="#A59A92"></Setter>
+        </Style>
+        <Style TargetType="sdk:Label" x:Key="top_hover">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+        <Style TargetType="sdk:Label" x:Key="top_seletcted">
+            <Setter Property="Foreground" Value="#333"></Setter>
+        </Style>
+        <Style TargetType="Rectangle" x:Key="topBg_normal">
+            <Setter Property="Fill" Value="#FF4B423F"></Setter>
+            <Setter Property="Opacity" Value="0.55"></Setter>
+        </Style>
+        <Style TargetType="Rectangle" x:Key="topBg_selected">
+            <Setter Property="Fill" Value="White"></Setter>
+        </Style>
+        <Style TargetType="sdk:Label" x:Key="side_normal">
+            <Setter Property="Foreground" Value="#B9A894"></Setter>
+        </Style>
+        <Style TargetType="sdk:Label" x:Key="side_seletcted">
+            <Setter Property="Foreground" Value="#333"></Setter>
+        </Style>
+        <Storyboard x:Key="promt_close">
+            <DoubleAnimation
+                Storyboard.TargetName="frame_promt"
+                Storyboard.TargetProperty="Height"
+                From="70" To="0" Duration="0:0:0.3" />
+        </Storyboard>
+        <Storyboard x:Key="promt_open">
+            <DoubleAnimation
+                Storyboard.TargetName="frame_promt"
+                Storyboard.TargetProperty="Height"
+                From="0" To="70" Duration="0:0:0.3" />
+        </Storyboard>
+        <Storyboard x:Key="page_close">
+            <DoubleAnimation
+                Storyboard.TargetName="root"
+                Storyboard.TargetProperty="Opacity"
+                From="70" To="0" Duration="0:0:0.3" />
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="root" MinHeight="648" MinWidth="1152" Background="#FF1A100E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition MinHeight="468"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition MinWidth="952"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--以下是标题栏-->
+        <Grid
+              Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="img/bg_top2.jpg"/>
+            </Grid.Background>
+            <Image Source="img/logo.jpg" Height="200" Width="530" HorizontalAlignment="Left"></Image>
+        </Grid>
+        <!--以下是主标题-->
+        <sdk:Label Content="IWorld 后台管理" Height="40" VerticalAlignment="Top"
+                   Grid.Column="1" Margin="30,55,0,0"
+                   FontSize="32" Foreground="White" FontFamily="font/msyh.ttc#Microsoft Yahei">
+            <sdk:Label.Effect>
+                <DropShadowEffect Opacity="0.4" BlurRadius="1" Direction="330" ShadowDepth="6"/>
+            </sdk:Label.Effect>
+        </sdk:Label>
+        <!--以上是主标题-->
+        <!--以下是副标题-->
+        <sdk:Label Content="努力就可以拥有一切" VerticalAlignment="Top"
+                   Grid.Column="1" Margin="30,105,0,0"
+                   FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei" Height="22"/>
+        <!--以上是副标题-->
+        <Grid Width="1152" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" 
+              Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Height="20" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Name="button_backToReception" Content="返回前台" Height="16" Cursor="Hand"
+                           Foreground="#B9A894" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="5" Margin="5,0,5,0"></sdk:Label>
+                <sdk:Label Content="|" Height="16"
+                           Foreground="#B9A894" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="4" Margin="5,0,5,0"></sdk:Label>
+                <sdk:Label Name="button_logout" Content="安全退出" Height="16" Cursor="Hand"
+                           Foreground="#B9A894" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="3" Margin="5,0,5,0"></sdk:Label>
+                <sdk:Label Content="|" Height="16"
+                           Foreground="#B9A894" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="2" Margin="5,0,5,0"></sdk:Label>
+                <sdk:Label Name="text_username" Content="MagicVr" Height="16"
+                           Foreground="White" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="1" Margin="5,0,5,0"></sdk:Label>
+                <sdk:Label Content="欢迎你" Height="16"
+                           Foreground="#B9A894" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Grid.Column="0"></sdk:Label>
+            </Grid>
+            <sdk:Label Name="text_lastLoginDate" Content="最后登入时间：2013/05/04" Height="16" 
+                       HorizontalAlignment="Right" VerticalAlignment="Center"
+                       Foreground="#6A5644" FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                       Grid.Column="1" Grid.Row="1" Margin="0,0,5,0"></sdk:Label>
+        </Grid>
+        <!--以上是标题栏-->
+        <!--以下顶部菜单栏-->
+        <Grid MaxWidth="952" Height="36" Grid.Column="1"
+              HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Height="36" Grid.Column="0" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_GoToIndexBg" RadiusX="3" RadiusY="3"
+                           Style="{StaticResource ResourceKey=topBg_selected}"></Rectangle>
+                <sdk:Label Name="topButton_GoToIndex" Content="首页" Height="16"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_seletcted}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_manageUser" Height="36" Grid.Column="1" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_manageUserBg" RadiusX="3" RadiusY="3"
+                           Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_manageUser" Content="用户管理" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_manageTicket" Height="36" Grid.Column="2" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_manageTicketBg" RadiusX="3" RadiusY="3"
+                           Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_manageTicket" Content="彩票管理" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                           Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_manageBulletin" Height="36" Grid.Column="3" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_manageBulletinBg" RadiusX="3" RadiusY="3"
+                           Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_manageBulletin" Content="公告管理" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_manageActivity" Height="36" Grid.Column="4" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_manageActivityBg" RadiusX="3" RadiusY="3"
+                            Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_manageActivity" Content="活动管理" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_dataReport" Height="36" Grid.Column="5" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_dataReportBg" RadiusX="3" RadiusY="3"
+                            Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_dataReport" Content="数据报表" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_setting" Height="36" Grid.Column="6" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_settingBg" RadiusX="3" RadiusY="3"
+                            Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_setting" Content="系统设置" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+            <Grid Name="topKey_manager" Height="36" Grid.Column="7" Margin="0,0,5,-1">
+                <Rectangle Name="topButton_managerBg" RadiusX="3" RadiusY="3" 
+                           Style="{StaticResource ResourceKey=topBg_normal}"></Rectangle>
+                <sdk:Label Name="topButton_manager" Content="管理员组" Height="16" Cursor="Hand"
+                           FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" Style="{StaticResource ResourceKey=top_normal}"
+                           Margin="20,0,20,0"></sdk:Label>
+            </Grid>
+        </Grid>
+        <!--以上顶部菜单栏-->
+        <!--以下是侧边栏-->
+        <Grid Width="200" Grid.Column="0" Grid.Row="1" Background="#FF332B28"
+              HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition MinHeight="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Name="module_users" Height="159" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="用户管理" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_examineUsers" Content="查看用户列表" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_addNewUser" Content="添加新用户" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_examineUserGroups" Content="查看用户组" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_landingRecords" Content="查看前台登入记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_lotteryTickets" Height="187" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Width="202" Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="彩票管理" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_examineTickets" Content="查看彩票列表" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_examineTags" Content="查看玩法标签列表" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_examinePatterns" Content="查看玩法列表"
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_examineLottery" Content="查看开奖记录"
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <sdk:Label Name="sideButton_examineVirtualTop" Content="查看虚拟排行"
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_bulletins" Height="103" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Width="202" Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="公告管理" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_examineBulletins" Content="查看公告列表" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_addNewBulletin" Content="添加新的公告" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_activities" Height="159" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Width="202" Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="活动管理" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_examineActivities" Content="查看默认活动" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_participatedRecordOfActivities" Content="查看默认活动参与记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_examineExchanges" Content="查看兑换活动" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_participatedRecordOfExchanges" Content="查看兑换活动参与记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_dataReport" Height="215" Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Width="202" Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="数据报表" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_siteReports" Content="查看站点统计" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_personalReports" Content="查看个人统计" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_bettingReports" Content="查看投注记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_rechargeReports" Content="查看充值记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <sdk:Label Name="sideButton_withdrawalReports" Content="查看提现记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <sdk:Label Name="sideButton_transferReports" Content="查看现金支取记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_setting" Height="159" Grid.Row="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="系统设置" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_webiteSetting" Content="综合设置" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_bankAccounts" Content="银行帐号（系统）" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_emailAccounts" Content="电子邮箱帐号" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_emailHosts" Content="电子邮箱服务" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+            <Grid Name="module_manager" Height="159" Grid.Row="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#2E2520">
+                    <Rectangle Width="200" Height="1" Fill="#423732" VerticalAlignment="Top"></Rectangle>
+                    <Rectangle Width="200" Height="1" Fill="#2C2523" VerticalAlignment="Bottom"></Rectangle>
+                    <sdk:Label Content="管理员组" HorizontalAlignment="Center"
+                               FontSize="16" Foreground="#B9A894" FontFamily="font/msyh.ttc#Microsoft Yahei"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <sdk:Label Name="sideButton_examineMangers" Content="查看管理员列表" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <sdk:Label Name="sideButton_examineManagerGroups" Content="查看管理员用户组" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <sdk:Label Name="sideButton_managerLandingRecords" Content="查看后台登入记录" 
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <sdk:Label Name="sideButton_managedRecords" Content="查看管理记录" Visibility="Collapsed"
+                               HorizontalAlignment="Right" Margin="0,0,20,0" Cursor="Hand"
+                               FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei" 
+                               Style="{StaticResource ResourceKey=side_normal}"></sdk:Label>
+                </Grid>
+            </Grid>
+        </Grid>
+        <!--以上是侧边栏-->
+        <!--主体-->
+        <Grid Grid.Column="1" Grid.Row="1" Background="White">
+            <Grid Width="912" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--信息提示栏-->
+                <Grid Name="frame_promt" Height="70" VerticalAlignment="Top" Margin="0,0,0,40" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="46"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="#F8F2B7" BorderBrush="#DBD6A1" BorderThickness="1" CornerRadius="3"
+                            Grid.ColumnSpan="3"></Border>
+                    <Image Width="16" Height="16" Source="img/exclamation.png" Grid.Column="0"></Image>
+                    <!--提示信息-->
+                    <Grid Grid.Column="1" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Height="20" Grid.Column="0" Margin="0,5,0,0"
+                                   FontSize="12" FontFamily="font/msyh.ttc#Microsoft Yahei">
+                            <Run xml:space="preserve">你有 </Run>
+                            <Run x:Name="text_countOfNewMessage" Foreground="Red">1</Run>
+                            <Run xml:space="preserve"> 条新的消息，请注意查收！</Run>
+                        </TextBlock>
+                        <TextBlock Name="button_openMessageBox" Text="查看消息盒子" Cursor="Hand"
+                                   TextDecorations="Underline" FontSize="12" Foreground="#41829F"
+                                   Grid.Column="1" Margin="10,3,0,0" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                                   VerticalAlignment="Center" MouseLeftButtonDown="GoToMessageBoxPage"></TextBlock>
+                    </Grid>
+                    <!--关闭按键-->
+                    <Grid Height="16" Width="38" Grid.Column="1"
+                          HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+                        <sdk:Label Content="关闭" FontSize="9" Foreground="#900"></sdk:Label>
+                        <Image Source="img/cross_small.png"  Width="16" Height="16"
+                               HorizontalAlignment="Right" VerticalAlignment="Top"></Image>
+                        <Grid Name="button_closePromt" Height="16" Width="38" 
+                              Background="White" Opacity="0" Cursor="Hand"></Grid>
+                    </Grid>
+                </Grid>
+                <!--主体信息显示-->
+                <Grid Name="body" Grid.Row="1">
+                    
+                </Grid>
+                <!--版权信息-->
+                <Grid Grid.Row="2" Height="100">
+                    <TextBlock Text="版权所有 © 2013/2014" FontFamily="font/msyh.ttc#Microsoft Yahei"
+                               VerticalAlignment="Center"></TextBlock>
+                    <MediaElement Name="messageCall" AutoPlay="False" Volume="1" Source="music/MessageCall.wma"></MediaElement>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

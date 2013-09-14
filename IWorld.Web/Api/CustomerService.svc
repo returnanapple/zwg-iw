@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="IWorld.Web.Api.CustomerService" CodeBehind="CustomerService.svc.cs" %>

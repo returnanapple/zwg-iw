@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="IWorld.Admin.TableTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="titleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#333"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Margin" Value="15,10,0,0"></Setter>
+            <Setter Property="FontFamily" Value="font/msyh.ttc#Microsoft Yahei"></Setter>
+        </Style>
+        <Style x:Key="bg_single" TargetType="Border">
+            <Setter Property="Background" Value="#F1F1F1"></Setter>
+        </Style>
+        <Style x:Key="bg_double" TargetType="Border">
+            <Setter Property="Background" Value="#F7F7F7"></Setter>
+        </Style>
+        <Style x:Key="bg_hover" TargetType="Border">
+            <Setter Property="Background" Value="#E8E4DE"></Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="root" Width="912">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Name="title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Grid.Row="0"
+                   Foreground="Black" FontFamily="font/msyh.ttc#Microsoft Yahei" FontSize="20">Div.container1: h3</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid Name="body_bg" VerticalAlignment="Top"></Grid>
+            <Path Name="bg" Stroke="#CCC" StrokeThickness="0.5"></Path>
+            <Grid Name="body" VerticalAlignment="Top"></Grid>
+        </Grid>
+        <Grid Name="pageTool" Height="30" Grid.Row="2" HorizontalAlignment="Left">
+        </Grid>
+    </Grid>
+</UserControl>

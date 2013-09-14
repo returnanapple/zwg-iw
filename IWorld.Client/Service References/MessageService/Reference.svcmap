@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8ebea62-6b1b-4695-a526-8f5e4df6d0ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/MessageService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MessageService.xsd" MetadataType="Schema" ID="63ce1c28-4950-49e8-98ef-f70ee66c21c9" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MessageService1.xsd" MetadataType="Schema" ID="f0bbf5a2-e37d-4586-abb1-d28b91794d03" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MessageService.wsdl" MetadataType="Wsdl" ID="28b93731-a3a1-4a6a-9817-4beb34d8fd1d" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?wsdl" />
+    <MetadataFile FileName="MessageService2.xsd" MetadataType="Schema" ID="210bdfe4-ebd7-4058-af88-c1ebcdfcdb83" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MessageService.disco" MetadataType="Disco" ID="f54d0f25-1bd7-432b-8ca1-2f7530feb6cb" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

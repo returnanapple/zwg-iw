@@ -1,0 +1,81 @@
+﻿<controls:ChildWindow xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+           x:Class="IWorld.Admin.ExamineActivitiesPage_CreateTool"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:Admin="clr-namespace:IWorld.Admin"
+           HasCloseButton="False">
+
+    <ScrollViewer BorderThickness="0" Width="440" Height="500" VerticalScrollBarVisibility="Auto">
+        <Canvas x:Name="root" Width="420" Height="470">
+            <TextBlock Text="标题：" Canvas.Left="58" Canvas.Top="10"/>
+            <TextBlock Text="活动类型：" Canvas.Left="34" Canvas.Top="41"/>
+            <TextBlock Text="参数最小值：" Canvas.Left="22" Canvas.Top="72"/>
+            <TextBlock Text="参数最大值：" Canvas.Left="22" Canvas.Top="107"/>
+            <TextBlock Text="奖励类型：" Canvas.Left="34" Canvas.Top="138"/>
+            <TextBlock Text="奖励数额类型：" Canvas.Left="10" Canvas.Top="169"/>
+            <TextBlock Text="奖励数额：" Canvas.Left="34" Canvas.Top="200"/>
+            <TextBlock Text="限制条件：" Canvas.Left="34" Canvas.Top="327"/>
+            <TextBlock Text="开始时间：" Canvas.Left="34" Canvas.Top="230"/>
+            <TextBlock Text="持续天数：" Canvas.Left="34" Canvas.Top="262"/>
+            <TextBlock Text="过期自动删除：" Canvas.Left="10" Canvas.Top="294"/>
+
+            <TextBox x:Name="input_title" Canvas.Left="119" Canvas.Top="6" Width="160"/>
+            <ComboBox Name="input_type" Canvas.Left="119" Canvas.Top="37" Width="120" Height="26" />
+            <TextBox x:Name="input_minRestrictionValue" Canvas.Left="119" Canvas.Top="68" Width="80"/>
+            <TextBox x:Name="input_maxRestrictionValues" Canvas.Left="119" Canvas.Top="103" Width="80"/>
+            <ComboBox Name="input_rewardType" Canvas.Left="119" Canvas.Top="134" Width="120" Height="26" />
+            <ComboBox Name="input_rewardValueIsAbsolute" Canvas.Left="119" Canvas.Top="165" Width="80" Height="26"
+                  SelectedIndex="0">
+                <ComboBox.Items>
+                    <TextBlock Text="绝对值"></TextBlock>
+                    <TextBlock Text="百分比"></TextBlock>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBox x:Name="input_reward" Canvas.Left="119" Canvas.Top="196" Width="80"/>
+            <toolkit:SystemColorsTheme Canvas.Left="119" Canvas.Top="227" Height="26">
+                <controls:DatePicker Name="input_beginTime" />
+            </toolkit:SystemColorsTheme>
+            <TextBox x:Name="input_days" Canvas.Left="119" Canvas.Top="258" Width="80"/>
+            <ComboBox x:Name="input_autoDelete" Canvas.Left="119" Canvas.Top="289" Width="80" Height="26"
+        	SelectedIndex="1">
+                <TextBlock Text="是"/>
+                <TextBlock Text="否"/>
+            </ComboBox>
+
+            <Admin:SubmitButton Canvas.Left="350" Canvas.Top="10" Text="添  加" ClickEventHandler="Create" />
+            <Admin:SubmitButton Canvas.Left="350" Canvas.Top="42" Text="取  消" ClickEventHandler="BackToList" />
+            <Grid Name="tool_showConditions" Canvas.Left="119" Canvas.Top="320" Width="280"
+              VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="用户组等级" Grid.Column="0"></TextBlock>
+                <TextBlock Text="1" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Text="2" Grid.Column="2" HorizontalAlignment="Center"></TextBlock>
+                <Image Width="20" Height="20" Grid.Column="3" Source="img/cross_small.png"
+                   HorizontalAlignment="Right" MouseLeftButtonDown="RemoveCondition"></Image>
+            </Grid>
+            <Grid Name="tool_AddConditions" Height="100" Canvas.Left="119" Canvas.Top="355" Width="240">
+                <Path Stroke="White" StrokeThickness="1" Data="M0,0 L240,0"></Path>
+                <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,0.5 L240,0.5"></Path>
+
+                <TextBlock Text="类型：" Margin="0,16,156,68"/>
+                <TextBlock Text="下限：" Margin="0,47,180,37"/>
+                <TextBlock Text="上限：" Margin="0,78,180,6"/>
+
+                <ComboBox x:Name="input_conditionType" Margin="41,12,79,62" />
+                <TextBox x:Name="input_conditionLimit" Margin="41,43,139,31"/>
+                <TextBox x:Name="input_conditionUpper" Margin="41,74,139,0"/>
+                <Admin:SubmitButton Text="添加限制条件" ClickEventHandler="AddCondition" Margin="160,75,0,0" />
+
+            </Grid>
+        </Canvas>
+    </ScrollViewer>
+</controls:ChildWindow>

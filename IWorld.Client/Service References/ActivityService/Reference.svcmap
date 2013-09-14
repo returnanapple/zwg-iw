@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="281e5802-44d5-4fe7-9b15-b9c83dd5f5bc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/ActivityService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ActivityService.xsd" MetadataType="Schema" ID="98b88aa5-7d2a-4a7d-bf5c-a9ca9c573e4c" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ActivityService.wsdl" MetadataType="Wsdl" ID="bcfe777d-a666-4054-a1dd-fd262529eda8" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?wsdl" />
+    <MetadataFile FileName="ActivityService1.xsd" MetadataType="Schema" ID="be14cace-dee9-497c-bdee-f3773a53aa0e" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ActivityService.disco" MetadataType="Disco" ID="73cdb119-7d01-4d5f-9dde-a67a8dc8b1c6" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?disco" />
+    <MetadataFile FileName="ActivityService2.xsd" MetadataType="Schema" ID="872c972a-9d37-45cc-aeea-5068545f0c20" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ActivityService3.xsd" MetadataType="Schema" ID="1579383e-3de6-43fd-8c2f-5e0f8a79b78d" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C4BBA66-B1AA-4A59-9AAF-B197AC0E12E1}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWorld.Admin</RootNamespace>
+    <AssemblyName>IWorld.Admin</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>IWorld.Admin.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>IWorld.Admin.App</SilverlightAppEntry>
+    <TestPageFileName>IWorld.AdminTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <InBrowserSettingsFile>Properties\InBrowserSettings.xml</InBrowserSettingsFile>
+    <RequireInBrowserElevation>false</RequireInBrowserElevation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="SLVisifire.Charts, Version=5.1.1.0, Culture=neutral, PublicKeyToken=e1555b029ff71bd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\IWorld.Web\Content\Assembly\SLVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Theming.SystemColors, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Theming.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountsPage.xaml.cs">
+      <DependentUpon>BankAccountsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountsPage_CreateTool.xaml.cs">
+      <DependentUpon>BankAccountsPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountsPage_EditTool.xaml.cs">
+      <DependentUpon>BankAccountsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BankAccountsPage_TableRow.xaml.cs">
+      <DependentUpon>BankAccountsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BettingReportsPage.xaml.cs">
+      <DependentUpon>BettingReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BettingReportsPage_FullWindow.xaml.cs">
+      <DependentUpon>BettingReportsPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BettingReportsPage_TableRow.xaml.cs">
+      <DependentUpon>BettingReportsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewBulletinPage.xaml.cs">
+      <DependentUpon>CreateNewBulletinPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewUserPage.xaml.cs">
+      <DependentUpon>CreateNewUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAccountsPage.xaml.cs">
+      <DependentUpon>EmailAccountsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAccountsPage_CreateTool.xaml.cs">
+      <DependentUpon>EmailAccountsPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAccountsPage_EditTool.xaml.cs">
+      <DependentUpon>EmailAccountsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAccountsPage_TableRow.xaml.cs">
+      <DependentUpon>EmailAccountsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailHostsPage.xaml.cs">
+      <DependentUpon>EmailHostsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailHostsPage_CreateTool.xaml.cs">
+      <DependentUpon>EmailHostsPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailHostsPage_EditTool.xaml.cs">
+      <DependentUpon>EmailHostsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmailHostsPage_TableRow.xaml.cs">
+      <DependentUpon>EmailHostsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPrompt.xaml.cs">
+      <DependentUpon>ErrorPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage_EditTool_Basic.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage_EditTool_Basic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage_FullWindow.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineActivitiesPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineActivitiesPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineBulletinsPage.xaml.cs">
+      <DependentUpon>ExamineBulletinsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineBulletinsPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineBulletinsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineBulletinsPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineBulletinsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage.xaml.cs">
+      <DependentUpon>ExamineExchangesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineExchangesPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineExchangesPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage_EditTool_Basic.xaml.cs">
+      <DependentUpon>ExamineExchangesPage_EditTool_Basic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage_FullWindow.xaml.cs">
+      <DependentUpon>ExamineExchangesPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineExchangesPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineExchangesPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineLotteryPage.xaml.cs">
+      <DependentUpon>ExamineLotteryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineLotteryPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineLotteryPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineManagerGroupsPage.xaml.cs">
+      <DependentUpon>ExamineManagerGroupsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineManagerGroupsPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineManagerGroupsPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineManagerGroupsPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineManagerGroupsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineManagerGroupsPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineManagerGroupsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineMangersPage.xaml.cs">
+      <DependentUpon>ExamineMangersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineMangersPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineMangersPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineMangersPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineMangersPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminePlaysPage.xaml.cs">
+      <DependentUpon>ExaminePlaysPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminePlaysPage_EditTool.xaml.cs">
+      <DependentUpon>ExaminePlaysPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminePlaysPage_TableRow.xaml.cs">
+      <DependentUpon>ExaminePlaysPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTagsPage.xaml.cs">
+      <DependentUpon>ExamineTagsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTagsPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineTagsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTagsPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineTagsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTicketsPage.xaml.cs">
+      <DependentUpon>ExamineTicketsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTicketsPage_EditLotteryTimeTool.xaml.cs">
+      <DependentUpon>ExamineTicketsPage_EditLotteryTimeTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTicketsPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineTicketsPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineTicketsPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineTicketsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUserGroupPage.xaml.cs">
+      <DependentUpon>ExamineUserGroupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUserGroupPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineUserGroupPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUserGroupPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineUserGroupPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUserGroupPage_FullWindow.xaml.cs">
+      <DependentUpon>ExamineUserGroupPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUserGroupPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineUserGroupPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUsersPage.xaml.cs">
+      <DependentUpon>ExamineUsersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUsersPage_DeleteUserPrompt.xaml.cs">
+      <DependentUpon>ExamineUsersPage_DeleteUserPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUsersPage_FullWindow.xaml.cs">
+      <DependentUpon>ExamineUsersPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineUsersPage_TableBody.xaml.cs">
+      <DependentUpon>ExamineUsersPage_TableBody.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineVirtualTopPage.xaml.cs">
+      <DependentUpon>ExamineVirtualTopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineVirtualTopPage_CreateTool.xaml.cs">
+      <DependentUpon>ExamineVirtualTopPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineVirtualTopPage_EditTool.xaml.cs">
+      <DependentUpon>ExamineVirtualTopPage_EditTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineVirtualTopPage_TableRow.xaml.cs">
+      <DependentUpon>ExamineVirtualTopPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IndexPage_ClearUserPrompt.xaml.cs">
+      <DependentUpon>IndexPage_ClearUserPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IndexPage_EditManagerAccountWindow.xaml.cs">
+      <DependentUpon>IndexPage_EditManagerAccountWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LandingRecordsPage.xaml.cs">
+      <DependentUpon>LandingRecordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LandingRecordsPage_TableRow.xaml.cs">
+      <DependentUpon>LandingRecordsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerLandingRecordsPage.xaml.cs">
+      <DependentUpon>ManagerLandingRecordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerLandingRecordsPage_TableRow.xaml.cs">
+      <DependentUpon>ManagerLandingRecordsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxPage.xaml.cs">
+      <DependentUpon>MessageBoxPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NormalPrompt.xaml.cs">
+      <DependentUpon>NormalPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatedRecordOfActivitiesPage.xaml.cs">
+      <DependentUpon>ParticipatedRecordOfActivitiesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatedRecordOfActivitiesPage_TableRow.xaml.cs">
+      <DependentUpon>ParticipatedRecordOfActivitiesPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatedRecordOfExchangesPage.xaml.cs">
+      <DependentUpon>ParticipatedRecordOfExchangesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipatedRecordOfExchangesPage_TableRow.xaml.cs">
+      <DependentUpon>ParticipatedRecordOfExchangesPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalReportPage.xaml.cs">
+      <DependentUpon>PersonalReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalReportPage_TableRow.xaml.cs">
+      <DependentUpon>PersonalReportPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechargeReportsPage.xaml.cs">
+      <DependentUpon>RechargeReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeReportsPage_DeterminetTool.xaml.cs">
+      <DependentUpon>RechargeReportsPage_DeterminetTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeReportsPage_FullWindow.xaml.cs">
+      <DependentUpon>RechargeReportsPage_FullWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeReportsPage_NegativeTool.xaml.cs">
+      <DependentUpon>RechargeReportsPage_NegativeTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RechargeReportsPage_TableRow.xaml.cs">
+      <DependentUpon>RechargeReportsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ActivityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BulletinService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CollectionService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DataReportService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExchangeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LotteryTicketService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SystemSettingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserInfoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SetUpPage.xaml.cs">
+      <DependentUpon>SetUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SiteReportPage.xaml.cs">
+      <DependentUpon>SiteReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SiteReportPage_TableRow.xaml.cs">
+      <DependentUpon>SiteReportPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubmitButton.xaml.cs">
+      <DependentUpon>SubmitButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableTool.xaml.cs">
+      <DependentUpon>TableTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableTool_NextPageButton.xaml.cs">
+      <DependentUpon>TableTool_NextPageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferReportsPage.xaml.cs">
+      <DependentUpon>TransferReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferReportsPage_CreateTool.xaml.cs">
+      <DependentUpon>TransferReportsPage_CreateTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferReportsPage_TableRow.xaml.cs">
+      <DependentUpon>TransferReportsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebSiteSettingPage.xaml.cs">
+      <DependentUpon>WebSiteSettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawalReportsPage.xaml.cs">
+      <DependentUpon>WithdrawalReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawalReportsPage_NegativeTool.xaml.cs">
+      <DependentUpon>WithdrawalReportsPage_NegativeTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawalReportsPage_TableRow.xaml.cs">
+      <DependentUpon>WithdrawalReportsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="BankAccountsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BankAccountsPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BankAccountsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BankAccountsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BettingReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BettingReportsPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BettingReportsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateNewBulletinPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateNewUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailAccountsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailAccountsPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailAccountsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailAccountsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailHostsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailHostsPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailHostsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmailHostsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage_EditTool_Basic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineActivitiesPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineBulletinsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineBulletinsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineBulletinsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage_EditTool_Basic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineExchangesPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineLotteryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineLotteryPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineManagerGroupsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineManagerGroupsPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineManagerGroupsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineManagerGroupsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineMangersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineMangersPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineMangersPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExaminePlaysPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExaminePlaysPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExaminePlaysPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTagsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTagsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTagsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTicketsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTicketsPage_EditLotteryTimeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTicketsPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineTicketsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUserGroupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUserGroupPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUserGroupPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUserGroupPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUserGroupPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUsersPage_DeleteUserPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUsersPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineUsersPage_TableBody.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineVirtualTopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineVirtualTopPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineVirtualTopPage_EditTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExamineVirtualTopPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IndexPage_ClearUserPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IndexPage_EditManagerAccountWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LandingRecordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LandingRecordsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ManagerLandingRecordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerLandingRecordsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageBoxPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParticipatedRecordOfActivitiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParticipatedRecordOfActivitiesPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParticipatedRecordOfExchangesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ParticipatedRecordOfExchangesPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonalReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonalReportPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechargeReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechargeReportsPage_DeterminetTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechargeReportsPage_FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechargeReportsPage_NegativeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RechargeReportsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SiteReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SiteReportPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubmitButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableTool_NextPageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransferReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransferReportsPage_CreateTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransferReportsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebSiteSettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WithdrawalReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WithdrawalReportsPage_NegativeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WithdrawalReportsPage_TableRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="font\msyh.ttc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <None Include="Service References\ActivityService\ActivityService.wsdl" />
+    <None Include="Service References\ActivityService\ActivityService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\ActivityService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.ActivityService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.ActivityService.PaginationListOfActivityParticipateRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ActivityService\IWorld.Admin.ActivityService.PaginationListOfActivityResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService.wsdl" />
+    <None Include="Service References\BulletinService\BulletinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CollectionService\CollectionService.wsdl" />
+    <None Include="Service References\CollectionService\CollectionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CollectionService\CollectionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CollectionService\CollectionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService.wsdl" />
+    <None Include="Service References\DataReportService\DataReportService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService.wsdl" />
+    <None Include="Service References\ExchangeService\ExchangeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfHowToPlayResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfLotteryResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfLotteryTimeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfPlayTagResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfTicketResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\IWorld.Admin.LotteryTicketService.PaginationListOfVirtualTopResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.wsdl" />
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.PaginationListOfLandingRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.PaginationListOfManagerGroupResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.PaginationListOfManagerInfoResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\IWorld.Admin.ManagerService.PaginationListOfOperatedRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.wsdl" />
+    <None Include="Service References\ManagerService\ManagerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.CollectionStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.PaginationListOfBankAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.PaginationListOfEmailAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.PaginationListOfEmailClientResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Admin.SystemSettingService.WebSettingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService.wsdl" />
+    <None Include="Service References\SystemSettingService\SystemSettingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.PaginationListOfLandingRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.PaginationListOfUserGroupResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.PaginationListOfUserInfoResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.ResetPasswordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\IWorld.Admin.UserInfoService.ResetSafeWordResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService.wsdl" />
+    <None Include="Service References\UserInfoService\UserInfoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="img\card_address.png" />
+    <Resource Include="img\bin.png" />
+    <Resource Include="img\clock.png" />
+    <Resource Include="img\database.png" />
+    <Resource Include="img\folder_open_document_text.png" />
+    <Resource Include="img\switch.png" />
+    <Resource Include="img\loading.png" />
+    <None Include="Properties\InBrowserSettings.xml" />
+    <Resource Include="img\tick_circle.png" />
+    <None Include="Service References\ActivityService\ActivityService.disco" />
+    <None Include="Service References\ActivityService\configuration91.svcinfo" />
+    <None Include="Service References\ActivityService\configuration.svcinfo" />
+    <None Include="Service References\ActivityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BulletinService\BulletinService.disco" />
+    <None Include="Service References\BulletinService\configuration91.svcinfo" />
+    <None Include="Service References\BulletinService\configuration.svcinfo" />
+    <None Include="Service References\BulletinService\IWorld.Admin.BulletinService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\IWorld.Admin.BulletinService.PaginationListOfBulletinResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BulletinService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CollectionService\CollectionService.disco" />
+    <None Include="Service References\CollectionService\configuration91.svcinfo" />
+    <None Include="Service References\CollectionService\configuration.svcinfo" />
+    <None Include="Service References\CollectionService\IWorld.Admin.CollectionService.CollectionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CollectionService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DataReportService\DataReportService.disco" />
+    <None Include="Service References\DataReportService\configuration91.svcinfo" />
+    <None Include="Service References\DataReportService\configuration.svcinfo" />
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.ComprehensiveInformationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfBettingForChasingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfBettingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfChasingResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfPersonalDataResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfRechargeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfSiteDataResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfTransferResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.PaginationListOfWithdrawalResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.UntreatedRecharCountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\IWorld.Admin.DataReportService.UntreatedWithdrawalCountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataReportService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ExchangeService\ExchangeService.disco" />
+    <None Include="Service References\ExchangeService\configuration91.svcinfo" />
+    <None Include="Service References\ExchangeService\configuration.svcinfo" />
+    <None Include="Service References\ExchangeService\IWorld.Admin.ExchangeService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.ExchangeService.PaginationListOfExchangeParticipateRecordResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.ExchangeService.PaginationListOfExchangeResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\IWorld.Admin.ExchangeService.PaginationListOfGiftResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LotteryTicketService\LotteryTicketService.disco" />
+    <None Include="Service References\LotteryTicketService\configuration91.svcinfo" />
+    <None Include="Service References\LotteryTicketService\configuration.svcinfo" />
+    <None Include="Service References\LotteryTicketService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ManagerService\ManagerService.disco" />
+    <None Include="Service References\ManagerService\configuration91.svcinfo" />
+    <None Include="Service References\ManagerService\configuration.svcinfo" />
+    <None Include="Service References\ManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService.disco" />
+    <None Include="Service References\SystemSettingService\configuration91.svcinfo" />
+    <None Include="Service References\SystemSettingService\configuration.svcinfo" />
+    <None Include="Service References\SystemSettingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserInfoService\UserInfoService.disco" />
+    <None Include="Service References\UserInfoService\configuration91.svcinfo" />
+    <None Include="Service References\UserInfoService\configuration.svcinfo" />
+    <None Include="Service References\UserInfoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="music\MessageCall.wma">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\logo.jpg" />
+    <Resource Include="img\logo_login.jpg" />
+    <Resource Include="img\bg_top2.jpg" />
+    <Resource Include="img\cross_circle.png" />
+    <Resource Include="img\cross_small.png" />
+    <Resource Include="img\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ActivityService\" />
+    <WCFMetadataStorage Include="Service References\BulletinService\" />
+    <WCFMetadataStorage Include="Service References\CollectionService\" />
+    <WCFMetadataStorage Include="Service References\DataReportService\" />
+    <WCFMetadataStorage Include="Service References\ExchangeService\" />
+    <WCFMetadataStorage Include="Service References\LotteryTicketService\" />
+    <WCFMetadataStorage Include="Service References\ManagerService\" />
+    <WCFMetadataStorage Include="Service References\SystemSettingService\" />
+    <WCFMetadataStorage Include="Service References\UserInfoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IWorld.Admin.Class\IWorld.Admin.Class.csproj">
+      <Project>{e2f5280e-cccc-47fd-8a1f-f76f28befc9b}</Project>
+      <Name>IWorld.Admin.Class</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

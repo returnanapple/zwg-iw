@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IWorld.Model" />
+  <xs:complexType name="WebSettingResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Banks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BonusModeScale" type="xs:double" />
+          <xs:element minOccurs="0" name="ClosureSingleTime" type="xs:int" />
+          <xs:element minOccurs="0" name="CollectionRunning" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ConversionRates" type="xs:double" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HeartbeatInterval" type="xs:int" />
+          <xs:element minOccurs="0" name="Keywords" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineForProhibitBetting" type="xs:int" />
+          <xs:element minOccurs="0" name="MaximumBetsNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="MaximumBonusMode" type="xs:int" />
+          <xs:element minOccurs="0" name="MaximumPayout" type="xs:int" />
+          <xs:element minOccurs="0" name="MaximumRechargeAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="MaximumReturnPoints" type="xs:double" />
+          <xs:element minOccurs="0" name="MaximumWithdrawalAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="MinimumBonusMode" type="xs:int" />
+          <xs:element minOccurs="0" name="MinimumRechargeAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="MinimumReturnPoints" type="xs:double" />
+          <xs:element minOccurs="0" name="MinimumWithdrawalAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PageSizeForAdmin" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSizeForClient" type="xs:int" />
+          <xs:element minOccurs="0" name="PayoutBase" type="xs:int" />
+          <xs:element minOccurs="0" name="ReferenceBonusMode" type="xs:int" />
+          <xs:element minOccurs="0" name="ReturnPointsDifference" type="xs:double" />
+          <xs:element minOccurs="0" name="ReturnPointsScale" type="xs:double" />
+          <xs:element minOccurs="0" name="Rootpath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SpreadKeepTime" type="xs:int" />
+          <xs:element minOccurs="0" name="Subordinate" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeOfNoticeShow" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
+          <xs:element minOccurs="0" name="UserInTime" type="xs:int" />
+          <xs:element minOccurs="0" name="VirtualQueuing" type="xs:int" />
+          <xs:element minOccurs="0" name="WithdrawalInstructions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Withdrawals" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkingHour_Begin" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkingHour_End" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebSettingResult" nillable="true" type="tns:WebSettingResult" />
+  <xs:complexType name="OperateResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperateResult" nillable="true" type="tns:OperateResult" />
+  <xs:complexType name="BankAccountResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperateResult">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q1:Bank" />
+          <xs:element minOccurs="0" name="Card" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Holder" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BankAccountResult" nillable="true" type="tns:BankAccountResult" />
+</xs:schema>

@@ -1,0 +1,73 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ICustomerService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IDataReportService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IFundsService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IGamingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IMessageService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ISystemSettingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUsersService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IActivityService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IBulletinService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="../Api/CustomerService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ICustomerService" contract="CustomerService.ICustomerService"
+                name="BasicHttpBinding_ICustomerService" />
+            <endpoint address="../Api/DataReportService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IDataReportService"
+                contract="DataReportService.IDataReportService" name="BasicHttpBinding_IDataReportService" />
+            <endpoint address="../Api/FundsService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IFundsService" contract="FundsService.IFundsService"
+                name="BasicHttpBinding_IFundsService" />
+            <endpoint address="../Api/GamingService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IGamingService" contract="GamingService.IGamingService"
+                name="BasicHttpBinding_IGamingService" />
+            <endpoint address="../Api/MessageService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IMessageService" contract="MessageService.IMessageService"
+                name="BasicHttpBinding_IMessageService" />
+            <endpoint address="../Api/SystemSettingService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ISystemSettingService"
+                contract="SystemSettingService.ISystemSettingService" name="BasicHttpBinding_ISystemSettingService" />
+            <endpoint address="../Api/UsersService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IUsersService" contract="UsersService.IUsersService"
+                name="BasicHttpBinding_IUsersService" />
+            <endpoint address="../Api/ActivityService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IActivityService" contract="ActivityService.IActivityService"
+                name="BasicHttpBinding_IActivityService" />
+            <endpoint address="../Api/BulletinService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IBulletinService" contract="BulletinService.IBulletinService"
+                name="BasicHttpBinding_IBulletinService" />
+        </client>
+    </system.serviceModel>
+</configuration>

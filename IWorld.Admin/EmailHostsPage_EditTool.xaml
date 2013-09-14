@@ -1,0 +1,23 @@
+﻿<controls:ChildWindow x:Class="IWorld.Admin.EmailHostsPage_EditTool"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:Admin="clr-namespace:IWorld.Admin"
+           HasCloseButton="False">
+
+    <Canvas x:Name="root" Width="360" Height="180">
+        <TextBlock Text="索引字：" Canvas.Left="10" Canvas.Top="14"/>
+        <TextBlock Text="地址：" Canvas.Left="22" Canvas.Top="44"/>
+        <TextBlock Text="端口：" Canvas.Left="22" Canvas.Top="76"/>
+        <TextBlock Text="备注：" Canvas.Left="22" Canvas.Top="107"/>
+
+        <TextBox x:Name="input_key" Canvas.Left="65" Canvas.Top="10" Width="120"/>
+        <TextBox x:Name="input_host" Canvas.Left="65" Canvas.Top="41" Width="120"/>
+        <TextBox x:Name="input_port" Canvas.Left="65" Canvas.Top="72" Width="120"/>
+        <TextBox Name="input_remark" Canvas.Left="65" Canvas.Top="103" Width="180" Height="55"
+                 AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="10" Text="修  改" ClickEventHandler="Edit" />
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="40" Text="取  消" ClickEventHandler="BackToList" />
+    </Canvas>
+</controls:ChildWindow>

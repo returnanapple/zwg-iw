@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserInfoService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/Admin/UserInfoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IWorld.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserInfoService_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_GetLandingRecordList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandingRecordList" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_GetLandingRecordList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLandingRecordListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetSafeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetSafeCode" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetSafeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetSafeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetBankCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetBankCard" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetBankCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetBankCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_ResetEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_GetGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_GetGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddGroup_Basic_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup_Basic" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddGroup_Basic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup_BasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_EditGroup_Basic_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroup_Basic" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_EditGroup_Basic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroup_BasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_EditGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroup" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_EditGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_RemoveGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGroup" />
+  </wsdl:message>
+  <wsdl:message name="IUserInfoService_RemoveGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveGroupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserInfoService">
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/GetList" message="tns:IUserInfoService_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/GetListResponse" message="tns:IUserInfoService_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLandingRecordList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/GetLandingRecordList" message="tns:IUserInfoService_GetLandingRecordList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/GetLandingRecordListResponse" message="tns:IUserInfoService_GetLandingRecordList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/AddUser" message="tns:IUserInfoService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/AddUserResponse" message="tns:IUserInfoService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/ResetPassword" message="tns:IUserInfoService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/ResetPasswordResponse" message="tns:IUserInfoService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetSafeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/ResetSafeCode" message="tns:IUserInfoService_ResetSafeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/ResetSafeCodeResponse" message="tns:IUserInfoService_ResetSafeCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetBankCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/ResetBankCard" message="tns:IUserInfoService_ResetBankCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/ResetBankCardResponse" message="tns:IUserInfoService_ResetBankCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/ResetEmail" message="tns:IUserInfoService_ResetEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/ResetEmailResponse" message="tns:IUserInfoService_ResetEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/RemoveUser" message="tns:IUserInfoService_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/RemoveUserResponse" message="tns:IUserInfoService_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/GetGroupList" message="tns:IUserInfoService_GetGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/GetGroupListResponse" message="tns:IUserInfoService_GetGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup_Basic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/AddGroup_Basic" message="tns:IUserInfoService_AddGroup_Basic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/AddGroup_BasicResponse" message="tns:IUserInfoService_AddGroup_Basic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/AddGroup" message="tns:IUserInfoService_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/AddGroupResponse" message="tns:IUserInfoService_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGroup_Basic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/EditGroup_Basic" message="tns:IUserInfoService_EditGroup_Basic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/EditGroup_BasicResponse" message="tns:IUserInfoService_EditGroup_Basic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/EditGroup" message="tns:IUserInfoService_EditGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/EditGroupResponse" message="tns:IUserInfoService_EditGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserInfoService/RemoveGroup" message="tns:IUserInfoService_RemoveGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserInfoService/RemoveGroupResponse" message="tns:IUserInfoService_RemoveGroup_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserInfoService" type="tns:IUserInfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetList">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLandingRecordList">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/GetLandingRecordList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetSafeCode">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/ResetSafeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetBankCard">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/ResetBankCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/ResetEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/GetGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup_Basic">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/AddGroup_Basic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGroup_Basic">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/EditGroup_Basic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGroup">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/EditGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap:operation soapAction="http://tempuri.org/IUserInfoService/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserInfoService">
+    <wsdl:port name="BasicHttpBinding_IUserInfoService" binding="tns:BasicHttpBinding_IUserInfoService">
+      <soap:address location="http://localhost:55635/Api/Admin/UserInfoService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

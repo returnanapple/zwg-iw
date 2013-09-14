@@ -1,0 +1,16 @@
+﻿<controls:ChildWindow xmlns:Admin="clr-namespace:IWorld.Admin" x:Class="IWorld.Admin.WithdrawalReportsPage_NegativeTool"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           HasCloseButton="False">
+
+    <Canvas x:Name="root" Width="360" Height="80">
+        <TextBlock Text="备注：" Canvas.Left="10" Canvas.Top="14"></TextBlock>
+
+        <TextBox Name="input_remark" Canvas.Left="58" Canvas.Top="10" Width="180" Height="55"
+                 AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="10" Text="确  定" ClickEventHandler="Negative" />
+        <Admin:SubmitButton Canvas.Left="290" Canvas.Top="40" Text="取  消" ClickEventHandler="BackToList" />
+    </Canvas>
+</controls:ChildWindow>

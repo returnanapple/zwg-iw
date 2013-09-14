@@ -1,0 +1,91 @@
+﻿<controls:ChildWindow x:Class="IWorld.Admin.IndexPage_EditManagerAccountWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="300" HasCloseButton="False" Opacity="0.96">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" VerticalAlignment="Top">修改密码</TextBlock>
+        <Path Stroke="#CCC" StrokeThickness="1">
+            <Path.Data>
+                <LineGeometry StartPoint="0,40" EndPoint="396,40"></LineGeometry>
+            </Path.Data>
+        </Path>
+        <Grid Margin="30,50,30,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                <ColumnDefinition Width="0.75*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0">
+                原密码：
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0">
+                新密码：
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0">
+                确认新密码：
+            </TextBlock>
+            
+            <PasswordBox Name="input_oldPassword" Height="30" Grid.Row="0" Grid.Column="1" 
+                         Margin="20,0,20,0" Background="#FFF7F7F7">
+                <PasswordBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FFCCCCCC" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.BorderBrush>
+            </PasswordBox>
+            <PasswordBox Name="input_newPassword" Height="30" Grid.Row="1" Grid.Column="1" 
+                         Margin="20,0,20,0" Background="#FFF7F7F7">
+                <PasswordBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FFCCCCCC" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.BorderBrush>
+            </PasswordBox>
+            <PasswordBox Name="input_newPasswordAgain" Height="30" Grid.Row="2" Grid.Column="1" 
+                         Margin="20,0,20,0" Background="#FFF7F7F7">
+                <PasswordBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FFCCCCCC" Offset="1"/>
+                    </LinearGradientBrush>
+                </PasswordBox.BorderBrush>
+            </PasswordBox>
+            
+            <TextBlock Name="check_oldPassword" Grid.Row="0" Grid.Column="1" Margin="41,50,20,53" Grid.RowSpan="2"
+                       Foreground="Red" FontFamily="font/msyh.ttc#Microsoft Yahei" Visibility="Collapsed" />
+            <TextBlock Name="check_newPassword" Grid.Row="1" Grid.Column="1" Margin="41,50,20,54" Grid.RowSpan="2"
+            	Foreground="Red" FontFamily="font/msyh.ttc#Microsoft Yahei" Visibility="Collapsed" />
+            <TextBlock Name="check_newPasswordAgain" Grid.Row="2" Grid.Column="1" Margin="41,50,20,-5"
+            	Foreground="Red" FontFamily="font/msyh.ttc#Microsoft Yahei" Visibility="Collapsed" />
+
+            <Image Name="check_oldPassword_img" Height="14" Width="14" Source="img/cross_circle.png" Grid.Column="1"
+                   Margin="20,51,205,53" Grid.RowSpan="2" Visibility="Collapsed" />
+            <Image Name="check_newPassword_img" Height="14" Width="14" Source="img/cross_circle.png" Grid.Column="1" 
+                   Margin="20,50,205,54" Grid.Row="1" Grid.RowSpan="2" Visibility="Collapsed" />
+            <Image Name="check_newPasswordAgain_img" Height="14" Width="14" Source="img/cross_circle.png" Grid.Column="1" 
+                   Margin="20,50,205,-5" Grid.Row="2" Visibility="Collapsed" />
+        </Grid>
+
+        <Button x:Name="CancelButton" Content="取消" Click="CancelButton_Click" Width="75" Height="23" 
+                HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="修改" Click="OKButton_Click" Width="75" Height="23" 
+                HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+    </Grid>
+</controls:ChildWindow>

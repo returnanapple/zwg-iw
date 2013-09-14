@@ -1,0 +1,21 @@
+﻿<UserControl xmlns:Admin="clr-namespace:IWorld.Admin" x:Class="IWorld.Admin.EmailHostsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="912">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Width="912" Height="60" Grid.Row="0">
+            <Admin:SubmitButton Name="button_create" Text="添  加" Height="30" Width="70"
+                                ClickEventHandler="Create"/>
+        </Canvas>
+        <Grid Name="tableBody" Width="912" Grid.Row="1">
+
+        </Grid>
+    </Grid>
+</UserControl>

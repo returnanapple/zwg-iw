@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="IWorld.Admin.ExamineTicketsPage_TableRow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:admin="clr-namespace:IWorld.Admin.Class;assembly=IWorld.Admin.Class"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="912" Height="34" MouseEnter="Hover" MouseLeave="Unhover">
+        <Grid.Background>
+            <SolidColorBrush Color="White" Opacity="0"></SolidColorBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="156"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="156"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="text_name" Text="名称" Margin="10,0,10,0" 
+                   HorizontalAlignment="Left" Grid.Column="0"></TextBlock>
+        <TextBlock Name="text_phases" Text="期号" Margin="10,0,10,0" 
+                   HorizontalAlignment="Left" Grid.Column="1"></TextBlock>
+        <TextBlock Name="text_lottery" Text="开奖" Margin="10,0,10,0" 
+                   HorizontalAlignment="Left" Grid.Column="2"></TextBlock>
+        <TextBlock Name="button_tags" Text="玩法标签" Foreground="#41829F"
+                   HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="3" TextDecorations="Underline" 
+                   MouseLeftButtonDown="ViewTags">
+            <i:Interaction.Triggers>
+                <admin:NButtonFeedbackTrigger/>
+            </i:Interaction.Triggers>
+        </TextBlock>
+        <TextBlock Name="button_plays" Text="玩法" Foreground="#41829F"
+                   HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="4" TextDecorations="Underline" 
+                   MouseLeftButtonDown="ViewPlays">
+            <i:Interaction.Triggers>
+                <admin:NButtonFeedbackTrigger/>
+            </i:Interaction.Triggers>
+        </TextBlock>
+        <TextBlock Name="text_order" Text="排序" Margin="10,0,10,0" 
+                   HorizontalAlignment="Left" Grid.Column="5"></TextBlock>
+        <Canvas Height="34" Width="142" Grid.Column="6" HorizontalAlignment="Left" Margin="10,0,10,0">
+            <TextBlock Name="button_hide" Text="隐藏" Foreground="#41829F"
+                       HorizontalAlignment="Left" TextDecorations="Underline" Canvas.Top="8" 
+                       MouseLeftButtonDown="Hide">
+                <i:Interaction.Triggers>
+                    <admin:NButtonFeedbackTrigger/>
+                </i:Interaction.Triggers>
+            </TextBlock>
+            <TextBlock Name="button_edit" Text="修改" Foreground="#41829F"
+            	       HorizontalAlignment="Left" TextDecorations="Underline" Canvas.Top="8" Canvas.Left="29"
+                       MouseLeftButtonDown="Edit">
+                <i:Interaction.Triggers>
+                    <admin:NButtonFeedbackTrigger/>
+                </i:Interaction.Triggers>
+            </TextBlock>
+            <TextBlock x:Name="button_editLotteryTime" Text="编辑开奖时间" Foreground="#41829F"
+            	       HorizontalAlignment="Left" TextDecorations="Underline" Canvas.Top="8" Canvas.Left="58"
+                       MouseLeftButtonDown="EditLotteryTime">
+            	<i:Interaction.Triggers>
+            		<admin:NButtonFeedbackTrigger/>
+            	</i:Interaction.Triggers>
+            </TextBlock>
+        </Canvas>
+    </Grid>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<UserControl xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  x:Class="IWorld.Client.Ball"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <toolkit:ExpressionDarkTheme Background="#00000000">
+        <Grid Width="50" Height="50">
+            <Grid.Background>
+                <ImageBrush x:Name="bg" Stretch="Fill" ImageSource="img/红球.png"/>
+            </Grid.Background>
+            <TextBlock Name="keyText" Text="9" FontSize="30"
+                               VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="2" Opacity="0.7"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+    </toolkit:ExpressionDarkTheme>
+</UserControl>

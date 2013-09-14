@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Websetting>
+  <Name></Name>
+  <Title></Title>
+  <Rootpath></Rootpath>
+  <Description></Description>
+  <Keywords></Keywords>
+  <PageSizeForClient>12</PageSizeForClient>
+  <PageSizeForAdmin>20</PageSizeForAdmin>
+  <HeartbeatInterval>60</HeartbeatInterval>
+  <SpreadKeepTime>48</SpreadKeepTime>
+  <WorkingHour_Begin>8:00</WorkingHour_Begin>
+  <WorkingHour_End>17:00</WorkingHour_End>
+  <VirtualQueuing>3</VirtualQueuing>
+  <TimeOfNoticeShow>5</TimeOfNoticeShow>
+  <Withdrawals>3</Withdrawals>
+  <CollectionRunning>True</CollectionRunning>
+  <UserInTime>1000</UserInTime>
+  <MinimumRechargeAmount>10</MinimumRechargeAmount>
+  <MaximumRechargeAmount>1000000</MaximumRechargeAmount>
+  <Subordinate>4</Subordinate>
+  <MinimumWithdrawalAmount>10</MinimumWithdrawalAmount>
+  <MaximumWithdrawalAmount>100000</MaximumWithdrawalAmount>
+  <WithdrawalInstructions>取款时间从每日8:00-17:00 单次取款限额为10-100000元</WithdrawalInstructions>
+  <MaximumReturnPoints>12.5</MaximumReturnPoints>
+  <MinimumReturnPoints>4.5</MinimumReturnPoints>
+  <ReturnPointsDifference>0.5</ReturnPointsDifference>
+  <UnitPrice>2</UnitPrice>
+  <PayoutBase>1700</PayoutBase>
+  <LineForProhibitBetting>1950</LineForProhibitBetting>
+  <MaximumBonusMode>1950</MaximumBonusMode>
+  <ReferenceBonusMode>1700</ReferenceBonusMode>
+  <MinimumBonusMode>1700</MinimumBonusMode>
+  <MaximumPayout>100000</MaximumPayout>
+  <ReturnPointsScale>0.1</ReturnPointsScale>
+  <BonusModeScale>2</BonusModeScale>
+  <ConversionRates>20</ConversionRates>
+  <MaximumBetsNumber>12</MaximumBetsNumber>
+  <ClosureSingleTime>1</ClosureSingleTime>
+  <Banks>中国工商银行,中国农业银行,中国银行,中国建设银行,交通银行,财付通</Banks>
+</Websetting>

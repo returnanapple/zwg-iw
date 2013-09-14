@@ -1,0 +1,33 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  xmlns:Admin="clr-namespace:IWorld.Admin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="IWorld.Admin.CreateNewBulletinPage"
+    mc:Ignorable="d">
+
+    <Canvas x:Name="root" Width="912" Height="360">
+        <TextBlock Text="添加新的公告" FontSize="18"/>
+        <TextBlock Text="标题：" Canvas.Top="59" Canvas.Left="98"/>
+        <TextBlock Text="正文：" Canvas.Top="92" Canvas.Left="98"/>
+        <TextBlock Text="开始时间：" Canvas.Top="191" Canvas.Left="74"/>
+        <TextBlock Text="持续天数：" Canvas.Top="219" Canvas.Left="74"/>
+        <TextBlock Text="过期自动删除：" Canvas.Top="244" Canvas.Left="50"/>
+        <TextBox x:Name="input_title" Height="23" Canvas.Top="55" Width="240" Canvas.Left="158"/>
+        <TextBox x:Name="input_context" TextWrapping="Wrap" AcceptsReturn="True" Canvas.Left="158" Canvas.Top="83" 
+                 Height="100" Width="320" VerticalScrollBarVisibility="Auto"/>
+        <toolkit:SystemColorsTheme Canvas.Left="158" Canvas.Top="188">
+            <sdk:DatePicker Name="input_beginTime" />
+        </toolkit:SystemColorsTheme>
+        <RadioButton Name="input_autoDelete_true" GroupName="input_autoDelete" Content="是" Canvas.Left="158" 
+                     Canvas.Top="243"/>
+        <RadioButton Name="input_autoDelete_false" GroupName="input_autoDelete" Content="否" Canvas.Left="202" 
+                     Canvas.Top="244" IsChecked="true"/>
+        <TextBox x:Name="input_days" Height="23" Canvas.Top="215" Width="75" Canvas.Left="158"/>
+        
+        <Admin:SubmitButton Text="添  加" Width="75" Canvas.Left="158" Canvas.Top="280"
+                            ClickEventHandler="Create"/>
+        <Admin:SubmitButton Text="取  消" Width="75" Canvas.Left="248" Canvas.Top="280" 
+                            ClickEventHandler="BackToListPage"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<UserControl xmlns:Admin="clr-namespace:IWorld.Admin"  x:Class="IWorld.Admin.CreateNewUserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Canvas x:Name="root" Width="912" Height="320">
+        <TextBlock Text="创建新的用户" FontSize="18"></TextBlock>
+        <TextBlock Text="用户名：" Canvas.Top="59" Canvas.Left="86"/>
+        <TextBlock Text="密码：" Canvas.Top="87" Canvas.Left="98"/>
+        <TextBlock Text="正常返点：" Canvas.Top="115" Canvas.Left="74"/>
+        <TextBlock Text="不定位返点：" Canvas.Top="143" Canvas.Left="62"/>
+        <TextBlock Text="直属下级：" Canvas.Top="171" Canvas.Left="74"/>
+        <TextBox Name="input_username" Height="23" Canvas.Top="55" Width="160" Canvas.Left="158" 
+                 LostFocus="input_username_LostFocus"/>
+        <TextBox Name="input_password" Height="23" Canvas.Top="83" Width="160" Canvas.Left="158" 
+                 LostFocus="input_password_LostFocus"/>
+        <TextBox Name="input_nrp" Text="12.5" Height="23" Canvas.Top="111" Width="160" Canvas.Left="158" 
+                 LostFocus="input_nrp_LostFocus"/>
+        <TextBox Name="input_urp" Text="12.5" Height="23" Canvas.Top="139" Width="160" Canvas.Left="158" 
+                 LostFocus="input_urp_LostFocus"/>
+        <TextBox Name="input_mos" Text="0" Height="23" Canvas.Top="167" Width="160" Canvas.Left="158" 
+                 LostFocus="input_mos_LostFocus"/>
+        <Admin:SubmitButton Text="创  建" Width="75" Canvas.Left="158" Canvas.Top="215" 
+                            ClickEventHandler="CreateNewUser"/>
+        <Admin:SubmitButton Text="取  消" Width="75" Canvas.Left="243" Canvas.Top="215" 
+                            ClickEventHandler="BankToListPage"/>
+        <TextBlock Name="check_username" Canvas.Top="59" Canvas.Left="356" Foreground="Red"/>
+        <TextBlock Name="check_password" Canvas.Top="87" Canvas.Left="356" Foreground="Red"/>
+        <TextBlock Name="check_nrp" Canvas.Top="115" Canvas.Left="356" Foreground="Red"/>
+        <TextBlock Name="check_urp" Canvas.Top="143" Canvas.Left="356" Foreground="Red"/>
+        <TextBlock Name="check_mos" Canvas.Top="171" Canvas.Left="356" Foreground="Red"/>
+    </Canvas>
+</UserControl>
