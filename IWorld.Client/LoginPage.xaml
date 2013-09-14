@@ -23,9 +23,7 @@
                     <GradientStop Color="#FF2E2E2E"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <Image Width="58" Height="58" Source="/img/logo.png" Canvas.Left="21"/>
-            <TextBlock Canvas.Left="79" TextWrapping="Wrap" Text="无限精彩 无限未来" Canvas.Top="25" FontSize="14"
-                       Foreground="Gray"/>
+            <Image Height="45" Source="img/logo_hfgj.png" Canvas.Left="10" Canvas.Top="3"/>
             <Grid Name="button_minimize" Width="30" Height="20" Canvas.Left="250" Canvas.Top="10"
                   MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
                 <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="7,8,7,2"/>
