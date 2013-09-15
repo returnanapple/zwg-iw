@@ -45,7 +45,7 @@ namespace IWorld.Contract.Client
         {
             this.PlayTagId = tag.Id;
             this.Name = tag.Name;
-            this.HowToPlays = tag.HowToPlays.ConvertAll(x => new HowToPlayResult(x));
+            this.HowToPlays = tag.HowToPlays.Where(x => x.Hide == false).ToList().ConvertAll(x => new HowToPlayResult(x));
         }
 
         #endregion

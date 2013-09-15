@@ -252,7 +252,7 @@ namespace IWorld.BLL
                         throw new Exception("已经开奖 不能投注");
                     }
                     bool hadClosure = DateTime.Now > howToPlay.Tag.Ticket.NextLotteryTime.AddMinutes(-webSetting.ClosureSingleTime);
-                    if (hadClosure)
+                    if (hadClosure || this.Phases != howToPlay.Tag.Ticket.NextPhases)
                     {
                         throw new Exception("已经封单 不能投注");
                     }

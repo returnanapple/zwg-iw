@@ -28,14 +28,39 @@ namespace IWorld.Model
         {
             get
             {
-                if (this.Times.Any(x => x.Time > DateTime.Now))
+                int phases = 0;
+                #region 确认下期开奖是当天的第几期
+                if (this.Name == "重庆时时彩" || this.Name == "江西时时彩")
                 {
-                    return this.Times.Where(x => x.Time > DateTime.Now).Min(x => x.Time);
+                    char[] t = this.NextPhases.ToArray();
+                    int count = t.Count();
+                    string p = "";
+                    for (int i = count - 3; i < count; i++)
+                    {
+                        p += t[i].ToString();
+                    }
+                    phases = Convert.ToInt32(p);
                 }
-                else
+                else if (this.Name == "新疆时时彩" || this.Name == "十一夺运金"
+                    || this.Name == "广东十一选五" || this.Name == "上海时时乐")
                 {
-                    return this.Times.Min(x => x.Time).AddDays(1);
+                    char[] t = this.NextPhases.ToArray();
+                    int count = t.Count();
+                    string p = "";
+                    for (int i = count - 2; i < count; i++)
+                    {
+                        p += t[i].ToString();
+                    }
+                    phases = Convert.ToInt32(p);
                 }
+                else if (this.Name == "福彩3D" || this.Name == "排列三")
+                {
+                    phases = 1;
+                }
+                #endregion
+
+                int _p = Convert.ToInt32(phases);
+                return this.Times.FirstOrDefault(x => x.Phases == _p).Time;
             }
         }
 

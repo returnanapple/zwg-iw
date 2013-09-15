@@ -92,7 +92,7 @@ namespace IWorld.Contract.Client
             this.TimeAtServer = DateTime.Now;
             if (isEntity)
             {
-                this.Tags = ticket.Tags.ConvertAll(x => new PlayTagResult(x));
+                this.Tags = ticket.Tags.Where(x => x.Hide == false).ToList().ConvertAll(x => new PlayTagResult(x));
             }
         }
 

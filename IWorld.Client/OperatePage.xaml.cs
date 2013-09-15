@@ -21,7 +21,7 @@ namespace IWorld.Client
     public partial class OperatePage : UserControl
     {
         int _refreshTime = 1;
-        int _updateTime = 30;
+        int _updateTime = 15;
 
         public OperatePage()
         {
@@ -635,7 +635,8 @@ namespace IWorld.Client
         void ShowTicketMain()
         {
             LotteryTicketResult ticket = App.Ticktes.First(x => x.Name == ticketNameNowShow);
-            DateTime sTime = App.TicketsRefreshTime.Add(ticket.SurplusTime - ticket.TimeAtServer);
+            DateTime sTime = ticket.SurplusTime.Add(ticket.TimeAtServer - App.TicketsRefreshTime)
+                .AddMinutes(-App.Websetting.ClosureSingleTime);
             ShowTime(sTime);
             ShowBalls(ticket.Values.Count);
             text_phases_next.Text = string.Format("第 {0} 期", ticket.NextPhases);

@@ -100,7 +100,6 @@ namespace IWorld.BLL
 
         public void ChangeNextPhases(int ticketId, string nextPhases)
         {
-            NChecker.CheckEntity<LotteryTicket>(ticketId, "彩票", db);
             LotteryTicket ticket = db.Set<LotteryTicket>().Find(ticketId);
             ticket.NextPhases = nextPhases;
             db.SaveChanges();
