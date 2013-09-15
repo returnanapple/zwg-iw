@@ -626,6 +626,104 @@ namespace IWorld.BLL
         }
 
         /// <summary>
+        /// 反馈开奖结果（时间线补遗）
+        /// </summary>
+        /// <param name="sender">触发对象</param>
+        /// <param name="e">监视对象</param>
+        public static void GetResultOfLotteryOnTimeLine(object sender, NEventArgs e)
+        {
+            int c = (from betting in e.Db.Set<Betting>()
+                     from lottery in e.Db.Set<Lottery>()
+                     where betting.Phases == lottery.Phases && betting.HowToPlay.Tag.Ticket.Id == lottery.Ticket.Id
+                     where betting.Status == BettingStatus.即将开奖 || betting.Status == BettingStatus.等待开奖
+                     select betting.Id).Count();
+            if (c == 0) { return; }
+
+            BettingManager bettingManager = new BettingManager(e.Db);
+            WebSetting webSetting = new WebSetting();
+
+            (from betting in e.Db.Set<Betting>()
+             from lottery in e.Db.Set<Lottery>()
+             where betting.Phases == lottery.Phases && betting.HowToPlay.Tag.Ticket.Id == lottery.Ticket.Id
+             where betting.Status == BettingStatus.即将开奖 || betting.Status == BettingStatus.等待开奖
+             select new { betting, lottery })
+             .ToList().ForEach(x =>
+                 {
+                     int sum = AwardManager.AwardByBetting(x.lottery, x.betting);
+                     if (sum == 0)
+                     {
+                         bettingManager.ChangeStatus(x.betting.Id, BettingStatus.未中奖);
+                     }
+                     else
+                     {
+                         double conversionRates = x.betting.HowToPlay.ConversionRates == 0
+                             ? webSetting.ConversionRates : x.betting.HowToPlay.ConversionRates;
+                         double cardinalNumber = x.betting.HowToPlay.CardinalNumber == 0
+                             ? webSetting.PayoutBase : x.betting.HowToPlay.CardinalNumber;
+                         double coefficient = (cardinalNumber + x.betting.Points * conversionRates) / webSetting.PayoutBase;
+                         double odds = x.betting.HowToPlay.Odds;
+                         if (odds == 0)
+                         {
+                             double tSum = 1000;
+                             double _tSum = 1;
+                             switch (x.betting.HowToPlay.Interface)
+                             {
+                                 case LotteryInterface.任N组选:
+                                     #region 组选
+                                     int _tNum = x.betting.HowToPlay.Seats.FirstOrDefault().ValueList.Count;
+                                     if (x.betting.HowToPlay.Name.Contains("组三"))
+                                     {
+                                         #region 组三
+                                         _tSum = _tNum * (_tNum - 1);
+                                         #endregion
+                                     }
+                                     else if (x.betting.HowToPlay.Name.Contains("组六"))
+                                     {
+                                         #region 组六
+                                         _tSum *= _tNum < 3 ? 0 : DigitalHelper.GetFactorialIn0To12(_tNum)
+                                             / (DigitalHelper.GetFactorialIn0To12(3) * DigitalHelper.GetFactorialIn0To12(_tNum - 3));
+                                         #endregion
+                                     }
+                                     else if (x.betting.HowToPlay.Name.Contains("组选"))
+                                     {
+                                         #region 二星组选
+                                         _tSum *= _tNum < 2 ? 0 : DigitalHelper.GetFactorialIn0To12(_tNum)
+                                             / (DigitalHelper.GetFactorialIn0To12(2) * DigitalHelper.GetFactorialIn0To12(_tNum - 2));
+                                         #endregion
+                                     }
+                                     #endregion
+                                     break;
+                                 case LotteryInterface.任N直选:
+                                     #region 直选
+                                     x.betting.HowToPlay.Seats.ForEach(xx =>
+                                     {
+                                         _tSum *= xx.ValueList.Count;
+                                     });
+
+                                     #endregion
+                                     break;
+                                 case LotteryInterface.任N不定位:
+                                 case LotteryInterface.任N定位胆:
+                                     #region 不定位/定位胆
+                                     _tSum = x.betting.HowToPlay.Seats.First().ValueList.Count;
+                                     #endregion
+                                     break;
+                             }
+                             odds = webSetting.ReferenceBonusMode * _tSum / tSum;
+                         }
+                         odds = odds * coefficient;
+                         double bonus = sum * odds * x.betting.Multiple;
+                         if (bonus > webSetting.MaximumPayout)
+                         {
+                             bonus = webSetting.MaximumPayout;
+                         }
+                         bettingManager.ChangeStatus(x.betting.Id, BettingStatus.中奖, bonus);
+                     }
+                 });
+        }
+
+
+        /// <summary>
         /// 更新投注记录的状态
         /// </summary>
         /// <param name="sender">触发对象</param>

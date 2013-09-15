@@ -635,7 +635,7 @@ namespace IWorld.Client
         void ShowTicketMain()
         {
             LotteryTicketResult ticket = App.Ticktes.First(x => x.Name == ticketNameNowShow);
-            DateTime sTime = ticket.SurplusTime.Add(ticket.TimeAtServer - App.TicketsRefreshTime)
+            DateTime sTime = ticket.SurplusTime.Add(App.TicketsRefreshTime - ticket.TimeAtServer)
                 .AddMinutes(-App.Websetting.ClosureSingleTime);
             ShowTime(sTime);
             ShowBalls(ticket.Values.Count);

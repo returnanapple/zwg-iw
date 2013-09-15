@@ -74,7 +74,8 @@ namespace IWorld.BLL
             #region 时间线
 
             TimeLineManager.Interval20SecondEventHandler += BettingManager.UpdateBettingStatus;
-            TimeLineManager.Interval20SecondEventHandler += BettingForCgasingManager.UpdateBettingStatus;
+            //TimeLineManager.Interval20SecondEventHandler += BettingForCgasingManager.UpdateBettingStatus;
+            TimeLineManager.Interval20SecondEventHandler += BettingManager.GetResultOfLotteryOnTimeLine;
 
             #endregion
 
