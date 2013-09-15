@@ -53,7 +53,7 @@ namespace IWorld.BLL
 
             #region 开奖
 
-            LotteryManager.CreatedEventHandler += BettingManager.GetResultOfLottery;
+            LotteryManager.CreatingEventHandler += BettingManager.GetResultOfLottery;
             //LotteryManager.CreatedEventHandler += ChasingManager.UpdateChasingStatus;
             //LotteryManager.CreatedEventHandler += BettingForCgasingManager.GetResultOfLottery;
             LotteryManager.CreatedEventHandler += LotteryTicketManager.UpdateLotteryTime;

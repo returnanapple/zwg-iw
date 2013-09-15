@@ -99,7 +99,7 @@ namespace IWorld.BLL
                 public void CheckData(DbContext db)
                 {
                     NChecker.CheckEntity<Author>(this.OwnerId, "用户", db);
-                    NChecker.CheckEntity<Author>(this.ActivityId, "活动", db);
+                    NChecker.CheckEntity<Activity>(this.ActivityId, "活动", db);
                 }
 
                 /// <summary>

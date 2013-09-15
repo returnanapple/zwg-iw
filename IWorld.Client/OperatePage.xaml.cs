@@ -258,6 +258,7 @@ namespace IWorld.Client
 
                 string _text = input_insertBox.Text;
                 #region 移除/替换冗余字符
+                _text = new Regex(@"\r{1,}").Replace(_text, " ");
                 _text = new Regex(@"^ {1,}| {1,}$|^,{1,}|,{1,}$|^，{1,}|，{1,}$|^;{1,}|;{1,}$|^；{1,}|；{1,}$|^\r{1,}|\r{1,}$|^\|{1,}|\|{1,}$").Replace(_text, "");
                 _text = new Regex(@" {1,}").Replace(_text, " ");
                 _text = new Regex(@";{1,}").Replace(_text, " ");
@@ -265,7 +266,6 @@ namespace IWorld.Client
                 _text = new Regex(@",{1,}").Replace(_text, " ");
                 _text = new Regex(@"，{1,}").Replace(_text, " ");
                 _text = new Regex(@"\|{1,}").Replace(_text, " ");
-                _text = new Regex(@"\r{1,}").Replace(_text, " ");
                 #endregion
                 List<List<string>> _texts = new List<List<string>>();
                 _text.Split(new char[] { ' ' }).ToList().ForEach(x =>

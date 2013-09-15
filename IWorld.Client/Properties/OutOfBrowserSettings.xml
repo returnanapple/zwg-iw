@@ -1,7 +1,7 @@
-<OutOfBrowserSettings ShortName="IWorld" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
-  <OutOfBrowserSettings.Blurb>无限精彩 无限未来</OutOfBrowserSettings.Blurb>
+<OutOfBrowserSettings ShortName="DongSheng" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>东升国际</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="IWorld - 无限精彩 无限未来" Height="200" Width="320" WindowStyle="None" />
+    <WindowSettings Title="东升国际" Height="200" Width="320" WindowStyle="None" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />

@@ -662,6 +662,7 @@ namespace IWorld.BLL
             }
             int ticketId = db.Set<LotteryTicket>().Where(x => x.Name == ticketName)
                 .Select(x => x.Id).FirstOrDefault();
+            new LotteryTicketManager(db).ChangeNextPhases(ticketId, nextPhases);
             List<LotteryManager.Factory.IPackageForSeat> seats = new List<LotteryManager.Factory.IPackageForSeat>();
             for (int i = 0; i < values.Count; i++)
             {
@@ -670,7 +671,6 @@ namespace IWorld.BLL
             ICreatePackage<Lottery> pfc = LotteryManager.Factory
                 .CreatePackageForCreate(phases, LotterySources.系统采集, ticketId, seats);
             new LotteryManager(db).Create(pfc);
-            new LotteryTicketManager(db).ChangeNextPhases(ticketId, nextPhases);
         }
 
         #endregion
