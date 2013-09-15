@@ -52,7 +52,7 @@ namespace IWorld.Model
         /// <summary>
         /// 标识码
         /// </summary>
-        public string Code { get; set; }
+        public string Code { get { return this.Id.ToString("0000000000"); } }
 
         #endregion
 
@@ -81,7 +81,6 @@ namespace IWorld.Model
             this.Bank = Model.Bank.无;
             this.Status = RechargeStatus.等待支付;
             this.Remark = "";
-            this.Code = Guid.NewGuid().ToString("N");
         }
 
         #endregion
