@@ -429,9 +429,10 @@ namespace IWorld.BLL
                 .ToList().ForEach(x =>
                     {
                         bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
+                            && apr.Owner.Id == pd.Owner.Id
+                            && apr.CreatedTime.Year == DateTime.Now.Year
+                            && apr.CreatedTime.Month == DateTime.Now.Month
+                            && apr.CreatedTime.Day == DateTime.Now.Day);
                         if (hadJoin) { return; }
                         ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                             .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
@@ -449,9 +450,10 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                             if (hadJoin) { return; }
                             ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                                 .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
@@ -469,9 +471,10 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                             if (hadJoin) { return; }
                             ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                                 .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
@@ -492,9 +495,10 @@ namespace IWorld.BLL
                 .ToList().ForEach(x =>
                 {
                     bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                        && x.CreatedTime.Year == DateTime.Now.Year
-                        && x.CreatedTime.Month == DateTime.Now.Month
-                        && x.CreatedTime.Day == DateTime.Now.Day);
+                        && apr.Owner.Id == pd.Owner.Id
+                        && apr.CreatedTime.Year == DateTime.Now.Year
+                        && apr.CreatedTime.Month == DateTime.Now.Month
+                        && apr.CreatedTime.Day == DateTime.Now.Day);
                     if (hadJoin) { return; }
                     ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                         .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
@@ -512,9 +516,10 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                     {
                         bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                         if (hadJoin) { return; }
                         ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                             .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
@@ -532,9 +537,10 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                             if (hadJoin) { return; }
                             ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                                 .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
@@ -557,9 +563,10 @@ namespace IWorld.BLL
                 .ToList().ForEach(x =>
                 {
                     bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                        && x.CreatedTime.Year == DateTime.Now.Year
-                        && x.CreatedTime.Month == DateTime.Now.Month
-                        && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                     if (hadJoin) { return; }
                     ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                         .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
@@ -577,9 +584,10 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                     {
                         bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                         if (hadJoin) { return; }
                         ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                             .CreatePackageForCreate(p1.Id, x.Id, x.MinRestrictionValue);
@@ -597,9 +605,10 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && x.CreatedTime.Year == DateTime.Now.Year
-                                && x.CreatedTime.Month == DateTime.Now.Month
-                                && x.CreatedTime.Day == DateTime.Now.Day);
+                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.CreatedTime.Year == DateTime.Now.Year
+                                && apr.CreatedTime.Month == DateTime.Now.Month
+                                && apr.CreatedTime.Day == DateTime.Now.Day);
                             if (hadJoin) { return; }
                             ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                                 .CreatePackageForCreate(p2.Id, x.Id, x.MinRestrictionValue);
