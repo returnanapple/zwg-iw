@@ -39,7 +39,7 @@ namespace IWorld.Setting
                 , new XElement("MinimumWithdrawalAmount", 10)
                 , new XElement("MaximumWithdrawalAmount", 100000)
                 , new XElement("WithdrawalInstructions", "取款时间从每日8:00-17:00 单次取款限额为10-100000元")
-                , new XElement("MaximumReturnPoints", 12.5)
+                , new XElement("MaximumReturnPoints", 13)
                 , new XElement("MinimumReturnPoints", 4.5)
                 , new XElement("ReturnPointsDifference", 0.5)
                 , new XElement("UnitPrice", 2)
@@ -53,7 +53,7 @@ namespace IWorld.Setting
                 , new XElement("BonusModeScale", 2)
                 , new XElement("ConversionRates", 20)
                 , new XElement("MaximumBetsNumber", 12)
-                , new XElement("ClosureSingleTime", 10)
+                , new XElement("ClosureSingleTime", 30)
                 , new XElement("Banks", "中国工商银行,中国农业银行,中国银行,中国建设银行,交通银行,财付通"));
             _e.Save(path);
         }
@@ -271,7 +271,7 @@ namespace IWorld.Setting
         /// </summary>
         public double MaximumReturnPoints
         {
-            get { return GetDoubleValue("MaximumReturnPoints", 12.5); }
+            get { return GetDoubleValue("MaximumReturnPoints", 13); }
             set { SetValue("MaximumReturnPoints", value); }
         }
 
@@ -398,11 +398,11 @@ namespace IWorld.Setting
         }
 
         /// <summary>
-        /// 封单时间（分钟）
+        /// 封单时间（秒）
         /// </summary>
         public int ClosureSingleTime
         {
-            get { return GetIntValue("ClosureSingleTime", 10); }
+            get { return GetIntValue("ClosureSingleTime", 30); }
             set { SetValue("ClosureSingleTime", value); }
         }
 
@@ -467,7 +467,7 @@ namespace IWorld.Setting
             result.Add("BonusModeScale", "奖金模式刻度");
             result.Add("ConversionRates", "奖金 - 返点换算率");
             result.Add("MaximumBetsNumber", "最大投注倍数");
-            result.Add("ClosureSingleTime", "封单时间（分钟）");
+            result.Add("ClosureSingleTime", "封单时间（秒）");
             result.Add("Banks", "当前支持的付款/提现银行");
 
             return result;

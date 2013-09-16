@@ -636,7 +636,7 @@ namespace IWorld.Client
         {
             LotteryTicketResult ticket = App.Ticktes.First(x => x.Name == ticketNameNowShow);
             DateTime sTime = ticket.SurplusTime.Add(App.TicketsRefreshTime - ticket.TimeAtServer)
-                .AddMinutes(-App.Websetting.ClosureSingleTime);
+                .AddSeconds(-App.Websetting.ClosureSingleTime);
             ShowTime(sTime);
             ShowBalls(ticket.Values.Count);
             text_phases_next.Text = string.Format("第 {0} 期", ticket.NextPhases);
@@ -1668,7 +1668,7 @@ namespace IWorld.Client
             if (App.Bulletins.Count > 0)
             {
                 Random r = new Random();
-                int index = r.Next(0, App.Bulletins.Count - 1);
+                int index = r.Next(0, App.Bulletins.Count - 1); ;
                 BulletinResult _bulletin = App.Bulletins[index];
                 BulletinIdNowShow = _bulletin.BulletinId;
                 text_bulletin.Text = _bulletin.Title;
@@ -1687,7 +1687,7 @@ namespace IWorld.Client
             timer.Interval = new TimeSpan(0, 0, _refreshTime * 5);
             timer.Tick += (sender, e) =>
                 {
-
+                    ShowBulletins();
                 };
             timer.Start();
         }
@@ -1720,7 +1720,10 @@ namespace IWorld.Client
                     bg_music_r.Play();
                     break;
                 case NoticeType.开奖提醒:
-                    bg_music_b.Play();
+                    if (nw.Notice.BettingDetails.Status == BulletinService.BettingStatus.中奖)
+                    {
+                        bg_music_b.Play();
+                    }
                     break;
                 case NoticeType.提现反馈:
                     bg_music_w.Play();

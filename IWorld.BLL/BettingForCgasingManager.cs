@@ -350,7 +350,7 @@ namespace IWorld.BLL
             var bSet = e.Db.Set<BettingForCgasing>();
             e.Db.Set<LotteryTicket>().ToList().ForEach(ticket =>
             {
-                DateTime nextTime = ticket.NextLotteryTime.AddMinutes(-webSetting.ClosureSingleTime);
+                DateTime nextTime = ticket.NextLotteryTime.AddSeconds(-webSetting.ClosureSingleTime);
                 if (DateTime.Now > nextTime)
                 {
                     BettingForCgasingManager bettingManager = new BettingForCgasingManager(e.Db);

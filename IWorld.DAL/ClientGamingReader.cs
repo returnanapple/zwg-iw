@@ -105,13 +105,15 @@ namespace IWorld.DAL
             if (beginTime != "")
             {
                 string[] tTime = beginTime.Split(new char[] { '-' });
-                DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1]), Convert.ToInt32(tTime[2]));
+                DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1]), Convert.ToInt32(tTime[2]))
+                    .AddDays(1);
                 predicate2 = x => x.CreatedTime >= _time;
             }
             if (endTime != "")
             {
                 string[] tTime = endTime.Split(new char[] { '-' });
-                DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1]), Convert.ToInt32(tTime[2]));
+                DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1]), Convert.ToInt32(tTime[2]))
+                    .AddDays(1);
                 predicate2 = x => x.CreatedTime <= _time;
             }
 

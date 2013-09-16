@@ -251,7 +251,7 @@ namespace IWorld.BLL
                     {
                         throw new Exception("已经开奖 不能投注");
                     }
-                    bool hadClosure = DateTime.Now > howToPlay.Tag.Ticket.NextLotteryTime.AddMinutes(-webSetting.ClosureSingleTime);
+                    bool hadClosure = DateTime.Now > howToPlay.Tag.Ticket.NextLotteryTime.AddSeconds(-webSetting.ClosureSingleTime);
                     if (hadClosure || this.Phases != howToPlay.Tag.Ticket.NextPhases)
                     {
                         throw new Exception("已经封单 不能投注");
@@ -737,7 +737,7 @@ namespace IWorld.BLL
             var bSet = e.Db.Set<Betting>();
             e.Db.Set<LotteryTicket>().ToList().ForEach(ticket =>
                 {
-                    DateTime nextTime = ticket.NextLotteryTime.AddMinutes(-webSetting.ClosureSingleTime);
+                    DateTime nextTime = ticket.NextLotteryTime.AddSeconds(-webSetting.ClosureSingleTime);
                     if (DateTime.Now > nextTime)
                     {
                         BettingManager bettingManager = new BettingManager(e.Db);

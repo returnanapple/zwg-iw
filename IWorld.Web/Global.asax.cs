@@ -6,6 +6,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using IWorld.BLL;
 using IWorld.Setting;
+using IWorld.Model;
 
 namespace IWorld.Web
 {
@@ -26,6 +27,8 @@ namespace IWorld.Web
             EventManager.Initialization();
             TimeLineManager.Initialize();
             CollectionManager.Initialize();
+
+
         }
 
         protected void Session_Start(object sender, EventArgs e)

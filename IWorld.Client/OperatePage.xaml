@@ -312,9 +312,6 @@
                     <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
                 </i:Interaction.Triggers>
                 <Run x:Name="text_bulletin" Text="我是公告，我是可爱的公告"/>
-                <Run xml:space="preserve" Text="   == &gt;  "/>
-                <Run TextDecorations="Underline" Foreground="#FF346BCD" Text="猛戳我"/>
-                <Run xml:space="preserve" Text="  &lt;=="/>
             </TextBlock>
             <local:NoticeWindow x:Name="noticeTool" Canvas.Left="750" Canvas.Top="510" Visibility="Collapsed"/>
             <Grid x:Name="body" Width="720" Height="545" Canvas.Left="250" Canvas.Top="115" Visibility="Collapsed"/>
