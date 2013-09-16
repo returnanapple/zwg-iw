@@ -16,10 +16,7 @@
     <toolkit:ExpressionDarkTheme>
         <Canvas Width="1000" Height="680">
             <Canvas.Background>
-                <LinearGradientBrush EndPoint="0.7,1" MappingMode="RelativeToBoundingBox" StartPoint="0.4,0">
-                    <GradientStop Color="#FF171717" Offset="0.51"/>
-                    <GradientStop Color="#FF2E2E2E"/>
-                </LinearGradientBrush>
+                <ImageBrush Stretch="Fill" ImageSource="img/5.jpg"/>
             </Canvas.Background>
             <Grid x:Name="button_minimize" Width="30" Height="20" Canvas.Left="930" Canvas.Top="10"
 				MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
@@ -63,25 +60,25 @@
             <local:FunctionKey_Small ClickEventHandler="OpenWithdrawTool"
             	Text="提现" ImgSource="img/icons_up.png" Height="30" Canvas.Left="127" Canvas.Top="280" Width="60" />
             <Grid Height="266" Canvas.Left="44" Canvas.Top="325" Width="140">
-            	<Grid.RowDefinitions>
-            		<RowDefinition/>
-            		<RowDefinition/>
-            		<RowDefinition/>
-            		<RowDefinition/>
-            		<RowDefinition/>
-            		<RowDefinition/>
-            	</Grid.RowDefinitions>
-            	<local:FunctionKey x:Name="functionKey_users" Grid.Row="0"
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <local:FunctionKey x:Name="functionKey_users" Grid.Row="0"
             		Text="会员管理" ImgSource="img/icons_user.png"/>
-            	<local:FunctionKey x:Name="functionKey_money" Grid.Row="1"
+                <local:FunctionKey x:Name="functionKey_money" Grid.Row="1"
             		Text="资金管理" ImgSource="img/icons_book.png"/>
-            	<local:FunctionKey x:Name="functionKey_betting" Grid.Row="2"
+                <local:FunctionKey x:Name="functionKey_betting" Grid.Row="2"
             		Text="投注明细" ImgSource="img/icons_list.png"/>
-            	<local:FunctionKey x:Name="functionKey_dataReport" Grid.Row="3"
+                <local:FunctionKey x:Name="functionKey_dataReport" Grid.Row="3"
             		Text="数据报表" ImgSource="img/icons_data.png"/>
-            	<local:FunctionKey x:Name="functionKey_center" Grid.Row="4"
+                <local:FunctionKey x:Name="functionKey_center" Grid.Row="4"
             		Text="个人中心" ImgSource="img/icons_center.png"/>
-            	<local:FunctionKey x:Name="functionKey_exc" Grid.Row="5"
+                <local:FunctionKey x:Name="functionKey_exc" Grid.Row="5"
             		Text="积分兑换" ImgSource="img/icons_car.png"/>
             </Grid>
             <local:CustomerServiceButton 
@@ -179,12 +176,9 @@
                 <Grid x:Name="insertBox_single" Height="120" Canvas.Left="5" Canvas.Top="196" Width="471" Visibility="Collapsed">
                     <TextBox x:Name="input_insertBox" TextWrapping="Wrap" Margin="0,0,145,0" AcceptsReturn="True"/>
                     <TextBlock TextWrapping="Wrap" Margin="341,0,0,0">
-                    	<Run Text="请输入你想要投注的号码，格式为："/>
-<LineBreak/>
-                    	<Run Text=" xxxx xxxx xxxx"/>
-<LineBreak/>
-                    	<Run Text=" 注与注之间用“|”或者“ ”或者“;”或者“,”分割"/>
-<LineBreak/>
+                    	请输入你想要投注的号码，格式为：<LineBreak/>
+                    	 xxxx xxxx xxxx<LineBreak/>
+                    	 注与注之间用"|"或者" "或者";"或者","分割<LineBreak/>
                         <LineBreak/>
                     </TextBlock>
                 </Grid>
@@ -307,7 +301,7 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </Canvas>
-            <TextBlock x:Name="bulletinBody" Canvas.Left="281" Canvas.Top="34" Cursor="Hand" MouseLeftButtonDown="ShowBulletin">
+            <TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="25" Cursor="Hand" MouseLeftButtonDown="ShowBulletin">
                 <i:Interaction.Triggers>
                     <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
                 </i:Interaction.Triggers>
@@ -322,9 +316,9 @@
             <MediaElement x:Name="bg_music_b" AutoPlay="False" Volume="1" Source="music/music-b.wma"
                           Width="0" Height="0"/>
             <Image Source="img/logo_hfgj.png" Stretch="Fill" Width="180" Canvas.Left="33" Canvas.Top="45">
-            	<Image.Effect>
-            		<DropShadowEffect Color="#FF0009BB" Direction="340" ShadowDepth="3"/>
-            	</Image.Effect>
+                <Image.Effect>
+                    <DropShadowEffect Color="#FF0009BB" Direction="340" ShadowDepth="3"/>
+                </Image.Effect>
             </Image>
         </Canvas>
     </toolkit:ExpressionDarkTheme>

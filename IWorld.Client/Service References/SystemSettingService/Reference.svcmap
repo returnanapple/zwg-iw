@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2a200e46-2626-4e7a-b61b-713f7c27143e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0836e9b2-d05a-46dc-8699-c5d82db85e37" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,12 +23,12 @@
     <MetadataSource Address="http://localhost:55635/Api/SystemSettingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SystemSettingService.xsd" MetadataType="Schema" ID="41f33b97-566e-4dfa-8eab-f7cff424324e" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SystemSettingService2.xsd" MetadataType="Schema" ID="010227b9-d989-40d5-ab8e-0398a2057551" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SystemSettingService.wsdl" MetadataType="Wsdl" ID="1d2906c1-08cc-4816-bede-2f14c565e47c" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?wsdl" />
-    <MetadataFile FileName="SystemSettingService.disco" MetadataType="Disco" ID="fe5cad8a-6c12-4ea6-88ce-14fd0267ae39" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?disco" />
-    <MetadataFile FileName="SystemSettingService3.xsd" MetadataType="Schema" ID="b2c868b9-8003-4156-8ed0-b1edce5b9116" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd3" />
-    <MetadataFile FileName="SystemSettingService1.xsd" MetadataType="Schema" ID="8f99c73e-a1df-46c1-b3f4-c0f12b554ce9" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemSettingService.xsd" MetadataType="Schema" ID="3151e928-d901-42db-b7e2-e04ef582f276" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemSettingService1.xsd" MetadataType="Schema" ID="a79ba8cc-392b-4c31-992f-8df5ea15580a" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemSettingService.wsdl" MetadataType="Wsdl" ID="0702b5a2-b77c-40e3-a378-684b31a61fce" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?wsdl" />
+    <MetadataFile FileName="SystemSettingService.disco" MetadataType="Disco" ID="c94cdb36-f9a7-4163-9beb-10416604a9d8" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?disco" />
+    <MetadataFile FileName="SystemSettingService2.xsd" MetadataType="Schema" ID="26c8f247-9b80-4ae1-913b-393bdc4bcceb" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SystemSettingService3.xsd" MetadataType="Schema" ID="38ccb57b-c63f-4e75-add2-a7f5b2301825" SourceId="1" SourceUrl="http://localhost:55635/Api/SystemSettingService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

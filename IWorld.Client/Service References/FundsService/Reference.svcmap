@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42c97a69-06ca-48cb-8199-2c9d02a25469" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb363737-8359-4689-9a72-7d427741546b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,12 +23,12 @@
     <MetadataSource Address="http://localhost:55635/Api/FundsService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FundsService.xsd" MetadataType="Schema" ID="fdcf6fd4-4d6a-4097-a92f-17c385797127" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FundsService.disco" MetadataType="Disco" ID="a8871002-863a-42db-a807-1644710051e0" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?disco" />
-    <MetadataFile FileName="FundsService1.xsd" MetadataType="Schema" ID="4b8c94ba-e01b-46bc-a3ea-d5b102f37f3a" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd2" />
-    <MetadataFile FileName="FundsService2.xsd" MetadataType="Schema" ID="acd3fa2b-6375-4ef6-a3aa-cf535bc09305" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd1" />
-    <MetadataFile FileName="FundsService3.xsd" MetadataType="Schema" ID="e05530d9-6f03-4cef-8284-84ddc6b62ea7" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd3" />
-    <MetadataFile FileName="FundsService.wsdl" MetadataType="Wsdl" ID="3503b4bf-89a9-421b-8a00-451832085e2c" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?wsdl" />
+    <MetadataFile FileName="FundsService.xsd" MetadataType="Schema" ID="bbead0c3-352c-4f70-895f-61ec9f1f312c" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FundsService.disco" MetadataType="Disco" ID="4e6d8df5-4000-4ddd-b273-abd1d82c26be" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?disco" />
+    <MetadataFile FileName="FundsService1.xsd" MetadataType="Schema" ID="712f3f01-0336-48d0-a8a5-cbd411fa8542" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FundsService2.xsd" MetadataType="Schema" ID="20f83526-16c4-4180-afd9-a2821ef7330a" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FundsService3.xsd" MetadataType="Schema" ID="5500dc5c-62f5-4808-be1e-d0f37872d964" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FundsService.wsdl" MetadataType="Wsdl" ID="9386f417-3875-49e2-897f-fec4bba079b2" SourceId="1" SourceUrl="http://localhost:55635/Api/FundsService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

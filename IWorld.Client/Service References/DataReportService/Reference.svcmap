@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="21c6b8c0-98c8-4044-a950-c01377e4799e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7a6530b-cbf1-454a-92b6-0d3b277f7db4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,11 +23,11 @@
     <MetadataSource Address="http://localhost:55635/Api/DataReportService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DataReportService.disco" MetadataType="Disco" ID="efdcf7a5-f8d6-4a75-91ca-f6ed7210c21c" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?disco" />
-    <MetadataFile FileName="DataReportService.xsd" MetadataType="Schema" ID="e6b029d0-1491-4a03-80e5-72251f427904" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DataReportService1.xsd" MetadataType="Schema" ID="39380628-a8f5-4912-ae2a-982f8e9023a3" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DataReportService2.xsd" MetadataType="Schema" ID="4b9f49dc-706c-4762-981d-294a449356e3" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DataReportService.wsdl" MetadataType="Wsdl" ID="9ac3e7ec-3e7b-46b7-9be1-568bfd0adf8a" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?wsdl" />
+    <MetadataFile FileName="DataReportService.disco" MetadataType="Disco" ID="0f297104-7cf6-4252-8d62-6f94fe9bce24" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?disco" />
+    <MetadataFile FileName="DataReportService.xsd" MetadataType="Schema" ID="d27cabf5-8fec-43fc-8acc-dc11805f0d6e" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataReportService1.xsd" MetadataType="Schema" ID="f3e13d96-3995-4872-86e6-3e2b89d53978" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataReportService2.xsd" MetadataType="Schema" ID="3faf3559-573b-4a27-9e07-1f9564c9e84f" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataReportService.wsdl" MetadataType="Wsdl" ID="6de8698a-48e0-44b6-8123-05eaf4e27f2e" SourceId="1" SourceUrl="http://localhost:55635/Api/DataReportService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

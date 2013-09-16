@@ -16,20 +16,6 @@ namespace IWorld.Client.DataReportService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportsSelectType", Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client")]
-    public enum ReportsSelectType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        当日 = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        当月 = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        全部 = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportsType", Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client")]
     public enum ReportsType : int {
         
@@ -337,7 +323,7 @@ namespace IWorld.Client.DataReportService {
     public interface IDataReportService {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDataReportService/GetReports", ReplyAction="http://tempuri.org/IDataReportService/GetReportsResponse")]
-        System.IAsyncResult BeginGetReports(IWorld.Client.DataReportService.ReportsSelectType selectType, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetReports(string beginTime, string endTime, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState);
         
         IWorld.Client.DataReportService.PaginationListOfDataReportsResultL_PYu6_SAe EndGetReports(System.IAsyncResult result);
     }
@@ -434,8 +420,8 @@ namespace IWorld.Client.DataReportService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IWorld.Client.DataReportService.IDataReportService.BeginGetReports(IWorld.Client.DataReportService.ReportsSelectType selectType, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetReports(selectType, type, page, token, callback, asyncState);
+        System.IAsyncResult IWorld.Client.DataReportService.IDataReportService.BeginGetReports(string beginTime, string endTime, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetReports(beginTime, endTime, type, page, token, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -444,11 +430,12 @@ namespace IWorld.Client.DataReportService {
         }
         
         private System.IAsyncResult OnBeginGetReports(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            IWorld.Client.DataReportService.ReportsSelectType selectType = ((IWorld.Client.DataReportService.ReportsSelectType)(inValues[0]));
-            IWorld.Client.DataReportService.ReportsType type = ((IWorld.Client.DataReportService.ReportsType)(inValues[1]));
-            int page = ((int)(inValues[2]));
-            string token = ((string)(inValues[3]));
-            return ((IWorld.Client.DataReportService.IDataReportService)(this)).BeginGetReports(selectType, type, page, token, callback, asyncState);
+            string beginTime = ((string)(inValues[0]));
+            string endTime = ((string)(inValues[1]));
+            IWorld.Client.DataReportService.ReportsType type = ((IWorld.Client.DataReportService.ReportsType)(inValues[2]));
+            int page = ((int)(inValues[3]));
+            string token = ((string)(inValues[4]));
+            return ((IWorld.Client.DataReportService.IDataReportService)(this)).BeginGetReports(beginTime, endTime, type, page, token, callback, asyncState);
         }
         
         private object[] OnEndGetReports(System.IAsyncResult result) {
@@ -464,11 +451,11 @@ namespace IWorld.Client.DataReportService {
             }
         }
         
-        public void GetReportsAsync(IWorld.Client.DataReportService.ReportsSelectType selectType, IWorld.Client.DataReportService.ReportsType type, int page, string token) {
-            this.GetReportsAsync(selectType, type, page, token, null);
+        public void GetReportsAsync(string beginTime, string endTime, IWorld.Client.DataReportService.ReportsType type, int page, string token) {
+            this.GetReportsAsync(beginTime, endTime, type, page, token, null);
         }
         
-        public void GetReportsAsync(IWorld.Client.DataReportService.ReportsSelectType selectType, IWorld.Client.DataReportService.ReportsType type, int page, string token, object userState) {
+        public void GetReportsAsync(string beginTime, string endTime, IWorld.Client.DataReportService.ReportsType type, int page, string token, object userState) {
             if ((this.onBeginGetReportsDelegate == null)) {
                 this.onBeginGetReportsDelegate = new BeginOperationDelegate(this.OnBeginGetReports);
             }
@@ -479,7 +466,8 @@ namespace IWorld.Client.DataReportService {
                 this.onGetReportsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetReportsCompleted);
             }
             base.InvokeAsync(this.onBeginGetReportsDelegate, new object[] {
-                        selectType,
+                        beginTime,
+                        endTime,
                         type,
                         page,
                         token}, this.onEndGetReportsDelegate, this.onGetReportsCompletedDelegate, userState);
@@ -561,12 +549,13 @@ namespace IWorld.Client.DataReportService {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginGetReports(IWorld.Client.DataReportService.ReportsSelectType selectType, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[4];
-                _args[0] = selectType;
-                _args[1] = type;
-                _args[2] = page;
-                _args[3] = token;
+            public System.IAsyncResult BeginGetReports(string beginTime, string endTime, IWorld.Client.DataReportService.ReportsType type, int page, string token, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[5];
+                _args[0] = beginTime;
+                _args[1] = endTime;
+                _args[2] = type;
+                _args[3] = page;
+                _args[4] = token;
                 System.IAsyncResult _result = base.BeginInvoke("GetReports", _args, callback, asyncState);
                 return _result;
             }

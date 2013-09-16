@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="36705993-8ae3-4df3-aad4-c170cea0a5dc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="89de79b8-43d0-4243-a999-b923fe3b2fc7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,12 +23,12 @@
     <MetadataSource Address="http://localhost:55635/Api/BulletinService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BulletinService.disco" MetadataType="Disco" ID="5ad935a2-2a44-446c-a81a-0387d63da53a" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?disco" />
-    <MetadataFile FileName="BulletinService3.xsd" MetadataType="Schema" ID="bb2ddd9a-a548-4e21-baed-b381654ed4d1" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd3" />
-    <MetadataFile FileName="BulletinService2.xsd" MetadataType="Schema" ID="b4888c23-4ec4-427e-a1d8-bb6cb0e89b43" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd2" />
-    <MetadataFile FileName="BulletinService.xsd" MetadataType="Schema" ID="ccc27bea-e5a8-43ac-bc47-b65c4768a7c7" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd0" />
-    <MetadataFile FileName="BulletinService1.xsd" MetadataType="Schema" ID="d46c151f-0827-4c48-ad01-4764a776f7c7" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd1" />
-    <MetadataFile FileName="BulletinService.wsdl" MetadataType="Wsdl" ID="db217825-92b6-41a6-9cca-aeeafb84005f" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?wsdl" />
+    <MetadataFile FileName="BulletinService.disco" MetadataType="Disco" ID="ce21d37e-a9b2-4842-aad1-f111504b1cda" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?disco" />
+    <MetadataFile FileName="BulletinService.xsd" MetadataType="Schema" ID="5dac5a6d-8b95-4e4e-8247-1512d1156f17" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BulletinService1.xsd" MetadataType="Schema" ID="0caee019-0dd5-425a-bdf3-0e3f5ef16451" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BulletinService2.xsd" MetadataType="Schema" ID="635515af-8e27-42ed-ab8b-c626d3eb4efa" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BulletinService3.xsd" MetadataType="Schema" ID="8ea2a59c-126d-486a-b55f-57c927f3d1c3" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BulletinService.wsdl" MetadataType="Wsdl" ID="2038427a-c145-489b-946a-31e7b76da60b" SourceId="1" SourceUrl="http://localhost:55635/Api/BulletinService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -21,12 +21,14 @@ namespace IWorld.Web.Api
         /// <summary>
         /// 获取数据报表
         /// </summary>
-        /// <param name="selectType">筛选类型</param>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
         /// <param name="type">类型</param>
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回报表数据的分页列表</returns>
-        public PaginationList<DataReportsResult> GetReports(ReportsSelectType selectType, ReportsType type, int page, string token)
+        public PaginationList<DataReportsResult> GetReports(string beginTime, string endTime, ReportsType type, int page
+            , string token)
         {
             try
             {
@@ -39,7 +41,7 @@ namespace IWorld.Web.Api
                 using (WebMapContext db = new WebMapContext())
                 {
                     ClientDataReportReader reader = new ClientDataReportReader(db);
-                    return reader.ReadReports(userId, selectType, type, page);
+                    return reader.ReadReports(userId, beginTime, endTime, type, page);
                 }
             }
             catch (Exception ex)

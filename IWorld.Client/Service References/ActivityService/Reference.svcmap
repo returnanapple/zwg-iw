@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="281e5802-44d5-4fe7-9b15-b9c83dd5f5bc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c978d603-4022-40ba-85ac-bdd68eac0d27" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,12 +23,12 @@
     <MetadataSource Address="http://localhost:55635/Api/ActivityService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ActivityService.xsd" MetadataType="Schema" ID="98b88aa5-7d2a-4a7d-bf5c-a9ca9c573e4c" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd3" />
-    <MetadataFile FileName="ActivityService.wsdl" MetadataType="Wsdl" ID="bcfe777d-a666-4054-a1dd-fd262529eda8" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?wsdl" />
-    <MetadataFile FileName="ActivityService1.xsd" MetadataType="Schema" ID="be14cace-dee9-497c-bdee-f3773a53aa0e" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ActivityService.disco" MetadataType="Disco" ID="73cdb119-7d01-4d5f-9dde-a67a8dc8b1c6" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?disco" />
-    <MetadataFile FileName="ActivityService2.xsd" MetadataType="Schema" ID="872c972a-9d37-45cc-aeea-5068545f0c20" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ActivityService3.xsd" MetadataType="Schema" ID="1579383e-3de6-43fd-8c2f-5e0f8a79b78d" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ActivityService.xsd" MetadataType="Schema" ID="8da33d52-d9b1-4d59-973e-e583edf0c41a" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ActivityService.wsdl" MetadataType="Wsdl" ID="37a0058d-10b4-4e13-8903-6da05777504f" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?wsdl" />
+    <MetadataFile FileName="ActivityService1.xsd" MetadataType="Schema" ID="9ce044de-dfa5-47eb-9b59-e22aa21418db" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ActivityService.disco" MetadataType="Disco" ID="4006c9e9-f07a-42f2-a315-721c07850c3d" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?disco" />
+    <MetadataFile FileName="ActivityService2.xsd" MetadataType="Schema" ID="86a2315c-ecf9-47d7-a9f7-1472b05a45ec" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ActivityService3.xsd" MetadataType="Schema" ID="d7144a3d-71bd-481d-8315-aebf159e8908" SourceId="1" SourceUrl="http://localhost:55635/Api/ActivityService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

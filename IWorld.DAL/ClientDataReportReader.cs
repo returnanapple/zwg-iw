@@ -35,11 +35,13 @@ namespace IWorld.DAL
         /// 读取数据报表
         /// </summary>
         /// <param name="userId">目标用户的存储指针</param>
-        /// <param name="selectType">筛选类型</param>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
         /// <param name="type">类型</param>
         /// <param name="page">页码</param>
         /// <returns>返回报表数据的分页列表</returns>
-        public PaginationList<DataReportsResult> ReadReports(int userId, ReportsSelectType selectType, ReportsType type, int page)
+        public PaginationList<DataReportsResult> ReadReports(int userId, string beginTime, string endTime, ReportsType type
+            , int page)
         {
             List<DataReportsResult> tList = new List<DataReportsResult>();
             var aSet = db.Set<Author>();
@@ -50,100 +52,55 @@ namespace IWorld.DAL
             int tCount = aSet.Count(x => x.LeftKey >= user.LeftKey && x.RightKey <= user.RightKey
                 && x.Tree == user.Tree);
 
-            switch (selectType)
-            {
-                case ReportsSelectType.当日:
-                    #region 日报表
+            aSet.Where(x => x.LeftKey >= user.LeftKey && x.RightKey <= user.RightKey
+                 && x.Tree == user.Tree)
+                .OrderBy(x => x.Layer)
+                .Skip(startRow)
+                .Take(webSetting.PageSizeForClient)
+                .ToList().ForEach(_user =>
+                    {
+                        Expression<Func<PersonalDataAtDay, bool>> predicate1 = x => x.Id > 0;
+                        Expression<Func<PersonalDataAtDay, bool>> predicate2 = x => x.Id > 0;
+                        Expression<Func<PersonalDataAtDay, bool>> predicate3 = x => x.Id > 0;
+                        switch (type)
+                        {
+                            case ReportsType.个人:
+                                predicate1 = x => x.Owner.Id == _user.Id;
+                                break;
+                            case ReportsType.团队:
+                                predicate1 = x => x.Owner.LeftKey >= _user.LeftKey
+                                    && x.Owner.RightKey <= _user.RightKey;
+                                break;
+                        }
+                        if (beginTime != "")
+                        {
+                            string[] tTime = beginTime.Split(new char[] { '-' });
+                            DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1])
+                                , Convert.ToInt32(tTime[2]));
+                            predicate2 = x => x.CreatedTime >= _time;
+                        }
+                        if (endTime != "")
+                        {
+                            string[] tTime = endTime.Split(new char[] { '-' });
+                            DateTime _time = new DateTime(Convert.ToInt32(tTime[0]), Convert.ToInt32(tTime[1])
+                                , Convert.ToInt32(tTime[2]))
+                                .AddDays(1);
+                            predicate3 = x => x.CreatedTime < _time;
+                        }
 
-                    var drForDaySet = db.Set<PersonalDataAtDay>();
-                    aSet.Where(x => x.LeftKey >= user.LeftKey && x.RightKey <= user.RightKey
-                         && x.Tree == user.Tree)
-                        .OrderBy(x => x.Layer)
-                        .Skip(startRow)
-                        .Take(webSetting.PageSizeForClient)
-                        .ToList().ForEach(_user =>
-                            {
-                                Expression<Func<PersonalDataAtDay, bool>> predicate = x => x.Id > 0;
-                                switch (type)
-                                {
-                                    case ReportsType.个人:
-                                        predicate = x => x.Owner.Id == _user.Id;
-                                        break;
-                                    case ReportsType.团队:
-                                        predicate = x => x.Owner.LeftKey >= _user.LeftKey
-                                            && x.Owner.RightKey <= _user.RightKey;
-                                        break;
-                                }
+                        List<PersonalDataAtDay> _tList = db.Set<PersonalDataAtDay>()
+                            .Where(predicate1)
+                            .Where(predicate2)
+                            .Where(predicate3)
+                            .OrderBy(x => x.Owner.Layer)
+                            .ToList();
+                        if (_tList.Count == 0)
+                        {
+                            _tList.Add(new PersonalDataAtDay(_user));
+                        }
 
-                                List<PersonalDataAtDay> _tList = drForDaySet.Where(predicate)
-                                    .Where(x => x.Year == now.Year
-                                        && x.Month == now.Month
-                                        && x.Day == now.Day)
-                                    .OrderBy(x => x.Owner.Layer)
-                                    .ToList();
-                                if (_tList.Count == 0)
-                                {
-                                    _tList.Add(new PersonalDataAtDay(_user));
-                                }
-
-                                tList.Add(new DataReportsResult(_tList));
-                            });
-
-                    #endregion
-                    break;
-                case ReportsSelectType.当月:
-                case ReportsSelectType.全部:
-                    #region 月报表
-
-                    var drForMonthSet = db.Set<PersonalDataAtMonth>();
-                    aSet.Where(x => x.LeftKey >= user.LeftKey && x.RightKey <= user.RightKey
-                         && x.Tree == user.Tree)
-                        .OrderBy(x => x.Layer)
-                        .Skip(startRow)
-                        .Take(webSetting.PageSizeForClient)
-                        .ToList().ForEach(_user =>
-                            {
-                                Expression<Func<PersonalDataAtMonth, bool>> predicate1 = x => x.Id > 0;
-                                Expression<Func<PersonalDataAtMonth, bool>> predicate2 = x => x.Id > 0;
-
-                                switch (selectType)
-                                {
-                                    case ReportsSelectType.当月:
-                                        predicate1 = x => x.Year == now.Year && x.Month == now.Month;
-                                        break;
-                                    case ReportsSelectType.全部:
-                                        break;
-                                    default:
-                                        throw new Exception("这个选项不应该在这里出现，请严肃认真地检查代码");
-                                }
-
-                                switch (type)
-                                {
-                                    case ReportsType.个人:
-                                        predicate2 = x => x.Owner.Id == _user.Id;
-                                        break;
-                                    case ReportsType.团队:
-                                        predicate2 = x => x.Owner.LeftKey >= _user.LeftKey
-                                            && x.Owner.RightKey <= _user.RightKey;
-                                        break;
-                                }
-
-                                List<PersonalDataAtMonth> _tList = drForMonthSet
-                                    .Where(predicate1)
-                                    .Where(predicate2)
-                                    .OrderBy(x => x.Owner.Layer)
-                                    .ToList();
-                                if (_tList.Count == 0)
-                                {
-                                    _tList.Add(new PersonalDataAtMonth(_user));
-                                }
-
-                                tList.Add(new DataReportsResult(_tList));
-                            });
-
-                    #endregion
-                    break;
-            }
+                        tList.Add(new DataReportsResult(_tList));
+                    });
 
             return new PaginationList<DataReportsResult>(page, webSetting.PageSizeForClient, tCount, tList);
         }

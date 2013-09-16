@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b8ebea62-6b1b-4695-a526-8f5e4df6d0ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5e54011-9880-4e7e-abb4-dac5a7d4e89c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,11 +23,11 @@
     <MetadataSource Address="http://localhost:55635/Api/MessageService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MessageService.xsd" MetadataType="Schema" ID="63ce1c28-4950-49e8-98ef-f70ee66c21c9" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd0" />
-    <MetadataFile FileName="MessageService1.xsd" MetadataType="Schema" ID="f0bbf5a2-e37d-4586-abb1-d28b91794d03" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd2" />
-    <MetadataFile FileName="MessageService.wsdl" MetadataType="Wsdl" ID="28b93731-a3a1-4a6a-9817-4beb34d8fd1d" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?wsdl" />
-    <MetadataFile FileName="MessageService2.xsd" MetadataType="Schema" ID="210bdfe4-ebd7-4058-af88-c1ebcdfcdb83" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MessageService.disco" MetadataType="Disco" ID="f54d0f25-1bd7-432b-8ca1-2f7530feb6cb" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?disco" />
+    <MetadataFile FileName="MessageService.xsd" MetadataType="Schema" ID="f75a0a72-d252-4f74-b752-936825eca8c8" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MessageService1.xsd" MetadataType="Schema" ID="6124c080-a691-40cf-a27a-78ed4d151746" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MessageService.wsdl" MetadataType="Wsdl" ID="0aa8548f-d254-464e-9a2f-16d0f095a4fd" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?wsdl" />
+    <MetadataFile FileName="MessageService2.xsd" MetadataType="Schema" ID="06d40600-0d18-43f2-9afe-c2d10920f9e6" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MessageService.disco" MetadataType="Disco" ID="68814fa4-3e3c-4a00-97a9-69891c4bc238" SourceId="1" SourceUrl="http://localhost:55635/Api/MessageService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

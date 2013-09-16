@@ -18,12 +18,13 @@ namespace IWorld.Web.Api
         /// <summary>
         /// 获取数据报表
         /// </summary>
-        /// <param name="selectType">筛选类型</param>
+        /// <param name="beginTime">开始时间</param>
+        /// <param name="endTime">结束时间</param>
         /// <param name="type">类型</param>
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回报表数据的分页列表</returns>
         [OperationContract]
-        PaginationList<DataReportsResult> GetReports(ReportsSelectType selectType, ReportsType type, int page,string token);
+        PaginationList<DataReportsResult> GetReports(string beginTime, string endTime, ReportsType type, int page, string token);
     }
 }

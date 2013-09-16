@@ -4,8 +4,9 @@
   <xs:element name="GetReports">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" minOccurs="0" name="selectType" type="q1:ReportsSelectType" />
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" minOccurs="0" name="type" type="q2:ReportsType" />
+        <xs:element minOccurs="0" name="beginTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="endTime" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" minOccurs="0" name="type" type="q1:ReportsType" />
         <xs:element minOccurs="0" name="page" type="xs:int" />
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -14,7 +15,7 @@
   <xs:element name="GetReportsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" minOccurs="0" name="GetReportsResult" nillable="true" type="q3:PaginationListOfDataReportsResultL_PYu6_SAe" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" minOccurs="0" name="GetReportsResult" nillable="true" type="q2:PaginationListOfDataReportsResultL_PYu6_SAe" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

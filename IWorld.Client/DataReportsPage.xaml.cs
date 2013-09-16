@@ -16,8 +16,9 @@ namespace IWorld.Client
 {
     public partial class DataReportsPage : UserControl
     {
-        ReportsSelectType selectType = ReportsSelectType.全部;
         ReportsType type = ReportsType.个人;
+        string beginTime = "";
+        string endTime = "";
         int pageIndex = 1;
 
         public DataReportsPage()
@@ -57,21 +58,12 @@ namespace IWorld.Client
                 tableBody.Children.Clear();
                 tableBody.Children.Add(tt);
             };
-            client.GetReportsAsync(selectType, type, pageIndex, App.Token);
+            client.GetReportsAsync(beginTime, endTime, type, pageIndex, App.Token);
         }
 
         void GoToNextPage(object sender, NextPageEventArgs e)
         {
             pageIndex = e.To;
-            InsertTable();
-        }
-
-        private void SelectForSelectType(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cb = (ComboBox)sender;
-            TextBlock tb = (TextBlock)cb.SelectedItem;
-            selectType = (ReportsSelectType)Enum.Parse(typeof(ReportsSelectType), tb.Text, false);
-            pageIndex = 1;
             InsertTable();
         }
 
@@ -84,13 +76,21 @@ namespace IWorld.Client
             InsertTable();
         }
 
+        private void SelectForTime(object sender, RoutedEventArgs e)
+        {
+            beginTime = input_beginTime.Text;
+            endTime = input_endTime.Text;
+            pageIndex = 1;
+            InsertTable();
+        }
+
         private void Reset(object sender, RoutedEventArgs e)
         {
-            input_selectType.SelectedIndex = 0;
             input_type.SelectedIndex = 0;
 
-            selectType = ReportsSelectType.全部;
             type = ReportsType.个人;
+            beginTime = "";
+            endTime = "";
             pageIndex = 1;
             InsertTable();
         }

@@ -18,12 +18,9 @@
     <toolkit:ExpressionDarkTheme>
         <Canvas x:Name="root" Width="320" Height="200">
             <Canvas.Background>
-                <LinearGradientBrush EndPoint="0.7,1" MappingMode="RelativeToBoundingBox" StartPoint="0.4,0">
-                    <GradientStop Color="#FF171717" Offset="0.51"/>
-                    <GradientStop Color="#FF2E2E2E"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="img/5.jpg"/>
             </Canvas.Background>
-            <Image Height="45" Source="img/logo_hfgj.png" Canvas.Left="10" Canvas.Top="3"/>
+            <Image Height="50" Source="img/logo_hfgj.png" Canvas.Left="10" Canvas.Top="10"/>
             <Grid Name="button_minimize" Width="30" Height="20" Canvas.Left="250" Canvas.Top="10"
                   MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
                 <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="7,8,7,2"/>
@@ -32,24 +29,14 @@
                   MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="CloseMainWindow">
                 <Image Width="16" Height="16" Source="img/icons_x.png"/>
             </Grid>
-            <Path Height="10" Width="320" Canvas.Top="48.182" Stroke="Black" StrokeThickness="0.5" UseLayoutRounding="False">
-                <Path.Data>
-                    <LineGeometry StartPoint="0,5.5" EndPoint="320,5.5"></LineGeometry>
-                </Path.Data>
-            </Path>
-            <Path Height="10" Width="320" Canvas.Top="48.182" Stroke="Gray" StrokeThickness="0.3" UseLayoutRounding="False">
-                <Path.Data>
-                    <LineGeometry StartPoint="0,4.5" EndPoint="320,4.5"></LineGeometry>
-                </Path.Data>
-            </Path>
-            <TextBlock Canvas.Left="58" Text="账号" Canvas.Top="79" FontSize="14"/>
-            <TextBlock Canvas.Left="58" Text="密码" Canvas.Top="116" FontSize="14"/>
-            <TextBox Name="input_username" Height="22" Canvas.Left="103" Canvas.Top="78" Width="155"/>
-            <PasswordBox Name="input_password" Height="22" Canvas.Left="103" Canvas.Top="115" Width="155" 
-                         KeyDown="input_password_KeyDown"/>
-            <Button Content="登   陆" Canvas.Left="103" Canvas.Top="160" Width="75" FontSize="12"
+            <TextBlock Canvas.Left="66" Text="账号" Canvas.Top="92" FontSize="14"/>
+            <TextBlock Canvas.Left="66" Text="密码" Canvas.Top="125" FontSize="14"/>
+            <TextBox Name="input_username" Height="22" Canvas.Left="111" Canvas.Top="91" Width="130" Opacity="0.7"/>
+            <PasswordBox Name="input_password" Height="22" Canvas.Left="111" Canvas.Top="124" Width="130" 
+                         KeyDown="input_password_KeyDown" Opacity="0.7"/>
+            <Button Content="登  陆" Canvas.Left="111" Canvas.Top="160" Width="60" FontSize="12" Height="22"
                     Click="Login"/>
-            <Button Content="退   出" Canvas.Left="183" Canvas.Top="160" Width="75" FontSize="12"
+            <Button Content="退  出" Canvas.Left="181" Canvas.Top="160" Width="60" FontSize="12" Height="22"
                     Click="CloseMainWindow"/>
             <Canvas Name="coverFloor" Width="320" Height="200" Visibility="Collapsed">
                 <Canvas.Background>
