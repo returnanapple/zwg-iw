@@ -598,10 +598,10 @@ namespace IWorld.BLL
                                 break;
                             case LotteryInterface.任N直选:
                                 #region 直选
-                                betting.HowToPlay.Seats.ForEach(x =>
-                                    {
-                                        _tSum *= x.ValueList.Count;
-                                    });
+                                betting.HowToPlay.Seats.ForEach(xx =>
+                                {
+                                    _tSum *= xx.ValueList.Count;
+                                });
 
                                 #endregion
                                 break;
@@ -620,6 +620,7 @@ namespace IWorld.BLL
                     {
                         bonus = webSetting.MaximumPayout;
                     }
+                    bonus = Math.Round(bonus, 2);
                     bettingManager.ChangeStatus(betting.Id, BettingStatus.中奖, bonus);
                 }
             });
@@ -632,6 +633,8 @@ namespace IWorld.BLL
         /// <param name="e">监视对象</param>
         public static void GetResultOfLotteryOnTimeLine(object sender, NEventArgs e)
         {
+            DbSet<Betting> bSet = e.Db.Set<Betting>();
+            DbSet<Lottery> lSet = e.Db.Set<Lottery>();
             int c = (from betting in e.Db.Set<Betting>()
                      from lottery in e.Db.Set<Lottery>()
                      where betting.Phases == lottery.Phases && betting.HowToPlay.Tag.Ticket.Id == lottery.Ticket.Id
@@ -642,8 +645,8 @@ namespace IWorld.BLL
             BettingManager bettingManager = new BettingManager(e.Db);
             WebSetting webSetting = new WebSetting();
 
-            (from betting in e.Db.Set<Betting>()
-             from lottery in e.Db.Set<Lottery>()
+            (from betting in bSet
+             from lottery in lSet
              where betting.Phases == lottery.Phases && betting.HowToPlay.Tag.Ticket.Id == lottery.Ticket.Id
              where betting.Status == BettingStatus.即将开奖 || betting.Status == BettingStatus.等待开奖
              select new { betting, lottery })

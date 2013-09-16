@@ -318,7 +318,11 @@
             </TextBlock>
             <local:NoticeWindow x:Name="noticeTool" Canvas.Left="750" Canvas.Top="510" Visibility="Collapsed"/>
             <Grid x:Name="body" Width="720" Height="545" Canvas.Left="250" Canvas.Top="115" Visibility="Collapsed"/>
-            <MediaElement x:Name="bg_music" AutoPlay="False" Volume="1" Source="music/MessageCall.wma"
+            <MediaElement x:Name="bg_music_r" AutoPlay="False" Volume="1" Source="music/music-r.wma"
+                          Width="0" Height="0"/>
+            <MediaElement x:Name="bg_music_w" AutoPlay="False" Volume="1" Source="music/mussic-w.wma"
+                          Width="0" Height="0"/>
+            <MediaElement x:Name="bg_music_b" AutoPlay="False" Volume="1" Source="music/music-b.wma"
                           Width="0" Height="0"/>
             <Image Source="img/logo_hfgj.png" Stretch="Fill" Width="180" Canvas.Left="33" Canvas.Top="45">
             	<Image.Effect>

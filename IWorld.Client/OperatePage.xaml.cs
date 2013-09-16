@@ -1210,7 +1210,9 @@ namespace IWorld.Client
 
             double rp = howToPlay.Interface == LotteryInterface.任N不定位 ? App.UserInfo.UncertainReturnPoints
                 : App.UserInfo.NormalReturnPoints;
-            showTool_odds.Text = string.Format("{0} / {1}%", odds, Math.Round(rp - usedPoints, 1));
+            showTool_odds.Text = string.Format("{0} / {1}%"
+                , App.Websetting.PayoutBase + usedPoints * App.Websetting.ConversionRates
+                , Math.Round(rp - usedPoints, 1));
         }
 
         #endregion
@@ -1708,8 +1710,22 @@ namespace IWorld.Client
 
         void noticeTool_CallMusicEventHandler(object sender, EventArgs e)
         {
-            bg_music.Stop();
-            bg_music.Play();
+            NoticeWindow nw = (NoticeWindow)sender;
+            bg_music_b.Stop();
+            bg_music_r.Stop();
+            bg_music_w.Stop();
+            switch (nw.Notice.Type)
+            {
+                case NoticeType.充值反馈:
+                    bg_music_r.Play();
+                    break;
+                case NoticeType.开奖提醒:
+                    bg_music_b.Play();
+                    break;
+                case NoticeType.提现反馈:
+                    bg_music_w.Play();
+                    break;
+            }
         }
         #region 通知栏点击事件
 

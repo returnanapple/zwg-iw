@@ -89,6 +89,7 @@ namespace IWorld.BLL
                 {
                     seatName = new List<string> { "百位", "十位", "个位" };
                 }
+                seatName.RemoveAll(x => !betting.HowToPlay.Seats.Any(s => s.Name == x));
                 betting.Seats.First().ValueList.ForEach(x =>
                     {
                         List<string> tBettingValues = x.ToArray().ToList().ConvertAll(y => y.ToString());
@@ -97,7 +98,7 @@ namespace IWorld.BLL
                         {
                             tSeats.Add(seatName[i], tBettingValues[i]);
                         }
-                        if (lottery.Seats.All(t => t.Value == tSeats[t.Name]))
+                        if (tSeats.All(t => t.Value == lottery.Seats.First(s => s.Name == t.Key).Value))
                         {
                             result = 1;
                         }

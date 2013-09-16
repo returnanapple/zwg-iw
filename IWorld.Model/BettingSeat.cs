@@ -25,7 +25,7 @@ namespace IWorld.Model
         /// </summary>
         public List<string> ValueList
         {
-            get { return this.Values.Split(new char[] { ',' }).ToList(); }
+            get { return this.Values.Split(new char[] { ',',' ' }).ToList(); }
         }
 
         /// <summary>

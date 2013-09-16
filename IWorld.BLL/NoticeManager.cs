@@ -140,10 +140,10 @@ namespace IWorld.BLL
                             NChecker.CheckEntity<RechargeRecord>(this.TargetId, "充值记录", db);
                             break;
                         case NoticeType.开奖提醒:
-                            NChecker.CheckEntity<RechargeRecord>(this.TargetId, "投注记录", db);
+                            NChecker.CheckEntity<Betting>(this.TargetId, "投注记录", db);
                             break;
                         case NoticeType.提现反馈:
-                            NChecker.CheckEntity<RechargeRecord>(this.TargetId, "提现记录", db);
+                            NChecker.CheckEntity<WithdrawalsRecord>(this.TargetId, "提现记录", db);
                             break;
                     }
                 }
