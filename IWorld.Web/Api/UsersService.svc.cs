@@ -196,6 +196,7 @@ namespace IWorld.Web.Api
                 using (WebMapContext db = new WebMapContext())
                 {
                     new AuthorManager(db).ChangeReturnPoints(userId, normalReturnPoints, uncertainReturnPoints, _userId);
+                    Author a = db.Set<Author>().Find(userId);
                     return new OperateResult();
                 }
             }

@@ -1663,13 +1663,14 @@ namespace IWorld.Client
         #region 公告/通知
 
         int BulletinIdNowShow = 0;
+        int _index = 0;
         void ShowBulletins()
         {
             if (App.Bulletins.Count > 0)
             {
-                Random r = new Random();
-                int index = r.Next(0, App.Bulletins.Count - 1); ;
-                BulletinResult _bulletin = App.Bulletins[index];
+                _index++;
+                if (_index >= App.Bulletins.Count) { _index = 0; }
+                BulletinResult _bulletin = App.Bulletins[_index];
                 BulletinIdNowShow = _bulletin.BulletinId;
                 text_bulletin.Text = _bulletin.Title;
 

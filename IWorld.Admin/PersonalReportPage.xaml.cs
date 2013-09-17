@@ -21,6 +21,7 @@ namespace IWorld.Admin
         string beginTime = "";
         string endTime = "";
         TimePeriodSelectType timePeriod = TimePeriodSelectType.月;
+        string username = "";
 
         public PersonalReportPage(int userId = 0)
         {
@@ -65,7 +66,7 @@ namespace IWorld.Admin
                         tableBody.Children.Add(tool);
                     }
                 };
-            client.GetPersonalDataListAsync(beginTime, endTime, timePeriod, userId, pageIndex, App.Token);
+            client.GetPersonalDataListAsync(beginTime, endTime, timePeriod, userId, username, pageIndex, App.Token);
         }
 
         void SelectForOwner(object sender, EventArgs e)
@@ -95,7 +96,9 @@ namespace IWorld.Admin
             input_beginTime.Text = "";
             input_endTime.Text = "";
             input_timePeriod_month.IsChecked = true;
+            input_username.Text = "";
 
+            username = "";
             userId = 0;
             beginTime = "";
             endTime = "";
@@ -115,6 +118,14 @@ namespace IWorld.Admin
             {
                 timePeriod = TimePeriodSelectType.日;
             }
+            pageIndex = 1;
+            InsertTable();
+        }
+
+        private void SelectForUsername(object sender, EventArgs e)
+        {
+            username = input_username.Text;
+            input_username.Text = "";
             pageIndex = 1;
             InsertTable();
         }

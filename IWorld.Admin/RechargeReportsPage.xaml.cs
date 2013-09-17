@@ -21,6 +21,7 @@ namespace IWorld.Admin
         RechargeStatusSelectType status = RechargeStatusSelectType.全部;
         int userId = 0;
         int pageIndex = 1;
+        string username = "";
 
         public RechargeReportsPage()
         {
@@ -59,7 +60,7 @@ namespace IWorld.Admin
                         tableBody.Children.Add(tool);
                     }
                 };
-            client.GetRechargeListAsync(beginTime, endTime, status, userId, pageIndex, App.Token);
+            client.GetRechargeListAsync(beginTime, endTime, status, userId, username, pageIndex, App.Token);
         }
 
         void SelectForOwner(object sender, EventArgs e)
@@ -78,9 +79,11 @@ namespace IWorld.Admin
         private void Reset(object sender, EventArgs e)
         {
             input_beginTime.Text = "";
-            input_endTime.Text = "";
+            input_endTime.Text = ""; 
+            input_username.Text = "";
             input_status_all.IsChecked = true;
 
+            username = "";
             beginTime = "";
             endTime = "";
             status = RechargeStatusSelectType.全部;
@@ -107,6 +110,14 @@ namespace IWorld.Admin
         {
             beginTime = input_beginTime.Text;
             endTime = input_endTime.Text;
+            pageIndex = 1;
+            InsertTable();
+        }
+
+        private void SelectForUsername(object sender, EventArgs e)
+        {
+            username = input_username.Text;
+            input_username.Text = "";
             pageIndex = 1;
             InsertTable();
         }

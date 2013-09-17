@@ -24,7 +24,7 @@
   <WithdrawalInstructions>取款时间从每日8:00-17:00 单次取款限额为10-100000元</WithdrawalInstructions>
   <MaximumReturnPoints>13</MaximumReturnPoints>
   <MinimumReturnPoints>4.5</MinimumReturnPoints>
-  <ReturnPointsDifference>0.5</ReturnPointsDifference>
+  <ReturnPointsDifference>0.1</ReturnPointsDifference>
   <UnitPrice>2</UnitPrice>
   <PayoutBase>1700</PayoutBase>
   <LineForProhibitBetting>1950</LineForProhibitBetting>

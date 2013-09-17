@@ -33,8 +33,8 @@ namespace IWorld.Client
 
         private void UpPoints(object sender, RoutedEventArgs e)
         {
-            double nrp = Math.Round(Convert.ToDouble(input_nrp.Text));
-            double urp = Math.Round(Convert.ToDouble(input_urp.Text));
+            double nrp = Math.Round(Convert.ToDouble(input_nrp.Text), 1);
+            double urp = Math.Round(Convert.ToDouble(input_urp.Text), 1);
 
             UsersServiceClient client = new UsersServiceClient();
             client.UpgradePornCompleted += ShowUpPointsResult;

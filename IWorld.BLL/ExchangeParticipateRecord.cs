@@ -141,12 +141,18 @@ namespace IWorld.BLL
                     }
                     if (exchange.EachPersonCanExchangeTheNumberOfDays > 0)
                     {
-                        int countOfSumInToday = eprSet.Where(x => x.Owner.Id == this.OwnerId
-                            && x.Exchange.Id == this.ExchangeId
-                            && x.CreatedTime.Year == DateTime.Now.Year
-                            && x.CreatedTime.Month == DateTime.Now.Month
-                            && x.CreatedTime.Day == DateTime.Now.Day)
-                            .Sum(x => x.Sum);
+                        int countOfSumInToday = 0;
+                        try
+                        {
+                            countOfSumInToday = eprSet.Where(x => x.Owner.Id == this.OwnerId
+                                && x.Exchange.Id == this.ExchangeId
+                                && x.CreatedTime.Year == DateTime.Now.Year
+                                && x.CreatedTime.Month == DateTime.Now.Month
+                                && x.CreatedTime.Day == DateTime.Now.Day)
+                                .Sum(x => x.Sum);
+
+                        }
+                        catch (Exception) { }
                         if (countOfSumInToday + this.Sum > exchange.EachPersonCanExchangeTheNumberOfDays)
                         {
                             throw new Exception(string.Format("每日兑换奖品数量不能大于系统限定：{0} 已兑换：{1} 要求兑换：{2}"
@@ -168,9 +174,14 @@ namespace IWorld.BLL
                     }
                     if (exchange.EachPersonCanExchangeTheNumberOfAll > 0)
                     {
-                        int countOfSumAtAll = eprSet.Where(x => x.Owner.Id == this.OwnerId
-                            && x.Exchange.Id == this.ExchangeId)
-                            .Sum(x => x.Sum);
+                        int countOfSumAtAll = 0;
+                        try
+                        {
+                            countOfSumAtAll = eprSet.Where(x => x.Owner.Id == this.OwnerId
+                               && x.Exchange.Id == this.ExchangeId)
+                               .Sum(x => x.Sum);
+                        }
+                        catch (Exception) { }
                         if (countOfSumAtAll + this.Sum > exchange.EachPersonCanExchangeTheNumberOfDays)
                         {
                             throw new Exception(string.Format("总兑换奖品数量不能大于系统限定：{0} 已兑换：{1} 要求兑换：{2}"
@@ -200,6 +211,7 @@ namespace IWorld.BLL
                             GiftRecord gift = new GiftRecord(exchange, owner, x.Name, x.Description, x.Sum, x.Type, x.Price, x.Remark);
                             gifts.Add(gift);
                         });
+                    if (owner.Integral < exchange.UnitPrice * this.Sum) { throw new Exception("积分不足"); }
 
                     return new ExchangeParticipateRecord(owner, exchange, this.Sum, gifts);
                 }

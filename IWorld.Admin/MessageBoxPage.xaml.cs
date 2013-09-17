@@ -22,6 +22,7 @@ namespace IWorld.Admin
         WithdrawalsStatusSelectType wStatus = WithdrawalsStatusSelectType.处理中;
         int userId = 0;
         int pageIndex = 1;
+        string username = "";
 
         public MessageBoxPage()
         {
@@ -61,7 +62,7 @@ namespace IWorld.Admin
                     rTable.Children.Add(tool);
                 }
             };
-            client.GetRechargeListAsync(beginTime, endTime, rStatus, userId, pageIndex, App.Token);
+            client.GetRechargeListAsync(beginTime, endTime, rStatus, userId, username, pageIndex, App.Token);
         }
 
         void SelectForOwner_R(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace IWorld.Admin
                     wTable.Children.Add(tool);
                 }
             };
-            client.GetWithdrawalListAsync(beginTime, endTime, wStatus, userId, pageIndex, App.Token);
+            client.GetWithdrawalListAsync(beginTime, endTime, wStatus, userId, username, pageIndex, App.Token);
         }
 
         void SelectForOwner_W(object sender, EventArgs e)

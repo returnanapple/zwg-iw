@@ -16,7 +16,7 @@
     <toolkit:ExpressionDarkTheme Background="#00000000" HorizontalAlignment="Left" 
                                  MouseEnter="Hover" MouseLeave="Unhover" MouseLeftButtonDown="ViewFull"
                                  ToolTipService.ToolTip="点击查看详细信息和操作列表">
-        <Grid x:Name="root" Width="720" Height="34">
+        <Grid x:Name="root" Width="720" Height="20">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0"></SolidColorBrush>
             </Grid.Background>

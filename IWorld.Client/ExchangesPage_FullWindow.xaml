@@ -6,63 +6,29 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme Background="Black">
-        <ScrollViewer BorderThickness="0" Width="520" Height="320" VerticalScrollBarVisibility="Auto">
-            <Canvas x:Name="root" Width="500" Height="300">
-                <TextBlock Text="标题：" Canvas.Left="119" Canvas.Top="3"></TextBlock>
-                <TextBlock Text="名额：" Canvas.Left="119" Canvas.Top="24"/>
-                <TextBlock Text="兑换单价：" Canvas.Left="95" Canvas.Top="45"/>
-                <TextBlock Text="每人每次允许兑换数量：" Canvas.Left="23" Canvas.Top="66"/>
-                <TextBlock Text="每人每天允许兑换次数：" Canvas.Left="23" Canvas.Top="87"/>
-                <TextBlock Text="每人每天允许兑换总数量：" Canvas.Left="11" Canvas.Top="108"/>
-                <TextBlock Text="每人允许参与总次数：" Canvas.Left="35" Canvas.Top="129"/>
-                <TextBlock Text="每人允许兑换总数量：" Canvas.Left="35" Canvas.Top="152"/>
-                <TextBlock Text="开始时间：" Canvas.Left="95" Canvas.Top="173"/>
-                <TextBlock Text="结束时间：" Canvas.Left="95" Canvas.Top="194"/>
-                <TextBlock Text="限制条件：" Canvas.Left="95" Canvas.Top="215"/>
+        <Canvas x:Name="root" Width="500" Height="183">
+            <TextBlock Text="标题：" Canvas.Left="61" Canvas.Top="14"></TextBlock>
+            <TextBlock Text="兑换单价：" Canvas.Left="37" Canvas.Top="46"/>
 
-                <TextBlock Name="text_name" Text="18积分一个 最后三天跳楼大酬宾" Canvas.Left="177" Canvas.Top="3"/>
-                <TextBlock Name="text_places" Text="0" Canvas.Left="177" Canvas.Top="24"/>
-                <TextBlock Name="text_UnitPrice" Text="18" Canvas.Left="177" Canvas.Top="45"/>
-                <TextBlock Name="text_EachPersonCanExchangeTheNumberOfTimes" Text="0" Canvas.Left="177" Canvas.Top="66"/>
-                <TextBlock Name="text_EachPersonCanExchangeTheTimesOfDays" Text="0" Canvas.Left="177" Canvas.Top="87"/>
-                <TextBlock Name="text_EachPersonCanExchangeTheNumberOfDays" Text="0" Canvas.Left="177" Canvas.Top="108"/>
-                <TextBlock Name="text_EachPersonCanExchangeTheTimesOfAll" Text="0" Canvas.Left="178" Canvas.Top="129"/>
-                <TextBlock Name="text_EachPersonCanExchangeTheNumberOfAll" Text="0" Canvas.Left="178" Canvas.Top="152"/>
-                <TextBlock Name="text_beginTime" Text="2013年7月18日" Canvas.Left="178" Canvas.Top="173"/>
-                <TextBlock Name="text_endTime" Text="2013年7月28日" Canvas.Left="178" Canvas.Top="194"/>
-                <Grid Name="tool_showConditions" Canvas.Left="178" Canvas.Top="215" Width="260"
-              VerticalAlignment="Top">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="用户组等级" Grid.Column="0"></TextBlock>
-                    <TextBlock Text="1" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Text="2" Grid.Column="2" HorizontalAlignment="Center"></TextBlock>
-                </Grid>
+            <TextBlock Name="text_name" Text="18积分一个 最后三天跳楼大酬宾" Canvas.Left="119" Canvas.Top="14"/>
+            <TextBlock Name="text_UnitPrice" Text="18" Canvas.Left="119" Canvas.Top="46"/>
 
 
-                <TextBlock Name="title_showPrize" Text="奖品：" Canvas.Left="104" Canvas.Top="250"/>
-                <Grid x:Name="tool_showPrize" Canvas.Left="178" Canvas.Top="250" Width="260"
-        	VerticalAlignment="Top">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="奖金" Grid.Column="0"/>
-                    <TextBlock Text="100.00" Grid.Column="1" HorizontalAlignment="Center"/>
-                </Grid>
+            <TextBlock Name="title_showPrize" Text="奖品：" Canvas.Left="61" Canvas.Top="84"/>
+            <Grid x:Name="tool_showPrize" Canvas.Left="119" Canvas.Top="84" Width="260" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <TextBlock Name="text_pName" Text="奖金" Grid.Column="0"/>
+                <TextBlock Name="text_pPrice" Text="100.00" Grid.Column="1" HorizontalAlignment="Center"/>
+            </Grid>
 
-                <Button Content="兑  换" Canvas.Left="415" Canvas.Top="3" Width="75" Click="Enter"/>
-                <Button Content="返  回" Canvas.Left="415" Canvas.Top="30" Width="75" Click="Cancel"/>
-            </Canvas>
-        </ScrollViewer>
+            <Button Content="兑  换" Canvas.Left="415" Canvas.Top="14" Width="75" Click="Enter"/>
+            <Button Content="返  回" Canvas.Left="415" Canvas.Top="44" Width="75" Click="Cancel"/>
+        </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

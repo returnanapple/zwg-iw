@@ -28,8 +28,8 @@ namespace IWorld.Client
             CreateUserImport import = new CreateUserImport
             {
                 Username = input_username.Text,
-                NormalReturnPoints = (Math.Round(Convert.ToDouble(input_nrp.Text))),
-                UncertainReturnPoints = (Math.Round(Convert.ToDouble(input_urp.Text))),
+                NormalReturnPoints = (Math.Round(Convert.ToDouble(input_nrp.Text), 1)),
+                UncertainReturnPoints = (Math.Round(Convert.ToDouble(input_urp.Text), 1)),
                 Quota = 0
             };
 

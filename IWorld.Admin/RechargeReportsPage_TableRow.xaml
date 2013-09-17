@@ -18,13 +18,8 @@
             <ColumnDefinition Width="180"></ColumnDefinition>
             <ColumnDefinition Width="192"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Name="button_owner" Text="用户" Foreground="#41829F"
-                   HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="0" TextDecorations="Underline" 
-                   MouseLeftButtonDown="SelectForOwner">
-            <i:Interaction.Triggers>
-                <admin:NButtonFeedbackTrigger/>
-            </i:Interaction.Triggers>
-        </TextBlock>
+        <TextBlock Name="button_owner" Text="用户"
+                   HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="0" />
         <TextBlock Name="text_payer" Text="支付人" Margin="10,0,10,0" 
                    HorizontalAlignment="Left" Grid.Column="1"></TextBlock>
         <TextBlock Name="text_sum" Text="金额" Margin="10,0,10,0" 

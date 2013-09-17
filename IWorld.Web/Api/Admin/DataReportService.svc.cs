@@ -87,11 +87,12 @@ namespace IWorld.Web.Api.Admin
         /// <param name="endTime">结束时间</param>
         /// <param name="timePeriod">时间段</param>
         /// <param name="userId">目标用户的存储指针</param>
+        /// <param name="username">目标用户的用户名</param>
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回个人信息统计的分页列表</returns>
         public PaginationList<PersonalDataResult> GetPersonalDataList(string beginTime, string endTime
-            , TimePeriodSelectType timePeriod, int userId, int page, string token)
+            , TimePeriodSelectType timePeriod, int userId, string username, int page, string token)
         {
             try
             {
@@ -109,7 +110,7 @@ namespace IWorld.Web.Api.Admin
                     }
 
                     AdminDataReportReader reader = new AdminDataReportReader(db);
-                    return reader.ReadPersonalDataList(beginTime, endTime, timePeriod, userId, page);
+                    return reader.ReadPersonalDataList(beginTime, endTime, timePeriod, userId, username, page);
                 }
             }
             catch (Exception e)
@@ -124,6 +125,7 @@ namespace IWorld.Web.Api.Admin
         /// <param name="beginTime">开始时间</param>
         /// <param name="endTime">结束时间</param>
         /// <param name="ownerId">目标用户的存储指针</param>
+        /// <param name="usermae">目标用户的用户名</param>
         /// <param name="ticketId">目标彩票的存储指针</param>
         /// <param name="tagId">目标玩法标签的存储指针</param>
         /// <param name="howToPlatId">目标玩法的存储指针</param>
@@ -131,8 +133,8 @@ namespace IWorld.Web.Api.Admin
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回投注信息的分页列表</returns>
-        public PaginationList<BettingResult> GetBettingList(string beginTime, string endTime, int ownerId, int ticketId, int tagId
-            , int howToPlatId, BettingStatusSelectType status, int page, string token)
+        public PaginationList<BettingResult> GetBettingList(string beginTime, string endTime, int ownerId, string usermae
+            , int ticketId, int tagId, int howToPlatId, BettingStatusSelectType status, int page, string token)
         {
             try
             {
@@ -150,7 +152,8 @@ namespace IWorld.Web.Api.Admin
                     }
 
                     AdminDataReportReader reader = new AdminDataReportReader(db);
-                    return reader.ReadBettingList(beginTime, endTime, ownerId, ticketId, tagId, howToPlatId, status, page);
+                    return reader.ReadBettingList(beginTime, endTime, ownerId, usermae, ticketId, tagId, howToPlatId
+                        , status, page);
                 }
             }
             catch (Exception e)
@@ -243,11 +246,12 @@ namespace IWorld.Web.Api.Admin
         /// <param name="endTime">结束时间</param>
         /// <param name="status">状态</param>
         /// <param name="userId">目标用户的存储指针</param>
+        /// <param name="username">用户名</param>
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回充值申请的分页列表</returns>
         public PaginationList<RechargeResult> GetRechargeList(string beginTime, string endTime, RechargeStatusSelectType status
-            , int userId, int page, string token)
+            , int userId, string username, int page, string token)
         {
             try
             {
@@ -265,7 +269,7 @@ namespace IWorld.Web.Api.Admin
                     }
 
                     AdminDataReportReader reader = new AdminDataReportReader(db);
-                    return reader.ReadRechargeList(beginTime, endTime, status, userId, page);
+                    return reader.ReadRechargeList(beginTime, endTime, status, userId, username, page);
                 }
             }
             catch (Exception e)
@@ -383,11 +387,12 @@ namespace IWorld.Web.Api.Admin
         /// <param name="endTime">结束时间</param>
         /// <param name="status">状态</param>
         /// <param name="userId">目标用户的存储指针</param>
+        /// <param name="username">用户名</param>
         /// <param name="page">页码</param>
         /// <param name="token">身份标识</param>
         /// <returns>返回提现申请的分页列表</returns>
         public PaginationList<WithdrawalResult> GetWithdrawalList(string beginTime, string endTime
-            , WithdrawalsStatusSelectType status, int userId, int page, string token)
+            , WithdrawalsStatusSelectType status, int userId, string username, int page, string token)
         {
             try
             {
@@ -405,7 +410,7 @@ namespace IWorld.Web.Api.Admin
                     }
 
                     AdminDataReportReader reader = new AdminDataReportReader(db);
-                    return reader.ReadWithdrawalList(beginTime, endTime, status, userId, page);
+                    return reader.ReadWithdrawalList(beginTime, endTime, status, userId, username, page);
                 }
             }
             catch (Exception e)

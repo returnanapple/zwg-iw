@@ -304,7 +304,7 @@ namespace IWorld.BLL
             {
                 int num = _seats.Count(s => s.Value == x.Value
                     && s.Name != x.Name);
-                nums.Add(num);
+                nums.Add(num + 1);
             });
             if (chasing.HowToPlay.Parameter2 == nums.Max())
             {

@@ -301,7 +301,8 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </Canvas>
-            <TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="25" Cursor="Hand" MouseLeftButtonDown="ShowBulletin">
+            <TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="35" Cursor="Hand"
+                       MouseLeftButtonDown="ShowBulletin">
                 <i:Interaction.Triggers>
                     <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
                 </i:Interaction.Triggers>

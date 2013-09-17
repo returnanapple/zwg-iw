@@ -2869,12 +2869,12 @@ namespace IWorld.Admin.DataReportService {
         IWorld.Admin.DataReportService.PaginationListOfSiteDataResultp9CVq9mK EndGetSiteDataList(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDataReportService/GetPersonalDataList", ReplyAction="http://tempuri.org/IDataReportService/GetPersonalDataListResponse")]
-        System.IAsyncResult BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, int page, string token, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState);
         
         IWorld.Admin.DataReportService.PaginationListOfPersonalDataResultp9CVq9mK EndGetPersonalDataList(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDataReportService/GetBettingList", ReplyAction="http://tempuri.org/IDataReportService/GetBettingListResponse")]
-        System.IAsyncResult BeginGetBettingList(string beginTime, string endTime, int ownerId, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetBettingList(string beginTime, string endTime, int ownerId, string username, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState);
         
         IWorld.Admin.DataReportService.PaginationListOfBettingResultp9CVq9mK EndGetBettingList(System.IAsyncResult result);
         
@@ -2889,7 +2889,7 @@ namespace IWorld.Admin.DataReportService {
         IWorld.Admin.DataReportService.PaginationListOfBettingForChasingResultp9CVq9mK EndGetBettingForChasingList(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDataReportService/GetRechargeList", ReplyAction="http://tempuri.org/IDataReportService/GetRechargeListResponse")]
-        System.IAsyncResult BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState);
         
         IWorld.Admin.DataReportService.PaginationListOfRechargeResultp9CVq9mK EndGetRechargeList(System.IAsyncResult result);
         
@@ -2909,7 +2909,7 @@ namespace IWorld.Admin.DataReportService {
         IWorld.Admin.DataReportService.OperateResult EndNegativeRecharge(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDataReportService/GetWithdrawalList", ReplyAction="http://tempuri.org/IDataReportService/GetWithdrawalListResponse")]
-        System.IAsyncResult BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState);
         
         IWorld.Admin.DataReportService.PaginationListOfWithdrawalResultp9CVq9mK EndGetWithdrawalList(System.IAsyncResult result);
         
@@ -3536,8 +3536,8 @@ namespace IWorld.Admin.DataReportService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetPersonalDataList(beginTime, endTime, timePeriod, userId, page, token, callback, asyncState);
+        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetPersonalDataList(beginTime, endTime, timePeriod, userId, username, page, token, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3550,9 +3550,10 @@ namespace IWorld.Admin.DataReportService {
             string endTime = ((string)(inValues[1]));
             IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod = ((IWorld.Admin.DataReportService.TimePeriodSelectType)(inValues[2]));
             int userId = ((int)(inValues[3]));
-            int page = ((int)(inValues[4]));
-            string token = ((string)(inValues[5]));
-            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetPersonalDataList(beginTime, endTime, timePeriod, userId, page, token, callback, asyncState);
+            string username = ((string)(inValues[4]));
+            int page = ((int)(inValues[5]));
+            string token = ((string)(inValues[6]));
+            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetPersonalDataList(beginTime, endTime, timePeriod, userId, username, page, token, callback, asyncState);
         }
         
         private object[] OnEndGetPersonalDataList(System.IAsyncResult result) {
@@ -3568,11 +3569,11 @@ namespace IWorld.Admin.DataReportService {
             }
         }
         
-        public void GetPersonalDataListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, int page, string token) {
-            this.GetPersonalDataListAsync(beginTime, endTime, timePeriod, userId, page, token, null);
+        public void GetPersonalDataListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, string username, int page, string token) {
+            this.GetPersonalDataListAsync(beginTime, endTime, timePeriod, userId, username, page, token, null);
         }
         
-        public void GetPersonalDataListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, int page, string token, object userState) {
+        public void GetPersonalDataListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, string username, int page, string token, object userState) {
             if ((this.onBeginGetPersonalDataListDelegate == null)) {
                 this.onBeginGetPersonalDataListDelegate = new BeginOperationDelegate(this.OnBeginGetPersonalDataList);
             }
@@ -3587,13 +3588,14 @@ namespace IWorld.Admin.DataReportService {
                         endTime,
                         timePeriod,
                         userId,
+                        username,
                         page,
                         token}, this.onEndGetPersonalDataListDelegate, this.onGetPersonalDataListCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetBettingList(string beginTime, string endTime, int ownerId, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetBettingList(beginTime, endTime, ownerId, ticketId, tagId, howToPlatId, status, page, token, callback, asyncState);
+        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetBettingList(string beginTime, string endTime, int ownerId, string username, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetBettingList(beginTime, endTime, ownerId, username, ticketId, tagId, howToPlatId, status, page, token, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3605,13 +3607,14 @@ namespace IWorld.Admin.DataReportService {
             string beginTime = ((string)(inValues[0]));
             string endTime = ((string)(inValues[1]));
             int ownerId = ((int)(inValues[2]));
-            int ticketId = ((int)(inValues[3]));
-            int tagId = ((int)(inValues[4]));
-            int howToPlatId = ((int)(inValues[5]));
-            IWorld.Admin.DataReportService.BettingStatusSelectType status = ((IWorld.Admin.DataReportService.BettingStatusSelectType)(inValues[6]));
-            int page = ((int)(inValues[7]));
-            string token = ((string)(inValues[8]));
-            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetBettingList(beginTime, endTime, ownerId, ticketId, tagId, howToPlatId, status, page, token, callback, asyncState);
+            string username = ((string)(inValues[3]));
+            int ticketId = ((int)(inValues[4]));
+            int tagId = ((int)(inValues[5]));
+            int howToPlatId = ((int)(inValues[6]));
+            IWorld.Admin.DataReportService.BettingStatusSelectType status = ((IWorld.Admin.DataReportService.BettingStatusSelectType)(inValues[7]));
+            int page = ((int)(inValues[8]));
+            string token = ((string)(inValues[9]));
+            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetBettingList(beginTime, endTime, ownerId, username, ticketId, tagId, howToPlatId, status, page, token, callback, asyncState);
         }
         
         private object[] OnEndGetBettingList(System.IAsyncResult result) {
@@ -3627,11 +3630,11 @@ namespace IWorld.Admin.DataReportService {
             }
         }
         
-        public void GetBettingListAsync(string beginTime, string endTime, int ownerId, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token) {
-            this.GetBettingListAsync(beginTime, endTime, ownerId, ticketId, tagId, howToPlatId, status, page, token, null);
+        public void GetBettingListAsync(string beginTime, string endTime, int ownerId, string username, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token) {
+            this.GetBettingListAsync(beginTime, endTime, ownerId, username, ticketId, tagId, howToPlatId, status, page, token, null);
         }
         
-        public void GetBettingListAsync(string beginTime, string endTime, int ownerId, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, object userState) {
+        public void GetBettingListAsync(string beginTime, string endTime, int ownerId, string username, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, object userState) {
             if ((this.onBeginGetBettingListDelegate == null)) {
                 this.onBeginGetBettingListDelegate = new BeginOperationDelegate(this.OnBeginGetBettingList);
             }
@@ -3645,6 +3648,7 @@ namespace IWorld.Admin.DataReportService {
                         beginTime,
                         endTime,
                         ownerId,
+                        username,
                         ticketId,
                         tagId,
                         howToPlatId,
@@ -3768,8 +3772,8 @@ namespace IWorld.Admin.DataReportService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetRechargeList(beginTime, endTime, status, userId, page, token, callback, asyncState);
+        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetRechargeList(beginTime, endTime, status, userId, username, page, token, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3782,9 +3786,10 @@ namespace IWorld.Admin.DataReportService {
             string endTime = ((string)(inValues[1]));
             IWorld.Admin.DataReportService.RechargeStatusSelectType status = ((IWorld.Admin.DataReportService.RechargeStatusSelectType)(inValues[2]));
             int userId = ((int)(inValues[3]));
-            int page = ((int)(inValues[4]));
-            string token = ((string)(inValues[5]));
-            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetRechargeList(beginTime, endTime, status, userId, page, token, callback, asyncState);
+            string username = ((string)(inValues[4]));
+            int page = ((int)(inValues[5]));
+            string token = ((string)(inValues[6]));
+            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetRechargeList(beginTime, endTime, status, userId, username, page, token, callback, asyncState);
         }
         
         private object[] OnEndGetRechargeList(System.IAsyncResult result) {
@@ -3800,11 +3805,11 @@ namespace IWorld.Admin.DataReportService {
             }
         }
         
-        public void GetRechargeListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, int page, string token) {
-            this.GetRechargeListAsync(beginTime, endTime, status, userId, page, token, null);
+        public void GetRechargeListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, string username, int page, string token) {
+            this.GetRechargeListAsync(beginTime, endTime, status, userId, username, page, token, null);
         }
         
-        public void GetRechargeListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, int page, string token, object userState) {
+        public void GetRechargeListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, string username, int page, string token, object userState) {
             if ((this.onBeginGetRechargeListDelegate == null)) {
                 this.onBeginGetRechargeListDelegate = new BeginOperationDelegate(this.OnBeginGetRechargeList);
             }
@@ -3819,6 +3824,7 @@ namespace IWorld.Admin.DataReportService {
                         endTime,
                         status,
                         userId,
+                        username,
                         page,
                         token}, this.onEndGetRechargeListDelegate, this.onGetRechargeListCompletedDelegate, userState);
         }
@@ -3974,8 +3980,8 @@ namespace IWorld.Admin.DataReportService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetWithdrawalList(beginTime, endTime, status, userId, page, token, callback, asyncState);
+        System.IAsyncResult IWorld.Admin.DataReportService.IDataReportService.BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetWithdrawalList(beginTime, endTime, status, userId, username, page, token, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3988,9 +3994,10 @@ namespace IWorld.Admin.DataReportService {
             string endTime = ((string)(inValues[1]));
             IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status = ((IWorld.Admin.DataReportService.WithdrawalsStatusSelectType)(inValues[2]));
             int userId = ((int)(inValues[3]));
-            int page = ((int)(inValues[4]));
-            string token = ((string)(inValues[5]));
-            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetWithdrawalList(beginTime, endTime, status, userId, page, token, callback, asyncState);
+            string username = ((string)(inValues[4]));
+            int page = ((int)(inValues[5]));
+            string token = ((string)(inValues[6]));
+            return ((IWorld.Admin.DataReportService.IDataReportService)(this)).BeginGetWithdrawalList(beginTime, endTime, status, userId, username, page, token, callback, asyncState);
         }
         
         private object[] OnEndGetWithdrawalList(System.IAsyncResult result) {
@@ -4006,11 +4013,11 @@ namespace IWorld.Admin.DataReportService {
             }
         }
         
-        public void GetWithdrawalListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, int page, string token) {
-            this.GetWithdrawalListAsync(beginTime, endTime, status, userId, page, token, null);
+        public void GetWithdrawalListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, string username, int page, string token) {
+            this.GetWithdrawalListAsync(beginTime, endTime, status, userId, username, page, token, null);
         }
         
-        public void GetWithdrawalListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, int page, string token, object userState) {
+        public void GetWithdrawalListAsync(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, string username, int page, string token, object userState) {
             if ((this.onBeginGetWithdrawalListDelegate == null)) {
                 this.onBeginGetWithdrawalListDelegate = new BeginOperationDelegate(this.OnBeginGetWithdrawalList);
             }
@@ -4025,6 +4032,7 @@ namespace IWorld.Admin.DataReportService {
                         endTime,
                         status,
                         userId,
+                        username,
                         page,
                         token}, this.onEndGetWithdrawalListDelegate, this.onGetWithdrawalListCompletedDelegate, userState);
         }
@@ -4383,14 +4391,15 @@ namespace IWorld.Admin.DataReportService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[6];
+            public System.IAsyncResult BeginGetPersonalDataList(string beginTime, string endTime, IWorld.Admin.DataReportService.TimePeriodSelectType timePeriod, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
                 _args[0] = beginTime;
                 _args[1] = endTime;
                 _args[2] = timePeriod;
                 _args[3] = userId;
-                _args[4] = page;
-                _args[5] = token;
+                _args[4] = username;
+                _args[5] = page;
+                _args[6] = token;
                 System.IAsyncResult _result = base.BeginInvoke("GetPersonalDataList", _args, callback, asyncState);
                 return _result;
             }
@@ -4401,17 +4410,18 @@ namespace IWorld.Admin.DataReportService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetBettingList(string beginTime, string endTime, int ownerId, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[9];
+            public System.IAsyncResult BeginGetBettingList(string beginTime, string endTime, int ownerId, string username, int ticketId, int tagId, int howToPlatId, IWorld.Admin.DataReportService.BettingStatusSelectType status, int page, string token, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[10];
                 _args[0] = beginTime;
                 _args[1] = endTime;
                 _args[2] = ownerId;
-                _args[3] = ticketId;
-                _args[4] = tagId;
-                _args[5] = howToPlatId;
-                _args[6] = status;
-                _args[7] = page;
-                _args[8] = token;
+                _args[3] = username;
+                _args[4] = ticketId;
+                _args[5] = tagId;
+                _args[6] = howToPlatId;
+                _args[7] = status;
+                _args[8] = page;
+                _args[9] = token;
                 System.IAsyncResult _result = base.BeginInvoke("GetBettingList", _args, callback, asyncState);
                 return _result;
             }
@@ -4459,14 +4469,15 @@ namespace IWorld.Admin.DataReportService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[6];
+            public System.IAsyncResult BeginGetRechargeList(string beginTime, string endTime, IWorld.Admin.DataReportService.RechargeStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
                 _args[0] = beginTime;
                 _args[1] = endTime;
                 _args[2] = status;
                 _args[3] = userId;
-                _args[4] = page;
-                _args[5] = token;
+                _args[4] = username;
+                _args[5] = page;
+                _args[6] = token;
                 System.IAsyncResult _result = base.BeginInvoke("GetRechargeList", _args, callback, asyncState);
                 return _result;
             }
@@ -4522,14 +4533,15 @@ namespace IWorld.Admin.DataReportService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, int page, string token, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[6];
+            public System.IAsyncResult BeginGetWithdrawalList(string beginTime, string endTime, IWorld.Admin.DataReportService.WithdrawalsStatusSelectType status, int userId, string username, int page, string token, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
                 _args[0] = beginTime;
                 _args[1] = endTime;
                 _args[2] = status;
                 _args[3] = userId;
-                _args[4] = page;
-                _args[5] = token;
+                _args[4] = username;
+                _args[5] = page;
+                _args[6] = token;
                 System.IAsyncResult _result = base.BeginInvoke("GetWithdrawalList", _args, callback, asyncState);
                 return _result;
             }

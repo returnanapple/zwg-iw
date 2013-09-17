@@ -21,17 +21,32 @@
         </Grid.ColumnDefinitions>
         <TextBlock Name="button_owner" Text="用户" Foreground="#41829F"
                    HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="0" TextDecorations="Underline" 
-                   MouseLeftButtonDown="SelectForOwner">
+                   MouseLeftButtonDown="CopyUsername">
             <i:Interaction.Triggers>
                 <admin:NButtonFeedbackTrigger/>
             </i:Interaction.Triggers>
         </TextBlock>
-        <TextBlock Name="text_sum" Text="金额" Margin="10,0,10,0" 
-                   HorizontalAlignment="Left" Grid.Column="1"></TextBlock>
-        <TextBlock Name="text_card" Text="银行卡" Margin="10,0,10,0" 
-                   HorizontalAlignment="Left" Grid.Column="2"></TextBlock>
-        <TextBlock Name="text_holder" Text="开户人" Margin="10,0,10,0" 
-                   HorizontalAlignment="Left" Grid.Column="3"></TextBlock>
+        <TextBlock Name="text_sum" Text="金额" Margin="10,0,10,0"  Foreground="#41829F"
+                   HorizontalAlignment="Left" Grid.Column="1" TextDecorations="Underline" 
+                   MouseLeftButtonDown="CopySum">
+            <i:Interaction.Triggers>
+                <admin:NButtonFeedbackTrigger/>
+            </i:Interaction.Triggers>
+        </TextBlock>
+        <TextBlock Name="text_card" Text="银行卡" Margin="10,0,10,0"  Foreground="#41829F"
+                   HorizontalAlignment="Left" Grid.Column="2" TextDecorations="Underline" 
+                   MouseLeftButtonDown="CopyCard">
+            <i:Interaction.Triggers>
+                <admin:NButtonFeedbackTrigger/>
+            </i:Interaction.Triggers>
+        </TextBlock>
+        <TextBlock Name="text_holder" Text="开户人" Margin="10,0,10,0"  Foreground="#41829F"
+                   HorizontalAlignment="Left" Grid.Column="3" TextDecorations="Underline"
+                   MouseLeftButtonDown="CopyHolder">
+            <i:Interaction.Triggers>
+                <admin:NButtonFeedbackTrigger/>
+            </i:Interaction.Triggers>
+        </TextBlock>
         <TextBlock Name="text_status" Text="状态" Margin="10,0,10,0" 
                    HorizontalAlignment="Left" Grid.Column="4"></TextBlock>
         <Canvas Height="34" Width="142" Grid.Column="5" HorizontalAlignment="Left" Margin="10,0,10,0">

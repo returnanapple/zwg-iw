@@ -34,6 +34,9 @@
                                 ClickEventHandler="SelectForTime"/>
             <Admin:SubmitButton Text="重   置" Canvas.Left="367" Canvas.Top="6" Height="30" Width="70" 
                                 ClickEventHandler="Reset"/>
+            <TextBox Name="input_username" Width="120" Canvas.Left="472" Canvas.Top="9"/>
+            <Admin:SubmitButton Text="查   找" Canvas.Left="607" Canvas.Top="6" Height="30" Width="70" 
+            	ClickEventHandler="SelectForUsername"/>
         </Canvas>
         <Grid x:Name="tableBody" Width="912" Grid.Row="1"/>
     </Grid>

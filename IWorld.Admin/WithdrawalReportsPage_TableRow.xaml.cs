@@ -75,12 +75,24 @@ namespace IWorld.Admin
             }
         }
 
-        private void SelectForOwner(object sender, MouseButtonEventArgs e)
+        private void CopyUsername(object sender, MouseButtonEventArgs e)
         {
-            if (SelectForOwnerEventHandler != null)
-            {
-                SelectForOwnerEventHandler(this, new EventArgs());
-            }
+            Clipboard.SetText(Withdrawal.Owner);
+        }
+
+        private void CopyCard(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(Withdrawal.Card);
+        }
+
+        private void CopyHolder(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(Withdrawal.Name);
+        }
+
+        private void CopySum(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(Withdrawal.Sum.ToString());
         }
 
         private void Determinet(object sender, MouseButtonEventArgs e)

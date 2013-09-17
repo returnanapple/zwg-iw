@@ -750,12 +750,14 @@ namespace IWorld.BLL
                     if (this.NewEmail != "")
                     {
                         this.AddToUpdating("Email", this.NewEmail);
+                        this.AddToUpdating("BindingEmail", true);
                     }
                     if (this.Bank != Model.Bank.无)
                     {
                         this.AddToUpdating("Holder", this.Holder);
                         this.AddToUpdating("Card", this.Card);
                         this.AddToUpdating("Bank", this.Bank);
+                        this.AddToUpdating("BindingCard", true);
                     }
                     if (this.NewPassword != "")
                     {

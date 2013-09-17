@@ -24,6 +24,7 @@ namespace IWorld.Admin
         int howToPlatId = 0;
         BettingStatusSelectType status = BettingStatusSelectType.全部;
         int pageIndex = 1;
+        string username = "";
 
         public BettingReportsPage()
         {
@@ -66,7 +67,8 @@ namespace IWorld.Admin
                     tableBody.Children.Add(tool);
                 }
             };
-            client.GetBettingListAsync(beginTime, endTime, ownerId, ticketId, tagId, howToPlatId, status, pageIndex, App.Token);
+            client.GetBettingListAsync(beginTime, endTime, ownerId, username, ticketId, tagId, howToPlatId
+                , status, pageIndex, App.Token);
         }
 
         void SelectForHowToPlay(object sender, EventArgs e)
@@ -106,7 +108,9 @@ namespace IWorld.Admin
             input_beginTime.Text = "";
             input_endTime.Text = "";
             input_status_all.IsChecked = true;
+            input_username.Text = "";
 
+            username = "";
             beginTime = "";
             endTime = "";
             ownerId = 0;
@@ -136,6 +140,14 @@ namespace IWorld.Admin
         {
             beginTime = input_beginTime.Text;
             endTime = input_endTime.Text;
+            pageIndex = 1;
+            InsertTable();
+        }
+
+        private void SelectForUsername(object sender, EventArgs e)
+        {
+            username = input_username.Text;
+            input_username.Text = "";
             pageIndex = 1;
             InsertTable();
         }

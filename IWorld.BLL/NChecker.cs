@@ -58,12 +58,12 @@ namespace IWorld.BLL
             double nrp = rp.NormalReturnPoints - webSetting.ReturnPointsDifference;
             if (normalReturnPoints > nrp)
             {
-                throw new Exception(string.Format("上下级用户的普通返点差不得小于{0}", webSetting.MinimumReturnPoints));
+                throw new Exception(string.Format("上下级用户的普通返点差不得小于{0}", webSetting.ReturnPointsDifference));
             }
             double urp = rp.UncertainReturnPoints - webSetting.ReturnPointsDifference;
             if (uncertainReturnPoints > urp)
             {
-                throw new Exception(string.Format("上下级用户的不定位返点差不得小于{0}", webSetting.MinimumReturnPoints));
+                throw new Exception(string.Format("上下级用户的不定位返点差不得小于{0}", webSetting.ReturnPointsDifference));
             }
         }
     }

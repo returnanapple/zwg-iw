@@ -172,7 +172,7 @@ namespace IWorld.DAL
         /// <param name="page">页码</param>
         /// <returns>返回个人信息统计的分页列表</returns>
         public PaginationList<PersonalDataResult> ReadPersonalDataList(string beginTime, string endTime
-            , TimePeriodSelectType timePeriod, int userId, int page)
+            , TimePeriodSelectType timePeriod, int userId, string username, int page)
         {
             PaginationList<PersonalDataResult> result = new PaginationList<PersonalDataResult>("操作失败");
             WebSetting webSetting = new WebSetting();
@@ -185,6 +185,7 @@ namespace IWorld.DAL
                     Expression<Func<PersonalDataAtDay, bool>> predicate1 = x => x.Id > 0;
                     Expression<Func<PersonalDataAtDay, bool>> predicate2 = x => x.Id > 0;
                     Expression<Func<PersonalDataAtDay, bool>> predicate3 = x => x.Id > 0;
+                    Expression<Func<PersonalDataAtDay, bool>> predicate4 = x => x.Id > 0;
                     if (beginTime != "")
                     {
                         string[] tTimeStr = beginTime.Split(new char[] { '-' });
@@ -209,19 +210,23 @@ namespace IWorld.DAL
                     {
                         predicate3 = x => x.Owner.Id == userId;
                     }
+                    if (username != "")
+                    {
+                        predicate4 = x => x.Owner.Username == username;
+                    }
                     var pdadSet = db.Set<PersonalDataAtDay>();
 
                     int tCount = pdadSet
                         .Where(predicate1)
                         .Where(predicate2)
                         .Where(predicate3)
+                        .Where(predicate4)
                         .Count();
                     List<PersonalDataResult> tList = pdadSet
                         .Where(predicate1)
                         .Where(predicate3)
-                        .OrderByDescending(x => x.Year)
-                        .OrderByDescending(x => x.Month)
-                        .OrderByDescending(x => x.Day)
+                        .Where(predicate4)
+                        .OrderByDescending(x => x.CreatedTime)
                         .Skip(startRow)
                         .Take(webSetting.PageSizeForAdmin)
                         .ToList()
@@ -236,6 +241,7 @@ namespace IWorld.DAL
                     Expression<Func<PersonalDataAtMonth, bool>> _predicate1 = x => x.Id > 0;
                     Expression<Func<PersonalDataAtMonth, bool>> _predicate2 = x => x.Id > 0;
                     Expression<Func<PersonalDataAtMonth, bool>> _predicate3 = x => x.Id > 0;
+                    Expression<Func<PersonalDataAtMonth, bool>> _predicate4 = x => x.Id > 0;
                     if (beginTime != "")
                     {
                         string[] tTimeStr = beginTime.Split(new char[] { '-' });
@@ -256,17 +262,23 @@ namespace IWorld.DAL
                     {
                         _predicate3 = x => x.Owner.Id == userId;
                     }
+                    if (username != "")
+                    {
+                        _predicate4 = x => x.Owner.Username == username;
+                    }
                     var pdamSet = db.Set<PersonalDataAtMonth>();
 
                     int _tCount = pdamSet
                         .Where(_predicate1)
                         .Where(_predicate2)
                         .Where(_predicate3)
+                        .Where(_predicate4)
                         .Count();
                     List<PersonalDataResult> _tList = pdamSet
                         .Where(_predicate1)
                         .Where(_predicate2)
                         .Where(_predicate3)
+                        .Where(_predicate4)
                         .OrderByDescending(x => x.CreatedTime)
                         .Skip(startRow)
                         .Take(webSetting.PageSizeForAdmin)
@@ -286,14 +298,15 @@ namespace IWorld.DAL
         /// <param name="beginTime">开始时间</param>
         /// <param name="endTime">结束时间</param>
         /// <param name="ownerId">目标用户的存储指针</param>
+        /// <param name="username">目标用户的用户名</param>
         /// <param name="ticketId">目标彩票的存储指针</param>
         /// <param name="tagId">目标玩法标签的存储指针</param>
         /// <param name="howToPlatId">目标玩法的存储指针</param>
         /// <param name="status">状态</param>
         /// <param name="page">页码</param>
         /// <returns>返回投注信息的分页列表</returns>
-        public PaginationList<BettingResult> ReadBettingList(string beginTime, string endTime, int ownerId, int ticketId, int tagId
-            , int howToPlatId, BettingStatusSelectType status, int page)
+        public PaginationList<BettingResult> ReadBettingList(string beginTime, string endTime, int ownerId, string username
+            , int ticketId, int tagId, int howToPlatId, BettingStatusSelectType status, int page)
         {
             Expression<Func<Betting, bool>> predicate1 = x => x.Id > 0;
             Expression<Func<Betting, bool>> predicate2 = x => x.Id > 0;
@@ -302,6 +315,7 @@ namespace IWorld.DAL
             Expression<Func<Betting, bool>> predicate5 = x => x.Id > 0;
             Expression<Func<Betting, bool>> predicate6 = x => x.Id > 0;
             Expression<Func<Betting, bool>> predicate7 = x => x.Id > 0;
+            Expression<Func<Betting, bool>> predicate8 = x => x.Id > 0;
             if (ownerId != 0)
             {
                 predicate1 = x => x.Owner.Id == ownerId;
@@ -348,6 +362,10 @@ namespace IWorld.DAL
                     predicate7 = x => x.Status == BettingStatus.用户撤单;
                     break;
             }
+            if (username != "")
+            {
+                predicate8 = x => x.Owner.Username == username;
+            }
             WebSetting webSetting = new WebSetting();
             int startRow = ControllerHelper.GetStartRow(page, webSetting.PageSizeForAdmin);
 
@@ -359,6 +377,7 @@ namespace IWorld.DAL
                 .Where(predicate5)
                 .Where(predicate6)
                 .Where(predicate7)
+                .Where(predicate8)
                 .Count();
             List<BettingResult> tList = db.Set<Betting>()
                 .Where(predicate1)
@@ -368,6 +387,7 @@ namespace IWorld.DAL
                 .Where(predicate5)
                 .Where(predicate6)
                 .Where(predicate7)
+                .Where(predicate8)
                 .OrderByDescending(x => x.CreatedTime)
                 .Skip(startRow)
                 .Take(webSetting.PageSizeForAdmin)
@@ -539,15 +559,17 @@ namespace IWorld.DAL
         /// <param name="endTime">结束时间</param>
         /// <param name="status">状态</param>
         /// <param name="userId">目标用户的存储指针</param>
+        /// <param name="username">用户名</param>
         /// <param name="page">页码</param>
         /// <returns>返回充值申请的分页列表</returns>
         public PaginationList<RechargeResult> ReadRechargeList(string beginTime, string endTime, RechargeStatusSelectType status
-            , int userId, int page)
+            , int userId, string username, int page)
         {
             Expression<Func<RechargeRecord, bool>> predicate1 = x => x.Id > 0;
             Expression<Func<RechargeRecord, bool>> predicate2 = x => x.Id > 0;
             Expression<Func<RechargeRecord, bool>> predicate3 = x => x.Id > 0;
             Expression<Func<RechargeRecord, bool>> predicate4 = x => x.Id > 0;
+            Expression<Func<RechargeRecord, bool>> predicate5 = x => x.Id > 0;
             if (userId != 0)
             {
                 predicate1 = x => x.Owner.Id == userId;
@@ -579,6 +601,10 @@ namespace IWorld.DAL
                     predicate4 = x => x.Status == RechargeStatus.用户已经支付;
                     break;
             }
+            if (username != "")
+            {
+                predicate5 = x => x.Owner.Username == username;
+            }
             WebSetting webSetting = new WebSetting();
             int startRow = ControllerHelper.GetStartRow(page, webSetting.PageSizeForAdmin);
             var rrSet = db.Set<RechargeRecord>();
@@ -588,12 +614,14 @@ namespace IWorld.DAL
                 .Where(predicate2)
                 .Where(predicate3)
                 .Where(predicate4)
+                .Where(predicate5)
                 .Count();
             List<RechargeResult> tList = rrSet
                 .Where(predicate1)
                 .Where(predicate2)
                 .Where(predicate3)
                 .Where(predicate4)
+                .Where(predicate5)
                 .OrderByDescending(x => x.CreatedTime)
                 .Skip(startRow)
                 .Take(webSetting.PageSizeForAdmin)
@@ -623,12 +651,13 @@ namespace IWorld.DAL
         /// <param name="page">页码</param>
         /// <returns>返回提现申请的分页列表</returns>
         public PaginationList<WithdrawalResult> ReadWithdrawalList(string beginTime, string endTime
-            , WithdrawalsStatusSelectType status, int userId, int page)
+            , WithdrawalsStatusSelectType status, int userId, string username, int page)
         {
             Expression<Func<WithdrawalsRecord, bool>> predicate1 = x => x.Id > 0;
             Expression<Func<WithdrawalsRecord, bool>> predicate2 = x => x.Id > 0;
             Expression<Func<WithdrawalsRecord, bool>> predicate3 = x => x.Id > 0;
             Expression<Func<WithdrawalsRecord, bool>> predicate4 = x => x.Id > 0;
+            Expression<Func<WithdrawalsRecord, bool>> predicate5 = x => x.Id > 0;
             if (userId != 0)
             {
                 predicate1 = x => x.Owner.Id == userId;
@@ -657,6 +686,10 @@ namespace IWorld.DAL
                     predicate4 = x => x.Status == WithdrawalsStatus.提现成功;
                     break;
             }
+            if (username != "")
+            {
+                predicate5 = x => x.Owner.Username == username;
+            }
             WebSetting webSetting = new WebSetting();
             int startRow = ControllerHelper.GetStartRow(page, webSetting.PageSizeForAdmin);
             var wrSet = db.Set<WithdrawalsRecord>();
@@ -666,12 +699,14 @@ namespace IWorld.DAL
                 .Where(predicate2)
                 .Where(predicate3)
                 .Where(predicate4)
+                .Where(predicate5)
                 .Count();
             List<WithdrawalResult> tList = wrSet
                 .Where(predicate1)
                 .Where(predicate2)
                 .Where(predicate3)
                 .Where(predicate4)
+                .Where(predicate5)
                 .OrderByDescending(x => x.CreatedTime)
                 .Skip(startRow)
                 .Take(webSetting.PageSizeForAdmin)
