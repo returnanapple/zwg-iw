@@ -12,7 +12,7 @@
                     <GradientStop Color="#FF181818" Offset="0.352"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            
+
             <TextBlock Canvas.Left="10" FontSize="16" Text="绑定用户信息" Canvas.Top="10">
                 <TextBlock.Effect>
                     <DropShadowEffect/>
@@ -27,7 +27,7 @@
             <TextBlock Canvas.Left="58" Text="安全邮箱" Canvas.Top="237"/>
             <TextBlock Canvas.Left="70" Text="银行卡" Canvas.Top="287"/>
             <TextBlock Canvas.Left="70" Text="开户人" Canvas.Top="315"/>
-            <TextBlock Canvas.Left="82" Text="银行" Canvas.Top="343"/>
+            <TextBlock Canvas.Left="82" Text="银行" Canvas.Top="344"/>
 
             <PasswordBox Name="input_oldPassword" Height="23" Canvas.Left="152" Canvas.Top="63" Width="120"/>
             <PasswordBox Name="inpu_newPassword" Height="23" Canvas.Left="152" Canvas.Top="91" Width="120"/>
@@ -37,7 +37,12 @@
             <TextBox Name="input_email" Height="23" Canvas.Left="152" Canvas.Top="234" Width="120"/>
             <TextBox Name="input_card" Height="23" Canvas.Left="152" Canvas.Top="284" Width="120"/>
             <TextBox Name="input_holder" Height="23" Canvas.Left="152" Canvas.Top="312" Width="120"/>
-            <TextBox Name="input_bank" Height="23" Canvas.Left="152" Text="工商银行" IsReadOnly="True" Canvas.Top="340" Width="120"/>
+            <ComboBox Name="input_bank" Height="20" Canvas.Left="155" Canvas.Top="343" Width="117" SelectedIndex="0">
+                <ComboBox.Items>
+                    <TextBlock Text="工商银行"/>
+                    <TextBlock Text="财付通"/>
+                </ComboBox.Items>
+            </ComboBox>
 
             <Button Content="确  定" Canvas.Left="335" Canvas.Top="63" Width="60" Click="Enter"/>
             <Button Content="重  置" Canvas.Left="335" Canvas.Top="91" Width="60" Click="Reset"/>

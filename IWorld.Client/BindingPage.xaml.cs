@@ -43,7 +43,7 @@ namespace IWorld.Client
                     Email = input_email.Text,
                     Card = input_card.Text,
                     Holder = input_holder.Text,
-                    Bank = Bank.中国工商银行
+                    Bank = input_bank.SelectedIndex == 0 ? Bank.中国工商银行 : Bank.财付通
                 };
                 UsersServiceClient client = new UsersServiceClient();
                 client.BindingCompleted += ShowBindingResult;

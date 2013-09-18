@@ -12,11 +12,16 @@
             <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,1 L720,1 M0,161 L720,161"/>
             <TextBlock Text="银行卡：" Canvas.Left="106" Canvas.Top="38"/>
             <TextBlock Text="开户人：" Canvas.Left="106" Canvas.Top="67"/>
-            <TextBlock Text="银行：" Canvas.Left="118" Canvas.Top="96"/>
+            <TextBlock Text="银行：" Canvas.Left="118" Canvas.Top="99"/>
 
             <TextBox Name="input_card" Width="120" Canvas.Left="159" Canvas.Top="35"/>
             <TextBox x:Name="input_holder" Width="120" Canvas.Left="159" Canvas.Top="64"/>
-            <TextBox Text="中国工商银行" Width="120" Canvas.Left="159" Canvas.Top="93" IsEnabled="False"/>
+            <ComboBox Name="input_bank" Height="20" Canvas.Left="161" Canvas.Top="97" Width="117" SelectedIndex="0">
+                <ComboBox.Items>
+                    <TextBlock Text="工商银行"/>
+                    <TextBlock Text="财付通"/>
+                </ComboBox.Items>
+            </ComboBox>
 
             <Button Name="button_update" Content="修  改" Canvas.Left="352" Canvas.Top="35" Width="75" Click="Update"/>
             <Button Content="取  消" Canvas.Left="352" Canvas.Top="64" Width="75" Click="Cancel"/>

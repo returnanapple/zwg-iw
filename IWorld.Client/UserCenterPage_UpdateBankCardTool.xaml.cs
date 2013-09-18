@@ -33,9 +33,10 @@ namespace IWorld.Client
 
         private void Update(object sender, RoutedEventArgs e)
         {
+            Bank _bank = input_bank.SelectedIndex == 0 ? Bank.中国工商银行 : Bank.财付通;
             UsersServiceClient client = new UsersServiceClient();
             client.EditBankCompleted += ShowUpdateResult;
-            client.EditBankAsync(input_card.Text, input_holder.Text, Bank.中国工商银行, App.Token);
+            client.EditBankAsync(input_card.Text, input_holder.Text, _bank, App.Token);
         }
         #region 更新
         void ShowUpdateResult(object sender, EditBankCompletedEventArgs e)

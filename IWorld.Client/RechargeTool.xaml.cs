@@ -39,7 +39,7 @@ namespace IWorld.Client
                 client.RechargeAsync(userId, sum, App.Token);
             }
         }
-        #region 提现
+        #region 充值
         void ShowRechargeResult(object sender, RechargeCompletedEventArgs e)
         {
             if (!e.Result.Success)

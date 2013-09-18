@@ -118,9 +118,9 @@ namespace IWorld.Admin
                 {
                     throw new Exception("普通返点不应小于0");
                 }
-                if (ntp > 13)
+                if (ntp > 15)
                 {
-                    throw new Exception("普通返点不应大于13");
+                    throw new Exception("普通返点不应大于15");
                 }
                 ntpOK = true;
                 check_nrp.Text = "";
@@ -140,9 +140,9 @@ namespace IWorld.Admin
                 {
                     throw new Exception("不定位返点不应小于0");
                 }
-                if (utp > 13)
+                if (utp > 15)
                 {
-                    throw new Exception("不定位返点不应大于13");
+                    throw new Exception("不定位返点不应大于15");
                 }
                 utpOK = true;
                 check_urp.Text = "";

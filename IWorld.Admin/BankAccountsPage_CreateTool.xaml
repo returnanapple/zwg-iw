@@ -16,8 +16,7 @@
         <TextBox x:Name="input_key" Canvas.Left="65" Canvas.Top="10" Width="120"/>
         <TextBox x:Name="input_card" Canvas.Left="65" Canvas.Top="41" Width="120"/>
         <TextBox x:Name="input_holder" Canvas.Left="65" Canvas.Top="72" Width="120"/>
-        <TextBox x:Name="input_bank" Text="中国工商银行" Canvas.Left="65" Canvas.Top="103" Width="120"
-                 IsReadOnly="True"/>
+        <TextBox x:Name="input_bank" Text="中国工商银行" Canvas.Left="65" Canvas.Top="103" Width="120"/>
         <TextBox Name="input_remark" Canvas.Left="65" Canvas.Top="134" Width="180" Height="55"
                  AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
         <TextBox x:Name="input_order" Canvas.Left="65" Canvas.Top="194" Width="120"/>

@@ -30,6 +30,7 @@ namespace IWorld.Client
             text_time.Text = rdResult.Time.ToLongDateString();
             text_status.Text = rdResult.Status.ToString();
             text_code.Text = rdResult.Code;
+            text_bank.Text = BankAccount.Bank.ToString();
 
             SystemSettingServiceClient client = new SystemSettingServiceClient();
             client.GetBankAccountCompleted += ShowBankAccount;

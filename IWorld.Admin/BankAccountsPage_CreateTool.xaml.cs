@@ -27,10 +27,12 @@ namespace IWorld.Admin
 
         private void Create(object sender, EventArgs e)
         {
+            Bank _bank;
+            Enum.TryParse<Bank>(input_bank.Text, out _bank);
             AddBankAccountImport import = new AddBankAccountImport
             {
                 Key = input_key.Text,
-                Bank = Bank.中国工商银行,
+                Bank = _bank,
                 Card = input_card.Text,
                 Name = input_holder.Text,
                 Remark = input_remark.Text,
