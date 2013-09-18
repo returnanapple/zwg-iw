@@ -1820,7 +1820,7 @@ namespace IWorld.Client
 
         private void CallCustomerService(object sender, EventArgs e)
         {
-            OOBHyperLinkButton.OpenWebPage(new Uri("http://wpa.qq.com/msgrd?V=1&Uin=2621762252", UriKind.Absolute), "_blank");
+            OOBHyperLinkButton.OpenWebPage(new Uri("http://wpa.qq.com/msgrd?V=1&Uin=2360843522", UriKind.Absolute), "_blank");
         }
 
         #endregion

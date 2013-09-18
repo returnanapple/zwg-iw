@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <i:Interaction.Triggers>
-            <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
+            <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="False"/>
         </i:Interaction.Triggers>
         <Border BorderBrush="Black" BorderThickness="1"></Border>
         <Border BorderBrush="Gray" BorderThickness="0.3" Margin="1"></Border>
