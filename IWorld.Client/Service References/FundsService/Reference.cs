@@ -230,36 +230,68 @@ namespace IWorld.Client.FundsService {
     [System.Runtime.Serialization.DataContractAttribute(Name="RechargeResult", Namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client")]
     public partial class RechargeResult : IWorld.Client.FundsService.OperateResult {
         
-        private IWorld.Client.FundsService.Bank BankField;
+        private IWorld.Client.FundsService.Bank Bank1Field;
         
-        private string CardField;
+        private IWorld.Client.FundsService.Bank Bank2Field;
+        
+        private string Card1Field;
+        
+        private string Card2Field;
         
         private string CodeField;
         
-        private string HolderField;
+        private string Holder1Field;
+        
+        private string Holder2Field;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public IWorld.Client.FundsService.Bank Bank {
+        public IWorld.Client.FundsService.Bank Bank1 {
             get {
-                return this.BankField;
+                return this.Bank1Field;
             }
             set {
-                if ((this.BankField.Equals(value) != true)) {
-                    this.BankField = value;
-                    this.RaisePropertyChanged("Bank");
+                if ((this.Bank1Field.Equals(value) != true)) {
+                    this.Bank1Field = value;
+                    this.RaisePropertyChanged("Bank1");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Card {
+        public IWorld.Client.FundsService.Bank Bank2 {
             get {
-                return this.CardField;
+                return this.Bank2Field;
             }
             set {
-                if ((object.ReferenceEquals(this.CardField, value) != true)) {
-                    this.CardField = value;
-                    this.RaisePropertyChanged("Card");
+                if ((this.Bank2Field.Equals(value) != true)) {
+                    this.Bank2Field = value;
+                    this.RaisePropertyChanged("Bank2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Card1 {
+            get {
+                return this.Card1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Card1Field, value) != true)) {
+                    this.Card1Field = value;
+                    this.RaisePropertyChanged("Card1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Card2 {
+            get {
+                return this.Card2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Card2Field, value) != true)) {
+                    this.Card2Field = value;
+                    this.RaisePropertyChanged("Card2");
                 }
             }
         }
@@ -278,14 +310,27 @@ namespace IWorld.Client.FundsService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Holder {
+        public string Holder1 {
             get {
-                return this.HolderField;
+                return this.Holder1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.HolderField, value) != true)) {
-                    this.HolderField = value;
-                    this.RaisePropertyChanged("Holder");
+                if ((object.ReferenceEquals(this.Holder1Field, value) != true)) {
+                    this.Holder1Field = value;
+                    this.RaisePropertyChanged("Holder1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Holder2 {
+            get {
+                return this.Holder2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Holder2Field, value) != true)) {
+                    this.Holder2Field = value;
+                    this.RaisePropertyChanged("Holder2");
                 }
             }
         }

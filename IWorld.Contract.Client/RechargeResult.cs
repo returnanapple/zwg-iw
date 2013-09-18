@@ -16,22 +16,40 @@ namespace IWorld.Contract.Client
         #region 公开属性
 
         /// <summary>
-        /// 开户人
+        /// 开户人1
         /// </summary>
         [DataMember]
-        public string Holder { get; set; }
+        public string Holder1 { get; set; }
 
         /// <summary>
-        /// 银行卡
+        /// 银行卡1
         /// </summary>
         [DataMember]
-        public string Card { get; set; }
+        public string Card1 { get; set; }
 
         /// <summary>
-        /// 银行
+        /// 银行1
         /// </summary>
         [DataMember]
-        public Bank Bank { get; set; }
+        public Bank Bank1 { get; set; }
+
+        /// <summary>
+        /// 开户人2
+        /// </summary>
+        [DataMember]
+        public string Holder2 { get; set; }
+
+        /// <summary>
+        /// 银行卡2
+        /// </summary>
+        [DataMember]
+        public string Card2 { get; set; }
+
+        /// <summary>
+        /// 银行2
+        /// </summary>
+        [DataMember]
+        public Bank Bank2 { get; set; }
 
         /// <summary>
         /// 标识码
@@ -46,15 +64,22 @@ namespace IWorld.Contract.Client
         /// <summary>
         /// 实例化一个新的充值结果（成功）
         /// </summary>
-        /// <param name="holder">开户人</param>
-        /// <param name="card">银行卡</param>
-        /// <param name="bank">银行</param>
+        /// <param name="holder1">开户人1</param>
+        /// <param name="card1">银行卡1</param>
+        /// <param name="bank1">银行1</param>
+        /// <param name="holder1">开户人2</param>
+        /// <param name="card1">银行卡2</param>
+        /// <param name="bank1">银行2</param>
         /// <param name="code">标识码</param>
-        public RechargeResult(string holder, string card, Bank bank, string code)
+        public RechargeResult(string holder1, string card1, Bank bank1, string holder2, string card2
+            , Bank bank2, string code)
         {
-            this.Holder = holder;
-            this.Card = card;
-            this.Bank = bank;
+            this.Holder1 = holder1;
+            this.Card1 = card1;
+            this.Bank1 = bank1;
+            this.Holder2 = holder2;
+            this.Card2 = card2;
+            this.Bank2 = bank2;
             this.Code = code;
         }
 

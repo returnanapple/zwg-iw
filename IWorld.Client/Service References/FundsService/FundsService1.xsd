@@ -5,10 +5,13 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperateResult">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q1:Bank" />
-          <xs:element minOccurs="0" name="Card" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank1" type="q1:Bank" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank2" type="q2:Bank" />
+          <xs:element minOccurs="0" name="Card1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Card2" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Holder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Holder1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Holder2" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -54,7 +57,7 @@
       <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RechargeId" type="xs:int" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q2:RechargeStatus" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q3:RechargeStatus" />
       <xs:element minOccurs="0" name="Sum" type="xs:double" />
       <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
       <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
@@ -90,11 +93,11 @@
   <xs:element name="ArrayOfWithdrawDetailsResult" nillable="true" type="tns:ArrayOfWithdrawDetailsResult" />
   <xs:complexType name="WithdrawDetailsResult">
     <xs:sequence>
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q3:Bank" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Bank" type="q4:Bank" />
       <xs:element minOccurs="0" name="Card" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Holder" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q4:WithdrawalsStatus" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IWorld.Model" minOccurs="0" name="Status" type="q5:WithdrawalsStatus" />
       <xs:element minOccurs="0" name="Sum" type="xs:double" />
       <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
       <xs:element minOccurs="0" name="WithdrawalsId" type="xs:int" />

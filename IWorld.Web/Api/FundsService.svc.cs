@@ -40,9 +40,12 @@ namespace IWorld.Web.Api
                     ICreatePackage<RechargeRecord> pfc = RechargeRecordManager.Factory
                         .CreatePackageForCreate(userId, _userId, sum);
                     RechargeRecord record = new RechargeRecordManager(db).Create(pfc);
-                    BankAccount bankAccount = db.Set<BankAccount>().FirstOrDefault(x => x.IsDefault);
+                    BankAccount bank1 = db.Set<BankAccount>().FirstOrDefault(x => x.Bank == Bank.中国工商银行);
+                    BankAccount bank2 = db.Set<BankAccount>().FirstOrDefault(x => x.Bank == Bank.财付通);
 
-                    return new RechargeResult(bankAccount.Name, bankAccount.Card, bankAccount.Bank, record.Code);
+                    return new RechargeResult(bank1.Name, bank1.Card, bank1.Bank
+                        , bank2.Name, bank2.Card, bank2.Bank
+                        , record.Code);
                 }
             }
             catch (Exception ex)

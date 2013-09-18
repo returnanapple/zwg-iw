@@ -22,20 +22,34 @@ namespace IWorld.Client
             InitializeComponent();
             this.Recharge = recharge;
 
-            text_card.Text = recharge.Card;
-            text_holder.Text = recharge.Holder;
-            text_bank.Text = recharge.Bank.ToString();
-            text_code.Text = recharge.Code;
+            text_card1.Text = recharge.Card1;
+            text_holder1.Text = recharge.Holder1;
+            text_bank1.Text = recharge.Bank1.ToString();
+            text_code1.Text = recharge.Code;
+            text_card2.Text = recharge.Card2;
+            text_holder2.Text = recharge.Holder2;
+            text_bank2.Text = recharge.Bank2.ToString();
+            text_code2.Text = recharge.Code;
         }
 
-        private void GetCard(object sender, RoutedEventArgs e)
+        private void GetCard1(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(Recharge.Card);
+            Clipboard.SetText(Recharge.Card1);
         }
 
-        private void GetHolder(object sender, RoutedEventArgs e)
+        private void GetHolder1(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(Recharge.Holder);
+            Clipboard.SetText(Recharge.Holder1);
+        }
+
+        private void GetCard2(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Recharge.Card2);
+        }
+
+        private void GetHolder2(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Recharge.Holder2);
         }
 
         private void GetCode(object sender, RoutedEventArgs e)

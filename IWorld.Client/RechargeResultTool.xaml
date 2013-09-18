@@ -6,21 +6,32 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="440" Height="160">
+        <Canvas Background="Black" Width="440" Height="320">
             <TextBlock Text="官方账户：" Canvas.Left="22" Canvas.Top="27"/>
             <TextBlock Text="开户人：" Canvas.Left="34" Canvas.Top="48"/>
             <TextBlock Text="银行：" Canvas.Left="46" Canvas.Top="69"/>
             <TextBlock Text="标识码：" Canvas.Left="34" Canvas.Top="90"/>
-            
-            <TextBlock Name="text_card" Text="6753342345677456345" Canvas.Left="87" Canvas.Top="27"/>
-            <TextBlock Name="text_holder" Text="习近平" Canvas.Left="87" Canvas.Top="48"/>
-            <TextBlock Name="text_bank" Text="中国工商银行" Canvas.Left="87" Canvas.Top="69"/>
-            <TextBlock Name="text_code" Text="21232f297a57a5a743894a0e4a801fc3" Canvas.Left="87" Canvas.Top="90"/>
 
-            <Button Content="复制账户" Canvas.Left="22" Canvas.Top="128" Width="75" Click="GetCard"/>
-            <Button Content="复制开户人" Canvas.Left="102" Canvas.Top="128" Width="75" Click="GetHolder"/>
+            <TextBlock Name="text_card1" Text="6753342345677456345" Canvas.Left="87" Canvas.Top="27"/>
+            <TextBlock Name="text_holder1" Text="习近平" Canvas.Left="87" Canvas.Top="48"/>
+            <TextBlock Name="text_bank1" Text="中国工商银行" Canvas.Left="87" Canvas.Top="69"/>
+            <TextBlock Name="text_code1" Text="21232f297a57a5a743894a0e4a801fc3" Canvas.Left="87" Canvas.Top="90"/>
+
+            <Button Content="复制账户" Canvas.Left="22" Canvas.Top="128" Width="75" Click="GetCard1"/>
+            <Button Content="复制开户人" Canvas.Left="102" Canvas.Top="128" Width="75" Click="GetHolder1"/>
             <Button Content="复制标识码" Canvas.Left="182" Canvas.Top="128" Width="75" Click="GetCode"/>
             <Button Content="返  回" Canvas.Left="353" Canvas.Top="21" Width="60" Click="Cancel"/>
+            <TextBlock Text="官方账户：" Canvas.Left="22" Canvas.Top="174"/>
+            <TextBlock Text="开户人：" Canvas.Left="34" Canvas.Top="195"/>
+            <TextBlock Text="银行：" Canvas.Left="46" Canvas.Top="216"/>
+            <TextBlock Text="标识码：" Canvas.Left="34" Canvas.Top="237"/>
+            <TextBlock x:Name="text_card2" Text="6753342345677456345" Canvas.Left="87" Canvas.Top="174"/>
+            <TextBlock x:Name="text_holder2" Text="李克强" Canvas.Left="87" Canvas.Top="195"/>
+            <TextBlock x:Name="text_bank2" Text="财付通" Canvas.Left="87" Canvas.Top="216"/>
+            <TextBlock x:Name="text_code2" Text="21232f297a57a5a743894a0e4a801fc3" Canvas.Left="87" Canvas.Top="237"/>
+            <Button Content="复制账户" Canvas.Left="22" Canvas.Top="275" Width="75" Click="GetCard2"/>
+            <Button Content="复制开户人" Canvas.Left="102" Canvas.Top="275" Width="75" Click="GetHolder2"/>
+            <Button Content="复制标识码" Canvas.Left="182" Canvas.Top="275" Width="75" Click="GetCode"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>
