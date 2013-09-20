@@ -300,8 +300,9 @@ namespace IWorld.Web.Api.Admin
                         return new UntreatedRecharCountResult("该用户所属的用户组无权查看未处理的充值申请的数量");
                     }
 
-                    AdminDataReportReader reader = new AdminDataReportReader(db);
-                    return reader.ReadUntreatedRecharCount();
+                    //AdminDataReportReader reader = new AdminDataReportReader(db);
+                    //return reader.ReadUntreatedRecharCount();
+                    return new UntreatedRecharCountResult(0);
                 }
             }
             catch (Exception e)

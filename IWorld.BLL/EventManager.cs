@@ -1,4 +1,6 @@
-﻿
+﻿using System.Linq;
+using IWorld.Model;
+
 namespace IWorld.BLL
 {
     /// <summary>
@@ -76,6 +78,15 @@ namespace IWorld.BLL
             TimeLineManager.Interval20SecondEventHandler += BettingManager.UpdateBettingStatus;
             //TimeLineManager.Interval20SecondEventHandler += BettingForCgasingManager.UpdateBettingStatus;
             //TimeLineManager.Interval20SecondEventHandler += BettingManager.GetResultOfLotteryOnTimeLine;
+            TimeLineManager.Interval20SecondEventHandler += (sender, e) =>
+                {
+                    RechargeRecordManager manager = new RechargeRecordManager(e.Db);
+                    e.Db.Set<RechargeRecord>().Where(x => x.Status == RechargeStatus.用户已经支付)
+                        .ToList().ForEach(x =>
+                            {
+                                manager.ChangeStatus(x.Id, RechargeStatus.充值成功);
+                            });
+                };
 
             #endregion
 
@@ -114,7 +125,7 @@ namespace IWorld.BLL
             RechargeRecordManager.ChangedStatusEventHandler += PersonalDataManager.HadRecharged;
             WithdrawalsRecordManager.ChangedStatusEventHandler += PersonalDataManager.HadWithdrawal;
             SubordinateDynamicManager.CreatedEventHandler += PersonalDataManager.HadReturnedPoints;
-            
+
             #endregion
 
             #region 缓存池
