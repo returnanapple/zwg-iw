@@ -180,7 +180,7 @@ namespace IWorld.BLL
                 AuthorManager am = new AuthorManager(e.Db);
                 Author tOwner = owner;
                 int t = 0;
-                while (owner.Layer > 1)
+                while (tOwner.Layer > 1)
                 {
                     Author parent = am.GetParent(tOwner);
                     if (parent == null)
