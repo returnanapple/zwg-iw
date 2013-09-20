@@ -242,6 +242,12 @@ namespace IWorld.BLL
                     {
                         throw new Exception("资金余额不足");
                     }
+                    if (webSetting.ReferenceBonusMode + webSetting.ConversionRates * returnPoints 
+                        >= webSetting.LineForProhibitBetting)
+                    {
+                        throw new Exception(string.Format("最高奖金模式大于 {0} 的用户不允许参与博彩"
+                            , webSetting.LineForProhibitBetting));
+                    }
                     if (this.Points > returnPoints)
                     {
                         throw new Exception("声明所要用于转换为赔率的点数大于用户本身拥有的最大返点数");
