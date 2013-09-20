@@ -453,7 +453,7 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p1.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
@@ -474,7 +474,7 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p2.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
@@ -519,7 +519,7 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                     {
                         bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p1.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
@@ -540,7 +540,7 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p2.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
@@ -587,7 +587,7 @@ namespace IWorld.BLL
                     .ToList().ForEach(x =>
                     {
                         bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p1.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
@@ -608,7 +608,7 @@ namespace IWorld.BLL
                         .ToList().ForEach(x =>
                         {
                             bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
-                                && apr.Owner.Id == pd.Owner.Id
+                                && apr.Owner.Id == p2.Id
                                 && apr.CreatedTime.Year == DateTime.Now.Year
                                 && apr.CreatedTime.Month == DateTime.Now.Month
                                 && apr.CreatedTime.Day == DateTime.Now.Day);
