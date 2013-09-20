@@ -172,6 +172,8 @@ namespace IWorld.BLL
                     .ToList()
                     .ForEach(activity =>
                         {
+                            int _c = e.Db.Set<RechargeRecord>().Count(x => x.Owner.Id == rechargeRecord.Owner.Id);
+                            if (_c > 1) { return; }
                             ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                                 .CreatePackageForCreate(rechargeRecord.Owner.Id, activity.Id, rechargeRecord.Sum);
                             aprManager.Create(pfc);
@@ -428,12 +430,13 @@ namespace IWorld.BLL
                 && x.EndTime > DateTime.Now)
                 .ToList().ForEach(x =>
                     {
-                        bool hadJoin = e.Db.Set<ActivityParticipateRecord>().Any(apr => apr.Activity.Id == x.Id
+                        int _tNum_ = (int)Math.Floor(pd.AmountOfBets / x.MinRestrictionValue);
+                        int hadJoin = e.Db.Set<ActivityParticipateRecord>().Count(apr => apr.Activity.Id == x.Id
                             && apr.Owner.Id == pd.Owner.Id
                             && apr.CreatedTime.Year == DateTime.Now.Year
                             && apr.CreatedTime.Month == DateTime.Now.Month
                             && apr.CreatedTime.Day == DateTime.Now.Day);
-                        if (hadJoin) { return; }
+                        if (hadJoin >= _tNum_) { return; }
                         ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
                             .CreatePackageForCreate(pd.Owner.Id, x.Id, x.MinRestrictionValue);
                         aprManager.Create(pfc);

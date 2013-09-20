@@ -733,7 +733,7 @@ namespace IWorld.BLL
                         {
                             throw new Exception("新安全码与第二次输入的确认不一致");
                         }
-                        string oldSafeCode = EncryptHelper.EncryptByMd5(this.OldPassword);
+                        string oldSafeCode = EncryptHelper.EncryptByMd5(this.OldSafeCode);
                         bool correct = db.Set<Author>().Any(x => x.Id == this.Id
                             && x.SafeCode == oldSafeCode);
                         if (!correct) { throw new Exception("原安全码不正确"); }
@@ -767,7 +767,7 @@ namespace IWorld.BLL
                     if (this.NewSafeCode != "")
                     {
                         string newSafeCode = EncryptHelper.EncryptByMd5(this.NewSafeCode);
-                        this.AddToUpdating("SafeCode", NewSafeCode);
+                        this.AddToUpdating("SafeCode", newSafeCode);
                     }
 
                     return base.GetEntity(db);

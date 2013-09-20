@@ -21,11 +21,13 @@ namespace IWorld.Client
             InitializeComponent();
             input_card.Text = App.UserInfo.Card;
             input_holder.Text = App.UserInfo.Holder;
+            input_bank.SelectedIndex = App.UserInfo.Bank == Bank.财付通 ? 1 : 0;
             if (App.UserInfo.BindingCard)
             {
                 input_card.IsEnabled = false;
                 input_holder.IsEnabled = false;
                 button_update.IsEnabled = false;
+                input_bank.IsEnabled = false;
             }
         }
 
