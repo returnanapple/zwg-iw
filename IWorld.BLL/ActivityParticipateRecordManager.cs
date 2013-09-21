@@ -178,40 +178,6 @@ namespace IWorld.BLL
                                 .CreatePackageForCreate(rechargeRecord.Owner.Id, activity.Id, rechargeRecord.Sum);
                             aprManager.Create(pfc);
                         });
-                if (rechargeRecord.Owner.Layer > 1)
-                {
-                    Author parent = new AuthorManager(e.Db).GetParent(rechargeRecord.Owner);
-                    aSet.Where(activity => activity.Type == ActivityType.下级用户充值返点
-                        && activity.MinRestrictionValue <= rechargeRecord.Sum
-                        && activity.MaxRestrictionValues >= rechargeRecord.Sum
-                        && activity.Hide == false
-                        && activity.BeginTime < DateTime.Now
-                        && activity.EndTime > DateTime.Now)
-                        .ToList()
-                        .ForEach(activity =>
-                        {
-                            ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                .CreatePackageForCreate(parent.Id, activity.Id, rechargeRecord.Sum);
-                            aprManager.Create(pfc);
-                        });
-                    if (rechargeRecord.Owner.Layer > 2)
-                    {
-                        Author _parent = new AuthorManager(e.Db).GetParent(parent);
-                        aSet.Where(activity => activity.Type == ActivityType.下下级用户充值返点
-                            && activity.MinRestrictionValue <= rechargeRecord.Sum
-                            && activity.MaxRestrictionValues >= rechargeRecord.Sum
-                            && activity.Hide == false
-                            && activity.BeginTime < DateTime.Now
-                            && activity.EndTime > DateTime.Now)
-                            .ToList()
-                            .ForEach(activity =>
-                            {
-                                ICreatePackage<ActivityParticipateRecord> pfc = ActivityParticipateRecordManager.Factory
-                                    .CreatePackageForCreate(_parent.Id, activity.Id, rechargeRecord.Sum);
-                                aprManager.Create(pfc);
-                            });
-                    }
-                }
             }
         }
 

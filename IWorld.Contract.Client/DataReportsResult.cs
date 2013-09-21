@@ -130,7 +130,7 @@ namespace IWorld.Contract.Client
             this.Bonus = data.Sum(x => x.Bonus);
             this.Expenditures = data.Sum(x => x.Expenditures);
             this.Profit = data.Sum(x => x.GainsAndLosses);
-            this.Balance = data.Sum(x => x.Money);
+            this.Balance = data.OrderByDescending(x => x.CreatedTime).First().Money;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace IWorld.Contract.Client
             this.Bonus = data.Sum(x => x.Bonus);
             this.Expenditures = data.Sum(x => x.Expenditures);
             this.Profit = data.Sum(x => x.GainsAndLosses);
-            this.Balance = data.Sum(x => x.Money);
+            this.Balance = data.OrderByDescending(x => x.CreatedTime).First().Money;
         }
 
         #endregion

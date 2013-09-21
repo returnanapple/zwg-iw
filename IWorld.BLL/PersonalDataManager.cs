@@ -250,7 +250,7 @@ namespace IWorld.BLL
         #region 私有方法
 
         /// <summary>
-        /// 获取获取站点统计信息（日）
+        /// 获取获取个人统计信息（日）
         /// </summary>
         /// <param name="db">数据库连接对象</param>
         /// <param name="ownerId">目标用户的存储指针</param>
@@ -274,7 +274,7 @@ namespace IWorld.BLL
         }
 
         /// <summary>
-        /// 获取获取站点统计信息（月）
+        /// 获取获取个人统计信息（月）
         /// </summary>
         /// <param name="db">数据库连接对象</param>
         /// <param name="ownerId">目标用户的存储指针</param>
