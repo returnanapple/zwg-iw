@@ -4,8 +4,8 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            xmlns:Admin="clr-namespace:IWorld.Admin"
            HasCloseButton="False">
-    
-    <Canvas x:Name="root" Width="320" Height="280">
+
+    <Canvas x:Name="root" Width="320" Height="356">
         <TextBlock Text="订单号：" Canvas.Left="22" Canvas.Top="3"></TextBlock>
         <TextBlock Text="投注人：" Canvas.Left="22" Canvas.Top="24"/>
         <TextBlock Text="期号：" Canvas.Left="34" Canvas.Top="45"/>
@@ -16,9 +16,10 @@
         <TextBlock Text="玩法标签：" Canvas.Left="10" Canvas.Top="150"/>
         <TextBlock Text="玩法：" Canvas.Left="34" Canvas.Top="171"/>
         <TextBlock Text="投注号码：" Canvas.Left="10" Canvas.Top="192"/>
-        <TextBlock Text="状态：" Canvas.Left="34" Canvas.Top="213"/>
-        <TextBlock Text="投注金额：" Canvas.Left="10" Canvas.Top="234"/>
-        <TextBlock Text="中奖金额：" Canvas.Left="10" Canvas.Top="255"/>
+        <TextBlock Text="状态：" Canvas.Left="34" Canvas.Top="248"/>
+        <TextBlock Text="投注金额：" Canvas.Left="10" Canvas.Top="269"/>
+        <TextBlock Text="中奖金额：" Canvas.Left="10" Canvas.Top="290"/>
+        <TextBlock Text="投注时间：" Canvas.Left="10" Canvas.Top="311"/>
 
         <TextBlock Name="text_Id" Text="0001" Canvas.Left="75" Canvas.Top="3"/>
         <TextBlock Name="text_Owner" Text="admin" Canvas.Left="75" Canvas.Top="24"/>
@@ -29,11 +30,13 @@
         <TextBlock Name="text_Ticket" Text="重庆时时彩" Canvas.Left="75" Canvas.Top="129"/>
         <TextBlock Name="text_Tag" Text="三星直选" Canvas.Left="75" Canvas.Top="150"/>
         <TextBlock Name="text_HowToPlay" Text="前三单式" Canvas.Left="75" Canvas.Top="171"/>
-        <TextBlock Name="text_Seats" Text="13,125,4179" Canvas.Left="75" Canvas.Top="192"/>
-        <TextBlock Name="text_Status" Text="未中奖" Canvas.Left="75" Canvas.Top="213"/>
-        <TextBlock Name="text_Pay" Text="0" Canvas.Left="75" Canvas.Top="234"/>
-        <TextBlock Name="text_Bonus" Text="0" Canvas.Left="75" Canvas.Top="255"/>
-        
+        <TextBox Name="text_Seats" Text="13,125,4179" Canvas.Left="75" Canvas.Top="192" Height="51" Width="219" 
+                 IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+        <TextBlock Name="text_Status" Text="未中奖" Canvas.Left="75" Canvas.Top="248"/>
+        <TextBlock Name="text_Pay" Text="0" Canvas.Left="75" Canvas.Top="269"/>
+        <TextBlock Name="text_Bonus" Text="0" Canvas.Left="75" Canvas.Top="290"/>
+        <TextBlock Name="text_createdTime" Text="2013.9.21 - 18:00:00" Canvas.Left="75" Canvas.Top="311"/>
+
         <Admin:SubmitButton Canvas.Left="250" Text="返  回" ClickEventHandler="BackToList"/>
     </Canvas>
 </controls:ChildWindow>

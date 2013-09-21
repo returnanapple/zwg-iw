@@ -31,6 +31,9 @@ namespace IWorld.Admin
             text_Status.Text = betting.Status.ToString();
             text_Pay.Text = betting.Pay.ToString("0.00");
             text_Bonus.Text = betting.Bonus.ToString("0.00");
+            text_createdTime.Text = string.Format("{0} - {1}"
+                , betting.CreatedTime.ToShortDateString()
+                , betting.CreatedTime.ToLongTimeString());
         }
 
         private void BackToList(object sender, EventArgs e)

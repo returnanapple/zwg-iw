@@ -1526,6 +1526,8 @@ namespace IWorld.Admin.DataReportService {
         
         private double BonusField;
         
+        private System.DateTime CreatedTimeField;
+        
         private string HowToPlayField;
         
         private int HowToPlayIdField;
@@ -1578,6 +1580,19 @@ namespace IWorld.Admin.DataReportService {
                 if ((this.BonusField.Equals(value) != true)) {
                     this.BonusField = value;
                     this.RaisePropertyChanged("Bonus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedTime {
+            get {
+                return this.CreatedTimeField;
+            }
+            set {
+                if ((this.CreatedTimeField.Equals(value) != true)) {
+                    this.CreatedTimeField = value;
+                    this.RaisePropertyChanged("CreatedTime");
                 }
             }
         }

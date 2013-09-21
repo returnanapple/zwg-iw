@@ -179,6 +179,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="BettingId" type="xs:int" />
       <xs:element minOccurs="0" name="Bonus" type="xs:double" />
+      <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HowToPlay" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HowToPlayId" type="xs:int" />
       <xs:element minOccurs="0" name="Multiple" type="xs:double" />

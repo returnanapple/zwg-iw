@@ -60,7 +60,13 @@ namespace IWorld.Model
                 #endregion
 
                 int _p = Convert.ToInt32(phases);
-                return this.Times.FirstOrDefault(x => x.Phases == _p).Time;
+                DateTime _time = this.Times.FirstOrDefault(x => x.Phases == _p).Time;
+                if (_time == this.Times.Min(x => x.Time)
+                    && DateTime.Now > this.Times.Max(x => x.Time))
+                {
+                    _time.AddDays(1);
+                }
+                return _time;
             }
         }
 

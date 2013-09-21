@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Runtime.Serialization;
 using IWorld.Model;
 
@@ -113,6 +114,12 @@ namespace IWorld.Contract.Admin
         public double Bonus { get; set; }
 
         /// <summary>
+        /// 投注时间
+        /// </summary>
+        [DataMember]
+        public DateTime CreatedTime { get; set; }
+
+        /// <summary>
         /// 实例化一个新的投注信息
         /// </summary>
         /// <param name="betting">投注信息的数据封装</param>
@@ -131,11 +138,13 @@ namespace IWorld.Contract.Admin
             this.TagId = betting.HowToPlay.Tag.Id;
             this.HowToPlay = betting.HowToPlay.Name;
             this.HowToPlayId = betting.HowToPlay.Id;
-            this.Seats = string.Join(",", betting.Seats.OrderBy(x => x.Order).ToList()
-                .ConvertAll(x => string.Join("", x.ValueList)));
             this.Status = betting.Status;
             this.Pay = betting.Pay;
             this.Bonus = betting.Bonus;
+            this.CreatedTime = betting.CreatedTime;
+            this.Seats = betting.HowToPlay.Parameter3 == 0
+                ? betting.Seats.First().Values
+                : string.Join(",", betting.Seats.OrderBy(x => x.Order).ToList().ConvertAll(x => string.Join("", x.ValueList)));
         }
     }
 }

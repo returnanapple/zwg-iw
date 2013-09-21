@@ -531,13 +531,17 @@ namespace IWorld.BLL
                     if (!hadLottery)
                     {
                         List<string> bs = new List<string>();
+
+                        Regex _reg = new Regex("<p id=\"zj_area\">([\\w\\W]*)<span class=\"tryNum\">");
+                        string _v = _reg.Match(html).Groups[1].Value;
                         Regex reg2 = new Regex("<span class=\"red_ball\">(\\d+)</span>");
-                        Match m = reg2.Match(html);
+                        Match m = reg2.Match(_v);
                         while (m.Success)
                         {
                             bs.Add(m.Groups[1].Value);
                             m = m.NextMatch();
                         }
+                        if (bs.Count < 3) { return; }
                         int nextP = Convert.ToInt32(phases.Substring(4, 3)) + 1;
                         int tYear = Convert.ToInt32(phases.Substring(0, 4));
                         DateTime tTime = new DateTime(tYear, 1, 1);
