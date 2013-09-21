@@ -15,7 +15,7 @@ namespace IWorld.Model
         /// <summary>
         /// 存储指针
         /// </summary>
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         #endregion
 

@@ -44,5 +44,17 @@ namespace IWorld.Model
         }
 
         #endregion
+
+        #region 方法
+
+        /// <summary>
+        /// 声明数据模型已经被修改
+        /// </summary>
+        public void OnModify()
+        {
+            this.ModifiedTime = DateTime.Now;
+        }
+
+        #endregion
     }
 }

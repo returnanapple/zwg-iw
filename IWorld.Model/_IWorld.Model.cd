@@ -6,6 +6,9 @@
   <Comment CommentText="树状结构">
     <Position X="7.521" Y="0.5" Height="0.284" Width="0.815" />
   </Comment>
+  <Comment CommentText="用户">
+    <Position X="0.5" Y="2.24" Height="0.284" Width="0.7" />
+  </Comment>
   <Class Name="IWorld.Model.ModelBase" Collapsed="true">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
@@ -16,29 +19,71 @@
   <Class Name="IWorld.Model.RecordingTimeModelBase" Collapsed="true" HideInheritanceLine="true">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>RecordingTimeModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.CategoryModelBase" Collapsed="true" HideInheritanceLine="true">
     <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgIAAAAAACAAEAAAAAACAAAAAAAAAAEAAAIAAAAAAA=</HashCode>
       <FileName>CategoryModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.RegularModelBase" Collapsed="true" HideInheritanceLine="true">
     <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAQAAAAAAAEAAAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
       <FileName>RegularModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IWorld.Model.Relative" Collapsed="true">
+  <Class Name="IWorld.Model.Relative" Collapsed="true" HideInheritanceLine="true">
     <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Relative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.Author" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Author.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.UserData" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.UserBinding" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserBinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.UserGroup" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.RechargeRecord" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RechargeRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.WithdrawRecord" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WithdrawRecord.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
