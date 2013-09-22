@@ -88,6 +88,7 @@
       <xs:element minOccurs="0" name="Expenditures" type="xs:double" />
       <xs:element minOccurs="0" name="GainsAndLosses" type="xs:double" />
       <xs:element minOccurs="0" name="Recharge" type="xs:double" />
+      <xs:element minOccurs="0" name="ReturnPoints" type="xs:double" />
       <xs:element minOccurs="0" name="Transfer" type="xs:double" />
       <xs:element minOccurs="0" name="Withdrawal" type="xs:double" />
     </xs:sequence>

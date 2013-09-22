@@ -1165,6 +1165,8 @@ namespace IWorld.Admin.DataReportService {
         
         private double RechargeField;
         
+        private double ReturnPointsField;
+        
         private double TransferField;
         
         private double WithdrawalField;
@@ -1282,6 +1284,19 @@ namespace IWorld.Admin.DataReportService {
                 if ((this.RechargeField.Equals(value) != true)) {
                     this.RechargeField = value;
                     this.RaisePropertyChanged("Recharge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ReturnPoints {
+            get {
+                return this.ReturnPointsField;
+            }
+            set {
+                if ((this.ReturnPointsField.Equals(value) != true)) {
+                    this.ReturnPointsField = value;
+                    this.RaisePropertyChanged("ReturnPoints");
                 }
             }
         }

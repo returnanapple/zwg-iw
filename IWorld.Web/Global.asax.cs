@@ -27,8 +27,6 @@ namespace IWorld.Web
             EventManager.Initialization();
             TimeLineManager.Initialize();
             CollectionManager.Initialize();
-
-
         }
 
         protected void Session_Start(object sender, EventArgs e)

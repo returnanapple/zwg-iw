@@ -30,6 +30,7 @@ namespace IWorld.Admin
             text_card.Text = withdrawal.Card;
             text_holder.Text = withdrawal.Name;
             text_status.Text = withdrawal.Status.ToString();
+            text_bank.Text = withdrawal.Bank.ToString();
             if (withdrawal.Status != WithdrawalsStatus.处理中)
             {
                 button_determinet.Visibility = System.Windows.Visibility.Collapsed;

@@ -12,12 +12,13 @@
             <SolidColorBrush Color="White" Opacity="0"></SolidColorBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="152"></ColumnDefinition>
-            <ColumnDefinition Width="152"></ColumnDefinition>
-            <ColumnDefinition Width="152"></ColumnDefinition>
-            <ColumnDefinition Width="152"></ColumnDefinition>
-            <ColumnDefinition Width="152"></ColumnDefinition>
-            <ColumnDefinition Width="152"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="192"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="90"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Name="button_owner" Text="用户" Foreground="#41829F"
                    HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Column="0" TextDecorations="Underline" 
@@ -47,9 +48,11 @@
                 <admin:NButtonFeedbackTrigger/>
             </i:Interaction.Triggers>
         </TextBlock>
-        <TextBlock Name="text_status" Text="状态" Margin="10,0,10,0" 
+        <TextBlock Name="text_bank" Text="银行" Margin="10,0,10,0" 
                    HorizontalAlignment="Left" Grid.Column="4"></TextBlock>
-        <Canvas Height="34" Width="142" Grid.Column="5" HorizontalAlignment="Left" Margin="10,0,10,0">
+        <TextBlock Name="text_status" Text="状态" Margin="10,0,10,0" 
+                   HorizontalAlignment="Left" Grid.Column="5"></TextBlock>
+        <Canvas Height="34" Width="142" Grid.Column="6" HorizontalAlignment="Left" Margin="10,0,10,0">
             <TextBlock Name="button_determinet" Text="确认" Foreground="#41829F"
             	       HorizontalAlignment="Left" TextDecorations="Underline" Canvas.Top="8" Canvas.Left="10"
                        MouseLeftButtonDown="Determinet">

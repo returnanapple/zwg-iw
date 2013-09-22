@@ -77,6 +77,12 @@ namespace IWorld.Contract.Admin
         public double Cash { get; set; }
 
         /// <summary>
+        /// 返点
+        /// </summary>
+        [DataMember]
+        public double ReturnPoints { get; set; }
+
+        /// <summary>
         /// 实例化一个新的站点信息统计
         /// </summary>
         /// <param name="siteDataAtDay">站点信息统计的数据封装</param>

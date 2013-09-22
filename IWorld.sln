@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.DAL", "IWorld.DAL\IW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.Contract.Client", "IWorld.Contract.Client\IWorld.Contract.Client.csproj", "{D9D32AFB-E14C-4705-9848-391738FACD8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.DataCall", "IWorld.DataCall\IWorld.DataCall.csproj", "{563DF8FC-B60A-40B2-826B-E67FEE046CEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{D9D32AFB-E14C-4705-9848-391738FACD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D32AFB-E14C-4705-9848-391738FACD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9D32AFB-E14C-4705-9848-391738FACD8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

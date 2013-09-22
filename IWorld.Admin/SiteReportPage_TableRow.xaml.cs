@@ -33,7 +33,7 @@ namespace IWorld.Admin
             text_Recharge.Text = data.Recharge.ToString();
             text_Withdrawal.Text = data.Withdrawal.ToString();
             text_Transfer.Text = data.Transfer.ToString();
-            text_Cash.Text = data.Cash.ToString();
+            text_Rebate.Text = data.ReturnPoints.ToString();
         }
 
         public FrameworkElement GetElement()

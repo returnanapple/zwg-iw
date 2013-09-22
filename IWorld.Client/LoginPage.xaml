@@ -56,7 +56,7 @@
                            HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"></TextBlock>
                 </Grid>
             </Canvas>
-            <MediaElement Source="music/music-bg.wma" Volume="0.5"></MediaElement>
+            <MediaElement Source="music/music-bg.wma" Volume="0.15"></MediaElement>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </UserControl>

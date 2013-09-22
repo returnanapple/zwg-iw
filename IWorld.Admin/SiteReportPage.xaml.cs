@@ -35,12 +35,12 @@ namespace IWorld.Admin
             columns.Add(new TableToolColumnImport("注册", 60));
             columns.Add(new TableToolColumnImport("投注", 88));
             columns.Add(new TableToolColumnImport("奖金", 88));
-            columns.Add(new TableToolColumnImport("返还", 88));
+            columns.Add(new TableToolColumnImport("活动返还", 88));
             columns.Add(new TableToolColumnImport("盈亏", 88));
             columns.Add(new TableToolColumnImport("充值", 88));
             columns.Add(new TableToolColumnImport("提现", 88));
             columns.Add(new TableToolColumnImport("支取", 88));
-            columns.Add(new TableToolColumnImport("现金", 88));
+            columns.Add(new TableToolColumnImport("返点", 88));
             List<ITableToolRow> rows = new List<ITableToolRow>();
 
             DataReportServiceClient client = new DataReportServiceClient();

@@ -42,7 +42,7 @@
                    HorizontalAlignment="Left" Grid.Column="8"></TextBlock>
         <TextBlock Name="text_Transfer" Text="支取" Margin="10,0,10,0" 
                    HorizontalAlignment="Left" Grid.Column="9"></TextBlock>
-        <TextBlock Name="text_Cash" Text="现金" Margin="10,0,10,0" 
+        <TextBlock Name="text_Rebate" Text="返点" Margin="10,0,10,0" 
                    HorizontalAlignment="Left" Grid.Column="10"></TextBlock>
     </Grid>
 </UserControl>
