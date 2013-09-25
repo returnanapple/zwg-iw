@@ -424,6 +424,19 @@ namespace IWorld.BLL
             #endregion
 
             #endregion
+            #region 令牌
+
+            #region UserLoginToken的契约
+            modelBuilder.Entity<UserLoginToken>().ToTable("IWorld_UserLoginToken");
+            modelBuilder.Entity<UserLoginToken>().HasKey(x => x.Id);
+            #endregion
+
+            #region UserLoginToken的契约
+            modelBuilder.Entity<ManagerLoginToken>().ToTable("IWorld_ManagerLoginToken");
+            modelBuilder.Entity<ManagerLoginToken>().HasKey(x => x.Id);
+            #endregion
+
+            #endregion
         }
 
         #endregion

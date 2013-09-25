@@ -1018,6 +1018,15 @@ namespace IWorld.Admin.UserInfoService {
         交通银行 = 105,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        招商银行 = 106,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        民生银行 = 107,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        邮政存储 = 108,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         财付通 = 201,
     }
     

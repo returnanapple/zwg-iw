@@ -21,13 +21,14 @@ namespace IWorld.Client
             InitializeComponent();
             input_card.Text = App.UserInfo.Card;
             input_holder.Text = App.UserInfo.Holder;
-            input_bank.SelectedIndex = App.UserInfo.Bank == Bank.财付通 ? 1 : 0;
+            input_bank.SelectedIndex = 0;
             if (App.UserInfo.BindingCard)
             {
                 input_card.IsEnabled = false;
                 input_holder.IsEnabled = false;
                 button_update.IsEnabled = false;
                 input_bank.IsEnabled = false;
+                input_bank.SelectedIndex = (int)(App.UserInfo.Bank) - 101;
             }
         }
 
@@ -35,7 +36,7 @@ namespace IWorld.Client
 
         private void Update(object sender, RoutedEventArgs e)
         {
-            Bank _bank = input_bank.SelectedIndex == 0 ? Bank.中国工商银行 : Bank.财付通;
+            Bank _bank = (Bank)(Enum.Parse(typeof(Bank), ((TextBlock)input_bank.SelectedItem).Text, false));
             UsersServiceClient client = new UsersServiceClient();
             client.EditBankCompleted += ShowUpdateResult;
             client.EditBankAsync(input_card.Text, input_holder.Text, _bank, App.Token);

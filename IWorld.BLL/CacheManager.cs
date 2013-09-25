@@ -15,50 +15,29 @@ namespace IWorld.BLL
         #region 用户信息缓存
 
         /// <summary>
-        /// 用户信息的缓存池
-        /// </summary>
-        private static MemoryCache userCache = new MemoryCache("user");
-
-        /// <summary>
-        /// 用户信息的实体缓存区
-        /// </summary>
-        private static Dictionary<string, int> userCacheEntity = new Dictionary<string, int>();
-
-        /// <summary>
         /// 声明用户登陆
         /// </summary>
         /// <param name="userId">用户的存储指针</param>
         /// <returns>返回标识码</returns>
         public static string SetUserIn(int userId)
         {
-            #region 移除其余的同帐号登录
-            if (userCacheEntity.Values.Any(x => x == userId))
+            using (WebMapContext db = new WebMapContext())
             {
-                List<string> _tokens = userCacheEntity.Where(x => x.Value == userId).Select(x => x.Key).ToList();
-                _tokens.ForEach(x =>
-                {
-                    userCache.Remove(x);
-                });
+                #region 移除所有其他的登陆令牌
+
+                db.Set<UserLoginToken>().Where(x => x.UserId == userId
+                    && x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
+                        {
+                            x.ExpiredTime = DateTime.Now.AddYears(-1);
+                        });
+                #endregion
+
+                UserLoginToken token = new UserLoginToken(userId);
+                db.Set<UserLoginToken>().Add(token);
+                db.SaveChanges();
+                return token.Code;
             }
-
-            #endregion
-
-            string token = Guid.NewGuid().ToString("N");
-            WebSetting webSetting = new WebSetting();
-            CacheItemPolicy policy = new CacheItemPolicy();
-            policy.SlidingExpiration = new TimeSpan(0, webSetting.UserInTime, 0);
-            policy.Priority = CacheItemPriority.NotRemovable;
-            policy.RemovedCallback = (arguments) =>
-            {
-                if (userCacheEntity.Keys.Any(x => x == arguments.CacheItem.Key))
-                {
-                    userCacheEntity.Remove(arguments.CacheItem.Key);
-                }
-            };
-            userCache.Add(token, "", policy);
-            userCacheEntity.Add(token, userId);
-
-            return token;
         }
 
         /// <summary>
@@ -68,13 +47,24 @@ namespace IWorld.BLL
         /// <returns>返回一个布尔值，表示该用户是否已经声明他登陆在系统中</returns>
         public static bool SetUserOut(string token)
         {
-            bool hadThisMan = userCache.Any(x => x.Key == token);
-            if (!hadThisMan)
+            using (WebMapContext db = new WebMapContext())
             {
-                return false;
+                bool hadThisMan = db.Set<UserLoginToken>().Any(x => x.Code == token
+                        && x.ExpiredTime > DateTime.Now);
+                if (!hadThisMan)
+                {
+                    return false;
+                }
+
+                db.Set<UserLoginToken>().Where(x => x.Code == token
+                    && x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
+                    {
+                        x.ExpiredTime = DateTime.Now.AddYears(-1);
+                    });
+                db.SaveChanges();
+                return true;
             }
-            userCache.Remove(token);
-            return true;
         }
 
         /// <summary>
@@ -84,27 +74,22 @@ namespace IWorld.BLL
         /// <returns><返回用户的存储指针/returns>
         public static int GetUserId(string token)
         {
-            bool hadThisMan = userCache.Any(x => x.Key == token);
-            if (!hadThisMan)
+            using (WebMapContext db = new WebMapContext())
             {
-                return -1;
+                bool hadThisMan = db.Set<UserLoginToken>().Any(x => x.Code == token
+                        && x.ExpiredTime > DateTime.Now);
+                if (!hadThisMan)
+                {
+                    return -1;
+                }
+                return db.Set<UserLoginToken>().Where(x => x.Code == token && x.ExpiredTime > DateTime.Now)
+                    .OrderByDescending(x => x.CreatedTime).First().UserId;
             }
-            return userCacheEntity[token];
         }
 
         #endregion
 
         #region 管理员信息缓存
-
-        /// <summary>
-        /// 管理员信息的缓存池
-        /// </summary>
-        private static MemoryCache administratorCache = new MemoryCache("administrator");
-
-        /// <summary>
-        /// 管理员信息的实体缓存区
-        /// </summary>
-        private static Dictionary<string, int> administratorCacheEntity = new Dictionary<string, int>();
 
         /// <summary>
         /// 声明管理员登陆
@@ -113,34 +98,23 @@ namespace IWorld.BLL
         /// <returns>返回标识码</returns>
         public static string SetAdministratorIn(int administratorId)
         {
-            #region 移除其余的同帐号登录
-            if (administratorCacheEntity.Values.Any(x => x == administratorId))
+            using (WebMapContext db = new WebMapContext())
             {
-                List<string> _tokens = administratorCacheEntity.Where(x => x.Value == administratorId).Select(x => x.Key).ToList();
-                _tokens.ForEach(x =>
+                #region 移除所有其他的登陆令牌
+
+                db.Set<ManagerLoginToken>().Where(x => x.UserId == administratorId
+                    && x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
                     {
-                        administratorCache.Remove(x);
+                        x.ExpiredTime = DateTime.Now.AddYears(-1);
                     });
+                #endregion
+
+                ManagerLoginToken token = new ManagerLoginToken(administratorId);
+                db.Set<ManagerLoginToken>().Add(token);
+                db.SaveChanges();
+                return token.Code;
             }
-
-            #endregion
-
-            string token = Guid.NewGuid().ToString("N");
-            WebSetting webSetting = new WebSetting();
-            CacheItemPolicy policy = new CacheItemPolicy();
-            policy.SlidingExpiration = new TimeSpan(0, webSetting.UserInTime, 0);
-            policy.Priority = CacheItemPriority.NotRemovable;
-            policy.RemovedCallback = (arguments) =>
-                {
-                    if (administratorCacheEntity.Keys.Any(x => x == arguments.CacheItem.Key))
-                    {
-                        administratorCacheEntity.Remove(arguments.CacheItem.Key);
-                    }
-                };
-            administratorCache.Add(token, "", policy);
-            administratorCacheEntity.Add(token, administratorId);
-
-            return token;
         }
 
         /// <summary>
@@ -150,13 +124,24 @@ namespace IWorld.BLL
         /// <returns>返回一个布尔值，表示该管理员是否已经声明他登陆在系统中</returns>
         public static bool SetAdministratorOut(string token)
         {
-            bool hadThisMan = administratorCache.Any(x => x.Key == token);
-            if (!hadThisMan)
+            using (WebMapContext db = new WebMapContext())
             {
-                return false;
+                bool hadThisMan = db.Set<ManagerLoginToken>().Any(x => x.Code == token
+                        && x.ExpiredTime > DateTime.Now);
+                if (!hadThisMan)
+                {
+                    return false;
+                }
+
+                db.Set<ManagerLoginToken>().Where(x => x.Code == token
+                    && x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
+                    {
+                        x.ExpiredTime = DateTime.Now.AddYears(-1);
+                    });
+                db.SaveChanges();
+                return true;
             }
-            administratorCache.Remove(token);
-            return true;
         }
 
         /// <summary>
@@ -166,12 +151,17 @@ namespace IWorld.BLL
         /// <returns><返回管理员的存储指针/returns>
         public static int GetAdministratorId(string token)
         {
-            bool hadThisMan = administratorCache.Any(x => x.Key == token);
-            if (!hadThisMan)
+            using (WebMapContext db = new WebMapContext())
             {
-                return -1;
+                bool hadThisMan = db.Set<ManagerLoginToken>().Any(x => x.Code == token
+                        && x.ExpiredTime > DateTime.Now);
+                if (!hadThisMan)
+                {
+                    return -1;
+                }
+                return db.Set<ManagerLoginToken>().Where(x => x.Code == token && x.ExpiredTime > DateTime.Now)
+                    .OrderByDescending(x => x.CreatedTime).First().UserId;
             }
-            return administratorCacheEntity[token];
         }
 
         #endregion
@@ -599,8 +589,20 @@ namespace IWorld.BLL
         /// </summary>
         public static void ClearCache()
         {
-            userCache = new MemoryCache("user");
-            userCacheEntity = new Dictionary<string, int>();
+            using (WebMapContext db = new WebMapContext())
+            {
+                db.Set<UserLoginToken>().Where(x => x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
+                    {
+                        x.ExpiredTime = DateTime.Now.AddYears(-1);
+                    });
+                db.Set<ManagerLoginToken>().Where(x => x.ExpiredTime > DateTime.Now)
+                    .ToList().ForEach(x =>
+                    {
+                        x.ExpiredTime = DateTime.Now.AddYears(-1);
+                    });
+                db.SaveChanges();
+            }
 
             collectionReslutCache = new MemoryCache("collectionReslut");
             collectionReslutCacheEntity = new Dictionary<string, CollectionResult>();

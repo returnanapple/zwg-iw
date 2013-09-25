@@ -27,6 +27,7 @@ namespace IWorld.Admin
             text_holer.Text = recharge.Name;
             text_status.Text = recharge.Status.ToString();
             text_remark.Text = recharge.Remark;
+            text_bank.Text = recharge.Bank.ToString();
         }
 
         private void BackToList(object sender, EventArgs e)

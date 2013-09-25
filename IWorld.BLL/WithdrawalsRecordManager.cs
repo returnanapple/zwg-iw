@@ -195,7 +195,7 @@ namespace IWorld.BLL
                         throw new Exception(string.Format("提款金额不得小于系统规定的下限（{0}元）", minimumWithdrawalAmount));
                     }
                     double maximumWithdrawalAmount = t.MaximumWithdrawalAmount != 0 ? t.MaximumWithdrawalAmount
-                        : webSetting.MinimumBonusMode;
+                        : webSetting.MaximumWithdrawalAmount;
                     if (this.Sum > maximumWithdrawalAmount)
                     {
                         throw new Exception(string.Format("提款金额不得大于系统规定的上限（{0}元）", maximumWithdrawalAmount));
@@ -208,6 +208,16 @@ namespace IWorld.BLL
                     if (!banks.Contains(this.Bank.ToString()))
                     {
                         throw new Exception(string.Format("指定的银行不在系统支持的列表中（{0}）", webSetting.Banks));
+                    }
+                    double _recharge = 0;
+                    if (db.Set<PersonalDataAtMonth>().Any(x => x.Owner.Id == this.OwnerId))
+                    {
+                        _recharge = db.Set<PersonalDataAtMonth>().Where(x => x.Owner.Id == this.OwnerId).Sum(x => x.Recharge);
+                    }
+                    double _consumption = db.Set<Author>().Where(x => x.Id == this.OwnerId).Select(x => x.Consumption).First();
+                    if (_consumption < 0.3 * _recharge)
+                    {
+                        throw new Exception("因为消费量小于充值额的30%或者长得太丑 提现申请失败");
                     }
                 }
 

@@ -11,7 +11,7 @@ namespace IWorld.BLL
     /// <summary>
     /// 客服账户的管理者对象
     /// </summary>
-    public class WaiterManager : SimplifyManagerBase<Waiter>
+    public class WaiterManager : IWorld.BLL.SimplifyManagerBase<Waiter>
     {
         #region 构造方法
 

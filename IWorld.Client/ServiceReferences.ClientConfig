@@ -42,12 +42,49 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_IActivityService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IBulletinService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IDataReportService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IGamingService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IMessageService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ISystemSettingService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUsersService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
             <endpoint address="../Api/CustomerService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_ICustomerService" contract="CustomerService.ICustomerService"
                 name="BasicHttpBinding_ICustomerService" />
+            <endpoint address="../Api/FundsService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IFundsService" contract="FundsService.IFundsService"
+                name="BasicHttpBinding_IFundsService" />
+            <endpoint address="../Api/ActivityService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IActivityService" contract="ActivityService.IActivityService"
+                name="BasicHttpBinding_IActivityService" />
+            <endpoint address="../Api/BulletinService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IBulletinService" contract="BulletinService.IBulletinService"
+                name="BasicHttpBinding_IBulletinService" />
             <endpoint address="../Api/DataReportService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IDataReportService"
                 contract="DataReportService.IDataReportService" name="BasicHttpBinding_IDataReportService" />
@@ -63,15 +100,6 @@
             <endpoint address="../Api/UsersService.svc" binding="basicHttpBinding"
                 bindingConfiguration="BasicHttpBinding_IUsersService" contract="UsersService.IUsersService"
                 name="BasicHttpBinding_IUsersService" />
-            <endpoint address="../Api/ActivityService.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IActivityService" contract="ActivityService.IActivityService"
-                name="BasicHttpBinding_IActivityService" />
-            <endpoint address="../Api/BulletinService.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IBulletinService" contract="BulletinService.IBulletinService"
-                name="BasicHttpBinding_IBulletinService" />
-            <endpoint address="../Api/FundsService.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_IFundsService" contract="FundsService.IFundsService"
-                name="BasicHttpBinding_IFundsService" />
         </client>
     </system.serviceModel>
 </configuration>

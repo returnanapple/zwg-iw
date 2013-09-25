@@ -14,7 +14,6 @@ namespace IWorld.DataCall
     {
         static void Main(string[] args)
         {
-            SaveToData();
         }
 
         static void SaveToXaml()
@@ -148,6 +147,165 @@ namespace IWorld.DataCall
                         x.Money = 0;
                         x.MoneyBeFrozen = 0;
                     });
+                db.SaveChanges();
+            }
+        }
+
+        static void SaveToDataRecord()
+        {
+            XElement doc = new XElement("records");
+            using (WebMapContext db = new WebMapContext())
+            {
+                db.Set<SiteDataAtDay>().ToList().ForEach(x =>
+                    {
+                        db.Set<SiteDataAtDay>().Remove(x);
+                    });
+                db.Set<SiteDataAtMonth>().ToList().ForEach(x =>
+                    {
+                        db.Set<SiteDataAtMonth>().Remove(x);
+                    });
+                db.Set<PersonalDataAtDay>().ToList().ForEach(x =>
+                    {
+                        db.Set<PersonalDataAtDay>().Remove(x);
+                    });
+                db.Set<PersonalDataAtMonth>().ToList().ForEach(x =>
+                    {
+                        db.Set<PersonalDataAtMonth>().Remove(x);
+                    });
+                SiteDataAtDay _SiteDataAtDay = new SiteDataAtDay(DateTime.Now);
+                SiteDataAtMonth _SiteDataAtMonth = new SiteDataAtMonth(DateTime.Now);
+
+                db.Set<Author>().Where(x => x.Status == UserStatus.正常).ToList().ForEach(user =>
+                    {
+                        XElement e = new XElement("record", new XElement("用户名", user.Username));
+                        PersonalDataAtDay _PersonalDataAtDay = new PersonalDataAtDay(user);
+                        PersonalDataAtMonth _PersonalDataAtMonth = new PersonalDataAtMonth(user);
+
+                        #region 充值
+
+                        double _recharge = 0;
+                        if (db.Set<RechargeRecord>().Any(x => x.Status == RechargeStatus.充值成功 && x.Owner.Id == user.Id))
+                        {
+                            _recharge = db.Set<RechargeRecord>()
+                                .Where(x => x.Status == RechargeStatus.充值成功 && x.Owner.Id == user.Id)
+                                .Sum(x => x.Sum);
+                        }
+                        e.Add(new XElement("充值", _recharge));
+                        _SiteDataAtDay.Recharge += _recharge;
+                        _SiteDataAtMonth.Recharge += _recharge;
+                        _PersonalDataAtDay.Recharge = _recharge;
+                        _PersonalDataAtMonth.Recharge = _recharge;
+
+                        #endregion
+
+                        #region 提现
+
+                        double _withdraw = 0;
+                        if (db.Set<WithdrawalsRecord>().Any(x => x.Status == WithdrawalsStatus.提现成功 && x.Owner.Id == user.Id))
+                        {
+                            _withdraw = db.Set<WithdrawalsRecord>()
+                                .Where(x => x.Status == WithdrawalsStatus.提现成功 && x.Owner.Id == user.Id)
+                                .Sum(x => x.Sum);
+                        }
+                        e.Add(new XElement("提现", _withdraw));
+                        _SiteDataAtDay.Withdrawal += _withdraw;
+                        _SiteDataAtMonth.Withdrawal += _withdraw;
+                        _PersonalDataAtDay.Withdrawal = _withdraw;
+                        _PersonalDataAtMonth.Withdrawal = _withdraw;
+
+                        #endregion
+
+                        #region 投注
+
+                        double _bet = 0;
+                        List<BettingStatus> _bettingStatus = new List<BettingStatus> { BettingStatus.即将开奖, BettingStatus.未中奖, BettingStatus.中奖 };
+                        if (db.Set<Betting>().Any(x => x.Owner.Id == user.Id && _bettingStatus.Contains(x.Status)))
+                        {
+                            _bet = db.Set<Betting>()
+                                .Where(x => x.Owner.Id == user.Id && _bettingStatus.Contains(x.Status))
+                                .Sum(x => x.Pay);
+                        }
+                        e.Add(new XElement("投注", _bet));
+                        _SiteDataAtDay.AmountOfBets += _bet;
+                        _SiteDataAtMonth.AmountOfBets += _bet;
+                        _PersonalDataAtDay.AmountOfBets = _bet;
+                        _PersonalDataAtMonth.AmountOfBets = _bet;
+
+                        #endregion
+
+                        #region 中奖
+
+                        double _bonus = 0;
+                        if (db.Set<Betting>().Any(x => x.Owner.Id == user.Id && x.Status == BettingStatus.中奖))
+                        {
+                            _bonus = db.Set<Betting>()
+                                .Where(x => x.Owner.Id == user.Id && x.Status == BettingStatus.中奖)
+                                .Sum(x => x.Bonus);
+                        }
+                        e.Add(new XElement("中奖", _bonus));
+                        _SiteDataAtDay.Bonus += _bonus;
+                        _SiteDataAtMonth.Bonus += _bonus;
+                        _PersonalDataAtDay.Bonus = _bonus;
+                        _PersonalDataAtMonth.Bonus = _bonus;
+
+                        #endregion
+
+                        #region 返点
+
+                        double _rebate = 0;
+                        if (db.Set<SubordinateDynamic>().Any(x => x.To.Id == user.Id && x.Currency == Currency.元))
+                        {
+                            _rebate = db.Set<SubordinateDynamic>()
+                                .Where(x => x.To.Id == user.Id && x.Currency == Currency.元)
+                                .Sum(x => x.Give);
+                        }
+                        e.Add(new XElement("返点", _rebate));
+                        _SiteDataAtDay.ReturnPoints += _rebate;
+                        _SiteDataAtMonth.ReturnPoints += _rebate;
+                        _PersonalDataAtDay.ReturnPoints = _rebate;
+                        _PersonalDataAtMonth.ReturnPoints = _rebate;
+
+                        #endregion
+
+                        #region 活动返还
+
+                        double _return = 0;
+                        if (db.Set<ActivityParticipateRecord>().Any(x => x.Owner.Id == user.Id
+                            && x.Activity.RewardType == ActivityRewardType.人民币))
+                        {
+                            _return = db.Set<ActivityParticipateRecord>().Where(x => x.Owner.Id == user.Id
+                                    && x.Activity.RewardType == ActivityRewardType.人民币)
+                                .Sum(x => x.Activity.Reward);
+                        }
+                        e.Add(new XElement("活动返还", _return));
+                        _SiteDataAtDay.Expenditures += _return;
+                        _SiteDataAtMonth.Expenditures += _return;
+                        _PersonalDataAtDay.Expenditures = _return;
+                        _PersonalDataAtMonth.Expenditures = _return;
+
+                        #endregion
+
+                        double profit = _bonus + _rebate + _return - _bet;
+                        e.Add(new XElement("盈利", profit));
+
+                        double money = profit + _recharge - _withdraw;
+                        e.Add(new XElement("理论余额", money));
+                        _PersonalDataAtDay.Money = money;
+                        _PersonalDataAtMonth.Money = money;
+
+                        e.Add(new XElement("实际余额", user.Money));
+                        user.Money = money;
+
+                        doc.Add(e);
+                        db.Set<PersonalDataAtDay>().Add(_PersonalDataAtDay);
+                        db.Set<PersonalDataAtMonth>().Add(_PersonalDataAtMonth);
+                        Console.WriteLine(string.Format("统计完毕，当前用户：{0}，Id：{1}", user.Username, user.Id));
+                    });
+
+                db.Set<SiteDataAtDay>().Add(_SiteDataAtDay);
+                db.Set<SiteDataAtMonth>().Add(_SiteDataAtMonth);
+
+                doc.Save("E:/用户统计数据报表.xml");
                 db.SaveChanges();
             }
         }

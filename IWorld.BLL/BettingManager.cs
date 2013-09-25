@@ -238,6 +238,14 @@ namespace IWorld.BLL
                             returnPoints = user.NormalReturnPoints;
                             break;
                     }
+                    if (this.Pay <= 0)
+                    {
+                        throw new Exception("付款金额小于 0 ？你想多了吧？");
+                    }
+                    if (this.Multiple <= 0)
+                    {
+                        throw new Exception("倍数小于 0 ？你想多了吧？");
+                    }
                     if (this.Pay > user.Money)
                     {
                         throw new Exception("资金余额不足");

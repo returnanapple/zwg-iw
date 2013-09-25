@@ -43,7 +43,7 @@ namespace IWorld.Client
                     Email = input_email.Text,
                     Card = input_card.Text,
                     Holder = input_holder.Text,
-                    Bank = input_bank.SelectedIndex == 0 ? Bank.中国工商银行 : Bank.财付通
+                    Bank = (Bank)(Enum.Parse(typeof(Bank), ((TextBlock)input_bank.SelectedItem).Text, false))
                 };
                 UsersServiceClient client = new UsersServiceClient();
                 client.BindingCompleted += ShowBindingResult;
@@ -55,13 +55,20 @@ namespace IWorld.Client
         {
             if (e.Result.Success)
             {
-                App.GoToOperatePage();
+                ErrorPromt ep = new ErrorPromt("绑定成功，请重新登陆");
+                ep.Closed += ep_Closed;
+                ep.Show();
             }
             else
             {
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
             }
+        }
+
+        void ep_Closed(object sender, EventArgs e)
+        {
+            App.GoToLoginPage();
         }
         #endregion
 

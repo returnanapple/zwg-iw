@@ -66,10 +66,10 @@ namespace IWorld.BLL
                 ChangingStatusEventHandler(this, eventArgs);    //触发前置事件
             }
             record.Status = newStatus;
-            record.Remark = remark;
-            record.Card = card;
-            record.Name = name;
-            record.Bank = bank;
+            if (remark != "") { record.Remark = remark; }
+            if (card != "") { record.Card = card; }
+            if (name != "") { record.Name = name; }
+            if (bank != Bank.无) { record.Bank = bank; }
             db.SaveChanges();
             if (ChangedStatusEventHandler != null)
             {

@@ -22,6 +22,12 @@ namespace IWorld.Model
         中国建设银行 = 104,
         [EnumMember]
         交通银行 = 105,
+        [EnumMember]
+        招商银行 = 106,
+        [EnumMember]
+        民生银行 = 107,
+        [EnumMember]
+        邮政存储 = 108,
         //网络支付
         [EnumMember]
         财付通 = 201

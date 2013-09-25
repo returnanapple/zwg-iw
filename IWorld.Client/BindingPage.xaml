@@ -39,8 +39,14 @@
             <TextBox Name="input_holder" Height="23" Canvas.Left="152" Canvas.Top="312" Width="120"/>
             <ComboBox Name="input_bank" Height="20" Canvas.Left="155" Canvas.Top="343" Width="117" SelectedIndex="0">
                 <ComboBox.Items>
-                    <TextBlock Text="工商银行"/>
-                    <TextBlock Text="财付通"/>
+                    <TextBlock Text="中国工商银行"/>
+                    <TextBlock Text="中国农业银行"/>
+                    <TextBlock Text="中国银行"/>
+                    <TextBlock Text="中国建设银行"/>
+                    <TextBlock Text="交通银行"/>
+                    <TextBlock Text="招商银行"/>
+                    <TextBlock Text="民生银行"/>
+                    <TextBlock Text="邮政存储"/>
                 </ComboBox.Items>
             </ComboBox>
 

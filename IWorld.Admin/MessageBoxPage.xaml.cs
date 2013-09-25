@@ -86,12 +86,13 @@ namespace IWorld.Admin
         void InsertTable_W()
         {
             List<TableToolColumnImport> columns = new List<TableToolColumnImport>();
-            columns.Add(new TableToolColumnImport("用户", 152));
-            columns.Add(new TableToolColumnImport("金额", 152));
-            columns.Add(new TableToolColumnImport("银行卡", 152));
-            columns.Add(new TableToolColumnImport("开户人", 152));
-            columns.Add(new TableToolColumnImport("状态", 152));
-            columns.Add(new TableToolColumnImport("操作", 152));
+            columns.Add(new TableToolColumnImport("用户", 130));
+            columns.Add(new TableToolColumnImport("金额", 120));
+            columns.Add(new TableToolColumnImport("银行卡", 192));
+            columns.Add(new TableToolColumnImport("开户人", 120));
+            columns.Add(new TableToolColumnImport("开户行", 130));
+            columns.Add(new TableToolColumnImport("状态", 120));
+            columns.Add(new TableToolColumnImport("操作", 90));
             List<ITableToolRow> rows = new List<ITableToolRow>();
 
             DataReportServiceClient client = new DataReportServiceClient();

@@ -80,6 +80,7 @@
     <Compile Include="LotteryManager.cs" />
     <Compile Include="LotteryTicketManager.cs" />
     <Compile Include="ManagerBase.cs" />
+    <Compile Include="ManagerLoginToken.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="NChecker.cs" />
     <Compile Include="NDelegate.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="TransferRecordManager.cs" />
     <Compile Include="UserGroupManager.cs" />
     <Compile Include="UserLandingRecordManager.cs" />
+    <Compile Include="UserLoginToken.cs" />
     <Compile Include="VirtualTopManager.cs" />
     <Compile Include="WaiterManager.cs" />
     <Compile Include="WebMapContext.cs" />

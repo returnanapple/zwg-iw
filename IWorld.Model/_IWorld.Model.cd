@@ -378,7 +378,7 @@
   <Enum Name="IWorld.Model.RechargeStatus" Collapsed="true">
     <Position X="6" Y="13.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAEAAAAAA=</HashCode>
       <FileName>RechargeStatus.cs</FileName>
     </TypeIdentifier>
   </Enum>
@@ -427,7 +427,7 @@
   <Enum Name="IWorld.Model.ActivityType" Collapsed="true">
     <Position X="7.75" Y="14.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAEAAAAAAAgAAAAAAAAEAACAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAACAMQAAQAAgiCEAAAAAgEAICAAACAgAhAA=</HashCode>
       <FileName>ActivityType.cs</FileName>
     </TypeIdentifier>
   </Enum>

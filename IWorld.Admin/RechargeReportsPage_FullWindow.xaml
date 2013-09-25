@@ -12,8 +12,9 @@
         <TextBlock Text="标识码：" Canvas.Left="22" Canvas.Top="66"/>
         <TextBlock Text="来源卡号：" Canvas.Left="10" Canvas.Top="87"/>
         <TextBlock Text="开户人：" Canvas.Left="22" Canvas.Top="108"/>
-        <TextBlock Text="状态：" Canvas.Left="34" Canvas.Top="129"/>
-        <TextBlock Text="备注：" Canvas.Left="34" Canvas.Top="150"/>
+        <TextBlock Text="银行：" Canvas.Left="34" Canvas.Top="129"/>
+        <TextBlock Text="状态：" Canvas.Left="34" Canvas.Top="150"/>
+        <TextBlock Text="备注：" Canvas.Left="34" Canvas.Top="171"/>
 
         <TextBlock Name="text_owner" Text="admin" Canvas.Left="75" Canvas.Top="3"/>
         <TextBlock Name="text_payer" Text="admin" Canvas.Left="75" Canvas.Top="24"/>
@@ -21,8 +22,9 @@
         <TextBlock Name="text_code" Text="xxooxxooxxooxxooxxooxxooxxooxxoo" Canvas.Left="75" Canvas.Top="66"/>
         <TextBlock Name="text_card" Text="3457782094666284675" Canvas.Left="75" Canvas.Top="87"/>
         <TextBlock Name="text_holer" Text="习近平" Canvas.Left="75" Canvas.Top="108"/>
-        <TextBlock Name="text_status" Text="未处理" Canvas.Left="75" Canvas.Top="129"/>
-        <TextBlock Name="text_remark" Text="备注" Canvas.Left="75" Canvas.Top="150" Height="100" Width="219"
+        <TextBlock Name="text_bank" Text="工商银行" Canvas.Left="75" Canvas.Top="129"/>
+        <TextBlock Name="text_status" Text="未处理" Canvas.Left="75" Canvas.Top="150"/>
+        <TextBlock Name="text_remark" Text="备注" Canvas.Left="75" Canvas.Top="171" Height="99" Width="219"
                    TextWrapping="Wrap"/>
 
         <Admin:SubmitButton Canvas.Left="350" Text="返  回" ClickEventHandler="BackToList"/>
