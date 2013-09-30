@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="基类 - 单元测试">
+    <Position X="0.5" Y="0.5" Height="0.284" Width="1.21" />
+  </Comment>
+  <Class Name="IWorld.Model.Test.RecordingTimeModelBase_UnitTest">
+    <Position X="0.5" Y="1" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordingTimeModelBase_UnitTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.Test.CategoryModelBase_UnitTest">
+    <Position X="4.5" Y="1" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CategoryModelBase_UnitTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

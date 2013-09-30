@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="基础结构">
+    <Position X="0.5" Y="0.5" Height="0.284" Width="0.96" />
+  </Comment>
+  <Class Name="IWorld.Model.ModelBase">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.RecordingTimeModelBase">
+    <Position X="4" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>RecordingTimeModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.CategoryModelBase">
+    <Position X="7.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAAAAACAAEAAAAAACAAAAAAAAAAEAAAIAAAAAAA=</HashCode>
+      <FileName>CategoryModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.RegularModelBase">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAEAAAAAAAAAAgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>RegularModelBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.Relative">
+    <Position X="6.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Relative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

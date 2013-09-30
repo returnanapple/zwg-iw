@@ -32,11 +32,6 @@ namespace IWorld.Model
         /// </summary>
         public bool Hide { get; set; }
 
-        /// <summary>
-        /// 一个布尔值 标识活动是否到期之后自动删除
-        /// </summary>
-        public bool AutoDlete { get; set; }
-
         #endregion
 
         #region 构造方法
@@ -54,14 +49,15 @@ namespace IWorld.Model
         /// <param name="beginTime">开始时间</param>
         /// <param name="endTime">结束时间</param>
         /// <param name="hide">一个布尔值 标识活动是否暂停</param>
-        /// <param name="autoDlete">一个布尔值 标识活动是否到期之后自动删除</param>
-        public RegularModelBase(DateTime beginTime, DateTime endTime, bool hide, bool autoDlete)
-            : base(DateTime.Now)
+        public RegularModelBase(DateTime beginTime, DateTime endTime, bool hide)
         {
+            if (beginTime < endTime)
+            {
+                throw new Exception("定期活动的开始时候不小于结束时间 请检查输入");
+            }
             this.BeginTime = beginTime;
             this.EndTime = endTime;
             this.Hide = hide;
-            this.AutoDlete = autoDlete;
         }
 
         #endregion

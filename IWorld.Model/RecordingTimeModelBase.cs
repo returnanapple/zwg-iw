@@ -31,16 +31,8 @@ namespace IWorld.Model
         /// </summary>
         public RecordingTimeModelBase()
         {
-        }
-
-        /// <summary>
-        /// 实例化一个新的记录创建时间和最新修改时间的数据模型
-        /// </summary>
-        /// <param name="now">当前时间</param>
-        public RecordingTimeModelBase(DateTime now)
-        {
-            this.CreatedTime = now;
-            this.ModifiedTime = now;
+            this.CreatedTime = DateTime.Now;
+            this.ModifiedTime = DateTime.Now;
         }
 
         #endregion

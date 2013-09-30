@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace IWorld.Model
 {
@@ -44,19 +45,29 @@ namespace IWorld.Model
         /// <param name="relatives">父祖节点</param>
         /// <param name="tree">所从属的树</param>
         public CategoryModelBase(List<Relative> relatives, string tree = "")
-            : base(DateTime.Now)
         {
-            if (relatives == null || relatives.Count == 0)
-            {
-                this.Relatives = relatives;
-                this.Layer = relatives.Max(x => x.NodeLayer) + 1;
-            }
-            else
+            if (relatives == null)
             {
                 this.Relatives = new List<Relative>();
                 this.Layer = 1;
+                this.Tree = Guid.NewGuid().ToString("N");
             }
-            this.Tree = tree == "" ? Guid.NewGuid().ToString("N") : tree;
+            else if (relatives.Count > 0)
+            {
+                this.Relatives = relatives;
+                this.Layer = relatives.Max(x => x.NodeLayer) + 1;
+
+                Regex reg = new Regex(@"^[a-zA-Z0-9]{32}$");
+                if (!reg.IsMatch(tree))
+                {
+                    throw new Exception("树状结构的名称应为32位的guid");
+                }
+                this.Tree = tree;
+            }
+            else
+            {
+                throw new Exception("输入的父祖节点不应为空列表 如果该对象是第一级节点 请将父祖节点输入为null");
+            }
         }
 
         #endregion

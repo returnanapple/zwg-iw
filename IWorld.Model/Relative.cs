@@ -38,7 +38,7 @@ namespace IWorld.Model
         /// </summary>
         /// <param name="nodeId"></param>
         /// <param name="nodeLayer"></param>
-        public Relative(long nodeId, long nodeLayer)
+        public Relative(int nodeId, int nodeLayer)
         {
             this.NodeId = nodeId;
             this.NodeLayer = nodeLayer;

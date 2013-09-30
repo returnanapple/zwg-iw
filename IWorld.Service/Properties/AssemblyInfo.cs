@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 //“生成号”和“修订号”的默认值:
 // [assembly: AssemblyVersion("4.4.*")]
 [assembly: AssemblyVersion("4.4.*")]
-[assembly: AssemblyFileVersion("4.4.*")]
+[assembly: AssemblyFileVersion("4.4.0.0")]

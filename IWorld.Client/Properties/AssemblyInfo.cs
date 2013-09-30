@@ -32,4 +32,4 @@ using System.Runtime.InteropServices;
 // 您可以指定所有这些值，也可以使用“修订号”和“生成号”的默认值，
 // 方法是按如下所示使用“*”:
 [assembly: AssemblyVersion("4.4.*")]
-[assembly: AssemblyFileVersion("4.4.*")]
+[assembly: AssemblyFileVersion("4.4.0.0")]
