@@ -1,7 +1,7 @@
-<OutOfBrowserSettings ShortName="DongSheng" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
-  <OutOfBrowserSettings.Blurb>东升国际</OutOfBrowserSettings.Blurb>
+<OutOfBrowserSettings ShortName="IWorld" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>这个软件由紫微阁工作室制作，内核版本号为3.8</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="东升国际" Height="200" Width="320" WindowStyle="None" />
+    <WindowSettings Title="IWorld" Height="200" Width="320" WindowStyle="None" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />

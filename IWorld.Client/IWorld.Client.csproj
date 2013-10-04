@@ -767,19 +767,6 @@
       <Name>IWorld.Client.Class</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ActivityService\" />
-    <WCFMetadataStorage Include="Service References\BulletinService\" />
-    <WCFMetadataStorage Include="Service References\DataReportService\" />
-    <WCFMetadataStorage Include="Service References\FundsService\" />
-    <WCFMetadataStorage Include="Service References\GamingService\" />
-    <WCFMetadataStorage Include="Service References\MessageService\" />
-    <WCFMetadataStorage Include="Service References\SystemSettingService\" />
-    <WCFMetadataStorage Include="Service References\UsersService\" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -42,7 +42,7 @@
                 <local:TicketButton Text="新疆时时彩" Grid.Column="2"/>
                 <local:TicketButton Text="福彩3D" Grid.Column="3"/>
                 <local:TicketButton Text="十一夺运金" Grid.Column="4"/>
-                <local:TicketButton Text="福彩3D" Grid.Column="5"/>
+                <local:TicketButton Text="排列三" Grid.Column="5"/>
                 <local:TicketButton Text="上海时时乐" Grid.Column="6"/>
             </Grid>
             <TextBlock Text="用户：" Height="16" Canvas.Left="48" Canvas.Top="162" Width="36"/>
@@ -316,11 +316,7 @@
                           Width="0" Height="0"/>
             <MediaElement x:Name="bg_music_b" AutoPlay="False" Volume="1" Source="music/music-b.wma"
                           Width="0" Height="0"/>
-            <Image Source="img/logo_hfgj.png" Stretch="Fill" Width="180" Canvas.Left="33" Canvas.Top="45">
-                <Image.Effect>
-                    <DropShadowEffect Color="#FF0009BB" Direction="340" ShadowDepth="3"/>
-                </Image.Effect>
-            </Image>
+            <TextBlock Canvas.Left="44" TextWrapping="Wrap" Text="Logo" Canvas.Top="35" FontSize="48"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </UserControl>
