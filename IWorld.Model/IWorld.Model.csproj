@@ -53,6 +53,7 @@
     <Compile Include="RechargeRecord.cs" />
     <Compile Include="RecordingTimeModelBase.cs" />
     <Compile Include="RegularModelBase.cs" />
+    <Compile Include="RegularStatus.cs" />
     <Compile Include="Relative.cs" />
     <Compile Include="UserBinding.cs" />
     <Compile Include="UserData.cs" />
@@ -63,8 +64,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="_Base.cd" />
-    <None Include="_User.cd" />
+    <None Include="_IWorld.Model.Base.cd" />
+    <None Include="_IWorld.Model.User.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

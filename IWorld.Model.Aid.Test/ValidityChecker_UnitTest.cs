@@ -16,7 +16,7 @@ namespace IWorld.Model.Aid.Test
         #region 下限
 
         /// <summary>
-        /// 测试检查下限边际（输入参数为double类型）
+        /// 测试静态方法：检查下限边际（输入参数为double类型）
         /// </summary>
         [TestMethod]
         public void TestCheckLower_double()
@@ -55,7 +55,7 @@ namespace IWorld.Model.Aid.Test
         }
 
         /// <summary>
-        /// 测试检查下限边际（输入参数为int类型）
+        /// 测试静态方法：检查下限边际（输入参数为int类型）
         /// </summary>
         [TestMethod]
         public void TestCheckLower_int()
@@ -98,7 +98,7 @@ namespace IWorld.Model.Aid.Test
         #region 上限
 
         /// <summary>
-        /// 测试检查上限边际（输入参数为double类型）
+        /// 测试静态方法：检查上限边际（输入参数为double类型）
         /// </summary>
         [TestMethod]
         public void TestCheckCheckCaps_double()
@@ -137,7 +137,7 @@ namespace IWorld.Model.Aid.Test
         }
 
         /// <summary>
-        /// 测试检查上限边际（输入参数为int类型）
+        /// 测试静态方法：检查上限边际（输入参数为int类型）
         /// </summary>
         [TestMethod]
         public void TestCheckCheckCaps_int()

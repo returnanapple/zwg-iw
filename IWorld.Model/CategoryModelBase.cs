@@ -89,7 +89,7 @@ namespace IWorld.Model
         }
 
         /// <summary>
-        /// 判断目标对象是否是当前对象的祖节点
+        /// 判断当前对象是否是目标对象的祖节点
         /// </summary>
         /// <param name="beau">所要进行判断的对象</param>
         /// <returns></returns>
@@ -101,31 +101,31 @@ namespace IWorld.Model
         }
 
         /// <summary>
-        /// 判断目标对象是否是当前对象的父节点
+        /// 判断当前对象是否是目标对象的父节点
         /// </summary>
         /// <param name="beau">所要进行判断的对象</param>
-        /// <returns>返回一个布尔值 标识目标对象是否是当前对象的父节点</returns>
+        /// <returns>返回一个布尔值 标识当前对象是否是目标对象的父节点</returns>
         public bool IsParent(CategoryModelBase beau)
         {
-            return beau.Layer == this.Layer - 1
-                && beau.IsAncestry(this);
+            return beau.Layer == this.Layer + 1
+                && this.IsAncestry(beau);
         }
 
         /// <summary>
-        /// 判断目标对象是否是当前对象的的子孙节点
+        /// 判断当前对象是否是目标对象的的子孙节点
         /// </summary>
         /// <param name="beau">所要进行判断的对象</param>
-        /// <returns>返回一个布尔值 标识目标对象是否是当前对象的子孙节点</returns>
+        /// <returns>返回一个布尔值 标识当前对象是否是目标对象的子孙节点</returns>
         public bool IsOffspring(CategoryModelBase beau)
         {
             return beau.IsAncestry(this);
         }
 
         /// <summary>
-        /// 判断目标对象是否是当前对象的的子节点
+        /// 判断当前对象是否是目标对象的的子节点
         /// </summary>
         /// <param name="beau">所要进行判断的对象</param>
-        /// <returns>返回一个布尔值 标识目标对象是否是当前对象的子节点</returns>
+        /// <returns>返回一个布尔值 标识当前对象是否是目标对象的子节点</returns>
         public bool IsChild(CategoryModelBase beau)
         {
             return beau.IsParent(this);

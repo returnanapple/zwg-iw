@@ -36,12 +36,11 @@ namespace IWorld.Model
         /// <summary>
         /// 实例化一个新的亲族节点
         /// </summary>
-        /// <param name="nodeId"></param>
-        /// <param name="nodeLayer"></param>
-        public Relative(int nodeId, int nodeLayer)
+        /// <param name="beau">目标对象</param>
+        public Relative(CategoryModelBase beau)
         {
-            this.NodeId = nodeId;
-            this.NodeLayer = nodeLayer;
+            this.NodeId = beau.Id;
+            this.NodeLayer = beau.Layer;
         }
 
         #endregion

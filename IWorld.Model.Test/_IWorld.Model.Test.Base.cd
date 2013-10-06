@@ -13,8 +13,15 @@
   <Class Name="IWorld.Model.Test.CategoryModelBase_UnitTest">
     <Position X="4.5" Y="1" Width="5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAABAEEAAAAAACAAAAAAAAAAIABAAA=</HashCode>
       <FileName>CategoryModelBase_UnitTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.Model.Test.RegularModelBase_UnitTest">
+    <Position X="0.5" Y="2.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABA=</HashCode>
+      <FileName>RegularModelBase_UnitTest.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />

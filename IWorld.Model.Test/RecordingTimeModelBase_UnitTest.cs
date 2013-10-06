@@ -29,7 +29,7 @@ namespace IWorld.Model.Test
         #region 方法
 
         /// <summary>
-        /// 测试声明数据模型已经被修改
+        /// 测试方法：声明数据模型已经被修改
         /// </summary>
         [TestMethod]
         public void Model_RecordingTimeModelBase_TestOnModify()

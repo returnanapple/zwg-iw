@@ -54,7 +54,7 @@
     <Compile Include="ValidityChecker_UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="_Checker.cd" />
+    <None Include="_IWorld.Model.Aid.Test.Checker.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IWorld.Model.Aid\IWorld.Model.Aid.csproj">
