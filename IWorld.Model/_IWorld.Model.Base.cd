@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+<ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="基础结构">
     <Position X="0.5" Y="0.5" Height="0.284" Width="0.96" />
   </Comment>
   <Class Name="IWorld.Model.ModelBase">
-    <Position X="2.75" Y="0.75" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.RecordingTimeModelBase">
-    <Position X="3.75" Y="3.25" Width="2.25" />
+    <Position X="2.25" Y="2.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>RecordingTimeModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.CategoryModelBase">
-    <Position X="6.75" Y="3.25" Width="2.5" />
+    <Position X="3.75" Y="5.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAgIAAAAAACAAEAAAAAACAAAAAAAAAAEAAAIAAAAAAA=</HashCode>
       <FileName>CategoryModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.RegularModelBase">
-    <Position X="0.5" Y="3.25" Width="2.5" />
+    <Position X="0.5" Y="5.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEQAAAAAAAEAAAAAAEAAAgAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEQAAAAAAAEAAAAAAEAACgAAAAQAAAAAAAAAA=</HashCode>
       <FileName>RegularModelBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.Model.Relative">
-    <Position X="6.25" Y="1" Width="1.75" />
+    <Position X="7" Y="2.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Relative.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="IWorld.Model.RegularStatus">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Enum Name="IWorld.Model.RegularStatus" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAEAAAAAAAAAAAAQAAAAAAAAAAAIA=</HashCode>
       <FileName>RegularStatus.cs</FileName>
