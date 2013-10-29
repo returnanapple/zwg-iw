@@ -31,6 +31,12 @@ namespace IWorld.Admin
             button_howToPlay.Text = betting.HowToPlay;
             text_pay.Text = betting.Pay.ToString("0.00");
             text_bonus.Text = betting.Bonus.ToString("0.00");
+            button_cheat.Text = betting.Cheat ? "取消作弊" : "作弊";
+            List<BettingStatus> showStatus = new List<BettingStatus> { BettingStatus.等待开奖, BettingStatus.即将开奖 };
+            if (!showStatus.Contains(betting.Status))
+            {
+                button_cheat.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         #region 事件
@@ -111,6 +117,32 @@ namespace IWorld.Admin
         {
             BettingReportsPage_FullWindow fw = new BettingReportsPage_FullWindow(this.Betting);
             fw.Show();
+        }
+
+        private void SetIfCheat(object sender, MouseButtonEventArgs e)
+        {
+            DataReportServiceClient client = new DataReportServiceClient();
+            client.SetCheatForBettingCompleted += ShowSetIfCheatResualt;
+            client.SetCheatForBettingAsync(this.Betting.BettingId, !this.Betting.Cheat, App.Token);
+        }
+
+        void ShowSetIfCheatResualt(object sender, SetCheatForBettingCompletedEventArgs e)
+        {
+            if (!e.Result.Success)
+            {
+                ErrorPrompt ep = new ErrorPrompt(e.Result.Error);
+                ep.Show();
+                return;
+            }
+            Betting.Cheat = !Betting.Cheat;
+            button_cheat.Text = Betting.Cheat ? "取消作弊" : "作弊";
+            List<BettingStatus> showStatus = new List<BettingStatus> { BettingStatus.等待开奖, BettingStatus.即将开奖 };
+            if (!showStatus.Contains(Betting.Status))
+            {
+                button_cheat.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            ErrorPrompt _ep = new ErrorPrompt("操作成功");
+            _ep.Show();
         }
     }
 }

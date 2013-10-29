@@ -32,6 +32,7 @@ namespace IWorld.BLL
             SHSSLEventhandler += InsertSHSSL;
             FC3DEventhandler += InsertFC3D;
             PLSEventhandler += InsertPLS;
+            QTCEventhandler += InsertQTC;
 
             System.Threading.Thread thread = new System.Threading.Thread((obj) =>
                 {
@@ -51,6 +52,7 @@ namespace IWorld.BLL
                                 ecentHandlers.Add(SHSSLEventhandler);   //上海时时乐
                                 ecentHandlers.Add(FC3DEventhandler);    //福彩3D
                                 ecentHandlers.Add(PLSEventhandler); //排列三
+                                ecentHandlers.Add(QTCEventhandler); //全天彩
 
                                 ecentHandlers.ForEach(x =>
                                     {
@@ -115,6 +117,11 @@ namespace IWorld.BLL
         /// 采集排列三数据的实例委托
         /// </summary>
         private static event NcDelegate PLSEventhandler;
+
+        /// <summary>
+        /// 采集全天彩数据的实例委托
+        /// </summary>
+        private static event NcDelegate QTCEventhandler;
 
         #endregion
 
@@ -627,6 +634,48 @@ namespace IWorld.BLL
             }
         }
 
+        /// <summary>
+        /// 采集全天彩数据
+        /// </summary>
+        /// <param name="db">数据库连接对象</param>
+        private static void InsertQTC(DbContext db)
+        {
+            string ticketName = "全天彩";
+            #region 插入
+
+            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            int tP = 0;
+            while (time <= DateTime.Now)
+            {
+                tP++;
+                time = time.AddMinutes(5);
+            }
+            string p = string.Format("{0}{1}{2}{3}"
+                , time.Year.ToString("0000").Substring(2, 2)
+                , time.Month.ToString("00")
+                , time.Day.ToString("00")
+                , tP.ToString("000"));
+
+            if (db.Set<Lottery>().Any(x => x.Ticket.Name == ticketName && x.Phases == p)) { return; }
+
+            List<string> vs = new List<string>();
+            Random r = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                vs.Add(r.Next(0, 9).ToString());
+            }
+            time = time.AddMinutes(5);
+            int tNp = time.Day != DateTime.Now.Day ? 1 : tP + 1;
+            string np = string.Format("{0}{1}{2}{3}"
+                , time.Year.ToString("0000").Substring(2, 2)
+                , time.Month.ToString("00")
+                , time.Day.ToString("00")
+                , tNp.ToString("000"));
+            AddLottery(db, ticketName, p, vs, np);
+
+            #endregion
+        }
+
         #region 私有变量
 
         private static bool InsertingCQSSC = false;
@@ -644,6 +693,8 @@ namespace IWorld.BLL
         private static bool InsertingFC3D = false;
 
         private static bool InsertingPLS = false;
+
+        private static bool InsertingQTC = false;
 
         #endregion
 

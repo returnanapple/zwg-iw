@@ -241,6 +241,12 @@ namespace IWorld.Contract.Admin
         public string Banks { get; set; }
 
         /// <summary>
+        /// 全天彩盈利率
+        /// </summary>
+        [DataMember]
+        public double ProfitabilityOfAllDayLottery { get; set; }
+
+        /// <summary>
         /// 属性名对照
         /// </summary>
         [DataMember]

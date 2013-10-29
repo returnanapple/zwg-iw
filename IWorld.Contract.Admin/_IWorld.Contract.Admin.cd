@@ -38,7 +38,7 @@
   <Class Name="IWorld.Contract.Admin.WebSettingResult" Collapsed="true" HideInheritanceLine="true">
     <Position X="6" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAKCQYICIBwAECAAoEjAAQABBICggAAEEAgABAAiQA=</HashCode>
+      <HashCode>IAAKCQYICIBwAECAAoEzAAQABBICggAAEEAgABAAiQA=</HashCode>
       <FileName>WebSettingResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -353,7 +353,7 @@
   <Class Name="IWorld.Contract.Admin.EditWebSettingImport" Collapsed="true">
     <Position X="0.75" Y="15.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAKCQYICIBwAECAAIEjAAQABBICggAAEEAgABAAiQA=</HashCode>
+      <HashCode>IAAKCQYICIBwAECAAIEzAAQABBICggAAEEAgABAAiQA=</HashCode>
       <FileName>EditWebSettingImport.cs</FileName>
     </TypeIdentifier>
   </Class>

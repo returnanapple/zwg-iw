@@ -54,7 +54,8 @@ namespace IWorld.Setting
                 , new XElement("ConversionRates", 20)
                 , new XElement("MaximumBetsNumber", 12)
                 , new XElement("ClosureSingleTime", 30)
-                , new XElement("Banks", "中国工商银行,中国农业银行,中国银行,中国建设银行,交通银行,财付通"));
+                , new XElement("Banks", "中国工商银行,中国农业银行,中国银行,中国建设银行,交通银行,财付通")
+                , new XElement("ProfitabilityOfAllDayLottery", 50));
             _e.Save(path);
         }
 
@@ -415,6 +416,15 @@ namespace IWorld.Setting
             set { SetValue("Banks", value); }
         }
 
+        /// <summary>
+        /// 全天彩盈利率
+        /// </summary>
+        public double ProfitabilityOfAllDayLottery
+        {
+            get { return GetDoubleValue("ProfitabilityOfAllDayLottery", 50); }
+            set { SetValue("ProfitabilityOfAllDayLottery", value); }
+        }
+
         #endregion
 
         #endregion
@@ -469,6 +479,7 @@ namespace IWorld.Setting
             result.Add("MaximumBetsNumber", "最大投注倍数");
             result.Add("ClosureSingleTime", "封单时间（秒）");
             result.Add("Banks", "当前支持的付款/提现银行");
+            result.Add("ProfitabilityOfAllDayLottery", "全天彩盈利率");
 
             return result;
         }

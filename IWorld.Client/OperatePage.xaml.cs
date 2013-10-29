@@ -1824,6 +1824,17 @@ namespace IWorld.Client
         }
 
         #endregion
+
+        private void ChageSize(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 1000;
+                App.Current.MainWindow.Height = 680;
+                App.Current.MainWindow.Top = App.TopOfInitial - 240;
+                App.Current.MainWindow.Left = App.LeftOfInitia - 340;
+            }
+        }
     }
 
     public delegate void XDelegate();

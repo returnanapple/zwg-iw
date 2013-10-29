@@ -6,7 +6,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
     xmlns:local="clr-namespace:IWorld.Client"  x:Class="IWorld.Client.OperatePage"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="ChageSize">
 
     <UserControl.Resources>
         <Style x:Key="LinkStyle" TargetType="TextBlock" BasedOn="{StaticResource ResourceKey=LinkStyle}">

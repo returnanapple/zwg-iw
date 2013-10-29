@@ -105,6 +105,12 @@
   <wsdl:message name="IDataReportService_AddTransfer_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddTransferResponse" />
   </wsdl:message>
+  <wsdl:message name="IDataReportService_SetCheatForBetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCheatForBetting" />
+  </wsdl:message>
+  <wsdl:message name="IDataReportService_SetCheatForBetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCheatForBettingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDataReportService">
     <wsdl:operation name="GetComprehensiveInformation">
       <wsdl:input wsaw:Action="http://tempuri.org/IDataReportService/GetComprehensiveInformation" message="tns:IDataReportService_GetComprehensiveInformation_InputMessage" />
@@ -169,6 +175,10 @@
     <wsdl:operation name="AddTransfer">
       <wsdl:input wsaw:Action="http://tempuri.org/IDataReportService/AddTransfer" message="tns:IDataReportService_AddTransfer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDataReportService/AddTransferResponse" message="tns:IDataReportService_AddTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCheatForBetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataReportService/SetCheatForBetting" message="tns:IDataReportService_SetCheatForBetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataReportService/SetCheatForBettingResponse" message="tns:IDataReportService_SetCheatForBetting_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDataReportService" type="tns:IDataReportService">
@@ -310,6 +320,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddTransfer">
       <soap:operation soapAction="http://tempuri.org/IDataReportService/AddTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCheatForBetting">
+      <soap:operation soapAction="http://tempuri.org/IDataReportService/SetCheatForBetting" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

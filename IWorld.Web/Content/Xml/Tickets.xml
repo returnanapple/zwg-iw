@@ -3247,9 +3247,9 @@
         <name>五星直选</name>
         <order>1</order>
         <plays>
-          <!--五星复式-->
+          <!--五星直选-->
           <play>
-            <name>五星复式</name>
+            <name>五星直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>5</lowerseats>
@@ -3260,52 +3260,6 @@
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
             <order>1</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--五星单式-->
-          <play>
-            <name>五星单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>5</lowerseats>
-            <upperseats>5</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -3346,9 +3300,9 @@
         <name>四星直选</name>
         <order>2</order>
         <plays>
-          <!--前四复式-->
+          <!--前四直选-->
           <play>
-            <name>前四复式</name>
+            <name>前四直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>4</lowerseats>
@@ -3386,49 +3340,9 @@
               </seat>
             </seats>
           </play>
-          <!--前四单式-->
+          <!--后四直选-->
           <play>
-            <name>前四单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>4</lowerseats>
-            <upperseats>4</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后四复式-->
-          <play>
-            <name>后四复式</name>
+            <name>后四直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>4</lowerseats>
@@ -3438,47 +3352,7 @@
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
-            <order>3</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后四单式-->
-          <play>
-            <name>后四单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>4</lowerseats>
-            <upperseats>4</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
+            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -3513,9 +3387,9 @@
         <name>三星直选</name>
         <order>3</order>
         <plays>
-          <!--前三复式-->
+          <!--前三直选-->
           <play>
-            <name>前三复式</name>
+            <name>前三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -3547,9 +3421,9 @@
               </seat>
             </seats>
           </play>
-          <!--前三单式-->
+          <!--中三直选-->
           <play>
-            <name>前三单式</name>
+            <name>中三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -3558,9 +3432,15 @@
             <isStackedBit>False</isStackedBit>
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
+            <parameter3>1</parameter3>
             <order>2</order>
             <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
               <seat>
                 <name>百位</name>
                 <isRequired>True</isRequired>
@@ -3573,17 +3453,11 @@
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>11</upperOfPick>
               </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
             </seats>
           </play>
-          <!--中三复式-->
+          <!--后三直选-->
           <play>
-            <name>中三复式</name>
+            <name>后三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -3594,108 +3468,6 @@
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
             <order>3</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三单式-->
-          <play>
-            <name>中三单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三复式-->
-          <play>
-            <name>后三复式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>5</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三单式-->
-          <play>
-            <name>后三单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>6</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -3935,9 +3707,9 @@
         <name>二星直选</name>
         <order>5</order>
         <plays>
-          <!--前二复式-->
+          <!--前二直选-->
           <play>
-            <name>前二复式</name>
+            <name>前二直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>2</lowerseats>
@@ -3963,37 +3735,9 @@
               </seat>
             </seats>
           </play>
-          <!--前二单式-->
+          <!--后二直选-->
           <play>
-            <name>前二单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>2</lowerseats>
-            <upperseats>2</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
-            <seats>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后二复式-->
-          <play>
-            <name>后二复式</name>
+            <name>后二直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>2</lowerseats>
@@ -4003,35 +3747,7 @@
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
-            <order>3</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后二单式-->
-          <play>
-            <name>后二单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>2</lowerseats>
-            <upperseats>2</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
+            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -4316,9 +4032,9 @@
         <name>五星直选</name>
         <order>1</order>
         <plays>
-          <!--五星复式-->
+          <!--五星直选-->
           <play>
-            <name>五星复式</name>
+            <name>五星直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>5</lowerseats>
@@ -4329,52 +4045,6 @@
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
             <order>1</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--五星单式-->
-          <play>
-            <name>五星单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>5</lowerseats>
-            <upperseats>5</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -4415,9 +4085,9 @@
         <name>四星直选</name>
         <order>2</order>
         <plays>
-          <!--前四复式-->
+          <!--前四直选-->
           <play>
-            <name>前四复式</name>
+            <name>前四直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>4</lowerseats>
@@ -4455,49 +4125,9 @@
               </seat>
             </seats>
           </play>
-          <!--前四单式-->
+          <!--后四直选-->
           <play>
-            <name>前四单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>4</lowerseats>
-            <upperseats>4</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后四复式-->
-          <play>
-            <name>后四复式</name>
+            <name>后四直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>4</lowerseats>
@@ -4507,47 +4137,7 @@
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
-            <order>3</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后四单式-->
-          <play>
-            <name>后四单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>4</lowerseats>
-            <upperseats>4</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
+            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -4582,9 +4172,9 @@
         <name>三星直选</name>
         <order>3</order>
         <plays>
-          <!--前三复式-->
+          <!--前三直选-->
           <play>
-            <name>前三复式</name>
+            <name>前三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -4616,9 +4206,9 @@
               </seat>
             </seats>
           </play>
-          <!--前三单式-->
+          <!--中三直选-->
           <play>
-            <name>前三单式</name>
+            <name>中三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -4627,9 +4217,15 @@
             <isStackedBit>False</isStackedBit>
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
+            <parameter3>1</parameter3>
             <order>2</order>
             <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>11</upperOfPick>
+              </seat>
               <seat>
                 <name>百位</name>
                 <isRequired>True</isRequired>
@@ -4642,17 +4238,11 @@
                 <limitOfPick>1</limitOfPick>
                 <upperOfPick>11</upperOfPick>
               </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
             </seats>
           </play>
-          <!--中三复式-->
+          <!--后三直选-->
           <play>
-            <name>中三复式</name>
+            <name>后三直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>3</lowerseats>
@@ -4663,108 +4253,6 @@
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
             <order>3</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--中三单式-->
-          <play>
-            <name>中三单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
-            <seats>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三复式-->
-          <play>
-            <name>后三复式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>1</parameter3>
-            <order>5</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>百位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后三单式-->
-          <play>
-            <name>后三单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>3</lowerseats>
-            <upperseats>3</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>6</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -5004,9 +4492,9 @@
         <name>二星直选</name>
         <order>5</order>
         <plays>
-          <!--前二复式-->
+          <!--前二直选-->
           <play>
-            <name>前二复式</name>
+            <name>前二直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>2</lowerseats>
@@ -5032,37 +4520,9 @@
               </seat>
             </seats>
           </play>
-          <!--前二单式-->
+          <!--后二直选-->
           <play>
-            <name>前二单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>2</lowerseats>
-            <upperseats>2</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>2</order>
-            <seats>
-              <seat>
-                <name>千位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>万位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后二复式-->
-          <play>
-            <name>后二复式</name>
+            <name>后二直选</name>
             <description></description>
             <rule></rule>
             <lowerseats>2</lowerseats>
@@ -5072,35 +4532,7 @@
             <parameter1>0</parameter1>
             <parameter2>0</parameter2>
             <parameter3>1</parameter3>
-            <order>3</order>
-            <seats>
-              <seat>
-                <name>个位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-              <seat>
-                <name>十位</name>
-                <isRequired>True</isRequired>
-                <limitOfPick>1</limitOfPick>
-                <upperOfPick>11</upperOfPick>
-              </seat>
-            </seats>
-          </play>
-          <!--后二单式-->
-          <play>
-            <name>后二单式</name>
-            <description></description>
-            <rule></rule>
-            <lowerseats>2</lowerseats>
-            <upperseats>2</upperseats>
-            <interface>任N直选</interface>
-            <isStackedBit>False</isStackedBit>
-            <parameter1>0</parameter1>
-            <parameter2>0</parameter2>
-            <parameter3>0</parameter3>
-            <order>4</order>
+            <order>2</order>
             <seats>
               <seat>
                 <name>个位</name>
@@ -6633,6 +6065,1075 @@
           <!--不定位-->
           <play>
             <name>不定位</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N不定位</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+    </tags>
+  </ticket>
+  <!--全天彩-->
+  <ticket>
+    <name>全天彩</name>
+    <order>9</order>
+    <valueOfFirst>0</valueOfFirst>
+    <values>10</values>
+    <time>0:0,0:5,0:10,0:15,0:20,0:25,0:30,0:35,0:40,0:45,0:50,0:55,1:0,1:5,1:10,1:15,1:20,1:25,1:30,1:35,1:40,1:45,1:50,1:55,2:0,2:5,2:10,2:15,2:20,2:25,2:30,2:35,2:40,2:45,2:50,2:55,3:0,3:5,3:10,3:15,3:20,3:25,3:30,3:35,3:40,3:45,3:50,3:55,4:0,4:5,4:10,4:15,4:20,4:25,4:30,4:35,4:40,4:45,4:50,4:55,5:0,5:5,5:10,5:15,5:20,5:25,5:30,5:35,5:40,5:45,5:50,5:55,6:0,6:5,6:10,6:15,6:20,6:25,6:30,6:35,6:40,6:45,6:50,6:55,7:0,7:5,7:10,7:15,7:20,7:25,7:30,7:35,7:40,7:45,7:50,7:55,8:0,8:5,8:10,8:15,8:20,8:25,8:30,8:35,8:40,8:45,8:50,8:55,9:0,9:5,9:10,9:15,9:20,9:25,9:30,9:35,9:40,9:45,9:50,9:55,10:0,10:5,10:10,10:15,10:20,10:25,10:30,10:35,10:40,10:45,10:50,10:55,11:0,11:5,11:10,11:15,11:20,11:25,11:30,11:35,11:40,11:45,11:50,11:55,12:0,12:5,12:10,12:15,12:20,12:25,12:30,12:35,12:40,12:45,12:50,12:55,13:0,13:5,13:10,13:15,13:20,13:25,13:30,13:35,13:40,13:45,13:50,13:55,14:0,14:5,14:10,14:15,14:20,14:25,14:30,14:35,14:40,14:45,14:50,14:55,15:0,15:5,15:10,15:15,15:20,15:25,15:30,15:35,15:40,15:45,15:50,15:55,16:0,16:5,16:10,16:15,16:20,16:25,16:30,16:35,16:40,16:45,16:50,16:55,17:0,17:5,17:10,17:15,17:20,17:25,17:30,17:35,17:40,17:45,17:50,17:55,18:0,18:5,18:10,18:15,18:20,18:25,18:30,18:35,18:40,18:45,18:50,18:55,19:0,19:5,19:10,19:15,19:20,19:25,19:30,19:35,19:40,19:45,19:50,19:55,20:0,20:5,20:10,20:15,20:20,20:25,20:30,20:35,20:40,20:45,20:50,20:55,21:0,21:5,21:10,21:15,21:20,21:25,21:30,21:35,21:40,21:45,21:50,21:55,22:0,22:5,22:10,22:15,22:20,22:25,22:30,22:35,22:40,22:45,22:50,22:55,23:0,23:5,23:10,23:15,23:20,23:25,23:30,23:35,23:40,23:45,23:50,23:55</time>
+    <seats>
+      <seat>
+        <name>万位</name>
+        <isSpecial>False</isSpecial>
+        <order>0</order>
+      </seat>
+      <seat>
+        <name>千位</name>
+        <isSpecial>False</isSpecial>
+        <order>1</order>
+      </seat>
+      <seat>
+        <name>百位</name>
+        <isSpecial>False</isSpecial>
+        <order>2</order>
+      </seat>
+      <seat>
+        <name>十位</name>
+        <isSpecial>False</isSpecial>
+        <order>3</order>
+      </seat>
+      <seat>
+        <name>个位</name>
+        <isSpecial>False</isSpecial>
+        <order>4</order>
+      </seat>
+    </seats>
+    <tags>
+      <!--五星直选-->
+      <tag>
+        <name>五星直选</name>
+        <order>1</order>
+        <plays>
+          <!--五星复式-->
+          <play>
+            <name>五星复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>5</lowerseats>
+            <upperseats>5</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--五星单式-->
+          <play>
+            <name>五星单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>5</lowerseats>
+            <upperseats>5</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>2</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--四星直选-->
+      <tag>
+        <name>四星直选</name>
+        <order>2</order>
+        <plays>
+          <!--前四复式-->
+          <play>
+            <name>前四复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>4</lowerseats>
+            <upperseats>4</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--前四单式-->
+          <play>
+            <name>前四单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>4</lowerseats>
+            <upperseats>4</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>2</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后四复式-->
+          <play>
+            <name>后四复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>4</lowerseats>
+            <upperseats>4</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>3</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后四单式-->
+          <play>
+            <name>后四单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>4</lowerseats>
+            <upperseats>4</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>4</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--三星直选-->
+      <tag>
+        <name>三星直选</name>
+        <order>3</order>
+        <plays>
+          <!--前三复式-->
+          <play>
+            <name>前三复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--前三单式-->
+          <play>
+            <name>前三单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>2</order>
+            <seats>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--中三复式-->
+          <play>
+            <name>中三复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>3</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--中三单式-->
+          <play>
+            <name>中三单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>4</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后三复式-->
+          <play>
+            <name>后三复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>5</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后三单式-->
+          <play>
+            <name>后三单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>3</lowerseats>
+            <upperseats>3</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>6</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--三星组选-->
+      <tag>
+        <name>三星组选</name>
+        <order>4</order>
+        <plays>
+          <!--前三组三-->
+          <play>
+            <name>前三组三</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>2</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--中三组三-->
+          <play>
+            <name>中三组三</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>2</parameter2>
+            <parameter3>1</parameter3>
+            <order>3</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后三组三-->
+          <play>
+            <name>后三组三</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>2</parameter2>
+            <parameter3>1</parameter3>
+            <order>5</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--前三组六-->
+          <play>
+            <name>前三组六</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>1</parameter2>
+            <parameter3>1</parameter3>
+            <order>7</order>
+            <seats>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--中三组六-->
+          <play>
+            <name>中三组六</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>1</parameter2>
+            <parameter3>1</parameter3>
+            <order>9</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后三组六-->
+          <play>
+            <name>后三组六</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>3</parameter1>
+            <parameter2>1</parameter2>
+            <parameter3>1</parameter3>
+            <order>11</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>3</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--二星直选-->
+      <tag>
+        <name>二星直选</name>
+        <order>5</order>
+        <plays>
+          <!--前二复式-->
+          <play>
+            <name>前二复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>2</lowerseats>
+            <upperseats>2</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--前二单式-->
+          <play>
+            <name>前二单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>2</lowerseats>
+            <upperseats>2</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>2</order>
+            <seats>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后二复式-->
+          <play>
+            <name>后二复式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>2</lowerseats>
+            <upperseats>2</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>3</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后二单式-->
+          <play>
+            <name>后二单式</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>2</lowerseats>
+            <upperseats>2</upperseats>
+            <interface>任N直选</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>0</parameter3>
+            <order>4</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--二星组选-->
+      <tag>
+        <name>二星组选</name>
+        <order>6</order>
+        <plays>
+          <!--前二组选-->
+          <play>
+            <name>前二组选</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>2</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后二组选-->
+          <play>
+            <name>后二组选</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N组选</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>2</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>3</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>2</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--定位胆-->
+      <tag>
+        <name>定位胆</name>
+        <order>7</order>
+        <plays>
+          <!--定位胆-->
+          <play>
+            <name>定位胆</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>5</upperseats>
+            <interface>任N定位胆</interface>
+            <isStackedBit>False</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>个位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>0</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>十位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>0</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>0</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>0</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>True</isRequired>
+                <limitOfPick>0</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+        </plays>
+      </tag>
+      <!--不定位-->
+      <tag>
+        <name>不定位</name>
+        <order>8</order>
+        <plays>
+          <!--前三不定位-->
+          <play>
+            <name>前三不定位</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N不定位</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>万位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--中三不定位-->
+          <play>
+            <name>中三不定位</name>
+            <description></description>
+            <rule></rule>
+            <lowerseats>1</lowerseats>
+            <upperseats>1</upperseats>
+            <interface>任N不定位</interface>
+            <isStackedBit>True</isStackedBit>
+            <parameter1>0</parameter1>
+            <parameter2>0</parameter2>
+            <parameter3>1</parameter3>
+            <order>1</order>
+            <seats>
+              <seat>
+                <name>十位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>百位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+              <seat>
+                <name>千位</name>
+                <isRequired>False</isRequired>
+                <limitOfPick>1</limitOfPick>
+                <upperOfPick>10</upperOfPick>
+              </seat>
+            </seats>
+          </play>
+          <!--后三不定位-->
+          <play>
+            <name>后三不定位</name>
             <description></description>
             <rule></rule>
             <lowerseats>1</lowerseats>

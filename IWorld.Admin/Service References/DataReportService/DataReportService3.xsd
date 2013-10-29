@@ -283,4 +283,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetCheatForBetting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bettingId" type="xs:int" />
+        <xs:element minOccurs="0" name="cheat" type="xs:boolean" />
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCheatForBettingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/IWorld.Contract.Admin" minOccurs="0" name="SetCheatForBettingResult" nillable="true" type="q25:OperateResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

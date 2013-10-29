@@ -30,7 +30,7 @@ namespace IWorld.Model
             {
                 int phases = 0;
                 #region 确认下期开奖是当天的第几期
-                if (this.Name == "重庆时时彩" || this.Name == "江西时时彩")
+                if (this.Name == "重庆时时彩" || this.Name == "江西时时彩" || this.Name == "全天彩")
                 {
                     char[] t = this.NextPhases.ToArray();
                     int count = t.Count();

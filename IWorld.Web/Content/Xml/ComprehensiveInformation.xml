@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Websetting>
   <CountOfSetUp>0</CountOfSetUp>
-  <AmountOfBets>0</AmountOfBets>
+  <AmountOfBets>2</AmountOfBets>
   <ReturnPoints>0</ReturnPoints>
   <Bonus>0</Bonus>
   <Expenditures>0</Expenditures>
-  <Recharge>0</Recharge>
+  <Recharge>10000</Recharge>
   <Withdrawal>0</Withdrawal>
   <Transfer>0</Transfer>
 </Websetting>

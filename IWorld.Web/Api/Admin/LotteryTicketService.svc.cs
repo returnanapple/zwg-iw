@@ -25,29 +25,29 @@ namespace IWorld.Web.Api.Admin
         public PaginationList<TicketResult> GetTicketList(string keyword, HideOrNotSelectType isHide, int page
             , string token)
         {
-            try
+            //try
+            //{
+            int administratorId = WebHepler.GetAdministratorId(token);
+            if (administratorId == -1)
             {
-                int administratorId = WebHepler.GetAdministratorId(token);
-                if (administratorId == -1)
+                return new PaginationList<TicketResult>("未登陆");
+            }
+            using (WebMapContext db = new WebMapContext())
+            {
+                Administrator administrator = db.Set<Administrator>().Find(administratorId);
+                if (!administrator.Group.CanViewTickets)
                 {
-                    return new PaginationList<TicketResult>("未登陆");
+                    return new PaginationList<TicketResult>("该用户所属的用户组无权查看彩票信息");
                 }
-                using (WebMapContext db = new WebMapContext())
-                {
-                    Administrator administrator = db.Set<Administrator>().Find(administratorId);
-                    if (!administrator.Group.CanViewTickets)
-                    {
-                        return new PaginationList<TicketResult>("该用户所属的用户组无权查看彩票信息");
-                    }
 
-                    AdminLotteryTicketReader reader = new AdminLotteryTicketReader(db);
-                    return reader.ReadTicketList(keyword, isHide, page);
-                }
+                AdminLotteryTicketReader reader = new AdminLotteryTicketReader(db);
+                return reader.ReadTicketList(keyword, isHide, page);
             }
-            catch (Exception e)
-            {
-                return new PaginationList<TicketResult>(e.Message);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    return new PaginationList<TicketResult>(e.Message);
+            //}
         }
 
         /// <summary>

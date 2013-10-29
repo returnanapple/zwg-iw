@@ -22,6 +22,7 @@ namespace IWorld.Client
 
         public static double LeftOfInitia = 0;
         public static double TopOfInitial = 0;
+        public static bool HadSetSize = false;
 
         /// <summary>
         /// 身份标识
@@ -65,14 +66,6 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new LoginPage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 320;
-                App.Current.MainWindow.Height = 200;
-                App.Current.MainWindow.Top = App.TopOfInitial;
-                App.Current.MainWindow.Left = App.LeftOfInitia;
-            }
         }
 
         /// <summary>
@@ -83,14 +76,6 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new OperatePage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 1000;
-                App.Current.MainWindow.Height = 680;
-                App.Current.MainWindow.Top = App.TopOfInitial - 240;
-                App.Current.MainWindow.Left = App.LeftOfInitia - 340;
-            }
         }
 
         /// <summary>
@@ -101,14 +86,6 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new BindingPage());
-
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 420;
-                App.Current.MainWindow.Height = 400;
-                App.Current.MainWindow.Top = App.TopOfInitial - 100;
-                App.Current.MainWindow.Left = App.LeftOfInitia - 50;
-            }
         }
 
         #endregion

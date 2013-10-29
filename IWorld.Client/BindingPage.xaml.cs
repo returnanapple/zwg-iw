@@ -88,5 +88,16 @@ namespace IWorld.Client
         {
             App.GoToLoginPage();
         }
+
+        private void ChageSize(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 420;
+                App.Current.MainWindow.Height = 400;
+                App.Current.MainWindow.Top = App.TopOfInitial - 100;
+                App.Current.MainWindow.Left = App.LeftOfInitia - 50;
+            }
+        }
     }
 }

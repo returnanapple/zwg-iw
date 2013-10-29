@@ -60,6 +60,13 @@
                     <admin:NButtonFeedbackTrigger/>
                 </i:Interaction.Triggers>
             </TextBlock>
+            <TextBlock x:Name="button_cheat" Text="作弊" Foreground="#41829F"
+            	HorizontalAlignment="Left" TextDecorations="Underline" Canvas.Top="8"
+            	MouseLeftButtonDown="SetIfCheat" Canvas.Left="53">
+            	<i:Interaction.Triggers>
+            		<admin:NButtonFeedbackTrigger/>
+            	</i:Interaction.Triggers>
+            </TextBlock>
         </Canvas>
     </Grid>
 </UserControl>

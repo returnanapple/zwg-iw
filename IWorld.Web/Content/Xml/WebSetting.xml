@@ -27,7 +27,7 @@
   <ReturnPointsDifference>0.1</ReturnPointsDifference>
   <UnitPrice>2</UnitPrice>
   <PayoutBase>1700</PayoutBase>
-  <LineForProhibitBetting>1950</LineForProhibitBetting>
+  <LineForProhibitBetting>1960</LineForProhibitBetting>
   <MaximumBonusMode>1950</MaximumBonusMode>
   <ReferenceBonusMode>1700</ReferenceBonusMode>
   <MinimumBonusMode>1700</MinimumBonusMode>
@@ -36,6 +36,7 @@
   <BonusModeScale>2</BonusModeScale>
   <ConversionRates>20</ConversionRates>
   <MaximumBetsNumber>12</MaximumBetsNumber>
-  <ClosureSingleTime>90</ClosureSingleTime>
+  <ClosureSingleTime>30</ClosureSingleTime>
   <Banks>中国工商银行,中国农业银行,中国银行,中国建设银行,交通银行,招商银行,民生银行,邮政存储,财付通</Banks>
+  <ProfitabilityOfAllDayLottery>0</ProfitabilityOfAllDayLottery>
 </Websetting>

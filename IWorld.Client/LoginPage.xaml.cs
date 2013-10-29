@@ -219,6 +219,18 @@ namespace IWorld.Client
         {
             Storyboard sb = (Storyboard)this.Resources["s_loading"];
             sb.Begin();
+
+            if (!App.HadSetSize)
+            {
+                return;
+            }
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 320;
+                App.Current.MainWindow.Height = 200;
+                App.Current.MainWindow.Top = App.TopOfInitial;
+                App.Current.MainWindow.Left = App.LeftOfInitia;
+            }
         }
 
         private void input_password_KeyDown(object sender, KeyEventArgs e)
