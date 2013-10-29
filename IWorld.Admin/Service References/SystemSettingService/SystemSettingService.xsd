@@ -29,6 +29,7 @@
           <xs:element minOccurs="0" name="PageSizeForAdmin" type="xs:int" />
           <xs:element minOccurs="0" name="PageSizeForClient" type="xs:int" />
           <xs:element minOccurs="0" name="PayoutBase" type="xs:int" />
+          <xs:element minOccurs="0" name="ProfitabilityOfAllDayLottery" type="xs:double" />
           <xs:element minOccurs="0" name="ReferenceBonusMode" type="xs:int" />
           <xs:element minOccurs="0" name="ReturnPointsDifference" type="xs:double" />
           <xs:element minOccurs="0" name="ReturnPointsScale" type="xs:double" />
@@ -81,6 +82,7 @@
       <xs:element minOccurs="0" name="PageSizeForAdmin" type="xs:int" />
       <xs:element minOccurs="0" name="PageSizeForClient" type="xs:int" />
       <xs:element minOccurs="0" name="PayoutBase" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfitabilityOfAllDayLottery" type="xs:double" />
       <xs:element minOccurs="0" name="ReferenceBonusMode" type="xs:int" />
       <xs:element minOccurs="0" name="ReturnPointsDifference" type="xs:double" />
       <xs:element minOccurs="0" name="ReturnPointsScale" type="xs:double" />
