@@ -590,5 +590,39 @@ namespace IWorld.Web.Api.Admin
                 return new OperateResult(e.Message);
             }
         }
+
+        /// <summary>
+        /// 设置投注记录是否作弊
+        /// </summary>
+        /// <param name="bettingId">目标投注记录的存储指针</param>
+        /// <param name="cheat">一个布尔值 标识投注记录是否作弊</param>
+        /// <param name="token">身份标识</param>
+        /// <returns>返回操作结果</returns>
+        public OperateResult SetCheatForBetting(int bettingId, bool cheat, string token)
+        {
+            try
+            {
+                int administratorId = WebHepler.GetAdministratorId(token);
+                if (administratorId == -1)
+                {
+                    return new OperateResult("未登陆");
+                }
+                using (WebMapContext db = new WebMapContext())
+                {
+                    Administrator administrator = db.Set<Administrator>().Find(administratorId);
+                    if (!administrator.Group.CanViewDataReports)
+                    {
+                        return new OperateResult("该用户所属的用户组无权设置投注记录是否作弊");
+                    }
+
+                    new BettingManager(db).ChangeIfCheat(bettingId, cheat);
+                    return new OperateResult();
+                }
+            }
+            catch (Exception e)
+            {
+                return new OperateResult(e.Message);
+            }
+        }
     }
 }

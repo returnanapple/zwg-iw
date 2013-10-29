@@ -248,7 +248,7 @@
   <Class Name="IWorld.Contract.Admin.ActivityResult" Collapsed="true">
     <Position X="0.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAEAAABAAAAAAAAAAAAAAgQAQQAAAAQA=</HashCode>
+      <HashCode>AACAAAAAQAAQAEAAEBAAAAAAAAAgAAAAwQAQQAAAAQA=</HashCode>
       <FileName>ActivityResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -297,7 +297,7 @@
   <Class Name="IWorld.Contract.Admin.ExchangeResult" Collapsed="true">
     <Position X="0.75" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAgAAAAAAAABAEAAQAAAAAAIAAAEgAAAABABA=</HashCode>
+      <HashCode>IACAAAAAwAAAAAAAEBAEAAQAAAAgAIAAQEgAAAABABA=</HashCode>
       <FileName>ExchangeResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -423,7 +423,7 @@
   <Class Name="IWorld.Contract.Admin.SiteDataResult" Collapsed="true">
     <Position X="0.75" Y="17" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAARAAAAAAAAAAAAAAwAAAgAAEAQBAAAAAAJAAAE=</HashCode>
+      <HashCode>AAAAAARAAAAAAAAAAAAAAwAAggAAEAQBAAAAAAJAAAE=</HashCode>
       <FileName>SiteDataResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -437,7 +437,7 @@
   <Class Name="IWorld.Contract.Admin.BettingResult" Collapsed="true">
     <Position X="4.25" Y="17" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAACMAAAgggACEgAAAAAAAgAAABAAAAAAAAAAFBU=</HashCode>
+      <HashCode>AAIAAACMAAAgggASEgAAAAAAAgAAABAAAAAAAAAAFBU=</HashCode>
       <FileName>BettingResult.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -563,7 +563,7 @@
   <Enum Name="IWorld.Contract.Admin.RechargeStatusSelectType" Collapsed="true">
     <Position X="6" Y="21" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAEEAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAEEAAAAAA=</HashCode>
       <FileName>RechargeStatusSelectType.cs</FileName>
     </TypeIdentifier>
   </Enum>

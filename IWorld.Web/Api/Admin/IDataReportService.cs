@@ -201,5 +201,15 @@ namespace IWorld.Web.Api.Admin
         /// <returns>返回操作结果</returns>
         [OperationContract]
         OperateResult AddTransfer(double sum, string remark, string token);
+
+        /// <summary>
+        /// 设置投注记录是否作别
+        /// </summary>
+        /// <param name="bettingId">目标投注记录的存储指针</param>
+        /// <param name="cheat">一个布尔值 标识投注记录是否作弊</param>
+        /// <param name="token">身份标识</param>
+        /// <returns>返回操作结果</returns>
+        [OperationContract]
+        OperateResult SetCheatForBetting(int bettingId, bool cheat, string token);
     }
 }

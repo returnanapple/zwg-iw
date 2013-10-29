@@ -120,6 +120,12 @@ namespace IWorld.Contract.Admin
         public DateTime CreatedTime { get; set; }
 
         /// <summary>
+        /// 一个布尔值 标识是否对当前投注作弊
+        /// </summary>
+        [DataMember]
+        public bool Cheat { get; set; }
+
+        /// <summary>
         /// 实例化一个新的投注信息
         /// </summary>
         /// <param name="betting">投注信息的数据封装</param>
@@ -145,6 +151,7 @@ namespace IWorld.Contract.Admin
             this.Seats = betting.HowToPlay.Parameter3 == 0
                 ? betting.Seats.First().Values
                 : string.Join(",", betting.Seats.OrderBy(x => x.Order).ToList().ConvertAll(x => string.Join("", x.ValueList)));
+            this.Cheat = betting.Cheat;
         }
     }
 }
