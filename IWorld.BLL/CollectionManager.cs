@@ -641,39 +641,44 @@ namespace IWorld.BLL
         private static void InsertQTC(DbContext db)
         {
             string ticketName = "全天彩";
-            #region 插入
-
-            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            int tP = 0;
-            while (time <= DateTime.Now)
+            if (!InsertingQTC)
             {
-                tP++;
+                InsertingQTC = true;
+                #region 插入
+
+                DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                int tP = 0;
+                while (time <= DateTime.Now)
+                {
+                    tP++;
+                    time = time.AddMinutes(5);
+                }
+                string p = string.Format("{0}{1}{2}{3}"
+                    , time.Year.ToString("0000").Substring(2, 2)
+                    , time.Month.ToString("00")
+                    , time.Day.ToString("00")
+                    , tP.ToString("000"));
+
+                if (db.Set<Lottery>().Any(x => x.Ticket.Name == ticketName && x.Phases == p)) { return; }
+
+                List<string> vs = new List<string>();
+                Random r = new Random();
+                for (int i = 0; i < 5; i++)
+                {
+                    vs.Add(r.Next(0, 9).ToString());
+                }
                 time = time.AddMinutes(5);
+                int tNp = time.Day != DateTime.Now.Day ? 1 : tP + 1;
+                string np = string.Format("{0}{1}{2}{3}"
+                    , time.Year.ToString("0000").Substring(2, 2)
+                    , time.Month.ToString("00")
+                    , time.Day.ToString("00")
+                    , tNp.ToString("000"));
+                AddLottery(db, ticketName, p, vs, np);
+
+                #endregion
+                InsertingQTC = false;
             }
-            string p = string.Format("{0}{1}{2}{3}"
-                , time.Year.ToString("0000").Substring(2, 2)
-                , time.Month.ToString("00")
-                , time.Day.ToString("00")
-                , tP.ToString("000"));
-
-            if (db.Set<Lottery>().Any(x => x.Ticket.Name == ticketName && x.Phases == p)) { return; }
-
-            List<string> vs = new List<string>();
-            Random r = new Random();
-            for (int i = 0; i < 5; i++)
-            {
-                vs.Add(r.Next(0, 9).ToString());
-            }
-            time = time.AddMinutes(5);
-            int tNp = time.Day != DateTime.Now.Day ? 1 : tP + 1;
-            string np = string.Format("{0}{1}{2}{3}"
-                , time.Year.ToString("0000").Substring(2, 2)
-                , time.Month.ToString("00")
-                , time.Day.ToString("00")
-                , tNp.ToString("000"));
-            AddLottery(db, ticketName, p, vs, np);
-
-            #endregion
         }
 
         #region 私有变量

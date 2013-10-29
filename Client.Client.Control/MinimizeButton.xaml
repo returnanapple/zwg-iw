@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Client.Client.Control.MinimizeButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" Width="23" Height="23" Cursor="Hand"
+          MouseEnter="OnHover" MouseLeave="OnUnhover" MouseLeftButtonDown="OnClick">
+        <Border Name="bg" Visibility="Collapsed">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.3"/>
+            </Border.Background>
+        </Border>
+        <Image Width="16" Source="img/icons_minimize.png"/>
+    </Grid>
+</UserControl>

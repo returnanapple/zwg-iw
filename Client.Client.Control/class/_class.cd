@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Client.Client.Control.ModelBase">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>class\ModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Client.Control.TalkClientViewModel">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIBEIARAAGAAAkAAQABAUBAAAAgSAAAAABQAQEAgBA=</HashCode>
+      <FileName>class\TalkClientViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Client.Client.Control.UserInfoModel">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAEAACAAAAAgQAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>class\UserInfoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Client.Client.Control.TalkingManModel">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAgAAQAAEAEAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>class\TalkingManModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Client.Client.Control.UserShowStatus" Collapsed="true">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAABAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>class\UserShowStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

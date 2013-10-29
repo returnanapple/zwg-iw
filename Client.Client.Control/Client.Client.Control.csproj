@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{106498C3-E6CC-4F90-AB22-9C730A7099A2}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client.Client.Control</RootNamespace>
+    <AssemblyName>Client.Client.Control</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FJ.Core">
+      <HintPath>..\packages\Flux.Jpeg.Core.0.7.2\lib\sl50\FJ.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.NetTcp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="system.windows.controls.toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChooseIconButton.xaml.cs">
+      <DependentUpon>ChooseIconButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseIconWindow.xaml.cs">
+      <DependentUpon>ChooseIconWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\TalkingManModel.cs" />
+    <Compile Include="CoverFloorTool.xaml.cs">
+      <DependentUpon>CoverFloorTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tool\TalkButtonNeedUserConverter.cs" />
+    <Compile Include="tool\ShowMyOnlineStatusConverter.cs" />
+    <Compile Include="tool\ChooseUserGroupConverter.cs" />
+    <Compile Include="class\ModelBase.cs" />
+    <Compile Include="class\UniversalCommand.cs" />
+    <Compile Include="class\UserShowStatus.cs" />
+    <Compile Include="FriendListButton.xaml.cs">
+      <DependentUpon>FriendListButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FriendListTool.xaml.cs">
+      <DependentUpon>FriendListTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IconAndPicButton.xaml.cs">
+      <DependentUpon>IconAndPicButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageShowTool.xaml.cs">
+      <DependentUpon>MessageShowTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MinimizeButton.xaml.cs">
+      <DependentUpon>MinimizeButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScrollButton.xaml.cs">
+      <DependentUpon>ScrollButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ChatService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PicService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TalkClient.xaml.cs">
+      <DependentUpon>TalkClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="class\TalkClientViewModel.cs" />
+    <Compile Include="TalkTool.xaml.cs">
+      <DependentUpon>TalkTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TargetUserTool.xaml.cs">
+      <DependentUpon>TargetUserTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tool\KeepTextRealTime.cs" />
+    <Compile Include="tool\KeyDownCommandAction.cs" />
+    <Compile Include="class\UserInfoModel.cs" />
+    <Compile Include="UserOnlineStatusIcon.xaml.cs">
+      <DependentUpon>UserOnlineStatusIcon.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ChooseIconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChooseIconWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CoverFloorTool.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FriendListButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FriendListTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IconAndPicButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageShowTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MinimizeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScrollButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TalkClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TalkTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TargetUserTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserOnlineStatusIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\user_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\user_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\openIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\openPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\oppenScreenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons_x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="class\_class.cd" />
+    <None Include="packages.config" />
+    <None Include="Service References\PicService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PicService\configuration.svcinfo" />
+    <None Include="Service References\PicService\configuration91.svcinfo" />
+    <None Include="Service References\PicService\PicService.disco" />
+    <None Include="Service References\ChatService\Client.Client.Control.ChatService.MessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChatService\Client.Client.Control.ChatService.PaginationListOfMessageResult5O3_PPRz2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChatService\Client.Client.Control.ChatService.SetInResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ChatService\Client.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChatService\Client.Service.DataContract.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChatService\service.wsdl" />
+    <None Include="Service References\ChatService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChatService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="icon\41.png" />
+    <Resource Include="icon\42.png" />
+    <Resource Include="icon\43.png" />
+    <Resource Include="icon\44.png" />
+    <Resource Include="icon\45.png" />
+    <Resource Include="icon\46.png" />
+    <Resource Include="icon\47.png" />
+    <Resource Include="icon\48.png" />
+    <Resource Include="icon\49.png" />
+    <Resource Include="icon\50.png" />
+    <Resource Include="icon\51.png" />
+    <Resource Include="icon\52.png" />
+    <Resource Include="icon\53.png" />
+    <Resource Include="icon\54.png" />
+    <Resource Include="icon\55.png" />
+    <Resource Include="icon\56.png" />
+    <Resource Include="icon\57.png" />
+    <Resource Include="icon\58.png" />
+    <Resource Include="icon\59.png" />
+    <Resource Include="icon\60.png" />
+    <Resource Include="icon\61.png" />
+    <Resource Include="icon\62.png" />
+    <Resource Include="icon\63.png" />
+    <Resource Include="icon\64.png" />
+    <Resource Include="icon\65.png" />
+    <Resource Include="icon\66.png" />
+    <Resource Include="icon\67.png" />
+    <Resource Include="icon\68.png" />
+    <Resource Include="icon\69.png" />
+    <Resource Include="icon\70.png" />
+    <Resource Include="music\music_p.wma">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\PicService\PicService.wsdl" />
+    <None Include="Service References\PicService\PicService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PicService\PicService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PicService\PicService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ChatService\" />
+    <WCFMetadataStorage Include="Service References\PicService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChatService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChatService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ChatService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+﻿<UserControl xmlns:Control="clr-namespace:Client.Client.Control"  x:Class="Client.Client.Control.TalkClient"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal">
+        <Control:TalkTool VerticalAlignment="Bottom" CanSee="{Binding MessageToolCanSee}"/>
+        <Control:FriendListTool HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                Grid.Column="1" Margin="0,0,10,0" HaveUnreadMessage="{Binding HaveNewMessage}" />
+        <MediaElement Name="_music" Height="0" Width="0" Source="music/music_p.wma" Volume="1" AutoPlay="False"/>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7bb5fbc9-19ec-4da9-8d60-16945bcf6f43" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://192.168.1.119:4512/ChatService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="abac518c-bb76-4485-9a84-bd7bf8db10f2" SourceId="1" SourceUrl="net.tcp://192.168.1.119:4512/ChatService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="972f6076-c69c-4552-8525-cd4b0a602835" SourceId="1" SourceUrl="net.tcp://192.168.1.119:4512/ChatService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ae748e60-3711-4700-b978-6d01c254fa52" SourceId="1" SourceUrl="net.tcp://192.168.1.119:4512/ChatService/mex" />
+    <MetadataFile FileName="Client.Service.DataContract.xsd" MetadataType="Schema" ID="1782283c-f251-49e0-add7-93f02b185d8b" SourceId="1" SourceUrl="net.tcp://192.168.1.119:4512/ChatService/mex" />
+    <MetadataFile FileName="Client.Model.xsd" MetadataType="Schema" ID="6b000ba0-18fe-48b7-9f2b-a88e41b26603" SourceId="1" SourceUrl="net.tcp://192.168.1.119:4512/ChatService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

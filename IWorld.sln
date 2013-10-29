@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.Contract.Client", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.DataCall", "IWorld.DataCall\IWorld.DataCall.csproj", "{563DF8FC-B60A-40B2-826B-E67FEE046CEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Client.Control", "Client.Client.Control\Client.Client.Control.csproj", "{106498C3-E6CC-4F90-AB22-9C730A7099A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
