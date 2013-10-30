@@ -48,7 +48,9 @@
     <Compile Include="Bank.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="Betting.cs" />
+    <Compile Include="BettingDetailOfJaw.cs" />
     <Compile Include="BettingForCgasing.cs" />
+    <Compile Include="BettingOfJaw.cs" />
     <Compile Include="BettingSeat.cs" />
     <Compile Include="BettingStatus.cs" />
     <Compile Include="Bulletin.cs" />
@@ -68,7 +70,12 @@
     <Compile Include="ExchangeParticipateRecord.cs" />
     <Compile Include="GiftStatus.cs" />
     <Compile Include="ICondition.cs" />
+    <Compile Include="IconOfJaw.cs" />
     <Compile Include="IConsumption.cs" />
+    <Compile Include="LotteryOfJaw.cs" />
+    <Compile Include="LotteryTimeOfJaw.cs" />
+    <Compile Include="MainOfJaw.cs" />
+    <Compile Include="MarkOfJaw.cs" />
     <Compile Include="NoticeType.cs" />
     <Compile Include="PersonalDataAtDay.cs" />
     <Compile Include="PersonalDataAtMonth.cs" />
