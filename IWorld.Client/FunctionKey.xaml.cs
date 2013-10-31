@@ -57,11 +57,11 @@ namespace IWorld.Client
                     FunctionKey t = (FunctionKey)d;
                     if ((bool)e.NewValue == true)
                     {
-                        t.bg.Opacity = 1;
+                        t.root.Style = (Style)t.Resources["CheckStyle"];
                     }
                     else
                     {
-                        t.bg.Opacity = 0;
+                        t.root.Style = (Style)t.Resources["UnCheckStyle"]; ;
                     }
                 }));
         public string ImgSource

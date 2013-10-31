@@ -62,6 +62,7 @@ namespace IWorld.Client
         void BankToLoginPage(object sender, EventArgs e)
         {
             App.GoToLoginPage();
+
         }
 
         #endregion

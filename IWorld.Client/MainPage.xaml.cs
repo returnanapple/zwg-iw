@@ -43,7 +43,6 @@ namespace IWorld.Client
             {
                 App.LeftOfInitia = App.Current.MainWindow.Left;
                 App.TopOfInitial = App.Current.MainWindow.Top;
-                App.HadSetSize = true;
             }
         }
     }

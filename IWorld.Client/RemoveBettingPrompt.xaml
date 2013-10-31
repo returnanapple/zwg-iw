@@ -6,25 +6,28 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="500" Height="270">
-            <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="20"/>
+        <Canvas  Width="500" Height="270">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
+            <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="20" FontSize="14"/>
 
             <TextBox Name="text_values" Width="306" Canvas.Left="29" Canvas.Top="41" Height="71"
                      AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
-                     Text="1,5,01" IsReadOnly="True" Cursor="Arrow"/>
-            <TextBlock Text="订单号：" Canvas.Left="29" Canvas.Top="130"/>
-            <TextBlock Text="彩种：" Canvas.Left="29" Canvas.Top="151"/>
-            <TextBlock Text="玩法标签：" Canvas.Left="29" Canvas.Top="172"/>
-            <TextBlock Text="玩法：" Canvas.Left="29" Canvas.Top="193"/>
-            <TextBlock Text="总金额：" Canvas.Left="29" Canvas.Top="214"/>
+                     Text="1,5,01" IsReadOnly="True" Cursor="Arrow" FontSize="14"/>
+            <TextBlock Text="订单号：" Canvas.Left="29" Canvas.Top="130" FontSize="14"/>
+            <TextBlock Text="彩种：" Canvas.Left="29" Canvas.Top="151" FontSize="14"/>
+            <TextBlock Text="玩法标签：" Canvas.Left="29" Canvas.Top="172" FontSize="14"/>
+            <TextBlock Text="玩法：" Canvas.Left="29" Canvas.Top="193" FontSize="14"/>
+            <TextBlock Text="总金额：" Canvas.Left="29" Canvas.Top="214" FontSize="14"/>
 
-            <TextBlock x:Name="text_id" Text="000001" Canvas.Left="94" Canvas.Top="130"/>
-            <TextBlock Name="text_ticket" Text="重庆时时彩" Canvas.Left="94" Canvas.Top="151"/>
-            <TextBlock Name="text_playTag" Text="三星直选" Canvas.Left="94" Canvas.Top="172"/>
-            <TextBlock Name="text_howToPlay" Text="前三复式" Canvas.Left="94" Canvas.Top="193"/>
-            <TextBlock Name="text_money" Text="40.00" Canvas.Left="94" Canvas.Top="214"/>
-            <Button Content="撤  单" Canvas.Left="415" Canvas.Top="20" Width="60" Click="OKButton_Click"/>
-            <Button Content="取  消" Canvas.Left="415" Canvas.Top="47" Width="60" Click="CancelButton_Click"/>
+            <TextBlock x:Name="text_id" Text="000001" Canvas.Left="94" Canvas.Top="130" FontSize="14"/>
+            <TextBlock Name="text_ticket" Text="重庆时时彩" Canvas.Left="94" Canvas.Top="151" FontSize="14"/>
+            <TextBlock Name="text_playTag" Text="三星直选" Canvas.Left="94" Canvas.Top="172" FontSize="14"/>
+            <TextBlock Name="text_howToPlay" Text="前三复式" Canvas.Left="94" Canvas.Top="193" FontSize="14"/>
+            <TextBlock Name="text_money" Text="40.00" Canvas.Left="94" Canvas.Top="214" FontSize="14"/>
+            <Button Content="撤  单" Style="{StaticResource midBtnStyle}"  Canvas.Left="385" Canvas.Top="41" Width="89" Click="OKButton_Click" Height="30"/>
+            <Button Content="取  消" Style="{StaticResource midBtnStyle}"  Canvas.Left="385" Canvas.Top="82" Width="89" Click="CancelButton_Click" Height="30"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

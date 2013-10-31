@@ -11,7 +11,7 @@
     <toolkit:ExpressionDarkTheme>
         <Grid Width="240" MinHeight="160">
             <Grid.Background>
-                <ImageBrush Stretch="Fill" ImageSource="img/5.jpg"/>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
             </Grid.Background>
             <Border BorderThickness="1" BorderBrush="Black"></Border>
             <Border BorderThickness="0.3" BorderBrush="Gray" Margin="1"></Border>

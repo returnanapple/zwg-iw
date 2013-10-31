@@ -6,7 +6,10 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="400" Height="280">
+        <Canvas  Width="400" Height="280">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
             <Path Stroke="White" StrokeThickness="0.3" Data="M34,140 240,140"></Path>
             <TextBlock Text="目标账户：" Canvas.Left="46" Canvas.Top="27"/>
             <TextBlock Text="支付人：" Canvas.Left="58" Canvas.Top="48"/>
@@ -28,10 +31,10 @@
             <TextBlock Name="text_bank" Text="中国工商银行" Canvas.Left="111" Canvas.Top="195"/>
             <TextBlock Name="text_code" Text="21232f297a57a5a743894a0e4a801fc3" Canvas.Left="111" Canvas.Top="216"/>
 
-            <Button Name="button_b" Content="返  回" Canvas.Left="318" Canvas.Top="25" Width="60" Click="Cancel"/>
-            <Button Content="复制账户" Canvas.Left="31" Canvas.Top="248" Width="75" Click="GetCard"/>
-            <Button Content="复制开户人" Canvas.Left="111" Canvas.Top="248" Width="75" Click="GetHolder"/>
-            <Button Content="复制标识码" Canvas.Left="191" Canvas.Top="248" Width="75" Click="GetCode"/>
+            <Button Name="button_b" Content="返  回" Style="{StaticResource smallBtnStyle}" Canvas.Left="318" Canvas.Top="25" Width="60" Click="Cancel"/>
+            <Button Content="复制账户" Canvas.Left="31" Style="{StaticResource smallBtnStyle}" Canvas.Top="248" Width="75" Click="GetCard"/>
+            <Button Content="复制开户人" Canvas.Left="111" Style="{StaticResource smallBtnStyle}" Canvas.Top="248" Width="75" Click="GetHolder"/>
+            <Button Content="复制标识码" Canvas.Left="191"  Style="{StaticResource smallBtnStyle}" Canvas.Top="248" Width="75" Click="GetCode"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

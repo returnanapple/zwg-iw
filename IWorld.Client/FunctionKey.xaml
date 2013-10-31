@@ -6,17 +6,30 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Grid" x:Key="CheckStyle">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/bigredBack.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Grid" x:Key="UnCheckStyle">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/FunctionKeyBack.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-    <Grid x:Name="root" Width="140" Height="27" MouseLeftButtonDown="Click">
-        <Grid.Background>
-            <SolidColorBrush x:Name="bg" Color="Gray" Opacity="0"/>
-        </Grid.Background>
+    </UserControl.Resources>
+    <Grid x:Name="root" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseLeftButtonDown="Click" Style="{StaticResource UnCheckStyle}">
         <i:Interaction.Triggers>
             <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="False"/>
         </i:Interaction.Triggers>
-        <Image Name="img" Width="24" Height="24" Source="img/icons_user.png" Margin="16,0,0,0"
-               HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <TextBlock Name="keyText" Text="会员管理" FontSize="16" Margin="0,0,24,0"
-                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Image Name="img" Width="24" Height="24" Source="img/icons_user.png" 
+               HorizontalAlignment="Left" VerticalAlignment="Center" Margin="55,0,0,0"/>
+        <TextBlock Name="keyText" Text="会员管理" FontSize="17" Margin="0,0,55,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Center" />
     </Grid>
 </UserControl>

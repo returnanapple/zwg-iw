@@ -4,11 +4,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
+
     <toolkit:ExpressionDarkTheme Background="#00000000">
-        <Grid Width="50" Height="50">
+        <Grid Width="60" Height="60">
             <Grid.Background>
-                <ImageBrush x:Name="bg" Stretch="Fill" ImageSource="img/红球.png"/>
+                <ImageBrush x:Name="bg" Stretch="Fill" ImageSource="img/images/ball.png"/>
             </Grid.Background>
             <TextBlock Name="keyText" Text="9" FontSize="30"
                                VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial">

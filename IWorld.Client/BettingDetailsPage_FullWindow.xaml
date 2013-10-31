@@ -7,12 +7,15 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="500" Height="420">
+        <Canvas Width="500" Height="420">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
             <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="20"/>
 
-            <TextBox x:Name="text_values" Width="306" Canvas.Left="29" Canvas.Top="41" Height="71"
+            <TextBox x:Name="text_values"  Width="306" Canvas.Left="29" Canvas.Top="41" Height="71"
 				AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
-				Text="1,5,01" IsReadOnly="True" Cursor="Arrow"/>
+				Text="1,5,01" IsReadOnly="True" Cursor="Arrow" Background="#475061"/>
             <TextBlock Text="彩种：" Canvas.Left="29" Canvas.Top="130"/>
             <TextBlock Text="玩法标签：" Canvas.Left="29" Canvas.Top="151"/>
             <TextBlock Text="玩法：" Canvas.Left="29" Canvas.Top="172"/>
@@ -53,8 +56,8 @@
             <local:Ball Name="ball_purple" Text="-" Color="Purple" Canvas.Left="268" Canvas.Top="326"/>
             <TextBlock x:Name="text_status" Text="等待开奖" Canvas.Left="340" Canvas.Top="348"/>
 
-            <Button Name="button_r" Content="撤  单" Canvas.Left="415" Canvas.Top="20" Width="60" Click="Remove"/>
-            <Button Name="button_b" Content="返  回" Canvas.Left="415" Canvas.Top="47" Width="60" Click="Back"/>
+            <Button Name="button_r" Content="撤  单" Style="{StaticResource smallBtnStyle}"  Canvas.Left="415" Canvas.Top="20" Width="60" Click="Remove"/>
+            <Button Name="button_b" Content="返  回" Style="{StaticResource smallBtnStyle}"   Canvas.Left="415" Canvas.Top="47" Width="60" Click="Back"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

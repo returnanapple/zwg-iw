@@ -44,11 +44,16 @@ namespace IWorld.Client
 
         public static void IsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            //PlayTagButton ptTutton = (PlayTagButton)d;
+            //ptTutton.bg.Style = (bool)e.NewValue == true ? (Style)ptTutton.Resources["selected"] 
+            //    : (Style)ptTutton.Resources["normal"];
+            //ptTutton.text_content.Foreground = (bool)e.NewValue == false
+            //    ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Black);
             PlayTagButton ptTutton = (PlayTagButton)d;
-            ptTutton.bg.Style = (bool)e.NewValue == true ? (Style)ptTutton.Resources["selected"] 
+            ptTutton.bg.Style = (bool)e.NewValue == true ? (Style)ptTutton.Resources["selected"]
                 : (Style)ptTutton.Resources["normal"];
-            ptTutton.text_content.Foreground = (bool)e.NewValue == false
-                ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Black);
+            //ptTutton.text_content.Foreground = (bool)e.NewValue == false
+            //    ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Yellow);
         }
 
         public string Text

@@ -37,7 +37,7 @@ namespace IWorld.Client
         /// <summary>
         /// 行高
         /// </summary>
-        private double rowHeight = 20;
+        private double rowHeight = 30;
 
         /// <summary>
         /// 显示列名
@@ -90,45 +90,34 @@ namespace IWorld.Client
         /// <param name="rows">行数</param>
         public void ShowTableBg(List<TableToolColumnImport> columns, List<ITableToolRow> rows)
         {
-            double firstRdHeight = haveColumnName ? titleHeight : 0;
-            RowDefinition rd1 = new RowDefinition();
-            rd1.Height = new GridLength(firstRdHeight);
-            body_bg.RowDefinitions.Add(rd1);
-            RowDefinition rd2 = new RowDefinition();
-            rd2.Height = new GridLength(firstRdHeight);
-            body.RowDefinitions.Add(rd2);
-            #region 外框
+            
+            
+        //    #region 外框
+            
+        //    //bg.Height = mainHeight;
+        //    //GeometryGroup group = new GeometryGroup();
+        //    //group.Children.Add(CreateLine(0, 0, mainWidth, 0));
+        //    //group.Children.Add(CreateLine(0, 0, 0, mainHeight));
+        //    //group.Children.Add(CreateLine(mainWidth, 0, mainWidth, mainHeight));
+        //    //if (haveColumnName)
+        //    //{
+        //    //    group.Children.Add(CreateLine(0, titleHeight, mainWidth, titleHeight));
+        //    //}
+        //    //if (rows.Count != 0)
+        //    //{
+        //    //    group.Children.Add(CreateLine(0, mainHeight, mainWidth, mainHeight));
+        //    //}
 
-            bg.Height = mainHeight;
-            GeometryGroup group = new GeometryGroup();
-            group.Children.Add(CreateLine(0, 0, mainWidth, 0));
-            group.Children.Add(CreateLine(0, 0, 0, mainHeight));
-            group.Children.Add(CreateLine(mainWidth, 0, mainWidth, mainHeight));
-            if (haveColumnName)
-            {
-                group.Children.Add(CreateLine(0, titleHeight, mainWidth, titleHeight));
-            }
-            if (rows.Count != 0)
-            {
-                group.Children.Add(CreateLine(0, mainHeight, mainWidth, mainHeight));
-            }
-
-            #endregion
+        //    #endregion
             #region 列名、内部分割线和背景
             Grid grid = new Grid();
             grid.Height = titleHeight;
             grid.SetValue(Grid.RowProperty, 0);
-            body_bg.Children.Add(grid);
+            DataGridTitle.Children.Add(grid);
 
-            double tx = 0;
             int t = 0;
             columns.ForEach(x =>
             {
-                tx += x.Width;
-                if (tx > 0 && tx < mainWidth)
-                {
-                    group.Children.Add(CreateLine(tx, 0, tx, mainHeight));
-                }
                 if (haveColumnName)
                 {
                     ColumnDefinition cd = new ColumnDefinition();
@@ -141,29 +130,42 @@ namespace IWorld.Client
                     tb.SetValue(Grid.ColumnProperty, t);
                     grid.Children.Add(tb);
                 }
-
                 t++;
             });
             #endregion
             #region 行背景
-            t = 1;
-            rows.ForEach(x =>
+            for (int i = 0; i < rows.Count(); i++)
             {
                 RowDefinition rd = new RowDefinition();
                 rd.Height = new GridLength(rowHeight);
                 body_bg.RowDefinitions.Add(rd);
-
-                string styleName = t % 2 == 0 ? "bg_double" : "bg_single";
+                //string styleName = t % 2 == 0 ? "bg_double" : "bg_single";
                 Border border = new Border();
-                border.Style = (Style)this.Resources[styleName];
-                border.SetValue(Grid.RowProperty, t);
+                border.Style = (Style)this.Resources["bg_double"];
+                border.SetValue(Grid.RowProperty, i);
                 body_bg.Children.Add(border);
-                _body_bgs.Add(t, border);
-
-                t++;
-            });
+                _body_bgs.Add(i+1, border);
+            }
             #endregion
-            bg.Data = group;
+            int nrowCount = rows.Count();
+            if (nrowCount == 0)
+                return;
+            double gridHight = nrowCount * rowHeight;
+            body_bgLine.Height = gridHight;
+            int nItemWidth = (int)(mainWidth / columns.Count());
+            GeometryGroup group = new GeometryGroup();
+
+            for (int j = 0; j < columns.Count() - 1; j++)
+            {
+                int x1 = (j + 1) * nItemWidth - 10;
+                int y1 = 0;
+
+                int x2 = x1;
+                int y2 = (int)(gridHight);
+                group.Children.Add(CreateLine(x1, y1, x2, y2));
+            }
+            body_bgLine.Data = group;
+        //    //bg.Data = group;
         }
 
         /// <summary>
@@ -189,7 +191,7 @@ namespace IWorld.Client
         /// <param name="e">监视对象</param>
         private void ChangeRowBgToHover(object sender, TableToolBodyHoverEventArgs e)
         {
-            _body_bgs[e.Row + 1].Style = (Style)this.Resources["bg_hover"];
+            _body_bgs[e.Row + 1].Style = (Style)this.Resources["bg_single"];
         }
 
         /// <summary>
@@ -199,8 +201,8 @@ namespace IWorld.Client
         /// <param name="e">监视对象</param>
         private void ChangeRowBgToNormal(object sender, TableToolBodyHoverEventArgs e)
         {
-            string _style = e.Row % 2 == 0 ? "bg_double" : "bg_single";
-            _body_bgs[e.Row + 1].Style = (Style)this.Resources[_style];
+            //string _style = e.Row % 2 == 0 ? "bg_double" : "bg_single";
+            _body_bgs[e.Row + 1].Style = (Style)this.Resources["bg_double"];
         }
 
         #endregion
@@ -223,7 +225,7 @@ namespace IWorld.Client
                 rows[i].UnhoverEventHandler += ChangeRowBgToNormal;
 
                 FrameworkElement element = rows[i].GetElement();
-                element.SetValue(Grid.RowProperty, i + 1);
+                element.SetValue(Grid.RowProperty, i);
                 body.Children.Add(element);
             }
         }

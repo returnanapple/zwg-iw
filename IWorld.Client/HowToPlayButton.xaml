@@ -22,13 +22,13 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="root" Width="60" Height="20" MouseLeftButtonDown="Click">
+    <Grid x:Name="root" Width="70" Height="20" MouseLeftButtonDown="Click">
         <i:Interaction.Triggers>
             <client:NButtonFeedbackTrigger NBTOffset="1"/>
         </i:Interaction.Triggers>
         <Border Name="b1" BorderBrush="Black" BorderThickness="1" Visibility="Collapsed"></Border>
         <Border Name="b2" BorderBrush="Gray" BorderThickness="0.3" Margin="1" Visibility="Collapsed"></Border>
-        <TextBlock Name="text_content" Text="五星直选" Foreground="White" FontSize="11"
+        <TextBlock Name="text_content" Text="五星直选" Foreground="White" FontSize="13"
                    HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
     </Grid>
 </UserControl>

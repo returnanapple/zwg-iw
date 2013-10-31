@@ -71,20 +71,20 @@ namespace IWorld.Client
 
         void ShowCover()
         {
-            coverFloor.Visibility = System.Windows.Visibility.Visible;
+            //coverFloor.Visibility = System.Windows.Visibility.Visible;
         }
 
         void HideCover()
         {
-            coverFloor.Visibility = System.Windows.Visibility.Collapsed;
+            //coverFloor.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         #endregion
 
         private void Login(object sender, EventArgs e)
         {
-            ShowCover();
-
+            //ShowCover();
+            BeginAnimation();
             string username = input_username.Text;
             string password = input_password.Password;
 
@@ -109,6 +109,7 @@ namespace IWorld.Client
                 input_password.Password = "";
 
                 HideCover();
+                StopAnimation();
 
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
@@ -128,7 +129,7 @@ namespace IWorld.Client
             else
             {
                 HideCover();
-
+                StopAnimation();
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
             }
@@ -148,6 +149,7 @@ namespace IWorld.Client
             {
                 HideCover();
 
+                StopAnimation();
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
             }
@@ -167,6 +169,7 @@ namespace IWorld.Client
             {
                 HideCover();
 
+                StopAnimation();
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
             }
@@ -183,6 +186,7 @@ namespace IWorld.Client
             {
                 HideCover();
 
+                StopAnimation();
                 ErrorPromt ep = new ErrorPromt(e.Result.Error);
                 ep.Show();
             }
@@ -211,26 +215,21 @@ namespace IWorld.Client
         #endregion
 
         /// <summary>
-        /// 显示动态效果
+        /// 开始动态效果
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ShowAnimation(object sender, RoutedEventArgs e)
+        private void BeginAnimation()
         {
-            Storyboard sb = (Storyboard)this.Resources["s_loading"];
+            Storyboard sb = (Storyboard)this.Resources["s_Rotating"];
             sb.Begin();
+        }
 
-            if (!App.HadSetSize)
-            {
-                return;
-            }
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 320;
-                App.Current.MainWindow.Height = 200;
-                App.Current.MainWindow.Top = App.TopOfInitial;
-                App.Current.MainWindow.Left = App.LeftOfInitia;
-            }
+        /// <summary>
+        /// 开始动态效果
+        /// </summary>
+        private void StopAnimation()
+        {
+            Storyboard sb = (Storyboard)this.Resources["s_Rotating"];
+            sb.Stop();
         }
 
         private void input_password_KeyDown(object sender, KeyEventArgs e)
@@ -238,6 +237,24 @@ namespace IWorld.Client
             if (e.Key == Key.Enter)
             {
                 Login(null, null);
+            }
+        }
+
+        private void login_Comb_DropDownClosed(object sender, EventArgs e)
+        {
+            try
+            {
+                ComboBoxItem cbi = (ComboBoxItem)(sender as ComboBox).SelectedItem;
+                string selectedText = cbi.Content.ToString();
+                login_Comb.SelectedIndex = -1;
+                if (!string.IsNullOrEmpty(selectedText))
+                {
+                    input_username.Text = selectedText;
+                }
+            }
+            catch (Exception)
+            {
+                input_username.Text = "";
             }
         }
     }

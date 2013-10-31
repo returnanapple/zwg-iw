@@ -7,7 +7,7 @@
 
     <UserControl.Resources>
         <Style x:Key="titleStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#333"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="VerticalAlignment" Value="Top"></Setter>
@@ -15,27 +15,44 @@
             <Setter Property="FontFamily" Value="font/msyh.ttc#Microsoft Yahei"></Setter>
         </Style>
         <Style x:Key="bg_single" TargetType="Border">
-            <Setter Property="Background" Value="#FF1C1C1C"></Setter>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#005f9f"></Setter>
         </Style>
         <Style x:Key="bg_double" TargetType="Border">
-            <Setter Property="Background" Value="#FF1E1E1E"></Setter>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#0e1027"></Setter>
         </Style>
-        <Style x:Key="bg_hover" TargetType="Border">
+        <!--<Style x:Key="bg_hover" TargetType="Border">
             <Setter Property="Background" Value="#FF2D2D30"></Setter>
-        </Style>
+        </Style>-->
     </UserControl.Resources>
 
     <Grid x:Name="root" Width="912">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="270"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Name="title" Text="xx"></TextBlock>
         <Grid Grid.Row="1">
-            <Grid Name="body_bg" VerticalAlignment="Top"></Grid>
-            <Path Name="bg" Stroke="#CCC" StrokeThickness="0.5"></Path>
-            <Grid Name="body" VerticalAlignment="Top"></Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Name="DataGridTitle">
+                <Grid.Background>
+                    <ImageBrush ImageSource="img/images/DataGridHeader.png"/>
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid Name="body_bg" VerticalAlignment="Top"></Grid>
+                <!--<Grid Name="body_bgLine" VerticalAlignment="Top" HorizontalAlignment="Left"></Grid>-->
+                <Grid Name="body" VerticalAlignment="Top"></Grid>
+                
+            </Grid>
+            <Grid Grid.Row="1">
+                <Path VerticalAlignment="Top"  Name="body_bgLine" Stroke="#9cbff9" StrokeThickness="0.5"></Path>
+            </Grid>
         </Grid>
         <Grid Name="pageTool" Height="30" Grid.Row="2" HorizontalAlignment="Left">
         </Grid>

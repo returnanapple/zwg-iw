@@ -8,15 +8,18 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="360" Height="120">
-            <TextBlock Text="用户名：" Canvas.Left="34" Canvas.Top="27"/>
-            <TextBlock Text="密码：" Canvas.Left="46" Canvas.Top="48"/>
+        <Canvas Width="360" Height="120">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
+            <TextBlock Text="用户名：" Canvas.Left="34" Canvas.Top="27" FontSize="14"/>
+            <TextBlock Text="密   码：" Canvas.Left="34" Canvas.Top="48" FontSize="14"/>
 
-            <TextBlock Name="text_username" Text="admin" Canvas.Left="87" Canvas.Top="27"/>
-            <TextBlock Name="text_password" Text="123456" Canvas.Left="87" Canvas.Top="48"/>
+            <TextBlock Name="text_username" Text="admin" Canvas.Left="90" Canvas.Top="28" FontSize="14"/>
+            <TextBlock Name="text_password" Text="123456" Canvas.Left="87" Canvas.Top="48" FontSize="14"/>
 
-            <Button Content="返  回" Canvas.Left="277" Canvas.Top="25" Width="60" Click="Cancel"/>
-            <TextBlock Text="复制" Canvas.Left="87" Canvas.Top="69" Style="{StaticResource ResourceKey=LinkStyle}"
+            <Button Content="返  回" Canvas.Left="277" Canvas.Top="25" Width="60" Click="Cancel" Style="{StaticResource midBtnStyle}"/>
+            <TextBlock Text="复制" FontSize="16" Canvas.Left="35" Canvas.Top="75" Style="{StaticResource ResourceKey=LinkStyle}"
                        MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">
                 <i:Interaction.Triggers>
                     <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="False"/>

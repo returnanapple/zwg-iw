@@ -178,14 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ClientBin\System.ComponentModel.DataAnnotations.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Data.Input.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Input.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.SystemColors.zip" />
-    <Content Include="ClientBin\System.Windows.Controls.Theming.Toolkit.zip" />
-    <Content Include="ClientBin\System.Windows.Data.zip" />
     <None Include="Properties\PublishProfiles\发布到E盘.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

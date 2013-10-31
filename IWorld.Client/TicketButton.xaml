@@ -8,32 +8,27 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <Style TargetType="Border" x:Key="normal">
+        <Style TargetType="Border" x:Key="normal">        
             <Setter Property="Background">
                 <Setter.Value>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF1C1C1C" Offset="1"/>
-                        <GradientStop Color="#FF2D2D30"/>
-                        <GradientStop Color="#FF787878" Offset="0.525"/>
-                        <GradientStop Color="#FF929292" Offset="0.521"/>
-                    </LinearGradientBrush>
+                    <ImageBrush ImageSource="img/images/smallredBack.png"/>
                 </Setter.Value>
             </Setter>
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="root" Width="100" Height="32" VerticalAlignment="Top" MouseLeftButtonDown="Click">
+    <Grid x:Name="root" Height="51" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseLeftButtonDown="Click">
         <i:Interaction.Triggers>
             <client:NButtonFeedbackTrigger NBTOffset="1"/>
         </i:Interaction.Triggers>
-        <Grid HorizontalAlignment="Left" Width="90" RenderTransformOrigin="0,1">
-            <Grid.RenderTransform>
+        <Grid HorizontalAlignment="Left" Width="100">
+            <!--<Grid.RenderTransform>
                 <CompositeTransform TranslateY="1" SkewX="-20"/>
-            </Grid.RenderTransform>
-            <Border BorderThickness="1" BorderBrush="Black"></Border>
-            <Border Name="bg" BorderThickness="0.3" BorderBrush="Gray" Margin="1" Style="{StaticResource ResourceKey=normal}"></Border>
+            </Grid.RenderTransform>-->
+            <!--<Border BorderThickness="1" BorderBrush="Black"></Border>-->
+            <Border Name="bg" BorderThickness="0" BorderBrush="Gray"></Border>
         </Grid>
-        <TextBlock Name="text_content" Text="Button"
+        <TextBlock Name="text_content" Text="Button" FontWeight="Bold"
                    FontSize="14" FontFamily="Verdana" Foreground="White"
                    VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock.Effect>

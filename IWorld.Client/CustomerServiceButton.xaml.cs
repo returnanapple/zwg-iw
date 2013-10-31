@@ -21,8 +21,15 @@ namespace IWorld.Client
         }
 
         public event NDelegate ClickEventHandler;
+        //private void Click(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (ClickEventHandler != null)
+        //    {
+        //        ClickEventHandler(this, new EventArgs());
+        //    }
+        //}
 
-        private void Click(object sender, MouseButtonEventArgs e)
+        private void customServiceBtn_click(object sender, RoutedEventArgs e)
         {
             if (ClickEventHandler != null)
             {

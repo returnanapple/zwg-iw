@@ -6,11 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Loaded="SetFirstValues">
 
-    <Grid MouseLeftButtonDown="DragMove">
-        <Grid Name="root">
-            <Client:LoginPage />
+        <Grid MouseLeftButtonDown="DragMove">
+            <Grid Name="root" Background="Transparent">
+                <Client:LoginPage />
+            </Grid>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="1" ></Border>
+            <Border BorderBrush="Gray" BorderThickness="0.3"></Border>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="1"></Border>
-        <Border BorderBrush="Gray" BorderThickness="0.3"></Border>
-    </Grid>
 </UserControl>

@@ -37,7 +37,7 @@ namespace IWorld.Client
             button.bg.Style = (bool)e.NewValue == true ? (Style)button.Resources["selected"]
                 : (Style)button.Resources["normal"];
             button.text_content.Foreground = (bool)e.NewValue == false
-                ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.Black);
+                ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.White);
         }
 
         public int Num

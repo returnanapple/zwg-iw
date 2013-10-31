@@ -4,17 +4,20 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
+           
+    <Grid>
+        <Canvas  Width="360" Height="110">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
+            <TextBlock Text="提现金额：" Foreground="#906a27" FontSize="15" Canvas.Left="40" Canvas.Top="27"/>
+            <TextBlock Text="安全密码：" Foreground="#906a27" FontSize="15" Canvas.Left="40" Canvas.Top="56"/>
 
-    <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="360" Height="110">
-            <TextBlock Text="提现金额：" Canvas.Left="40" Canvas.Top="27"/>
-            <TextBlock Text="安全密码：" Canvas.Left="40" Canvas.Top="56"/>
-            
-            <TextBox Name="input_sum" Width="120" Canvas.Left="105" Canvas.Top="24"/>
-            <PasswordBox x:Name="input_safeCode" Width="120" Canvas.Left="105" Canvas.Top="53"/>
+            <TextBox Name="input_sum" Width="120" Style="{StaticResource AppTextBoxStyle}" Canvas.Left="120" Canvas.Top="24"/>
+            <PasswordBox x:Name="input_safeCode" Background="#475061"  Width="120" Canvas.Left="120" Canvas.Top="53"/>
 
-            <Button Content="提  现" Canvas.Left="277" Canvas.Top="21" Width="60" Click="Withdraw"/>
-            <Button Content="取  消" Canvas.Left="277" Canvas.Top="55" Width="60" Click="Cancel"/>
+            <Button Content="提  现" Style="{StaticResource midBtnStyle}"  Canvas.Left="261" Canvas.Top="24" Width="60" Click="Withdraw"/>
+            <Button Content="取  消" Style="{StaticResource midBtnStyle}" Canvas.Left="261" Canvas.Top="54" Width="60" Click="Cancel"/>
         </Canvas>
-    </toolkit:ExpressionDarkTheme>
+    </Grid>
 </controls:ChildWindow>

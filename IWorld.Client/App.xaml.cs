@@ -22,7 +22,6 @@ namespace IWorld.Client
 
         public static double LeftOfInitia = 0;
         public static double TopOfInitial = 0;
-        public static bool HadSetSize = false;
 
         /// <summary>
         /// 身份标识
@@ -66,6 +65,14 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new LoginPage());
+
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 241;
+                App.Current.MainWindow.Height = 541;
+                App.Current.MainWindow.Top = App.TopOfInitial;
+                //App.Current.MainWindow.Left = App.LeftOfInitia;
+            }
         }
 
         /// <summary>
@@ -76,6 +83,14 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new OperatePage());
+
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 1024;
+                App.Current.MainWindow.Height = 768;
+                App.Current.MainWindow.Top = 0;
+                App.Current.MainWindow.Left = 100;
+            }
         }
 
         /// <summary>
@@ -86,6 +101,14 @@ namespace IWorld.Client
             MainPage mp = (MainPage)App.Current.RootVisual;
             mp.root.Children.Clear();
             mp.root.Children.Add(new BindingPage());
+
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 420;
+                App.Current.MainWindow.Height = 400;
+                App.Current.MainWindow.Top = App.TopOfInitial + 100;
+                App.Current.MainWindow.Left = App.LeftOfInitia + 50;
+            }
         }
 
         #endregion
@@ -102,6 +125,13 @@ namespace IWorld.Client
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             this.RootVisual = new MainPage();
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 241;
+                App.Current.MainWindow.Height = 541;
+                App.Current.MainWindow.Top = App.TopOfInitial + 100;
+                ////App.Current.MainWindow.Left = App.LeftOfInitia;
+            }
         }
 
         private void Application_Exit(object sender, EventArgs e)

@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <Style x:Key="normal" TargetType="Border">
+        <!--<Style x:Key="normal" TargetType="Border">
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -30,21 +30,40 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+        </Style>-->
+        <Style x:Key="normal" TargetType="Border">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style x:Key="selected" TargetType="Border">
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Width" Value="83"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/TagBtnBg.png"/>
+                </Setter.Value>
+            </Setter>
         </Style>
     </UserControl.Resources>
 
-    <Grid x:Name="root" Width="60" Height="25" MouseLeftButtonDown="Click">
+    <Grid x:Name="root" Width="83" Height="38" MouseLeftButtonDown="Click" AllowDrop="True">
         <i:Interaction.Triggers>
             <client:NButtonFeedbackTrigger NBTOffset="1"/>
         </i:Interaction.Triggers>
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="12"></Border>
+        <!--<Border BorderBrush="Black" BorderThickness="1" CornerRadius="12"></Border>
         <Border Name="bg" BorderBrush="Gray" BorderThickness="0.4" CornerRadius="12" Margin="1"
                 Style="{StaticResource ResourceKey=normal}">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="1" BlurRadius="12"/>
             </Border.Effect>
+        </Border>-->
+        <Border Name="bg" Height="38"
+                Style="{StaticResource ResourceKey=normal}">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="1" BlurRadius="12"/>
+            </Border.Effect>
         </Border>
-        <TextBlock Name="text_content" Text="五星直选" Foreground="White" FontSize="11"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Name="text_content" Text="五星直选" Foreground="White" FontSize="14"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,6"></TextBlock>
     </Grid>
 </UserControl>

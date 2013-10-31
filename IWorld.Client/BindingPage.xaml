@@ -3,14 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Loaded="ChageSize">
+    mc:Ignorable="d">
     <toolkit:ExpressionDarkTheme>
         <Canvas x:Name="root" Width="420" Height="400">
             <Canvas.Background>
-                <LinearGradientBrush EndPoint="0.6,1" StartPoint="0.4,0">
-                    <GradientStop Color="#FF282828"/>
-                    <GradientStop Color="#FF181818" Offset="0.352"/>
-                </LinearGradientBrush>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
             </Canvas.Background>
 
             <TextBlock Canvas.Left="10" FontSize="16" Text="绑定用户信息" Canvas.Top="10">
@@ -29,15 +26,15 @@
             <TextBlock Canvas.Left="70" Text="开户人" Canvas.Top="315"/>
             <TextBlock Canvas.Left="82" Text="银行" Canvas.Top="344"/>
 
-            <PasswordBox Name="input_oldPassword" Height="23" Canvas.Left="152" Canvas.Top="63" Width="120"/>
-            <PasswordBox Name="inpu_newPassword" Height="23" Canvas.Left="152" Canvas.Top="91" Width="120"/>
-            <PasswordBox Name="input_newPassword_a" Height="23" Canvas.Left="152" Canvas.Top="119" Width="120"/>
-            <PasswordBox Name="input_safeCode" Height="23" Canvas.Left="152" Canvas.Top="162" Width="120"/>
-            <PasswordBox Name="input_safeCode_a" Height="23" Canvas.Left="152" Canvas.Top="190" Width="120"/>
-            <TextBox Name="input_email" Height="23" Canvas.Left="152" Canvas.Top="234" Width="120"/>
-            <TextBox Name="input_card" Height="23" Canvas.Left="152" Canvas.Top="284" Width="120"/>
-            <TextBox Name="input_holder" Height="23" Canvas.Left="152" Canvas.Top="312" Width="120"/>
-            <ComboBox Name="input_bank" Height="20" Canvas.Left="155" Canvas.Top="343" Width="117" SelectedIndex="0">
+            <PasswordBox Name="input_oldPassword" Style="{StaticResource AppTextBoxStyle}"  Height="23" Canvas.Left="152" Canvas.Top="63" Width="120"/>
+            <PasswordBox Name="inpu_newPassword" Style="{StaticResource AppTextBoxStyle}" Height="23" Canvas.Left="152" Canvas.Top="91" Width="120"/>
+            <PasswordBox Name="input_newPassword_a" Style="{StaticResource AppTextBoxStyle}" Height="23" Canvas.Left="152" Canvas.Top="119" Width="120"/>
+            <PasswordBox Name="input_safeCode" Height="23" Style="{StaticResource AppTextBoxStyle}" Canvas.Left="152" Canvas.Top="162" Width="120"/>
+            <PasswordBox Name="input_safeCode_a" Height="23" Style="{StaticResource AppTextBoxStyle}" Canvas.Left="152" Canvas.Top="190" Width="120"/>
+            <TextBox Name="input_email" Height="23" Style="{StaticResource AppTextBoxStyle}" Canvas.Left="152" Canvas.Top="234" Width="120"/>
+            <TextBox Name="input_card" Style="{StaticResource AppTextBoxStyle}" Height="23" Canvas.Left="152" Canvas.Top="284" Width="120"/>
+            <TextBox Name="input_holder" Style="{StaticResource AppTextBoxStyle}" Height="23" Canvas.Left="152" Canvas.Top="312" Width="120"/>
+            <ComboBox Name="input_bank" ItemContainerStyle="{StaticResource comboBoxItemStyle}" Style="{StaticResource comboBoxStyle}" Height="20" Canvas.Left="155" Canvas.Top="343" Width="117" SelectedIndex="0">
                 <ComboBox.Items>
                     <TextBlock Text="中国工商银行"/>
                     <TextBlock Text="中国农业银行"/>
@@ -50,9 +47,9 @@
                 </ComboBox.Items>
             </ComboBox>
 
-            <Button Content="确  定" Canvas.Left="335" Canvas.Top="63" Width="60" Click="Enter"/>
-            <Button Content="重  置" Canvas.Left="335" Canvas.Top="91" Width="60" Click="Reset"/>
-            <Button Content="取  消" Canvas.Left="335" Canvas.Top="119" Width="60" Click="Cancel"/>
+            <Button Content="确  定" Style="{StaticResource smallBtnStyle}"  Canvas.Left="335" Canvas.Top="63" Width="60" Click="Enter"/>
+            <Button Content="重  置" Style="{StaticResource smallBtnStyle}"  Canvas.Left="335" Canvas.Top="91" Width="60" Click="Reset"/>
+            <Button Content="取  消" Style="{StaticResource smallBtnStyle}"  Canvas.Left="335" Canvas.Top="119" Width="60" Click="Cancel"/>
 
         </Canvas>
     </toolkit:ExpressionDarkTheme>

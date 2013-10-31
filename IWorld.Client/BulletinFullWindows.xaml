@@ -6,7 +6,10 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="400" Height="320">
+        <Canvas Width="400" Height="320">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
             <TextBlock Text="标题：" Canvas.Left="30" Canvas.Top="23"/>
             <TextBlock Name="text_title" Text="我不会告诉你我是标题" TextWrapping="Wrap" Canvas.Left="71" Canvas.Top="23" Width="240" Height="50"/>
             <TextBlock Text="正文：" Canvas.Left="30" Canvas.Top="82"/>
@@ -14,7 +17,7 @@
                           VerticalScrollBarVisibility="Auto">
                 <TextBlock Name="text_context" TextWrapping="Wrap" Width="240" Text="正文"></TextBlock>
             </ScrollViewer>
-            <Button Content="关  闭" Canvas.Left="336" Canvas.Top="21" Width="54" Click="CancelButton_Click"/>
+            <Button Content="关  闭" Style="{StaticResource smallBtnStyle}" Canvas.Left="336" Canvas.Top="21" Width="54" Click="CancelButton_Click"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

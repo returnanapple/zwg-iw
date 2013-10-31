@@ -4,9 +4,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
+
     <UserControl.Resources>
-        <Style x:Key="border_normal" TargetType="Border">
+        <!--<Style x:Key="border_normal" TargetType="Border">
             <Setter Property="BorderBrush" Value="#CCC"></Setter>
             <Setter Property="Background" Value="#F1F1F1"></Setter>
         </Style>
@@ -23,9 +23,34 @@
         </Style>
         <Style x:Key="text_selected" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"></Setter>
+        </Style>-->
+
+        <Style x:Key="border_normal" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/numDefault.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="border_selected" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/numPressed.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="border_hover" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#CCC"></Setter>
+            <Setter Property="Background" Value="#E8E4DE"></Setter>
+        </Style>
+        <Style x:Key="text_normal" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#999"></Setter>
+        </Style>
+        <Style x:Key="text_selected" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
         </Style>
     </UserControl.Resources>
-    
+
     <Grid x:Name="root" Height="30" MinWidth="26" Cursor="Hand">
         <Border Name="bg" BorderThickness="1" Style="{StaticResource ResourceKey=border_normal}"></Border>
         <TextBlock Name="text_pageIndex" Text="1" FontFamily="font/msyh.ttc#Microsoft Yahei" FontSize="12"

@@ -5,7 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
     mc:Ignorable="d">
-
+   
     <toolkit:ExpressionDarkTheme Background="#00000000" Margin="0,20,0,0">
         <Canvas Width="720" Height="435">
             <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L720,0 M0,160 L720,160"/>
@@ -14,9 +14,9 @@
             <TextBlock Text="开户人：" Canvas.Left="106" Canvas.Top="67"/>
             <TextBlock Text="银行：" Canvas.Left="118" Canvas.Top="99"/>
 
-            <TextBox Name="input_card" Width="120" Canvas.Left="159" Canvas.Top="35"/>
-            <TextBox x:Name="input_holder" Width="120" Canvas.Left="159" Canvas.Top="64"/>
-            <ComboBox Name="input_bank" Height="20" Canvas.Left="161" Canvas.Top="97" Width="117" SelectedIndex="0">
+            <TextBox Style="{StaticResource AppTextBoxStyle}" Name="input_card" Width="120" Canvas.Left="159" Canvas.Top="35"/>
+            <TextBox Style="{StaticResource AppTextBoxStyle}" Name="input_holder" Width="120" Canvas.Left="159" Canvas.Top="64"/>
+            <ComboBox Name="input_bank"  Height="20" Canvas.Left="161" Canvas.Top="97" Width="117" SelectedIndex="0">
                 <ComboBox.Items>
                     <TextBlock Text="中国工商银行"/>
                     <TextBlock Text="中国农业银行"/>
@@ -29,8 +29,8 @@
                 </ComboBox.Items>
             </ComboBox>
 
-            <Button Name="button_update" Content="修  改" Canvas.Left="352" Canvas.Top="35" Width="75" Click="Update"/>
-            <Button Content="取  消" Canvas.Left="352" Canvas.Top="64" Width="75" Click="Cancel"/>
+            <Button Style="{StaticResource midBtnStyle}" Name="button_update" Content="修  改" Canvas.Left="352" Canvas.Top="35" Width="75" Click="Update"/>
+            <Button Style="{StaticResource midBtnStyle}" Content="取  消" Canvas.Left="352" Canvas.Top="64" Width="75" Click="Cancel"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </UserControl>

@@ -6,17 +6,20 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="360" Height="140">
-            <TextBlock Text="目标用户：" Canvas.Left="38" Canvas.Top="31"/>
-            <TextBlock Text="正常返点：" Canvas.Left="38" Canvas.Top="56"/>
-            <TextBlock Text="不定位返点：" Canvas.Left="26" Canvas.Top="85"/>
+        <Canvas   Width="360" Height="140">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
+            <TextBlock Text="目标用户：" Canvas.Left="38" Canvas.Top="31" FontSize="14"/>
+            <TextBlock Text="正常返点：" Canvas.Left="38" Canvas.Top="56" FontSize="14"/>
+            <TextBlock Text="不定位返点：" Canvas.Left="26" Canvas.Top="85" FontSize="14"/>
 
-            <TextBlock Name="text_user" Text="admin" Canvas.Left="103" Canvas.Top="31"/>
-            <TextBox Name="input_nrp" Width="120" Canvas.Left="103" Canvas.Top="53"/>
-            <TextBox x:Name="input_urp" Width="120" Canvas.Left="103" Canvas.Top="82"/>
+            <TextBlock Name="text_user" Text="admin" Canvas.Left="116" Canvas.Top="31" FontSize="14"/>
+            <TextBox Name="input_nrp" Width="120" Canvas.Left="116" Canvas.Top="53" Style="{StaticResource AppTextBoxStyle}"/>
+            <TextBox x:Name="input_urp" Width="120" Canvas.Left="116" Canvas.Top="82" Style="{StaticResource AppTextBoxStyle}"/>
 
-            <Button Content="确  定" Canvas.Left="277" Canvas.Top="25" Width="60" Click="UpPoints"/>
-            <Button Content="取  消" Canvas.Left="277" Canvas.Top="54" Width="60" Click="Cancel"/>
+            <Button Content="确  定" Style="{StaticResource midBtnStyle}" Canvas.Left="277" Canvas.Top="25" Width="60" Click="UpPoints"/>
+            <Button Content="取  消" Style="{StaticResource midBtnStyle}" Canvas.Left="277" Canvas.Top="54" Width="60" Click="Cancel"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

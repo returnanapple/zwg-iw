@@ -56,6 +56,14 @@ namespace IWorld.Client
         void BankToLoginPage(object sender, EventArgs e)
         {
             App.GoToLoginPage();
+
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 1024;
+                App.Current.MainWindow.Height = 768;
+                App.Current.MainWindow.Top = App.TopOfInitial;
+                App.Current.MainWindow.Left = App.LeftOfInitia;
+            }
         }
 
         #endregion

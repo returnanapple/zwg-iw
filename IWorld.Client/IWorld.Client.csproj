@@ -61,12 +61,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IWorld.Client.Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\IWorld.Client.Class.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls" />
     <Reference Include="mscorlib" />
     <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.NetTcp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core">
@@ -77,12 +84,13 @@
     <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Theming.ExpressionDark, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Controls.Theming.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Dll\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
@@ -111,6 +119,12 @@
     <Compile Include="BulletinFullWindows.xaml.cs">
       <DependentUpon>BulletinFullWindows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContactControl.xaml.cs">
+      <DependentUpon>ContactControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactListControl.xaml.cs">
+      <DependentUpon>ContactListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomerServiceButton.xaml.cs">
       <DependentUpon>CustomerServiceButton.xaml</DependentUpon>
     </Compile>
@@ -119,6 +133,9 @@
     </Compile>
     <Compile Include="DataReportsPage_TableRow.xaml.cs">
       <DependentUpon>DataReportsPage_TableRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadBufferPage.xaml.cs">
+      <DependentUpon>DownloadBufferPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DownloadPage.xaml.cs">
       <DependentUpon>DownloadPage.xaml</DependentUpon>
@@ -233,6 +250,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SharkInfoTipCtrl.xaml.cs">
+      <DependentUpon>SharkInfoTipCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharkRotateItemCtrl.xaml.cs">
+      <DependentUpon>SharkRotateItemCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharkSelectAnimalShowCtrl.xaml.cs">
+      <DependentUpon>SharkSelectAnimalShowCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharkShowInfoCtrl.xaml.cs">
+      <DependentUpon>SharkShowInfoCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SharksOperationPage.xaml.cs">
+      <DependentUpon>SharksOperationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableTool.xaml.cs">
       <DependentUpon>TableTool.xaml</DependentUpon>
     </Compile>
@@ -315,6 +347,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ContactControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContactListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomerServiceButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -326,6 +366,14 @@
     <Page Include="DataReportsPage_TableRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DicSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DownloadBufferPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="DownloadPage.xaml">
       <SubType>Designer</SubType>
@@ -422,6 +470,26 @@
     <Page Include="RemoveBettingPrompt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SharkInfoTipCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SharkRotateItemCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SharkSelectAnimalShowCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SharkShowInfoCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SharksOperationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="TableTool.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -642,7 +710,129 @@
     <Resource Include="img\icons_message.png" />
     <Resource Include="img\download.png" />
     <Resource Include="img\loading.png" />
-    <Resource Include="img\5.jpg" />
+    <Resource Include="img\images\mainBack.jpg" />
+    <Resource Include="img\HeaderLine.png" />
+    <Resource Include="img\images\Leftred.png" />
+    <Resource Include="img\images\smallredBack.png" />
+    <Resource Include="img\images\adminPic.png" />
+    <Resource Include="img\images\get.png" />
+    <Resource Include="img\images\pay.png" />
+    <Resource Include="img\images\FunctionKeyBack.png" />
+    <Resource Include="img\images\LeftPanel.png" />
+    <Resource Include="img\images\个人中心.png" />
+    <Resource Include="img\images\会员管理.png" />
+    <Resource Include="img\images\安全退出.png" />
+    <Resource Include="img\images\投注明细.png" />
+    <Resource Include="img\images\数据报表.png" />
+    <Resource Include="img\images\积分兑换.png" />
+    <Resource Include="img\images\资金管理.png" />
+    <Resource Include="img\images\bottomBar.png" />
+    <Resource Include="img\images\ball.png" />
+    <Resource Include="img\images\ballBg.png" />
+    <Resource Include="img\images\button.png" />
+    <Resource Include="img\images\DateTitleBg.png" />
+    <Resource Include="img\images\mark.png" />
+    <Resource Include="img\images\numBtnDefaultBg.png" />
+    <Resource Include="img\images\numBtnSelectedBg.png" />
+    <Resource Include="img\images\playTagBallBg.png" />
+    <Resource Include="img\images\subTitleBg.png" />
+    <Resource Include="img\images\TagBtnBg.png" />
+    <Resource Include="img\images\textBg.png" />
+    <Resource Include="img\images\timeBg.png" />
+    <Resource Include="img\images\verticalBar.png" />
+    <Resource Include="img\images\tishi.png" />
+    <Resource Include="img\images\LongLine.png" />
+    <Resource Include="img\images\bigredBack.png" />
+    <Resource Include="img\images\submit.png" />
+    <Resource Include="img\images\DataGridHeader.png" />
+    <Resource Include="img\images\xLine.png" />
+    <Resource Include="img\images\yLine.png" />
+    <Resource Include="img\images\BottomBaseBar.png" />
+    <Resource Include="img\images\downtext.png" />
+    <Resource Include="img\images\DownPage.png" />
+    <Resource Include="img\images\BaseDialog.png" />
+    <Resource Include="img\images\bigBtn.png" />
+    <Resource Include="img\images\bigBtnDefault.png" />
+    <Resource Include="img\images\bigBtnHover.png" />
+    <Resource Include="img\images\bigBtnPressed.png" />
+    <Resource Include="img\images\buffer_bg.png" />
+    <Resource Include="img\images\chooseBtnDefault.png" />
+    <Resource Include="img\images\chooseBtnHover.png" />
+    <Resource Include="img\images\chooseBtnPressed.png" />
+    <Resource Include="img\images\danshuang.png" />
+    <Resource Include="img\images\danshuangSelected.png" />
+    <Resource Include="img\images\dataGridTitle.png" />
+    <Resource Include="img\images\login_actualbg.png" />
+    <Resource Include="img\images\login_btnbg1.png" />
+    <Resource Include="img\images\login_btnbg2.png" />
+    <Resource Include="img\images\login_close.png" />
+    <Resource Include="img\images\login_font1.png" />
+    <Resource Include="img\images\login_font2.png" />
+    <Resource Include="img\images\login_footerbg.png" />
+    <Resource Include="img\images\login_headbg.png" />
+    <Resource Include="img\images\login_headbg01.png" />
+    <Resource Include="img\images\login_icon1.png" />
+    <Resource Include="img\images\login_icon2.png" />
+    <Resource Include="img\images\login_key.png" />
+    <Resource Include="img\images\login_light.png" />
+    <Resource Include="img\images\login_min.png" />
+    <Resource Include="img\images\login_textbox.png" />
+    <Resource Include="img\images\login_user.png" />
+    <Resource Include="img\images\midBtnDefault.png" />
+    <Resource Include="img\images\midBtnHover.png" />
+    <Resource Include="img\images\midBtnPressed.png" />
+    <Resource Include="img\images\preData.png" />
+    <Resource Include="img\images\redcorner.png" />
+    <Resource Include="img\images\smallBtnDefault.png" />
+    <Resource Include="img\images\smallBtnHover.png" />
+    <Resource Include="img\images\smallBtnPressed.png" />
+    <Resource Include="img\images\submitDefault.png" />
+    <Resource Include="img\images\submitHover.png" />
+    <Resource Include="img\images\submitPressed.png" />
+    <Resource Include="img\images\combBtnDefault.png" />
+    <Resource Include="img\images\combBtnHover.png" />
+    <Resource Include="img\images\combBtnPressed.png" />
+    <Resource Include="img\images\combBg.png" />
+    <Resource Include="img\images\talkRBg.png" />
+    <Resource Include="img\images\talkLBg.png" />
+    <Resource Include="img\images\talkbtn1.png" />
+    <Resource Include="img\images\talkbtn2.png" />
+    <Resource Include="img\images\talkIco1.png" />
+    <Resource Include="img\images\talkIco2.png" />
+    <Resource Include="img\images\talkIco3.png" />
+    <Resource Include="img\images\talkIcoBtn.png" />
+    <Resource Include="img\images\talkIconUser.png" />
+    <Resource Include="img\images\datePickerDefault.png" />
+    <Resource Include="img\images\datePickerHover.png" />
+    <Resource Include="img\images\datePickerPressed.png" />
+    <Resource Include="img\images\numDefault.png" />
+    <Resource Include="img\images\numHover.png" />
+    <Resource Include="img\images\numPressed.png" />
+    <Resource Include="img\images\cha.png" />
+    <Resource Include="img\images\people.png" />
+    <Resource Include="img\images\itemDefault.png" />
+    <Resource Include="img\images\itemHover.png" />
+    <Resource Include="img\images\itemPressed.png" />
+    <Resource Include="img\images\loginDefault.png" />
+    <Resource Include="img\images\loginHover.png" />
+    <Resource Include="img\images\loginPressed.png" />
+    <Resource Include="img\images\pwdDefault.png" />
+    <Resource Include="img\images\pwdHover.png" />
+    <Resource Include="img\images\pwdPressed.png" />
+    <Resource Include="img\images\FirstPage_headbg.png" />
+    <Resource Include="img\images\loginCombDefault.png" />
+    <Resource Include="img\images\loginCombHover.png" />
+    <Resource Include="img\images\loginCombPressed.png" />
+    <Resource Include="img\images\downSub.png" />
+    <Resource Include="img\images\icons_minimize.png" />
+    <Resource Include="img\images\onLine.png" />
+    <Resource Include="img\images\customSvcDefault.png" />
+    <Resource Include="img\images\customSvcHover.png" />
+    <Resource Include="img\images\sharkBtnDefault.png" />
+    <Resource Include="img\images\sharkBtnPressed.png" />
+    <Resource Include="img\images\sharkCashBtnDefault.png" />
+    <Resource Include="img\images\sharkCashBtnPressed.png" />
+    <Resource Include="img\images\customSvcPressed.png" />
     <Content Include="img\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -762,17 +952,57 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="img\images\logotxt.png" />
+    <Resource Include="img\images\RightBar1.png" />
+    <Resource Include="img\个人中心.png" />
+    <Resource Include="img\会员管理.png" />
+    <Resource Include="img\安全退出.png" />
+    <Resource Include="img\投注明细.png" />
+    <Resource Include="img\数据报表.png" />
+    <Resource Include="img\积分兑换.png" />
+    <Resource Include="img\资金管理.png" />
+    <Resource Include="img\shark\blueshark_big.png" />
+    <Resource Include="img\shark\dove_big.png" />
+    <Resource Include="img\shark\hawk_big.png" />
+    <Resource Include="img\shark\lion_big.png" />
+    <Resource Include="img\shark\monkey_big.png" />
+    <Resource Include="img\shark\panda_big.png" />
+    <Resource Include="img\shark\peacock_big.png" />
+    <Resource Include="img\shark\rabbit_big.png" />
+    <Resource Include="img\shark\shark_animalbetbg.png" />
+    <Resource Include="img\shark\shark_bg.png" />
+    <Resource Include="img\shark\shark_bluesharkbg.png" />
+    <Resource Include="img\shark\shark_selectbetbg.png" />
+    <Resource Include="img\shark\swallow_big.png" />
+    <Resource Include="img\shark\thumb_animal0.png" />
+    <Resource Include="img\shark\thumb_animal1.png" />
+    <Resource Include="img\shark\thumb_animal10.png" />
+    <Resource Include="img\shark\thumb_animal11.png" />
+    <Resource Include="img\shark\thumb_animal12.png" />
+    <Resource Include="img\shark\thumb_animal13.png" />
+    <Resource Include="img\shark\thumb_animal14.png" />
+    <Resource Include="img\shark\thumb_animal15.png" />
+    <Resource Include="img\shark\thumb_animal16.png" />
+    <Resource Include="img\shark\thumb_animal17.png" />
+    <Resource Include="img\shark\thumb_animal18.png" />
+    <Resource Include="img\shark\thumb_animal19.png" />
+    <Resource Include="img\shark\thumb_animal2.png" />
+    <Resource Include="img\shark\thumb_animal20.png" />
+    <Resource Include="img\shark\thumb_animal21.png" />
+    <Resource Include="img\shark\thumb_animal22.png" />
+    <Resource Include="img\shark\thumb_animal23.png" />
+    <Resource Include="img\shark\thumb_animal24.png" />
+    <Resource Include="img\shark\thumb_animal25.png" />
+    <Resource Include="img\shark\thumb_animal26.png" />
+    <Resource Include="img\shark\thumb_animal27.png" />
+    <Resource Include="img\shark\thumb_animal3.png" />
+    <Resource Include="img\shark\thumb_animal4.png" />
+    <Resource Include="img\shark\thumb_animal5.png" />
+    <Resource Include="img\shark\thumb_animal6.png" />
+    <Resource Include="img\shark\thumb_animal7.png" />
+    <Resource Include="img\shark\thumb_animal8.png" />
+    <Resource Include="img\shark\thumb_animal9.png" />
     <Content Include="ServiceReferences.ClientConfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Client.Client.Control\Client.Client.Control.csproj">
-      <Project>{106498c3-e6cc-4f90-ab22-9c730a7099a2}</Project>
-      <Name>Client.Client.Control</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWorld.Client.Class\IWorld.Client.Class.csproj">
-      <Project>{6e56c45e-b5cd-478f-9a47-9a3a041f5e31}</Project>
-      <Name>IWorld.Client.Class</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,14 +7,17 @@
 
     <toolkit:ExpressionDarkTheme Background="Black">
         <Canvas x:Name="root" Width="500" Height="183">
-            <TextBlock Text="标题：" Canvas.Left="61" Canvas.Top="14"></TextBlock>
-            <TextBlock Text="兑换单价：" Canvas.Left="37" Canvas.Top="46"/>
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
+            <TextBlock Text="标题：" Canvas.Left="61" Canvas.Top="14" FontSize="15"></TextBlock>
+            <TextBlock Text="兑换单价：" Canvas.Left="37" Canvas.Top="46"  FontSize="15"/>
 
-            <TextBlock Name="text_name" Text="18积分一个 最后三天跳楼大酬宾" Canvas.Left="119" Canvas.Top="14"/>
-            <TextBlock Name="text_UnitPrice" Text="18" Canvas.Left="119" Canvas.Top="46"/>
+            <TextBlock Name="text_name" Text="18积分一个 最后三天跳楼大酬宾" Canvas.Left="119" Canvas.Top="14"  FontSize="15"/>
+            <TextBlock Name="text_UnitPrice" Text="18" Canvas.Left="119" Canvas.Top="46"  FontSize="15"/>
 
 
-            <TextBlock Name="title_showPrize" Text="奖品：" Canvas.Left="61" Canvas.Top="84"/>
+            <TextBlock Name="title_showPrize" Text="奖品：" Canvas.Left="61" Canvas.Top="84"  FontSize="15"/>
             <Grid x:Name="tool_showPrize" Canvas.Left="119" Canvas.Top="84" Width="260" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -23,12 +26,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
-                <TextBlock Name="text_pName" Text="奖金" Grid.Column="0"/>
-                <TextBlock Name="text_pPrice" Text="100.00" Grid.Column="1" HorizontalAlignment="Center"/>
+                <TextBlock Name="text_pName" Text="奖金" Grid.Column="0"  FontSize="15"/>
+                <TextBlock Name="text_pPrice" Text="100.00" Grid.Column="1" HorizontalAlignment="Center"  FontSize="15"/>
             </Grid>
 
-            <Button Content="兑  换" Canvas.Left="415" Canvas.Top="14" Width="75" Click="Enter"/>
-            <Button Content="返  回" Canvas.Left="415" Canvas.Top="44" Width="75" Click="Cancel"/>
+            <Button Content="兑  换" Style="{StaticResource midBtnStyle}" Canvas.Left="415" Canvas.Top="14" Width="75" Click="Enter"/>
+            <Button Content="返  回" Style="{StaticResource midBtnStyle}" Canvas.Left="415" Canvas.Top="44" Width="75" Click="Cancel"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

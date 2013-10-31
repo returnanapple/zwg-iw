@@ -1,0 +1,96 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:IWorld.Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:ec="http://schemas.microsoft.com/expression/2010/controls" x:Class="IWorld.Client.SharksOperationPage"
+    mc:Ignorable="d" d:DesignHeight="605" d:DesignWidth="807" x:Name="sharksOperation">
+    <UserControl.Resources>
+        <DropShadowEffect x:Key="fontEffect" Color="Black" BlurRadius="20" Direction="360" ShadowDepth="0"/>
+    </UserControl.Resources>
+    
+	<toolkit:ExpressionDarkTheme Background="#00000000">
+		<Grid x:Name="root">
+			<Grid.Background>
+				<ImageBrush ImageSource="img/shark/shark_bg.png" Opacity="0.95"/>
+			</Grid.Background>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="370"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Canvas Height="330" x:Name="rotateParent" Margin="60,35,80,0"  VerticalAlignment="Top">
+				<ec:PathListBox x:Name="lstRotateItems" IsEnabled="False">
+					<ec:PathListBox.LayoutPaths>
+						<ec:LayoutPath SourceElement="{Binding ElementName=ellipse}" Distribution="Even"/>
+					</ec:PathListBox.LayoutPaths>
+				</ec:PathListBox>
+				<Ellipse x:Name="ellipse" Canvas.Left="5" Stroke="Transparent" Canvas.Top="0" Width="{Binding ActualWidth, ElementName=rotateParent}"
+					Height="300" />
+
+			</Canvas>
+            
+
+			<StackPanel Margin="38,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <Button Content="续投" Style="{StaticResource sharkBtnStyle}"  Width="65" Height="28" Margin="0,0,0,5"/>
+                <Button Content="清空" Style="{StaticResource sharkBtnStyle}" Width="65" Height="28"/>
+			</StackPanel>
+			<StackPanel Margin="0,0,38,10" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button Content="取款" Style="{StaticResource sharkCashBtnStyle}"  Width="65" Height="28" Margin="0,0,0,5"/>
+                <Button Content="存款" Style="{StaticResource sharkBtnStyle}" Width="65" Height="28"/>
+			</StackPanel>
+            
+			<Grid Grid.Row="1" Margin="38,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="38"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="176"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<local:SharkInfoTipCtrl TipTitle="飞燕X2" TipContnet="1596000" HorizontalAlignment="Right"/>
+				<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Right">
+                    <local:SharkShowInfoCtrl AnimalName="燕子" Details="3039000" Number="2" AnimalImagePath="img/shark/swallow_big.png"/>
+                    <local:SharkShowInfoCtrl AnimalName="鸽子" Details="3039000" Number="4" AnimalImagePath="img/shark/dove_big.png"/>
+                    <local:SharkShowInfoCtrl AnimalName="孔雀" Details="3039000" Number="4" AnimalImagePath="img/shark/peacock_big.png"/>
+                    <local:SharkShowInfoCtrl AnimalName="老鹰" Details="3039000" Number="4"  AnimalImagePath="img/shark/hawk_big.png"/>
+				</StackPanel>
+
+				<TextBlock Grid.Column="1" Margin="10,5,0,0" FontWeight="Bold" Text="开奖时间：" FontSize="16" Effect="{StaticResource fontEffect}">
+					<TextBlock.Foreground>
+						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+							<GradientStop Color="#FDD16A" Offset="0" />
+							<GradientStop Color="#D18B1D" Offset="1" />
+						</LinearGradientBrush>
+					</TextBlock.Foreground>
+				</TextBlock>
+				<TextBlock Grid.Column="1" Margin="88,0,0,0" Text="{Binding LimitTime, ElementName=sharksOperation}" FontSize="20" Effect="{StaticResource fontEffect}">
+					<TextBlock.Foreground>
+						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+							<GradientStop Color="#D7D7D7" Offset="0" />
+							<GradientStop Color="#56C2E3" Offset="1" />
+						</LinearGradientBrush>
+					</TextBlock.Foreground>
+				</TextBlock>
+				<local:SharkSelectAnimalShowCtrl Grid.RowSpan="3" VerticalAlignment="Top" Margin="0,43,0,0" Grid.Column="1" AnimalName="鲨鱼" Details="3039000" Number="4" AnimalImagePath="img/shark/blueshark_big.png"/>
+
+				<StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Margin="0,8,0,0">
+                    <local:SharkShowInfoCtrl AnimalName="狮子" Details="3039000" Number="4" AnimalImagePath="img/shark/lion_big.png"/>
+                    <local:SharkShowInfoCtrl AnimalName="熊猫" Details="3039000" Number="4" AnimalImagePath="img/shark/panda_big.png"/>
+					<local:SharkShowInfoCtrl AnimalName="猴子" Details="3039000" Number="4" AnimalImagePath="img/shark/monkey_big.png"/>
+                    <local:SharkShowInfoCtrl AnimalName="兔子" Details="3039000" Number="4" AnimalImagePath="img/shark/rabbit_big.png"/>
+				</StackPanel>
+
+				<local:SharkInfoTipCtrl Grid.Column="2" TipTitle="走兽X2" TipContnet="1596000" HorizontalAlignment="Left"/>
+
+				<local:SharkInfoTipCtrl Grid.Row="2" Height="38" VerticalAlignment="Top" Margin="0,8,0,0" TipTitle="总共得分" TipContnet="+0" HorizontalAlignment="Right"/>
+
+				<local:SharkInfoTipCtrl Grid.Row="2" Grid.Column="2" Height="38" VerticalAlignment="Top" Margin="0,8,0,0" TipTitle="剩余资产" TipContnet="+0" HorizontalAlignment="Left"/>
+			</Grid>
+		</Grid>
+	</toolkit:ExpressionDarkTheme>
+</UserControl>

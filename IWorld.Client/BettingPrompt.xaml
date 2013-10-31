@@ -6,7 +6,10 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Background="Black" Width="500" Height="270">
+        <Canvas  Width="500" Height="270">
+            <Canvas.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Canvas.Background>
             <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="20"/>
 
             <TextBox Name="text_values" Width="306" Canvas.Left="29" Canvas.Top="41" Height="71"
@@ -33,8 +36,8 @@
             <TextBlock Name="text_sum" Text="10" Canvas.Left="284" Canvas.Top="172"/>
             <TextBlock Name="text_multiple" Text="2" Canvas.Left="284" Canvas.Top="193"/>
             <TextBlock Name="text_money" Text="40.00" Canvas.Left="284" Canvas.Top="214"/>
-            <Button Content="投  注" Canvas.Left="415" Canvas.Top="20" Width="60" Click="OKButton_Click"/>
-            <Button Content="取  消" Canvas.Left="415" Canvas.Top="47" Width="60" Click="CancelButton_Click"/>
+            <Button Style="{StaticResource midBtnStyle}"  Content="投  注" Canvas.Left="384" Canvas.Top="41" Width="91" Click="OKButton_Click" Height="30"/>
+            <Button Content="取  消" Style="{StaticResource midBtnStyle}"  Canvas.Left="384" Canvas.Top="82" Width="91" Click="CancelButton_Click" Height="30"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

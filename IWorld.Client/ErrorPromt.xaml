@@ -4,13 +4,16 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
     <toolkit:ExpressionDarkTheme>
-        <Grid x:Name="LayoutRoot" Margin="2" Background="Black">
+        <Grid x:Name="LayoutRoot" Margin="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Name="text_content" Margin="30" Grid.Column="0" MaxWidth="420" TextWrapping="Wrap">message</TextBlock>
-            <Button Content="确  定" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"
+            <Button Content="确  定" Style="{StaticResource smallBtnStyle}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Width="60" Height="25" Margin="20,26,10,0" Click="Enter"/>
         </Grid>
     </toolkit:ExpressionDarkTheme>

@@ -7,8 +7,8 @@
     mc:Ignorable="d">
     <toolkit:ExpressionDarkTheme Background="#00000000" Margin="0,20,0,0">
         <Canvas Width="720" Height="435">
-            <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L720,0 M50,280 L320,280 M360,35 L360,370"/>
-            <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,1 L720,1 M50,281 L320,281 M361,35 L361,370"/>
+            <Image Source="img/images/xLine.png" Canvas.Left="27" Canvas.Top="281" Width="655"></Image>
+            <Image Source="img/images/yLine.png" Canvas.Left="361" Canvas.Top="35" Height="241"  ></Image>
             <TextBlock Text="用户名：" Canvas.Left="106" Canvas.Top="35"/>
             <TextBlock Text="安全邮箱：" Canvas.Left="94" Canvas.Top="56"/>
             <TextBlock Text="正常返点：" Canvas.Left="94" Canvas.Top="77"/>

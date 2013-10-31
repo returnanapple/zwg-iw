@@ -17,7 +17,6 @@
         </i:Interaction.Triggers>
         <Image Name="img" Width="30" Height="20" Source="img/icons_down.png"
                            HorizontalAlignment="Left"></Image>
-        <TextBlock Name="tb" Text="提现" HorizontalAlignment="Right" VerticalAlignment="Center" 
-                               TextDecorations="Underline"></TextBlock>
+        <TextBlock Name="tb" Text="提现" HorizontalAlignment="Right" VerticalAlignment="Center" Width="30" ></TextBlock>
     </Grid>
 </UserControl>

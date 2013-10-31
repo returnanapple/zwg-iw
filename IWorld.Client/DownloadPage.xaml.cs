@@ -22,19 +22,19 @@ namespace IWorld.Client
         private void Image_MouseEnter(object sender, MouseEventArgs e)
         {
             FrameworkElement fe = (FrameworkElement)sender;
-            fe.Margin = new Thickness(2, 2, -2, -2);
+            fe.Margin = new Thickness(401, 494, 0, 0);
         }
 
         private void Image_MouseLeave(object sender, MouseEventArgs e)
         {
             FrameworkElement fe = (FrameworkElement)sender;
-            fe.Margin = new Thickness(0, 0, 0, 0);
+            fe.Margin = new Thickness(401, 495, 0, 0);
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement fe = (FrameworkElement)sender;
-            fe.Margin = new Thickness(0, 0, 0, 0);
+            fe.Margin = new Thickness(401, 496, 0, 0);
 
             if (App.Current.InstallState == InstallState.Installed)
             {

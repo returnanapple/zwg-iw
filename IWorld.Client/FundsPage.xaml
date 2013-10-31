@@ -15,15 +15,17 @@
             <Canvas Height="90">
                 <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L720,0"></Path>
                 <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,1 L720,1"></Path>
-                <Button Content="充  值" Width="75" Height="25" Canvas.Top="55"
+                <Button Content="充  值" Style="{StaticResource midBtnStyle}" Width="75" Height="25" Canvas.Top="55"
                         Click="OpenRTool"/>
-                <Button Content="提  现" Width="75" Height="25" Canvas.Left="80" Canvas.Top="55"
+                <Button Content="提  现" Width="75" Style="{StaticResource midBtnStyle}" Height="25" Canvas.Left="80" Canvas.Top="55"
                         Click="OpenWTool"/>
-                <Button Name="button_rList" Content="充值记录" Width="75" Height="25" 
+                <Button Name="button_rList" Content="充值记录" Style="{StaticResource midBtnStyle}" Width="75" Height="25" 
                         Canvas.Left="160" Canvas.Top="55" Click="SeeRList"/>
-                <Button Name="button_wList" Content="提现记录" Width="75" Height="25" 
+                <Button Name="button_wList" Content="提现记录" Style="{StaticResource midBtnStyle}" Width="75" Height="25" 
                         Canvas.Left="240" Canvas.Top="55" Click="SeeWList"/>
-                <TextBlock FontSize="20" Text="资金管理" Canvas.Top="10"/>
+                <TextBlock FontSize="20" Text="资金管理" Canvas.Top="11" Canvas.Left="321"/>
+                <Image Source="img/images/LongLine.png" HorizontalAlignment="Stretch" Width="720" Canvas.Left="0" Canvas.Top="41" />
+
             </Canvas>
             <Grid Name="tableBody" Grid.Row="1"></Grid>
         </Grid>

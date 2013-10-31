@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <UserControl.Resources>
-        <Style x:Key="normal" TargetType="Border">
+        <!--<Style x:Key="normal" TargetType="Border">
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -19,6 +19,20 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+        </Style>-->
+        <Style x:Key="normal" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/danshuang.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="selected" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/danshuangSelected.png"/>
+                </Setter.Value>
+            </Setter>
         </Style>
     </UserControl.Resources>
 
@@ -26,9 +40,9 @@
         <i:Interaction.Triggers>
             <client:NButtonFeedbackTrigger NBTOffset="1"/>
         </i:Interaction.Triggers>
-        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3"></Border>
-        <Border Name="bg" BorderBrush="Gray" BorderThickness="0.4" CornerRadius="3" Margin="1"
-                Style="{StaticResource ResourceKey=normal}">
+        <!--<Border BorderBrush="Black" BorderThickness="1" CornerRadius="3"></Border>-->
+        <Border Name="bg"
+                  Style="{StaticResource ResourceKey=normal}">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="1" BlurRadius="6"/>
             </Border.Effect>

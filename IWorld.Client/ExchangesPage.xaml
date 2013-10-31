@@ -13,7 +13,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Canvas Height="45">
-                <TextBlock FontSize="20" Text="积分兑换" Canvas.Top="10"/>
+                <TextBlock FontSize="20" Text="积分兑换" Canvas.Top="11" Canvas.Left="321"/>
+                <Image Source="img/images/LongLine.png" HorizontalAlignment="Stretch" Width="720" Canvas.Left="0" Canvas.Top="41" />
+
                 <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L720,0"/>
                 <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,1 L720,1"/>
             </Canvas>

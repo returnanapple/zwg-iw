@@ -1,7 +1,7 @@
-<OutOfBrowserSettings ShortName="IWorld" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+<OutOfBrowserSettings ShortName="迪赛娱乐" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
   <OutOfBrowserSettings.Blurb>这个软件由紫微阁工作室制作，内核版本号为3.8</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="IWorld" Height="200" Width="320" WindowStyle="None" />
+    <WindowSettings Title="迪赛娱乐" Height="200" Width="320" WindowStyle="None" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />

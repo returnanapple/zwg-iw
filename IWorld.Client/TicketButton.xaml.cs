@@ -67,7 +67,7 @@ namespace IWorld.Client
         public static void IsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             TicketButton key = (TicketButton)d;
-            key.bg.Style = (bool)e.NewValue == true ? null : (Style)key.Resources["normal"];
+            key.bg.Style = (bool)e.NewValue == false ? null : (Style)key.Resources["normal"];
         }
 
         #endregion

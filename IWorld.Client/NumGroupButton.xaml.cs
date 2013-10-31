@@ -24,6 +24,7 @@ namespace IWorld.Client
 
         private void Click(object sender, MouseButtonEventArgs e)
         {
+            this.IsSelected = !this.IsSelected;
             if (ClickEventHandler != null)
             {
                 ClickEventHandler(this, new EventArgs());
@@ -31,6 +32,24 @@ namespace IWorld.Client
         }
 
         #region 依赖属性
+        public bool IsSelected
+        {
+            get { return (bool)GetValue(IsSelectedProperty); }
+            set { SetValue(IsSelectedProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsSelectedProperty =
+            DependencyProperty.Register("IsSelected", typeof(bool), typeof(NumGroupButton)
+            , new PropertyMetadata(false, new PropertyChangedCallback(IsSelectedChanged)));
+
+        public static void IsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            NumGroupButton button = (NumGroupButton)d;
+            button.bg.Style = (bool)e.NewValue == true ? (Style)button.Resources["selected"]
+                : (Style)button.Resources["normal"];
+            button.text_content.Foreground = (bool)e.NewValue == false
+                ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.White);
+        }
 
         public string Text
         {

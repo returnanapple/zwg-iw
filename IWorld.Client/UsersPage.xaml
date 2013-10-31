@@ -13,20 +13,21 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Canvas Height="90">
-                <TextBlock FontSize="20" Text="用户管理" Canvas.Top="10"/>
+                <TextBlock FontSize="20" Text="用户管理" Canvas.Top="11" Canvas.Left="321"/>
+                <Image Source="img/images/LongLine.png" HorizontalAlignment="Stretch" Width="720" Canvas.Left="0" Canvas.Top="41" />
                 <Path Stroke="Black" StrokeThickness="1" Data="M0,0 L720,0"></Path>
                 <Path Stroke="Gray" StrokeThickness="0.3" Data="M0,1 L720,1"></Path>
-                <TextBox Name="input_keyword" Width="120" Canvas.Top="56"/>
-                <Button Name="button_selectForKeyword" Content="搜  索" Width="60" Height="25" 
+                <TextBox Name="input_keyword" Width="120" Canvas.Top="56" Style="{StaticResource AppTextBoxStyle}"/>
+                <Button Name="button_selectForKeyword" Content="搜  索" Width="60" Height="25" Style="{StaticResource midBtnStyle}"
                         Canvas.Left="125" Canvas.Top="55" Click="SelectForKeyword"/>
-                <Button x:Name="button_reset" Content="重  置" Width="60" Height="25" 
+                <Button x:Name="button_reset" Content="重  置" Width="60" Height="25" Style="{StaticResource midBtnStyle}"
                 	    Canvas.Left="190" Canvas.Top="55" Click="Reset"/>
-                <ComboBox Name="input_onlyImmediate" Width="110" Canvas.Left="281" Canvas.Top="57" SelectedIndex="0"
+                <ComboBox Name="input_onlyImmediate"  Style="{StaticResource comboBoxStyle}" ItemContainerStyle="{StaticResource comboBoxItemStyle}" Width="110" Canvas.Left="281" Canvas.Top="57" SelectedIndex="0"
                           SelectionChanged="SelectByIfOM">
                     <TextBlock Text="全部"></TextBlock>
                     <TextBlock Text="只看直属下级"></TextBlock>
                 </ComboBox>
-                <Button x:Name="button_create" Content="创建新用户" Width="100" Height="25" 
+                <Button x:Name="button_create" Content="创建新用户" Width="100" Height="25" Style="{StaticResource midBtnStyle}"
                 	    Canvas.Left="575" Canvas.Top="55" Click="Create"/>
             </Canvas>
             <Grid Name="tableBody" Grid.Row="1"></Grid>

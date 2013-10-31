@@ -89,7 +89,7 @@ namespace IWorld.Client
             text_username.Text = App.UserInfo.Username;
             text_userGroup.Text = App.UserInfo.Group.Name;
             text_money.Text = App.UserInfo.Money.ToString("0.00");
-            text_freeze.Text = App.UserInfo.MoneyBeFrozen.ToString("0.00");
+            //text_freeze.Text = App.UserInfo.MoneyBeFrozen.ToString("0.00");
             text_integral.Text = App.UserInfo.Integral.ToString();
         }
 
@@ -123,6 +123,7 @@ namespace IWorld.Client
             FunctionKeys.Add(functionKey_dataReport);
             FunctionKeys.Add(functionKey_center);
             FunctionKeys.Add(functionKey_exc);
+            FunctionKeys.Add(functionKey_exit);
 
             FunctionKeys.ForEach(x =>
                 {
@@ -147,6 +148,14 @@ namespace IWorld.Client
 
                     t++;
                 });
+
+            //测试
+            TicketButton btn = new TicketButton();
+            btn.Text = "大白鲨";
+            btn.SetValue(Grid.ColumnProperty, t);
+            btn.ClickEventHandler += SharksOperation;
+            titleTool.Children.Add(btn);
+            TicketButtons.Add(btn);
         }
         #region 功能键点击事件
 
@@ -155,31 +164,49 @@ namespace IWorld.Client
             ClearKeysSelected();
             FunctionKey button = (FunctionKey)sender;
             button.IsSelected = true;
+
+            //假实现
+            sharkpage.Visibility = Visibility.Collapsed;
+
             switch (button.Text)
             {
                 case "会员管理":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToUsersPage();
                     break;
                 case "资金管理":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToFundsPage();
                     break;
                 case "投注明细":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToBettingDetailsPage();
                     break;
                 case "数据报表":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToDataReportsPage();
                     break;
                 case "个人中心":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToUserCenterPage();
                     break;
                 case "积分兑换":
+                    hideBottomBar.Visibility = Visibility.Visible;
                     GoToExchangesPage();
+                    break;
+                case "安全退出":
+                    App.Current.MainWindow.Close();
                     break;
             }
         }
 
         void TicketButtonsClieck(object sender, EventArgs e)
         {
+            hideBottomBar.Visibility = Visibility.Collapsed;
+
+            //假实现
+            sharkpage.Visibility = Visibility.Collapsed;
+
             ClearKeysSelected();
             TicketButton button = (TicketButton)sender;
             button.IsSelected = true;
@@ -476,6 +503,16 @@ namespace IWorld.Client
         }
 
         #endregion
+
+        void ClearBettingInfo(object sender, RoutedEventArgs e)
+        {
+            BettingValuesImports.Clear();
+            ShowBettingInfo();
+            NumButtons.ForEach(x =>
+                {
+                    x.IsSelected = false;
+                });
+        }
 
         void ShowBettingGoTool(object sender, EventArgs e)
         {
@@ -855,13 +892,16 @@ namespace IWorld.Client
 
                     var _seat = howToPlay.Seats.First();
 
+                    Border bord = new Border();
+                    bord.Style = (Style)this.Resources["numBitStyle"];
                     TextBlock tb = new TextBlock();
+                    bord.Child = tb;
                     tb.Text = "选号";
                     tb.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                     tb.VerticalAlignment = System.Windows.VerticalAlignment.Center;
-                    tb.SetValue(Grid.RowProperty, r);
-                    tb.SetValue(Grid.ColumnProperty, 0);
-                    insertBox_double.Children.Add(tb);
+                    bord.SetValue(Grid.RowProperty, r);
+                    bord.SetValue(Grid.ColumnProperty, 0);
+                    insertBox_double.Children.Add(bord);
 
                     #region 快捷组选
 
@@ -960,13 +1000,16 @@ namespace IWorld.Client
 
                     howToPlay.Seats.ForEach(x =>
                         {
+                            Border bord = new Border();
+                            bord.Style = (Style)this.Resources["numBitStyle"];
                             TextBlock tb = new TextBlock();
-                            tb.Text = x.Name;
+                            bord.Child = tb;
+                            tb.Text = "选号";
                             tb.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                             tb.VerticalAlignment = System.Windows.VerticalAlignment.Center;
-                            tb.SetValue(Grid.RowProperty, r);
-                            tb.SetValue(Grid.ColumnProperty, 0);
-                            insertBox_double.Children.Add(tb);
+                            bord.SetValue(Grid.RowProperty, r);
+                            bord.SetValue(Grid.ColumnProperty, 0);
+                            insertBox_double.Children.Add(bord);
 
                             #region 快捷组选
 
@@ -1432,6 +1475,7 @@ namespace IWorld.Client
             else
             {
                 App.GoToLoginPage();
+
             }
         }
 
@@ -1672,13 +1716,10 @@ namespace IWorld.Client
                 if (_index >= App.Bulletins.Count) { _index = 0; }
                 BulletinResult _bulletin = App.Bulletins[_index];
                 BulletinIdNowShow = _bulletin.BulletinId;
-                text_bulletin.Text = _bulletin.Title;
-
-                bulletinBody.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {
-                bulletinBody.Visibility = System.Windows.Visibility.Collapsed;
+                //bulletinBody.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
 
@@ -1825,16 +1866,71 @@ namespace IWorld.Client
 
         #endregion
 
-        private void ChageSize(object sender, RoutedEventArgs e)
+        #region 大白鲨,界面假实现
+        private void SharksOperation(object sender, EventArgs e)
         {
-            if (App.Current.IsRunningOutOfBrowser)
-            {
-                App.Current.MainWindow.Width = 1000;
-                App.Current.MainWindow.Height = 680;
-                App.Current.MainWindow.Top = App.TopOfInitial - 240;
-                App.Current.MainWindow.Left = App.LeftOfInitia - 340;
-            }
+            ClearKeysSelected();
+            TicketButton btn = sender as TicketButton;
+            btn.IsSelected = true;
+            GoToSharkPage();
+            hideBottomBar.Visibility = Visibility.Visible;
         }
+
+        void GoToSharkPage()
+        {
+            #region 显示框架
+            ticketPageBody.Visibility = System.Windows.Visibility.Collapsed;
+            ticketPageBody_right.Visibility = System.Windows.Visibility.Collapsed;
+            ticketPageBody_buttom.Visibility = System.Windows.Visibility.Collapsed;
+            body.Visibility = System.Windows.Visibility.Collapsed;
+            showingTicket = false;
+            //假实现
+            sharkpage.Visibility = Visibility.Visible;
+
+            #endregion
+            SharksOperationPage shark = new SharksOperationPage();
+            sharkpage.Children.Clear();
+            sharkpage.Children.Add(shark);
+        }
+        #endregion
+
+        #region 客服,界面假实现
+        private void CustomServicePageOperation(object sender, EventArgs e)
+        {
+            ClearKeysSelected();
+            TicketButton btn = sender as TicketButton;
+            GoToCustomServicePage();
+            hideBottomBar.Visibility = Visibility.Visible;
+        }
+
+        void GoToCustomServicePage()
+        {
+            #region 显示框架
+            ticketPageBody.Visibility = System.Windows.Visibility.Collapsed;
+            ticketPageBody_right.Visibility = System.Windows.Visibility.Collapsed;
+            ticketPageBody_buttom.Visibility = System.Windows.Visibility.Collapsed;
+            body.Visibility = System.Windows.Visibility.Collapsed;
+            showingTicket = false;
+            //假实现
+            sharkpage.Visibility = Visibility.Visible;
+
+            #endregion
+            ContactControl client = new ContactControl();
+            client.VerticalAlignment = VerticalAlignment.Center;
+            client.HorizontalAlignment = HorizontalAlignment.Left;
+            client.Margin = new Thickness(30, 0, 0, 0);
+            //ContactListControl clientLst = new ContactListControl();
+            sharkpage.Children.Clear();
+            //client.SetValue(Grid.HorizontalAlignmentProperty, HorizontalAlignment.Left);
+            //clientLst.SetValue(Grid.HorizontalAlignmentProperty, HorizontalAlignment.Right);
+            sharkpage.Children.Add(client);
+            ContactListControl contactLis = new ContactListControl();
+            contactLis.VerticalAlignment = VerticalAlignment.Center;
+            contactLis.HorizontalAlignment = HorizontalAlignment.Right;
+            contactLis.Margin = new Thickness(0, 0, 10, 20);
+            sharkpage.Children.Add(contactLis);
+        }
+        #endregion
     }
 
     public delegate void XDelegate();
