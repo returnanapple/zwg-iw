@@ -78,7 +78,9 @@
     <Compile Include="ISimplify.cs" />
     <Compile Include="IUpdatePackage.cs" />
     <Compile Include="LotteryManager.cs" />
+    <Compile Include="LotteryOfJawManager.cs" />
     <Compile Include="LotteryTicketManager.cs" />
+    <Compile Include="MainOfJawManager.cs" />
     <Compile Include="ManagerBase.cs" />
     <Compile Include="ManagerLoginToken.cs" />
     <Compile Include="MessageManager.cs" />

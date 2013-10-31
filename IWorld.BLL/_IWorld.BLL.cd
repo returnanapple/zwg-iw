@@ -262,14 +262,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.AwardManager" Collapsed="true">
-    <Position X="0.5" Y="18.75" Width="1.5" />
+    <Position X="0.5" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>KEAAAAAAIAAAABCAIAAAAAAABAAAAcABAAAAAAAAAAQ=</HashCode>
       <FileName>AwardManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.EventManager" Collapsed="true">
-    <Position X="2.25" Y="18.75" Width="1.5" />
+    <Position X="2.25" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>EventManager.cs</FileName>
@@ -297,14 +297,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.TimeLineManager" Collapsed="true">
-    <Position X="4" Y="18.75" Width="1.5" />
+    <Position X="4" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>TimeLineManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.DefaultManager" Collapsed="true">
-    <Position X="5.75" Y="18.75" Width="1.5" />
+    <Position X="5.75" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DefaultManager.cs</FileName>
@@ -349,7 +349,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.CollectionManager" Collapsed="true">
-    <Position X="0.5" Y="19.5" Width="1.5" />
+    <Position X="0.5" Y="20.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gCEIAABCAQAACQBEFAEAFABAKABCQAAEAAIAgAAAAAg=</HashCode>
       <FileName>CollectionManager.cs</FileName>
@@ -363,7 +363,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.BLL.CacheManager" Collapsed="true">
-    <Position X="7.5" Y="18.75" Width="1.5" />
+    <Position X="7.5" Y="19.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAIABgACAAAggAKAACAAAAAACAAAgAAAAACIAgAAA=</HashCode>
       <FileName>CacheManager.cs</FileName>
@@ -403,6 +403,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAgAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>ManagerLoginToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.BLL.MainOfJawManager" Collapsed="true" HideInheritanceLine="true">
+    <Position X="0.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainOfJawManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.BLL.LotteryOfJawManager" Collapsed="true" HideInheritanceLine="true">
+    <Position X="2.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LotteryOfJawManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.BLL.BettingOfJawManager" Collapsed="true">
+    <Position X="4" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BettingOfJawManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="IWorld.BLL.ICategoryManager&lt;T&gt;" Collapsed="true">
