@@ -65,10 +65,6 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IWorld.Client.Class, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dll\IWorld.Client.Class.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Controls" />
     <Reference Include="mscorlib" />
     <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
@@ -1003,6 +999,12 @@
     <Resource Include="img\shark\thumb_animal8.png" />
     <Resource Include="img\shark\thumb_animal9.png" />
     <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IWorld.Client.Class\IWorld.Client.Class.csproj">
+      <Project>{6e56c45e-b5cd-478f-9a47-9a3a041f5e31}</Project>
+      <Name>IWorld.Client.Class</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

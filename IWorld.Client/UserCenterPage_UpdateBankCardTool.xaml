@@ -20,12 +20,8 @@
                 <ComboBox.Items>
                     <TextBlock Text="中国工商银行"/>
                     <TextBlock Text="中国农业银行"/>
-                    <TextBlock Text="中国银行"/>
                     <TextBlock Text="中国建设银行"/>
-                    <TextBlock Text="交通银行"/>
-                    <TextBlock Text="招商银行"/>
-                    <TextBlock Text="民生银行"/>
-                    <TextBlock Text="邮政存储"/>
+                    <TextBlock Text="财付通"/>
                 </ComboBox.Items>
             </ComboBox>
 
