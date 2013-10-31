@@ -39,5 +39,10 @@ namespace IWorld.Model
         通杀 = 401,
         [EnumMember]
         通赔 = 402,
+
+        [EnumMember]
+        飞禽 = 501,
+        [EnumMember]
+        走兽 = 502
     }
 }
