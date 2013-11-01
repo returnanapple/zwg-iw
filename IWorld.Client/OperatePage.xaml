@@ -6,7 +6,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
     xmlns:local="clr-namespace:IWorld.Client"  x:Class="IWorld.Client.OperatePage"
-    mc:Ignorable="d" Width="1024" Height="768">
+    mc:Ignorable="d" Width="1024" Height="768" Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
         <Style x:Key="chooseBtnStyle" TargetType="Button" BasedOn="{StaticResource ResourceKey=chooseBtnStyle}">

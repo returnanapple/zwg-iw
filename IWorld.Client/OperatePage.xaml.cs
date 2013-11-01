@@ -1931,6 +1931,17 @@ namespace IWorld.Client
             sharkpage.Children.Add(contactLis);
         }
         #endregion
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.IsRunningOutOfBrowser)
+            {
+                App.Current.MainWindow.Width = 1024;
+                App.Current.MainWindow.Height = 768;
+                App.Current.MainWindow.Top = 0;
+                App.Current.MainWindow.Left = 100;
+            }
+        }
     }
 
     public delegate void XDelegate();

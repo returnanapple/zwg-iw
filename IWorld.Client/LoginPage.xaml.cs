@@ -257,5 +257,16 @@ namespace IWorld.Client
                 input_username.Text = "";
             }
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (App.Current.IsRunningOutOfBrowser && App.HadSetSize)
+            {
+                App.Current.MainWindow.Width = 241;
+                App.Current.MainWindow.Height = 541;
+                App.Current.MainWindow.Top = App.TopOfInitial;
+                App.Current.MainWindow.Left = App.LeftOfInitia;
+            }
+        }
     }
 }
