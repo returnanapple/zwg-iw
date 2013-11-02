@@ -18,7 +18,7 @@
             <ImageBrush Stretch="Fill" ImageSource="Images/Background.png"/>
         </Canvas.Background>
         <local:ShowResultTool Result="{Binding Result}"/>
-        <local:BetTool2 Canvas.Left="333" Canvas.Top="417" 
+        <local:BetTool2 Canvas.Left="333" Canvas.Top="435" 
                         BetSum="{Binding BetInfoList,ConverterParameter=蓝色鲨鱼, Converter={StaticResource BetInfoListConverter}, Mode=TwoWay}"
                         Odds="{Binding OddsInfoList, ConverterParameter=蓝色鲨鱼, Converter={StaticResource OddsInfoListConverter}}"/>
 
@@ -56,16 +56,27 @@
                        Odds="{Binding OddsInfoList, ConverterParameter=兔子, Converter={StaticResource OddsInfoListConverter}}"/>
 
         <local:ShowTool Canvas.Left="34" Canvas.Top="548" Label="投注总额" Count="{Binding BetAll}"/>
-        <local:ShowTool Canvas.Left="500" Canvas.Top="548" Label="历史盈亏"/>
+        <local:ShowTool Canvas.Left="500" Canvas.Top="548" Label="历史盈亏" Count="{Binding Profit}"/>
 
         <local:ShowNotesTool Canvas.Left="182" Canvas.Top="170"/>
 
-        <TextBlock Canvas.Left="326" Canvas.Top="114" FontSize="15">
+        <TextBlock Canvas.Left="326" Canvas.Top="114" FontSize="15" Foreground="#FFA9967F">
             <Run Text="当前期号："/>
-            <Run Text="000000000"/>
+            <Run Text="{Binding CurrentNumber}"/>
         </TextBlock>
 
-        <TextBlock Text="开奖时间：" Canvas.Left="341" Canvas.Top="392" FontSize="15">
+        <TextBlock Text="下期期号：" Canvas.Left="341" Canvas.Top="388" FontSize="15">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4BF67"/>
+                    <GradientStop Color="#FFA9967F" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            <Run Text="下期期号："/>
+            <Run Text="{Binding NextNumber}"/>
+        </TextBlock>
+        
+        <TextBlock Text="开奖时间：" Canvas.Left="341" Canvas.Top="413" FontSize="15">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4BF67"/>

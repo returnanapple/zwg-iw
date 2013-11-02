@@ -301,7 +301,7 @@ namespace IWorld.BLL
                 }
             }
 
-            public BettingOfJawManager GetEntity(DbContext db)
+            public BettingOfJaw GetEntity(DbContext db)
             {
                 return db.Set<BettingOfJaw>().Find(this.id);
             }

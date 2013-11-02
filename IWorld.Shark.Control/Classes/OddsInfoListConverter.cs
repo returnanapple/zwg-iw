@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Linq;
+using IWorld.Shark.Control.JawService;
 
 namespace IWorld.Shark.Control.Classes
 {
