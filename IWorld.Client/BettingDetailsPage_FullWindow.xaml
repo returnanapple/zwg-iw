@@ -7,57 +7,57 @@
            HasCloseButton="False" Style="{StaticResource ResourceKey=cw_noBg}">
 
     <toolkit:ExpressionDarkTheme>
-        <Canvas Width="500" Height="420">
+        <Canvas Width="550" Height="470">
             <Canvas.Background>
                 <ImageBrush ImageSource="img/images/BaseDialog.png"></ImageBrush>
             </Canvas.Background>
-            <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="20"/>
+            <TextBlock Text="投注号码：" Canvas.Left="29" Canvas.Top="50"/>
 
-            <TextBox x:Name="text_values"  Width="306" Canvas.Left="29" Canvas.Top="41" Height="71"
+            <TextBox x:Name="text_values"  Width="306" Canvas.Left="29" Canvas.Top="71" Height="71"
 				AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
 				Text="1,5,01" IsReadOnly="True" Cursor="Arrow" Background="#475061"/>
-            <TextBlock Text="彩种：" Canvas.Left="29" Canvas.Top="130"/>
-            <TextBlock Text="玩法标签：" Canvas.Left="29" Canvas.Top="151"/>
-            <TextBlock Text="玩法：" Canvas.Left="29" Canvas.Top="172"/>
-            <TextBlock Text="期号：" Canvas.Left="29" Canvas.Top="193"/>
-            <TextBlock Text="返点：" Canvas.Left="29" Canvas.Top="214"/>
-            <TextBlock Text="注数：" Canvas.Left="29" Canvas.Top="235"/>
-            <TextBlock Text="倍数：" Canvas.Left="29" Canvas.Top="256"/>
-            <TextBlock Text="订单号：" Canvas.Left="242" Canvas.Top="130"/>
-            <TextBlock Text="用户：" Canvas.Left="242" Canvas.Top="151"/>
-            <TextBlock Text="下单时间：" Canvas.Left="242" Canvas.Top="172"/>
-            <TextBlock Text="单注价格：" Canvas.Left="242" Canvas.Top="193"/>
-            <TextBlock Text="总金额：" Canvas.Left="242" Canvas.Top="214"/>
-            <TextBlock Text="中奖金额：" Canvas.Left="242" Canvas.Top="235"/>
-            <TextBlock Text="盈亏：" Canvas.Left="242" Canvas.Top="256"/>
+            <TextBlock Text="彩种：" Canvas.Left="29" Canvas.Top="160"/>
+            <TextBlock Text="玩法标签：" Canvas.Left="29" Canvas.Top="181"/>
+            <TextBlock Text="玩法：" Canvas.Left="29" Canvas.Top="202"/>
+            <TextBlock Text="期号：" Canvas.Left="29" Canvas.Top="223"/>
+            <TextBlock Text="返点：" Canvas.Left="29" Canvas.Top="244"/>
+            <TextBlock Text="注数：" Canvas.Left="29" Canvas.Top="265"/>
+            <TextBlock Text="倍数：" Canvas.Left="29" Canvas.Top="286"/>
+            <TextBlock Text="订单号：" Canvas.Left="242" Canvas.Top="160"/>
+            <TextBlock Text="用户：" Canvas.Left="242" Canvas.Top="181"/>
+            <TextBlock Text="下单时间：" Canvas.Left="242" Canvas.Top="202"/>
+            <TextBlock Text="单注价格：" Canvas.Left="242" Canvas.Top="223"/>
+            <TextBlock Text="总金额：" Canvas.Left="242" Canvas.Top="244"/>
+            <TextBlock Text="中奖金额：" Canvas.Left="242" Canvas.Top="265"/>
+            <TextBlock Text="盈亏：" Canvas.Left="242" Canvas.Top="286"/>
 
-            <TextBlock x:Name="text_ticket" Text="重庆时时彩" Canvas.Left="100" Canvas.Top="130"/>
-            <TextBlock x:Name="text_playTag" Text="三星直选" Canvas.Left="100" Canvas.Top="151"/>
-            <TextBlock x:Name="text_howToPlay" Text="前三复式" Canvas.Left="100" Canvas.Top="172"/>
-            <TextBlock x:Name="text_phases" Text="20130721010" Canvas.Left="100" Canvas.Top="193"/>
-            <TextBlock x:Name="text_points" Text="0%" Canvas.Left="100" Canvas.Top="214"/>
-            <TextBlock x:Name="text_sum" Text="10" Canvas.Left="100" Canvas.Top="235"/>
-            <TextBlock x:Name="text_multiple" Text="2" Canvas.Left="100" Canvas.Top="256"/>
+            <TextBlock x:Name="text_ticket" Text="重庆时时彩" Canvas.Left="100" Canvas.Top="160"/>
+            <TextBlock x:Name="text_playTag" Text="三星直选" Canvas.Left="100" Canvas.Top="181"/>
+            <TextBlock x:Name="text_howToPlay" Text="前三复式" Canvas.Left="100" Canvas.Top="202"/>
+            <TextBlock x:Name="text_phases" Text="20130721010" Canvas.Left="100" Canvas.Top="223"/>
+            <TextBlock x:Name="text_points" Text="0%" Canvas.Left="100" Canvas.Top="244"/>
+            <TextBlock x:Name="text_sum" Text="10" Canvas.Left="100" Canvas.Top="265"/>
+            <TextBlock x:Name="text_multiple" Text="2" Canvas.Left="100" Canvas.Top="286"/>
 
-            <TextBlock x:Name="text_id" Text="000001" Canvas.Left="322" Canvas.Top="130"/>
-            <TextBlock x:Name="text_owner" Text="admin" Canvas.Left="322" Canvas.Top="151"/>
-            <TextBlock x:Name="text_time" Text="2013年7月21日" Canvas.Left="322" Canvas.Top="172"/>
-            <TextBlock x:Name="text_price" Text="2.00" Canvas.Left="322" Canvas.Top="193"/>
-            <TextBlock x:Name="text_money" Text="40.00" Canvas.Left="322" Canvas.Top="214"/>
-            <TextBlock x:Name="text_bonus" Text="0" Canvas.Left="322" Canvas.Top="235"/>
-            <TextBlock x:Name="text_profit" Text="0.00" Canvas.Left="322" Canvas.Top="256"/>
+            <TextBlock x:Name="text_id" Text="000001" Canvas.Left="322" Canvas.Top="160"/>
+            <TextBlock x:Name="text_owner" Text="admin" Canvas.Left="322" Canvas.Top="181"/>
+            <TextBlock x:Name="text_time" Text="2013年7月21日" Canvas.Left="322" Canvas.Top="202"/>
+            <TextBlock x:Name="text_price" Text="2.00" Canvas.Left="322" Canvas.Top="223"/>
+            <TextBlock x:Name="text_money" Text="40.00" Canvas.Left="322" Canvas.Top="244"/>
+            <TextBlock x:Name="text_bonus" Text="0" Canvas.Left="322" Canvas.Top="265"/>
+            <TextBlock x:Name="text_profit" Text="0.00" Canvas.Left="322" Canvas.Top="286"/>
 
 
-            <TextBlock Text="开奖号码：" Canvas.Left="29" Canvas.Top="297"/>
-            <local:Ball Name="ball_red" Text="-" Color="Red" Canvas.Left="48" Canvas.Top="326"/>
-            <local:Ball Name="ball_yellow" Text="-" Color="Yellow" Canvas.Left="103" Canvas.Top="326"/>
-            <local:Ball Name="ball_green" Text="-" Color="Green" Canvas.Left="158" Canvas.Top="326"/>
-            <local:Ball Name="ball_blue" Text="-" Color="Blue" Canvas.Left="213" Canvas.Top="326"/>
-            <local:Ball Name="ball_purple" Text="-" Color="Purple" Canvas.Left="268" Canvas.Top="326"/>
-            <TextBlock x:Name="text_status" Text="等待开奖" Canvas.Left="340" Canvas.Top="348"/>
+            <TextBlock Text="开奖号码：" Canvas.Left="29" Canvas.Top="327"/>
+            <local:Ball Name="ball_red" Text="-" Color="Red" Canvas.Left="48" Canvas.Top="356"/>
+            <local:Ball Name="ball_yellow" Text="-" Color="Yellow" Canvas.Left="103" Canvas.Top="356"/>
+            <local:Ball Name="ball_green" Text="-" Color="Green" Canvas.Left="158" Canvas.Top="356"/>
+            <local:Ball Name="ball_blue" Text="-" Color="Blue" Canvas.Left="213" Canvas.Top="356"/>
+            <local:Ball Name="ball_purple" Text="-" Color="Purple" Canvas.Left="268" Canvas.Top="356"/>
+            <TextBlock x:Name="text_status" Text="等待开奖" Canvas.Left="340" Canvas.Top="378"/>
 
-            <Button Name="button_r" Content="撤  单" Style="{StaticResource smallBtnStyle}"  Canvas.Left="415" Canvas.Top="20" Width="60" Click="Remove"/>
-            <Button Name="button_b" Content="返  回" Style="{StaticResource smallBtnStyle}"   Canvas.Left="415" Canvas.Top="47" Width="60" Click="Back"/>
+            <Button Name="button_r" Content="撤  单" Style="{StaticResource smallBtnStyle}"  Canvas.Left="435" Canvas.Top="50" Width="60" Click="Remove"/>
+            <Button Name="button_b" Content="返  回" Style="{StaticResource smallBtnStyle}"   Canvas.Left="435" Canvas.Top="87" Width="60" Click="Back"/>
         </Canvas>
     </toolkit:ExpressionDarkTheme>
 </controls:ChildWindow>

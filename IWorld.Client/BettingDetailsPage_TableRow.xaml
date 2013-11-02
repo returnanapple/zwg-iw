@@ -4,11 +4,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Name="betDetailTbRow">
 
     <UserControl.Resources>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="10,0,10,0"></Setter>
+            <Setter Property="Margin" Value="10,0"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
         </Style>
     </UserControl.Resources>
@@ -16,22 +16,23 @@
     <toolkit:ExpressionDarkTheme Background="#00000000" HorizontalAlignment="Left" 
                                  MouseEnter="Hover" MouseLeave="Unhover" MouseLeftButtonDown="ViewFull"
                                  ToolTipService.ToolTip="点击查看详细信息和操作选单">
-        <Grid x:Name="root" Width="720" Height="20">
+        <Grid x:Name="root" Width="760" Height="20">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="80"></ColumnDefinition>
-                <ColumnDefinition Width="70"></ColumnDefinition>
-                <ColumnDefinition Width="90"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="70"></ColumnDefinition>
                 <ColumnDefinition Width="80"></ColumnDefinition>
                 <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Name="text_owner" Text="用户" Grid.Column="0"></TextBlock>
             <TextBlock Name="text_ticket" Text="彩种" Grid.Column="1"></TextBlock>
             <TextBlock Name="text_howToPlay" Text="玩法" Grid.Column="2"></TextBlock>
             <TextBlock Name="text_phases" Text="期号" Grid.Column="3"></TextBlock>
-            <TextBlock Name="text_values" Text="投注号码" Grid.Column="4"></TextBlock>
+            <TextBlock Name="text_values" Text="投注号码" Grid.Column="4" Width="70" TextTrimming="WordEllipsis" 
+                       ToolTipService.ToolTip="{Binding ElementName=text_values,Path=Text}"></TextBlock>
             <TextBlock Name="text_status" Text="状态" Grid.Column="5"></TextBlock>
             <TextBlock Name="text_profit" Text="盈亏" Grid.Column="6"></TextBlock>
             <TextBlock Name="text_time" Text="时间" Grid.Column="7"></TextBlock>

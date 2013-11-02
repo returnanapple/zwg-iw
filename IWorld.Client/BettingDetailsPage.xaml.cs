@@ -31,14 +31,14 @@ namespace IWorld.Client
         void InsertTable()
         {
             List<TableToolColumnImport> columns = new List<TableToolColumnImport>();
-            columns.Add(new TableToolColumnImport("用户", 90));
-            columns.Add(new TableToolColumnImport("彩种", 80));
-            columns.Add(new TableToolColumnImport("玩法", 70));
+            columns.Add(new TableToolColumnImport("用户", 80));
+            columns.Add(new TableToolColumnImport("彩种", 90));
+            columns.Add(new TableToolColumnImport("玩法", 90));
             columns.Add(new TableToolColumnImport("期号", 90));
-            columns.Add(new TableToolColumnImport("投注号码", 150));
-            columns.Add(new TableToolColumnImport("状态", 70));
-            columns.Add(new TableToolColumnImport("盈亏", 80));
-            columns.Add(new TableToolColumnImport("投注时间", 90));
+            columns.Add(new TableToolColumnImport("投注号码", 90));
+            columns.Add(new TableToolColumnImport("状态", 90));
+            columns.Add(new TableToolColumnImport("盈亏", 90));
+            columns.Add(new TableToolColumnImport("投注时间", 100));
             List<ITableToolRow> rows = new List<Class.ITableToolRow>();
 
             GamingServiceClient client = new GamingServiceClient();
