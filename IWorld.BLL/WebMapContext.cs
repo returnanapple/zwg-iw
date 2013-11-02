@@ -437,6 +437,52 @@ namespace IWorld.BLL
             #endregion
 
             #endregion
+            #region 大白鲨
+
+            #region MainOfJaw的契约
+            modelBuilder.Entity<MainOfJaw>().ToTable("IWorld_MainOfJaw");
+            modelBuilder.Entity<MainOfJaw>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<MainOfJaw>().HasMany(x => x.Times)
+                .WithRequired()
+                .Map(x => x.MapKey("MainOfJawId"));
+            #endregion
+
+            #region MarkOfJaw的契约
+            modelBuilder.Entity<MarkOfJaw>().ToTable("IWorld_MarkOfJaw");
+            modelBuilder.Entity<MarkOfJaw>().HasKey(x => x.Id);
+            #endregion
+
+            #region LotteryOfJaw的契约
+            modelBuilder.Entity<LotteryOfJaw>().ToTable("IWorld_LotteryOfJaw");
+            modelBuilder.Entity<LotteryOfJaw>().HasKey(x => x.Id);
+            #endregion
+
+            #region BettingOfJaw的契约
+            modelBuilder.Entity<BettingOfJaw>().ToTable("IWorld_BettingOfJaw");
+            modelBuilder.Entity<BettingOfJaw>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<BettingOfJaw>().HasMany(x => x.Details)
+                .WithRequired()
+                .Map(x => x.MapKey("BettingOfJawId"));
+            #endregion
+
+            #region BettingDetailOfJaw的契约
+            modelBuilder.Entity<BettingDetailOfJaw>().ToTable("IWorld_BettingDetailOfJaw");
+            modelBuilder.Entity<BettingDetailOfJaw>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<BettingDetailOfJaw>().HasRequired(x => x.Mark)
+                .WithMany()
+                .Map(x => x.MapKey("MarkId"))
+                .WillCascadeOnDelete(false);
+            #endregion
+
+            #region LotteryTimeOfJaw的契约
+            modelBuilder.Entity<LotteryTimeOfJaw>().ToTable("IWorld_LotteryTimeOfJaw");
+            modelBuilder.Entity<LotteryTimeOfJaw>().HasKey(x => x.Id);
+            #endregion
+
+            #endregion
         }
 
         #endregion

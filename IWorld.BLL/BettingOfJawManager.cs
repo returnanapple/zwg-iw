@@ -66,6 +66,16 @@ namespace IWorld.BLL
             }
         }
 
+        /// <summary>
+        /// 将指定的实例从数据库中移除
+        /// </summary>
+        /// <param name="id">所要用于移除实例的存储指针</param>
+        public override void Remove(int id)
+        {
+            PackageForRemove pfr = new PackageForRemove(id);
+            Remove(pfr);
+        }
+
         #endregion
 
         #region 内嵌类型
@@ -268,6 +278,33 @@ namespace IWorld.BLL
             /// 投注金额
             /// </summary>
             double Sum { get; set; }
+        }
+
+        class PackageForRemove : IPackage<BettingOfJaw>, IRemovePackage<BettingOfJaw>
+        {
+            int id = 0;
+
+            public PackageForRemove(int id)
+            {
+                this.id = id;
+            }
+
+            public void CheckData(DbContext db)
+            {
+                NChecker.CheckEntity<BettingOfJaw>(this.id, "大白鲨游戏的投注记录", db);
+                var status = db.Set<BettingOfJaw>().Where(x => x.Id == this.id)
+                    .Select(x => x.Status)
+                    .First();
+                if (status != BettingStatus.等待开奖)
+                {
+                    throw new Exception("已经开奖或即将开奖的投注不能撤销");
+                }
+            }
+
+            public BettingOfJawManager GetEntity(DbContext db)
+            {
+                return db.Set<BettingOfJaw>().Find(this.id);
+            }
         }
 
         #region 监视对象

@@ -378,7 +378,7 @@
   <Class Name="IWorld.Model.MainOfJaw" Collapsed="true" HideInheritanceLine="true">
     <Position X="0.75" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>MainOfJaw.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -518,7 +518,7 @@
   <Enum Name="IWorld.Model.IconOfJaw" Collapsed="true">
     <Position X="2.5" Y="18.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAQACIAAAAAgAQAAAAAAAAAAgAACAQAQQAIAAAAA=</HashCode>
+      <HashCode>ABAAAQACIAAAAAgAQAAAAAAAAAAgAACAQAQQAIAACAA=</HashCode>
       <FileName>IconOfJaw.cs</FileName>
     </TypeIdentifier>
   </Enum>

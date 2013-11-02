@@ -113,10 +113,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="IWorld.DAL.ClientCustomerReader" Collapsed="true">
-    <Position X="4" Y="4.75" Width="1.5" />
+    <Position X="5.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClientCustomerReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IWorld.DAL.ClientJawReader" Collapsed="true" HideInheritanceLine="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ClientJawReader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />

@@ -48,5 +48,14 @@ namespace IWorld.Contract.Client
         /// </summary>
         [DataMember]
         public double Profit { get; set; }
+
+        public MainOfJawResult()
+        {
+        }
+
+        public MainOfJawResult(string error)
+            : base(error)
+        {
+        }
     }
 }
