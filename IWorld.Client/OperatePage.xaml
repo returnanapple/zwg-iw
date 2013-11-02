@@ -6,6 +6,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:client="clr-namespace:IWorld.Client.Class;assembly=IWorld.Client.Class"
     xmlns:local="clr-namespace:IWorld.Client"  x:Class="IWorld.Client.OperatePage"
+    xmlns:kefu="clr-namespace:Client.Client.Control;assembly=Client.Client.Control"
     mc:Ignorable="d" Width="1024" Height="768" Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
@@ -136,170 +137,171 @@
         </Style>
     </UserControl.Resources>
 
-    <toolkit:ExpressionDarkTheme>
-        <Canvas Width="1024" Height="768">
-            <Canvas.Background>
-                <ImageBrush Stretch="Fill" ImageSource="img/images/mainBack.jpg"/>
-            </Canvas.Background>
-            <Image Source="img/images/LeftPanel.png"/>
-            <Image Source="img/images/FirstPage_headbg.png"/>
-            <Image Source="img/images/RightBar1.png" Canvas.Left="214" Height="52" Canvas.Top="60" Width="809" />
-            <Image Source="img/images/Leftred.png"/>
-            <Image Source="img/images/logotxt.png" Canvas.Left="44" Canvas.Top="8"/>
+    <Grid>
+        <toolkit:ExpressionDarkTheme>
+            <Canvas Width="1024" Height="768">
+                <Canvas.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="img/images/mainBack.jpg"/>
+                </Canvas.Background>
+                <Image Source="img/images/LeftPanel.png"/>
+                <Image Source="img/images/FirstPage_headbg.png"/>
+                <Image Source="img/images/RightBar1.png" Canvas.Left="214" Height="52" Canvas.Top="60" Width="809" />
+                <Image Source="img/images/Leftred.png"/>
+                <Image Source="img/images/logotxt.png" Canvas.Left="44" Canvas.Top="8"/>
 
 
-            <Grid x:Name="button_minimize" Width="28" Height="20" Canvas.Left="958" Canvas.Top="8" Visibility="Visible"
+                <Grid x:Name="button_minimize" Width="28" Height="20" Canvas.Left="958" Canvas.Top="8" Visibility="Visible"
 				MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
-                <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="0,2,0,2"/>
+                    <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="0,2,0,2"/>
 
-            </Grid>
-            <Grid x:Name="button_close" Width="28" Height="20" Canvas.Left="987" Canvas.Top="8" Visibility="Visible"
+                </Grid>
+                <Grid x:Name="button_close" Width="28" Height="20" Canvas.Left="987" Canvas.Top="8" Visibility="Visible"
 				MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="CloseMainWindow">
-                <Image Width="16" Height="16" Source="img/icons_x.png" Margin="0,2,0,2"/>
-            </Grid>
-            <!--顶部导航-->
-            <Grid x:Name="titleTool" Height="50" Width="809" Canvas.Left="213" Canvas.Top="60">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <local:TicketButton Text="重庆时时彩" IsSelected="True" Grid.Column="0"/>
-                <local:TicketButton Text="江西时时彩" Grid.Column="1"/>
-                <local:TicketButton Text="新疆时时彩" Grid.Column="2"/>
-                <local:TicketButton Text="福彩3D" Grid.Column="3"/>
-                <local:TicketButton Text="十一夺运金" Grid.Column="4"/>
-                <local:TicketButton Text="排列三" Grid.Column="5"/>
-                <local:TicketButton Text="上海时时乐" Grid.Column="6"/>
-                <local:TicketButton Text="大白鲨" Grid.Column="7" />
-            </Grid>
-            <TextBlock Text="等级：" Foreground="#906a27" FontSize="15" Height="16" Canvas.Left="47" Canvas.Top="166" Width="36"/>
-            <TextBlock Text="积分：" Foreground="#906a27" Height="16" FontSize="15" Canvas.Left="47" Canvas.Top="190" Width="36"/>
-            <TextBlock Text="余额：" Height="16" Canvas.Left="95" Canvas.Top="110" Width="36" RenderTransformOrigin="1.806,-0.25"/>
-            <!--<TextBlock Text="冻结：" Height="16" Canvas.Left="48" Canvas.Top="225" Width="36"/>-->
-            <!--<TextBlock x:Name="text_freeze" Text="0" Height="16" Canvas.Left="89" Canvas.Top="225" Width="8"/>-->
+                    <Image Width="16" Height="16" Source="img/icons_x.png" Margin="0,2,0,2"/>
+                </Grid>
+                <!--顶部导航-->
+                <Grid x:Name="titleTool" Height="50" Width="809" Canvas.Left="213" Canvas.Top="60">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <local:TicketButton Text="重庆时时彩" IsSelected="True" Grid.Column="0"/>
+                    <local:TicketButton Text="江西时时彩" Grid.Column="1"/>
+                    <local:TicketButton Text="新疆时时彩" Grid.Column="2"/>
+                    <local:TicketButton Text="福彩3D" Grid.Column="3"/>
+                    <local:TicketButton Text="十一夺运金" Grid.Column="4"/>
+                    <local:TicketButton Text="排列三" Grid.Column="5"/>
+                    <local:TicketButton Text="上海时时乐" Grid.Column="6"/>
+                    <local:TicketButton Text="大白鲨" Grid.Column="7" />
+                </Grid>
+                <TextBlock Text="等级：" Foreground="#906a27" FontSize="15" Height="16" Canvas.Left="47" Canvas.Top="166" Width="36"/>
+                <TextBlock Text="积分：" Foreground="#906a27" Height="16" FontSize="15" Canvas.Left="47" Canvas.Top="190" Width="36"/>
+                <TextBlock Text="余额：" Height="16" Canvas.Left="95" Canvas.Top="110" Width="36" RenderTransformOrigin="1.806,-0.25"/>
+                <!--<TextBlock Text="冻结：" Height="16" Canvas.Left="48" Canvas.Top="225" Width="36"/>-->
+                <!--<TextBlock x:Name="text_freeze" Text="0" Height="16" Canvas.Left="89" Canvas.Top="225" Width="8"/>-->
 
-            <Image Name="userPhoto" Source="img/images/adminPic.png" Canvas.Left="28" Canvas.Top="75"/>
-            <TextBlock x:Name="text_username" Text="admin" Height="16" Canvas.Left="95" Canvas.Top="90" Width="37"/>
-            <TextBlock x:Name="text_userGroup" Foreground="#906a27" Text="见习会员" Height="16" FontSize="15" Canvas.Left="89" Canvas.Top="165" Width="48"/>
-            <TextBlock x:Name="text_money" Text="455655.33" Height="16" Canvas.Left="135" Canvas.Top="110" Width="8"/>
-            <TextBlock x:Name="text_integral" Foreground="#906a27" Text="0" Height="16" FontSize="15" Canvas.Left="90" Canvas.Top="190" Width="8"/>
-            <local:FunctionKey_Small ClickEventHandler="OpenRechargeTool"
+                <Image Name="userPhoto" Source="img/images/adminPic.png" Canvas.Left="28" Canvas.Top="75"/>
+                <TextBlock x:Name="text_username" Text="admin" Height="16" Canvas.Left="95" Canvas.Top="90" Width="37"/>
+                <TextBlock x:Name="text_userGroup" Foreground="#906a27" Text="见习会员" Height="16" FontSize="15" Canvas.Left="89" Canvas.Top="165" Width="48"/>
+                <TextBlock x:Name="text_money" Text="455655.33" Height="16" Canvas.Left="135" Canvas.Top="110" Width="8"/>
+                <TextBlock x:Name="text_integral" Foreground="#906a27" Text="0" Height="16" FontSize="15" Canvas.Left="90" Canvas.Top="190" Width="8"/>
+                <local:FunctionKey_Small ClickEventHandler="OpenRechargeTool"
             	Text="充值" ImgSource="img/images/pay.png" Foreground="#906a27"  FontSize="15" Height="30" Width="60" Canvas.Left="28" Canvas.Top="218"   />
-            <local:FunctionKey_Small ClickEventHandler="OpenWithdrawTool"
+                <local:FunctionKey_Small ClickEventHandler="OpenWithdrawTool"
             	Text="提现" ImgSource="img/images/get.png" Foreground="#906a27"  FontSize="15" Height="30" Width="60" Canvas.Left="122" Canvas.Top="218"  />
-            <Grid Height="290" Canvas.Left="0" Canvas.Top="245" Width="214">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <local:FunctionKey x:Name="functionKey_users" Grid.Row="0"
+                <Grid Height="290" Canvas.Left="0" Canvas.Top="245" Width="214">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <local:FunctionKey x:Name="functionKey_users" Grid.Row="0"
             		Text="会员管理" ImgSource="img/images/会员管理.png"/>
-                <local:FunctionKey x:Name="functionKey_money"
+                    <local:FunctionKey x:Name="functionKey_money"
             		Text="资金管理" ImgSource="img/images/资金管理.png" Margin="0,40,0,1" Grid.RowSpan="2"/>
-                <local:FunctionKey x:Name="functionKey_betting" Grid.Row="1"
+                    <local:FunctionKey x:Name="functionKey_betting" Grid.Row="1"
             		Text="投注明细" ImgSource="img/images/投注明细.png" Margin="0,40,0,2" Grid.RowSpan="2"/>
-                <local:FunctionKey x:Name="functionKey_dataReport" Grid.Row="2"
+                    <local:FunctionKey x:Name="functionKey_dataReport" Grid.Row="2"
             		Text="数据报表" ImgSource="img/images/数据报表.png" Margin="0,38,0,3" Grid.RowSpan="2"/>
-                <local:FunctionKey x:Name="functionKey_center" Grid.Row="3"
+                    <local:FunctionKey x:Name="functionKey_center" Grid.Row="3"
             		Text="个人中心" ImgSource="img/images/个人中心.png" Margin="0,38,0,4" Grid.RowSpan="2"/>
-                <local:FunctionKey x:Name="functionKey_exc" Grid.Row="4"
+                    <local:FunctionKey x:Name="functionKey_exc" Grid.Row="4"
             		Text="积分兑换" ImgSource="img/images/积分兑换.png" Margin="0,36,0,5" Grid.RowSpan="2"/>
-                <local:FunctionKey x:Name="functionKey_exit" Grid.Row="5"
+                    <local:FunctionKey x:Name="functionKey_exit" Grid.Row="5"
             		Text="安全退出" ImgSource="img/images/安全退出.png" Margin="0,36,0,6" Grid.RowSpan="2"/>
-            </Grid>
-            <Grid x:Name="topTool" Width="180" Height="135" Canvas.Left="20" Canvas.Top="575">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="10727110010" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Text="￥46785.31" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <TextBlock Text="10727110010" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Text="￥46785.31" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <TextBlock Text="10727110010" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Text="￥46785.31" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <TextBlock Text="10727110010" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Text="￥46785.31" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                <TextBlock Text="10727110010" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Text="￥46785.31" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="topTool" Width="180" Height="135" Canvas.Left="20" Canvas.Top="575">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="10727110010" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="￥46785.31" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="10727110010" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="￥46785.31" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="10727110010" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="￥46785.31" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="10727110010" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="￥46785.31" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="10727110010" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="￥46785.31" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
-            </Grid>
-
-
+                </Grid>
 
 
-            <Image Source="img/images/bottomBar.png" Canvas.Top="741"  Width="1024" Height="27"/>
-            <!--<local:CustomerServiceButton 
+
+
+                <Image Source="img/images/bottomBar.png" Canvas.Top="741"  Width="1024" Height="27"/>
+                <!--<local:CustomerServiceButton 
             	ClickEventHandler="CallCustomerService" Height="30" Canvas.Left="52" Canvas.Top="611" Width="120"/>-->
-            <!--主体-->
-            <Canvas x:Name="ticketPageBody" Height="626" Width="807" Canvas.Top="115" Canvas.Left="215">
-                <!--<Path Stroke="Black" StrokeThickness="1" 
+                <!--主体-->
+                <Canvas x:Name="ticketPageBody" Height="626" Width="807" Canvas.Top="115" Canvas.Left="215">
+                    <!--<Path Stroke="Black" StrokeThickness="1" 
                       Data="M0,0 L500,0 M0,100 L500,100 M0,175 L500,175"/>
                 <Path Stroke="Gray" StrokeThickness="0.3"
                       Data="M0,1 L500,1 M0,101 L500,101 M0,176 L500,176"/>-->
-                <Canvas Height="25" Width="808">
-                    <Canvas.Background>
-                        <ImageBrush ImageSource="img/images/DateTitleBg.png"/>
-                    </Canvas.Background>
-                </Canvas>
-                <Border  Width="3"  Canvas.Left="180" Canvas.Top="0" Height="181">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/verticalBar.png"/>
-                    </Border.Background>
-                </Border>
-                <Border  Width="3"  Canvas.Left="580" Canvas.Top="0" Height="181">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/verticalBar.png"/>
-                    </Border.Background>
-                </Border>
-                <TextBlock x:Name="text_phases_next" Text="第 20130614011 期" FontSize="12" Canvas.Left="32" Canvas.Top="3"/>
-                <!--<Canvas Height="40" Canvas.Left="32" Canvas.Top="32" Width="120">
+                    <Canvas Height="25" Width="808">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="img/images/DateTitleBg.png"/>
+                        </Canvas.Background>
+                    </Canvas>
+                    <Border  Width="3"  Canvas.Left="180" Canvas.Top="0" Height="181">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/verticalBar.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Border  Width="3"  Canvas.Left="580" Canvas.Top="0" Height="181">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/verticalBar.png"/>
+                        </Border.Background>
+                    </Border>
+                    <TextBlock x:Name="text_phases_next" Text="第 20130614011 期" FontSize="12" Canvas.Left="32" Canvas.Top="3"/>
+                    <!--<Canvas Height="40" Canvas.Left="32" Canvas.Top="32" Width="120">
                     <Canvas.Background>
                         <SolidColorBrush Color="Black" Opacity="0.30000001192092896"/>
                     </Canvas.Background>-->
-                <Grid Canvas.Left="25" Canvas.Top="60">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="60"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal" Height="60">
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="img/images/timeBg.png"/>
-                        </StackPanel.Background>
-                        <TextBlock x:Name="time_1" Margin="8,10,5,5" Text="0" FontSize="27"  FontFamily="Comic Sans MS"
+                    <Grid Canvas.Left="25" Canvas.Top="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Height="60">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="img/images/timeBg.png"/>
+                            </StackPanel.Background>
+                            <TextBlock x:Name="time_1" Margin="8,10,5,5" Text="0" FontSize="27"  FontFamily="Comic Sans MS"
                         TextOptions.TextHintingMode="Animated"/>
-                        <TextBlock x:Name="time_2" Text="5" Margin="5,10,3,0" FontSize="27"  FontFamily="Comic Sans MS"
+                            <TextBlock x:Name="time_2" Text="5" Margin="5,10,3,0" FontSize="27"  FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated"/>
-                    </StackPanel>
-                    <TextBlock x:Name="time_t" Text=":" Margin="8,13,0,13" FontSize="25"  Grid.Column="1" Canvas.Left="56" Canvas.Top="5" FontFamily="Comic Sans MS"
+                        </StackPanel>
+                        <TextBlock x:Name="time_t" Text=":" Margin="8,13,0,13" FontSize="25"  Grid.Column="1" Canvas.Left="56" Canvas.Top="5" FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated" HorizontalAlignment="Left" Width="4"/>
-                    <StackPanel Orientation="Horizontal" Grid.Column="2" Height="60">
-                        <StackPanel.Background>
-                            <ImageBrush ImageSource="img/images/timeBg.png"/>
-                        </StackPanel.Background>
-                        <TextBlock x:Name="time_3" Grid.Column="1" Margin="10,10,5,5" Text="1" FontSize="27" Canvas.Left="71" Canvas.Top="5" FontFamily="Comic Sans MS"
+                        <StackPanel Orientation="Horizontal" Grid.Column="2" Height="60">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="img/images/timeBg.png"/>
+                            </StackPanel.Background>
+                            <TextBlock x:Name="time_3" Grid.Column="1" Margin="10,10,5,5" Text="1" FontSize="27" Canvas.Left="71" Canvas.Top="5" FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated"/>
-                        <TextBlock x:Name="time_4" Text="7" FontSize="27" Margin="5,10" Canvas.Left="92" Canvas.Top="5" FontFamily="Comic Sans MS"
+                            <TextBlock x:Name="time_4" Text="7" FontSize="27" Margin="5,10" Canvas.Left="92" Canvas.Top="5" FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated"/>
 
-                    </StackPanel>
-                </Grid>
-                <!--<TextBlock x:Name="time_1" Text="0" FontSize="20" Canvas.Left="15" Canvas.Top="5" FontFamily="Comic Sans MS"
+                        </StackPanel>
+                    </Grid>
+                    <!--<TextBlock x:Name="time_1" Text="0" FontSize="20" Canvas.Left="15" Canvas.Top="5" FontFamily="Comic Sans MS"
                         TextOptions.TextHintingMode="Animated"/>
                     <TextBlock x:Name="time_2" Text="5" FontSize="20" Canvas.Left="36" Canvas.Top="5" FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated"/>
@@ -309,242 +311,244 @@
                     	TextOptions.TextHintingMode="Animated"/>
                     <TextBlock x:Name="time_t" Text=":" FontSize="20" Canvas.Left="56" Canvas.Top="5" FontFamily="Comic Sans MS"
                     	TextOptions.TextHintingMode="Animated"/>-->
-                <!--</Canvas>-->
-                <TextBlock Text="剩余投注时间" FontSize="12" Canvas.Left="60" Canvas.Top="130" Foreground="#00ccff"/>
-                <TextBlock x:Name="text_phases" Text="第 20130614010 期" FontSize="12" Canvas.Left="280" Canvas.Top="3"/>
-                <Border Canvas.Left="190" Canvas.Top="50" Height="106" Width="357">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/ballBg.png"/>
-                    </Border.Background>
-                    <Grid x:Name="ballTool" Height="60"  Width="357">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <local:Ball x:Name="ball_red" Text="9" Color="Red" Grid.Column="0"/>
-                        <local:Ball x:Name="ball_yellow" Text="1" Color="Yellow" Grid.Column="1"/>
-                        <local:Ball x:Name="ball_grean" Text="7" Color="Green" Grid.Column="2"/>
-                        <local:Ball x:Name="ball_blue" Text="3" Color="Blue" Grid.Column="3"/>
-                        <local:Ball x:Name="ball_purple" Text="2" Color="Purple" Grid.Column="4"/>
-                    </Grid>
-                </Border>
-                <Grid Height="57" Canvas.Top="175" Width="808">
-                    <Border Height="33" VerticalAlignment="Top">
+                    <!--</Canvas>-->
+                    <TextBlock Text="剩余投注时间" FontSize="12" Canvas.Left="60" Canvas.Top="130" Foreground="#00ccff"/>
+                    <TextBlock x:Name="text_phases" Text="第 20130614010 期" FontSize="12" Canvas.Left="280" Canvas.Top="3"/>
+                    <Border Canvas.Left="190" Canvas.Top="50" Height="106" Width="357">
                         <Border.Background>
-                            <ImageBrush ImageSource="img/images/playTagBallBg.png"/>
+                            <ImageBrush ImageSource="img/images/ballBg.png"/>
                         </Border.Background>
+                        <Grid x:Name="ballTool" Height="60"  Width="357">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <local:Ball x:Name="ball_red" Text="9" Color="Red" Grid.Column="0"/>
+                            <local:Ball x:Name="ball_yellow" Text="1" Color="Yellow" Grid.Column="1"/>
+                            <local:Ball x:Name="ball_grean" Text="7" Color="Green" Grid.Column="2"/>
+                            <local:Ball x:Name="ball_blue" Text="3" Color="Blue" Grid.Column="3"/>
+                            <local:Ball x:Name="ball_purple" Text="2" Color="Purple" Grid.Column="4"/>
+                        </Grid>
                     </Border>
-                    <Grid x:Name="howToPlayTool" Height="25" VerticalAlignment="Top" Margin="0,32,0,0">
-                        <Grid.Background>
-                            <ImageBrush ImageSource="img/images/subTitleBg.png"/>
-                        </Grid.Background>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <local:HowToPlayButton Text="前四复式" Grid.Column="0"/>
-                        <local:HowToPlayButton Text="前四单式" IsSelected="True" Grid.Column="1"/>
-                        <local:HowToPlayButton Text="后四复式" Grid.Column="2"/>
-                        <local:HowToPlayButton Text="后四单式" Grid.Column="3"/>
-                    </Grid>
-                    <Grid x:Name="playTagTool" Height="39" VerticalAlignment="Top">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
+                    <Grid Height="57" Canvas.Top="175" Width="808">
+                        <Border Height="33" VerticalAlignment="Top">
+                            <Border.Background>
+                                <ImageBrush ImageSource="img/images/playTagBallBg.png"/>
+                            </Border.Background>
+                        </Border>
+                        <Grid x:Name="howToPlayTool" Height="25" VerticalAlignment="Top" Margin="0,32,0,0">
+                            <Grid.Background>
+                                <ImageBrush ImageSource="img/images/subTitleBg.png"/>
+                            </Grid.Background>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <local:HowToPlayButton Text="前四复式" Grid.Column="0"/>
+                            <local:HowToPlayButton Text="前四单式" IsSelected="True" Grid.Column="1"/>
+                            <local:HowToPlayButton Text="后四复式" Grid.Column="2"/>
+                            <local:HowToPlayButton Text="后四单式" Grid.Column="3"/>
+                        </Grid>
+                        <Grid x:Name="playTagTool" Height="39" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-                        <local:PlayTagButton Text="五星直选" Grid.Column="0"/>
-                        <local:PlayTagButton Text="四星直选" IsSelected="True" Grid.Column="1"/>
-                        <local:PlayTagButton Text="三星直选" Grid.Column="2"/>
-                        <local:PlayTagButton Text="三星组选" Grid.Column="3"/>
-                        <local:PlayTagButton Text="二星直选" Grid.Column="4"/>
-                        <local:PlayTagButton Text="二星组选" Grid.Column="5"/>
-                        <local:PlayTagButton Text="不定位" Grid.Column="6"/>
-                        <local:PlayTagButton Text="定位胆" Grid.Column="7"/>
+                            <local:PlayTagButton Text="五星直选" Grid.Column="0"/>
+                            <local:PlayTagButton Text="四星直选" IsSelected="True" Grid.Column="1"/>
+                            <local:PlayTagButton Text="三星直选" Grid.Column="2"/>
+                            <local:PlayTagButton Text="三星组选" Grid.Column="3"/>
+                            <local:PlayTagButton Text="二星直选" Grid.Column="4"/>
+                            <local:PlayTagButton Text="二星组选" Grid.Column="5"/>
+                            <local:PlayTagButton Text="不定位" Grid.Column="6"/>
+                            <local:PlayTagButton Text="定位胆" Grid.Column="7"/>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Border  Canvas.Top="390" Canvas.Left="30">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/textBg.png"/>
-                    </Border.Background>
-                    <TextBox x:Name="showTool_num"  Height="60"   TextWrapping="Wrap" Text="请选择号码" Style="{StaticResource AppTextBoxStyle}"
+                    <Border  Canvas.Top="390" Canvas.Left="30">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/textBg.png"/>
+                        </Border.Background>
+                        <TextBox x:Name="showTool_num"  Height="60"   TextWrapping="Wrap" Text="请选择号码" Style="{StaticResource AppTextBoxStyle}"
                          Width="469" IsReadOnly="True" VerticalScrollBarVisibility="Auto"
                          Cursor="Arrow"/>
-                </Border>
-                <Border Canvas.Left="505" Opacity="0.6" Canvas.Top="380" Width="305" Height="125">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/redcorner.png"/>
-                    </Border.Background>
-                </Border>
-                <Button x:Name="submit" Cursor="Hand" Canvas.Left="505" Style="{StaticResource submitBtnStyle}" Canvas.Top="390" Height="60" Width="100" Click="ShowBettingGoTool">
+                    </Border>
+                    <Border Canvas.Left="505" Opacity="0.6" Canvas.Top="380" Width="305" Height="125">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/redcorner.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Button x:Name="submit" Cursor="Hand" Canvas.Left="505" Style="{StaticResource submitBtnStyle}" Canvas.Top="390" Height="60" Width="100" Click="ShowBettingGoTool">
 
-                </Button>
-                <TextBlock x:Name="showTool_sum" Text="总注数：0" FontSize="12" Canvas.Left="35" Canvas.Top="465"/>
-                <TextBlock x:Name="showTool_money" Text="总金额：0" FontSize="12" Canvas.Left="145" Canvas.Top="465"/>
-                <TextBlock Text="倍数：" FontSize="12" Canvas.Left="255" Canvas.Top="465"/>
-                <TextBox x:Name="input_multiple" Height="23" Canvas.Left="290" Text="1" Canvas.Top="461" Width="32" 
+                    </Button>
+                    <TextBlock x:Name="showTool_sum" Text="总注数：0" FontSize="12" Canvas.Left="35" Canvas.Top="465"/>
+                    <TextBlock x:Name="showTool_money" Text="总金额：0" FontSize="12" Canvas.Left="145" Canvas.Top="465"/>
+                    <TextBlock Text="倍数：" FontSize="12" Canvas.Left="255" Canvas.Top="465"/>
+                    <TextBox x:Name="input_multiple" Height="23" Canvas.Left="290" Text="1" Canvas.Top="461" Width="32" 
                          TextChanged="MultipleChanged"
                          />
-                <TextBlock x:Name="showTool_odds" Text="1700 / 12.5%" FontSize="12" Canvas.Left="660" Canvas.Top="400"/>
-                <Border Canvas.Left="630" Canvas.Top="423" Height="14"  Width="135" BorderBrush="#1a1c1e" Background="Black" BorderThickness="2" CornerRadius="8">
-                </Border>
-                <Slider x:Name="input_point" Cursor="Hand" Canvas.Left="630" Canvas.Top="420" Style="{StaticResource sliderStyle}"  Width="135" ValueChanged="SeletePoints"/>
-                <Button x:Name="button_ready" Foreground="White" Style="{StaticResource smallBtnStyle}" FontSize="12" Content="键盘投注" Canvas.Left="340" Canvas.Top="465" Width="78" Cursor="Hand"
+                    <TextBlock x:Name="showTool_odds" Text="1700 / 12.5%" FontSize="12" Canvas.Left="660" Canvas.Top="400"/>
+                    <Border Canvas.Left="630" Canvas.Top="423" Height="14"  Width="135" BorderBrush="#1a1c1e" Background="Black" BorderThickness="2" CornerRadius="8">
+                    </Border>
+                    <Slider x:Name="input_point" Cursor="Hand" Canvas.Left="630" Canvas.Top="420" Style="{StaticResource sliderStyle}"  Width="135" ValueChanged="SeletePoints"/>
+                    <Button x:Name="button_ready" Foreground="White" Style="{StaticResource smallBtnStyle}" FontSize="12" Content="键盘投注" Canvas.Left="340" Canvas.Top="465" Width="78" Cursor="Hand"
                         Click="BettingReady" Height="21"/>
-                <Button x:Name="button_go" Content="一键清除" Foreground="White"  Style="{StaticResource smallBtnStyle}" FontSize="12" Canvas.Left="421" Canvas.Top="465" Width="78"  Cursor="Hand" Click="ClearBettingInfo" Height="21"/>
-                <Grid x:Name="insertBox_single" Height="120" Canvas.Left="30" Canvas.Top="246" Width="471" Visibility="Visible">
-                    <TextBox x:Name="input_insertBox" TextWrapping="Wrap" Margin="0,0,145,0" Height="120" Style="{StaticResource AppTextBoxStyle}" AcceptsReturn="True"/>
-                    <TextBlock TextWrapping="Wrap" Margin="341,0,0,0">
+                    <Button x:Name="button_go" Content="一键清除" Foreground="White"  Style="{StaticResource smallBtnStyle}" FontSize="12" Canvas.Left="421" Canvas.Top="465" Width="78"  Cursor="Hand" Click="ClearBettingInfo" Height="21"/>
+                    <Grid x:Name="insertBox_single" Height="120" Canvas.Left="30" Canvas.Top="246" Width="471" Visibility="Visible">
+                        <TextBox x:Name="input_insertBox" TextWrapping="Wrap" Margin="0,0,145,0" Height="120" Style="{StaticResource AppTextBoxStyle}" AcceptsReturn="True"/>
+                        <TextBlock TextWrapping="Wrap" Margin="341,0,0,0">
                     	请输入你想要投注的号码，格式为：<LineBreak/>
                     	 xxxx xxxx xxxx<LineBreak/>
                     	 注与注之间用"|"或者" "或者";"或者","分割<LineBreak/>
                         <LineBreak/>
-                    </TextBlock>
-                </Grid>
-                <Grid x:Name="insertBox_double" Height="150" Canvas.Top="239" Canvas.Left="30" Width="750" Visibility="Visible">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </Canvas>
-            <!--右边信息栏-->
-            <Canvas x:Name="ticketPageBody_right" Height="173" Width="214" Canvas.Top="115" Canvas.Left="800">
-                <!--<Path Stroke="Black" StrokeThickness="1" 
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="insertBox_double" Height="150" Canvas.Top="239" Canvas.Left="30" Width="750" Visibility="Visible">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </Canvas>
+                <!--右边信息栏-->
+                <Canvas x:Name="ticketPageBody_right" Height="173" Width="214" Canvas.Top="115" Canvas.Left="800">
+                    <!--<Path Stroke="Black" StrokeThickness="1" 
                       Data="M0,0 L0,435 M80,0 200,0 M80,180 200,180"/>
                 <Path Stroke="Gray" StrokeThickness="0.3"
                       Data="M0.5,0 L0.5,435 M80,1 200,1 M80,181 200,181"/>-->
-                <TextBlock Canvas.Left="45" Canvas.Top="3" TextWrapping="Wrap" Text="历史记录" FontSize="12"/>
-                <!--<TextBlock Canvas.Left="15" Canvas.Top="174" TextWrapping="Wrap" Text="中奖排行" FontSize="12"/>-->
-                <Grid x:Name="historyTool" Width="180" Height="150" Canvas.Left="26" Canvas.Top="30">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="20130614010期" Grid.Row="0" Foreground="#999999" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="4,1,9,2,8" Grid.Row="0" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="20130614009期" Grid.Row="1" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="3,1,5,2,9" Grid.Row="1" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="20130614008期" Grid.Row="2" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="0,7,3,5,2" Grid.Row="2" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="20130614007期" Grid.Row="3" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="7,9,3,2,2" Grid.Row="3" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="20130614006期" Grid.Row="4" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
-                    <TextBlock Text="5,0,7,1,9" Grid.Row="4" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
-                </Grid>
-            </Canvas>
-            <!--底部信息栏-->
-            <Canvas x:Name="ticketPageBody_buttom" Height="100" Width="808" Canvas.Top="620" Canvas.Left="214">
-                <!--<Path Stroke="Black" StrokeThickness="1" 
+                    <TextBlock Canvas.Left="45" Canvas.Top="3" TextWrapping="Wrap" Text="历史记录" FontSize="12"/>
+                    <!--<TextBlock Canvas.Left="15" Canvas.Top="174" TextWrapping="Wrap" Text="中奖排行" FontSize="12"/>-->
+                    <Grid x:Name="historyTool" Width="180" Height="150" Canvas.Left="26" Canvas.Top="30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="20130614010期" Grid.Row="0" Foreground="#999999" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Text="4,1,9,2,8" Grid.Row="0" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="20130614009期" Grid.Row="1" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="3,1,5,2,9" Grid.Row="1" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="20130614008期" Grid.Row="2" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="0,7,3,5,2" Grid.Row="2" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="20130614007期" Grid.Row="3" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="7,9,3,2,2" Grid.Row="3" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="20130614006期" Grid.Row="4" HorizontalAlignment="Left" Foreground="#999999" VerticalAlignment="Center"/>
+                        <TextBlock Text="5,0,7,1,9" Grid.Row="4" HorizontalAlignment="Right" Foreground="#999999" VerticalAlignment="Center"/>
+                    </Grid>
+                </Canvas>
+                <!--底部信息栏-->
+                <Canvas x:Name="ticketPageBody_buttom" Height="100" Width="808" Canvas.Top="620" Canvas.Left="214">
+                    <!--<Path Stroke="Black" StrokeThickness="1" 
                       Data="M0,0 L720,0 M0,25 L720,25"/>
                 <Path Stroke="Gray" StrokeThickness="0.3"
                       Data="M0,1 L720,1 M0,26 L720,26"/>-->
-                <Grid Width="808" Height="25">
-                    <Grid.Background>
-                        <ImageBrush ImageSource="img/images/dataGridTitle.png"/>
-                    </Grid.Background>
-                </Grid>
-                <TextBlock Text="订单号" Canvas.Top="5" Canvas.Left="10" Foreground="#999999"/>
-                <TextBlock Text="玩法" Canvas.Left="112" Canvas.Top="5" Foreground="#999999"/>
-                <TextBlock Text="投注内容" Canvas.Left="216" Canvas.Top="5" Foreground="#999999"/>
-                <TextBlock Text="倍数" Canvas.Left="456" Canvas.Top="5" Foreground="#999999"/>
-                <TextBlock Text="金额" Canvas.Left="557" Canvas.Top="5" Foreground="#999999"/>
-                <TextBlock Text="撤单"  Canvas.Left="686" Canvas.Top="5" Foreground="#999999"/>
-                <Grid x:Name="buttomTool" Height="75" Canvas.Top="26" Width="710" Canvas.Left="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="101*"/>
-                        <ColumnDefinition Width="105*"/>
-                        <ColumnDefinition Width="239*"/>
-                        <ColumnDefinition Width="102*"/>
-                        <ColumnDefinition Width="129*"/>
-                        <ColumnDefinition Width="34*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-                <Border Grid.Row="0">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/preData.png"/>
-                    </Border.Background>
-                </Border>
-                <Border Grid.Row="1">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/preData.png"/>
-                    </Border.Background>
-                </Border>
-                <Border Grid.Row="2">
-                    <Border.Background>
-                        <ImageBrush ImageSource="img/images/preData.png"/>
-                    </Border.Background>
-                </Border>
-            </Canvas>
-            <Grid x:Name="sharkpage" Height="605" Width="807" Canvas.Top="115" Canvas.Left="215" Visibility="Collapsed"/>
+                    <Grid Width="808" Height="25">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="img/images/dataGridTitle.png"/>
+                        </Grid.Background>
+                    </Grid>
+                    <TextBlock Text="订单号" Canvas.Top="5" Canvas.Left="10" Foreground="#999999"/>
+                    <TextBlock Text="玩法" Canvas.Left="112" Canvas.Top="5" Foreground="#999999"/>
+                    <TextBlock Text="投注内容" Canvas.Left="216" Canvas.Top="5" Foreground="#999999"/>
+                    <TextBlock Text="倍数" Canvas.Left="456" Canvas.Top="5" Foreground="#999999"/>
+                    <TextBlock Text="金额" Canvas.Left="557" Canvas.Top="5" Foreground="#999999"/>
+                    <TextBlock Text="撤单"  Canvas.Left="686" Canvas.Top="5" Foreground="#999999"/>
+                    <Grid x:Name="buttomTool" Height="75" Canvas.Top="26" Width="710" Canvas.Left="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="101*"/>
+                            <ColumnDefinition Width="105*"/>
+                            <ColumnDefinition Width="239*"/>
+                            <ColumnDefinition Width="102*"/>
+                            <ColumnDefinition Width="129*"/>
+                            <ColumnDefinition Width="34*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <Border Grid.Row="0">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/preData.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Border Grid.Row="1">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/preData.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Border Grid.Row="2">
+                        <Border.Background>
+                            <ImageBrush ImageSource="img/images/preData.png"/>
+                        </Border.Background>
+                    </Border>
+                </Canvas>
+                <Grid x:Name="sharkpage" Height="605" Width="807" Canvas.Top="115" Canvas.Left="215" Visibility="Collapsed"/>
 
-            <Image Name="hideBottomBar" Source="img/images/BottomBaseBar.png" Canvas.Left="213" Canvas.Top="721" Visibility="Visible"/>
-            <!--<TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="35" Cursor="Hand"
+                <Image Name="hideBottomBar" Source="img/images/BottomBaseBar.png" Canvas.Left="213" Canvas.Top="721" Visibility="Visible"/>
+                <!--<TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="35" Cursor="Hand"
                        MouseLeftButtonDown="ShowBulletin">
                 <i:Interaction.Triggers>
                     <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
                 </i:Interaction.Triggers>
                 <Run x:Name="text_bulletin" Text="我是公告，我是可爱的公告"/>
             </TextBlock>-->
-            <Image Source="img/images/tishi.png" Height="20" Width="20" Canvas.Left="220" Canvas.Top="26"/>
-            <TextBlock	Text="欢迎使用迪赛安全平台!!" Foreground="White"  FontSize="13" Width="79" Height="30" Canvas.Left="250" Canvas.Top="26"   />
-            <!--<local:CustomerServiceButton 
+                <Image Source="img/images/tishi.png" Height="20" Width="20" Canvas.Left="220" Canvas.Top="26"/>
+                <TextBlock	Text="欢迎使用迪赛安全平台!!" Foreground="White"  FontSize="13" Width="79" Height="30" Canvas.Left="250" Canvas.Top="26"   />
+                <!--<local:CustomerServiceButton 
             	ClickEventHandler="CallCustomerService" Height="30" Canvas.Left="882" Canvas.Top="731" Width="114"/>-->
-            <local:NoticeWindow x:Name="noticeTool" Canvas.Left="750" Canvas.Top="510" Visibility="Collapsed"/>
-            <Grid x:Name="body" Width="720" Height="545" Canvas.Left="250" Canvas.Top="115" Visibility="Collapsed"/>
-            <MediaElement x:Name="bg_music_r" AutoPlay="False" Volume="1" Source="music/music-r.wma"
+                <local:NoticeWindow x:Name="noticeTool" Canvas.Left="750" Canvas.Top="510" Visibility="Collapsed"/>
+                <Grid x:Name="body" Width="720" Height="545" Canvas.Left="250" Canvas.Top="115" Visibility="Collapsed"/>
+                <MediaElement x:Name="bg_music_r" AutoPlay="False" Volume="1" Source="music/music-r.wma"
                           Width="0" Height="0"/>
-            <MediaElement x:Name="bg_music_w" AutoPlay="False" Volume="1" Source="music/mussic-w.wma"
+                <MediaElement x:Name="bg_music_w" AutoPlay="False" Volume="1" Source="music/mussic-w.wma"
                           Width="0" Height="0"/>
-            <MediaElement x:Name="bg_music_b" AutoPlay="False" Volume="1" Source="music/music-b.wma"
+                <MediaElement x:Name="bg_music_b" AutoPlay="False" Volume="1" Source="music/music-b.wma"
                           Width="0" Height="0"/>
 
-        </Canvas>
-    </toolkit:ExpressionDarkTheme>
+            </Canvas>
+        </toolkit:ExpressionDarkTheme>
+        <kefu:TalkClient HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+    </Grid>
 </UserControl>

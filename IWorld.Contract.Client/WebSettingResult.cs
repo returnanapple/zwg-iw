@@ -231,7 +231,7 @@ namespace IWorld.Contract.Client
         public int MaximumBetsNumber { get; set; }
 
         /// <summary>
-        /// 封单时间（分钟）
+        /// 封单时间（秒）
         /// </summary>
         [DataMember]
         public int ClosureSingleTime { get; set; }

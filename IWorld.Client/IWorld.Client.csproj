@@ -70,6 +70,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.NetTcp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core">
@@ -1001,6 +1002,10 @@
     <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Client.Client.Control\Client.Client.Control.csproj">
+      <Project>{106498c3-e6cc-4f90-ab22-9c730a7099a2}</Project>
+      <Name>Client.Client.Control</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IWorld.Client.Class\IWorld.Client.Class.csproj">
       <Project>{6e56c45e-b5cd-478f-9a47-9a3a041f5e31}</Project>
       <Name>IWorld.Client.Class</Name>
