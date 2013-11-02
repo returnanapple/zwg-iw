@@ -76,6 +76,10 @@ namespace IWorld.Shark.Control.Classes
         /// </summary>
         DateTime nextLotteryTime;
         /// <summary>
+        /// 剩余时间
+        /// </summary>
+        DateTime surplusTime;
+        /// <summary>
         /// 下注信息列表
         /// </summary>
         List<BetInfo> betInfoList;
@@ -166,6 +170,21 @@ namespace IWorld.Shark.Control.Classes
             {
                 nextLotteryTime = value;
                 OnPropertyChanged(this, "NextLotteryTime");
+            }
+        }
+        /// <summary>
+        /// 剩余时间
+        /// </summary>
+        public DateTime SurplusTime
+        {
+            get
+            {
+                return surplusTime;
+            }
+            set
+            {
+                surplusTime = value;
+                OnPropertyChanged(this, "SurplusTime");
             }
         }
         /// <summary>
