@@ -13,6 +13,7 @@ using IWorld.Client.UsersService;
 using IWorld.Client.SystemSettingService;
 using IWorld.Client.GamingService;
 using IWorld.Client.BulletinService;
+using System.IO.IsolatedStorage;
 
 namespace IWorld.Client
 {
@@ -98,6 +99,8 @@ namespace IWorld.Client
             if (e.Result.Success)
             {
                 App.Token = e.Result.Token;
+                string dataKeyOfSelf = "Client_Self";
+                IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf] = e.Result.Token;
 
                 UsersServiceClient client = (UsersServiceClient)sender;
                 client.GetUserInfoCompleted += ManageGetUserInfoResult;
