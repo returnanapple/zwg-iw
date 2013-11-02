@@ -55,7 +55,7 @@ namespace IWorld.BLL
 
             #region 开奖
 
-            LotteryManager.CreatingEventHandler += BettingManager.GetResultOfLottery;
+            LotteryManager.CreatedEventHandler += BettingManager.GetResultOfLottery;
             //LotteryManager.CreatedEventHandler += ChasingManager.UpdateChasingStatus;
             //LotteryManager.CreatedEventHandler += BettingForCgasingManager.GetResultOfLottery;
             LotteryManager.CreatedEventHandler += LotteryTicketManager.UpdateLotteryTime;
@@ -87,6 +87,7 @@ namespace IWorld.BLL
                                 manager.ChangeStatus(x.Id, RechargeStatus.充值成功);
                             });
                 };
+            TimeLineManager.Interval20SecondEventHandler += BettingOfJawManager.UpdateBettingStatus;
 
             #endregion
 
@@ -131,6 +132,14 @@ namespace IWorld.BLL
             #region 缓存池
 
             CustomerRecordManager.CreatedEventHandler += CacheManager.SetCustomerMessageIn;
+
+            #endregion
+
+            #region 大白鲨游戏
+
+            LotteryOfJawManager.CreatedEventHandler += BettingOfJawManager.GetResultOfLottery;
+            BettingOfJawManager.CreatingEventHandler += AuthorManager.PayForJaw;
+            BettingOfJawManager.ChangingStatusEventHandler += AuthorManager.GetResultOfJaw;
 
             #endregion
         }

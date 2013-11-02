@@ -81,6 +81,7 @@
     <Content Include="Api\DataReportService.svc" />
     <Content Include="Api\FundsService.svc" />
     <Content Include="Api\GamingService.svc" />
+    <Content Include="Api\JawService.svc" />
     <Content Include="Api\MessageService.svc" />
     <Content Include="Api\SystemSettingService.svc" />
     <Content Include="Api\UsersService.svc" />
@@ -157,9 +158,13 @@
     <Compile Include="Api\IDataReportService.cs" />
     <Compile Include="Api\IFundsService.cs" />
     <Compile Include="Api\IGamingService.cs" />
+    <Compile Include="Api\IJawService.cs" />
     <Compile Include="Api\IMessageService.cs" />
     <Compile Include="Api\ISystemSettingService.cs" />
     <Compile Include="Api\IUsersService.cs" />
+    <Compile Include="Api\JawService.svc.cs">
+      <DependentUpon>JawService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Api\MessageService.svc.cs">
       <DependentUpon>MessageService.svc</DependentUpon>
     </Compile>

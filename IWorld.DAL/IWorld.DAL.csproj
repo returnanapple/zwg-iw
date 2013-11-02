@@ -58,6 +58,7 @@
     <Compile Include="ClientDataReportReader.cs" />
     <Compile Include="ClientFundsReader.cs" />
     <Compile Include="ClientGamingReader.cs" />
+    <Compile Include="ClientJawReader.cs" />
     <Compile Include="ClientMessageReader.cs" />
     <Compile Include="ClientUsersReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
