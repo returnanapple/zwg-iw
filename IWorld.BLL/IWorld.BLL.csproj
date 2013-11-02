@@ -55,6 +55,7 @@
     <Compile Include="BankAccountManager.cs" />
     <Compile Include="BettingForCgasingManager.cs" />
     <Compile Include="BettingManager.cs" />
+    <Compile Include="BettingOfJawManager.cs" />
     <Compile Include="BulletinManager.cs" />
     <Compile Include="CacheManager.cs" />
     <Compile Include="CategoryManaerBase.cs" />

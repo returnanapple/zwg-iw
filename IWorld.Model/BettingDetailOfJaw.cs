@@ -36,10 +36,12 @@ namespace IWorld.Model
         /// <summary>
         /// 实例化一个新的大白鲨游戏的投注明细
         /// </summary>
-        /// <param name="Mark">目标标识</param>
-        /// <param name="Sum">投注金额</param>
-        public BettingDetailOfJaw(MarkOfJaw Mark, double Sum)
+        /// <param name="mark">目标标识</param>
+        /// <param name="sum">投注金额</param>
+        public BettingDetailOfJaw(MarkOfJaw mark, double sum)
         {
+            this.Mark = mark;
+            this.Sum = sum;
         }
 
         #endregion

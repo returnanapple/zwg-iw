@@ -44,11 +44,13 @@
     <Compile Include="BankAccountResult.cs" />
     <Compile Include="BasicUserInfoResult.cs" />
     <Compile Include="BettingActionResult.cs" />
+    <Compile Include="BettingDetailOfJawImport.cs" />
     <Compile Include="BettingDetailsResult.cs" />
     <Compile Include="BettingDetailsSelectType.cs" />
     <Compile Include="BettingForChasingInfo.cs" />
     <Compile Include="BettingImport.cs" />
     <Compile Include="BettingInfoImport.cs" />
+    <Compile Include="BettingOfJawImport.cs" />
     <Compile Include="BettingValuesImport.cs" />
     <Compile Include="BulletinResult.cs" />
     <Compile Include="ChasingInfoImport.cs" />
@@ -61,7 +63,9 @@
     <Compile Include="HistoryOfLotteryResult.cs" />
     <Compile Include="HowToPlayResult.cs" />
     <Compile Include="LoginResult.cs" />
+    <Compile Include="LotteryOfJawResult.cs" />
     <Compile Include="LotteryTicketResult.cs" />
+    <Compile Include="MainOfJawResult.cs" />
     <Compile Include="MessageResult.cs" />
     <Compile Include="NormalActivitiesResult.cs" />
     <Compile Include="NormalList.cs" />
