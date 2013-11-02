@@ -422,7 +422,7 @@
   <Class Name="IWorld.BLL.BettingOfJawManager" Collapsed="true" HideInheritanceLine="true">
     <Position X="4" Y="18.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BettingOfJawManager.cs</FileName>
     </TypeIdentifier>
   </Class>
