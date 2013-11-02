@@ -206,6 +206,8 @@ namespace IWorld.BLL
 
             BankAccount ba = new BankAccount("测试", "大厨卖当牛", "6214453595666458236", Bank.中国工商银行, "", 1, true);
             db.Set<BankAccount>().Add(ba);
+            BankAccount ba2 = new BankAccount("测试2", "李南瓜", "3838438", Bank.财付通, "", 2, true);
+            db.Set<BankAccount>().Add(ba2);
             db.SaveChanges();
 
             #endregion

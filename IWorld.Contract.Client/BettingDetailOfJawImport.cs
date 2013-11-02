@@ -16,11 +16,13 @@ namespace IWorld.Contract.Client
         /// <summary>
         /// 图标
         /// </summary>
+        [DataMember]
         public IconOfJaw Icon { get; set; }
 
         /// <summary>
         /// 投注金额
         /// </summary>
+        [DataMember]
         public double Sum { get; set; }
     }
 }
