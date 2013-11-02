@@ -13,11 +13,6 @@ namespace IWorld.Model
         #region 公开属性
 
         /// <summary>
-        /// 所从属的彩票的存储指针
-        /// </summary>
-        public int TicketId { get; set; }
-
-        /// <summary>
         /// 期数
         /// </summary>
         public int Phases { get; set; }

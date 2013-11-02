@@ -29,6 +29,7 @@ namespace IWorld.Model
         {
             get
             {
+                if (TouchOff == "") { return new List<int>(); }
                 return TouchOff.Split(new char[] { ',' }).ToList().ConvertAll(x => Convert.ToInt32(x));
             }
         }
@@ -45,6 +46,7 @@ namespace IWorld.Model
         {
             get
             {
+                if (OpenUp == "") { return new List<int>(); }
                 return OpenUp.Split(new char[] { ',' }).ToList().ConvertAll(x => Convert.ToInt32(x));
             }
         }

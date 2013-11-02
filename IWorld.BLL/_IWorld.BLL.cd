@@ -351,7 +351,7 @@
   <Class Name="IWorld.BLL.CollectionManager" Collapsed="true">
     <Position X="0.5" Y="20.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gCEIAABCAQIACQBEFAEAFABAKABDQAAEAAJAgAAAAAg=</HashCode>
+      <HashCode>gCEIACBCAQIACQBEFAEAFABAaABDQAAEAAJAgAAAAAg=</HashCode>
       <FileName>CollectionManager.cs</FileName>
     </TypeIdentifier>
   </Class>

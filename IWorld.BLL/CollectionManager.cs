@@ -33,6 +33,7 @@ namespace IWorld.BLL
             FC3DEventhandler += InsertFC3D;
             PLSEventhandler += InsertPLS;
             QTCEventhandler += InsertQTC;
+            JawEventhandler += InsertJaw;
 
             System.Threading.Thread thread = new System.Threading.Thread((obj) =>
                 {
@@ -53,6 +54,7 @@ namespace IWorld.BLL
                                 ecentHandlers.Add(FC3DEventhandler);    //福彩3D
                                 ecentHandlers.Add(PLSEventhandler); //排列三
                                 ecentHandlers.Add(QTCEventhandler); //全天彩
+                                ecentHandlers.Add(JawEventhandler); //大白鲨
 
                                 ecentHandlers.ForEach(x =>
                                     {
@@ -122,6 +124,11 @@ namespace IWorld.BLL
         /// 采集全天彩数据的实例委托
         /// </summary>
         private static event NcDelegate QTCEventhandler;
+
+        /// <summary>
+        /// 采集全天彩数据的实例委托
+        /// </summary>
+        private static event NcDelegate JawEventhandler;
 
         #endregion
 
@@ -672,6 +679,59 @@ namespace IWorld.BLL
                 , time.Day.ToString("00")
                 , tNp.ToString("000"));
             AddLottery(db, ticketName, p, vs, np);
+
+            #endregion
+        }
+
+        /// <summary>
+        /// 采集大白鲨游戏的开奖信息
+        /// </summary>
+        /// <param name="db">数据连接对象</param>
+        private static void InsertJaw(DbContext db)
+        {
+            #region 插入
+
+            DateTime time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            int tP = 0;
+            while (time <= DateTime.Now)
+            {
+                tP++;
+                time = time.AddMinutes(5);
+            }
+            string p = string.Format("{0}{1}{2}{3}"
+                , time.Year.ToString("0000").Substring(2, 2)
+                , time.Month.ToString("00")
+                , time.Day.ToString("00")
+                , tP.ToString("000"));
+
+            if (db.Set<LotteryOfJaw>().Any(x => x.Issue == p)) { return; }
+            List<int> tList = new List<int>();
+            db.Set<MarkOfJaw>().Where(x => x.TouchOff != "").ToList().ForEach(x =>
+                {
+                    int tNum = x.Probability / x.TouchOffList.Count;
+                    x.TouchOffList.ForEach(t =>
+                        {
+                            for (int i = 0; i < tNum; i++)
+                            {
+                                tList.Add(t);
+                            }
+                        });
+                });
+            Random r = new Random();
+            int num = r.Next(0, tList.Count - 1);
+            int value = tList[num];
+            time = time.AddMinutes(5);
+            int tNp = time.Day != DateTime.Now.Day ? 1 : tP + 1;
+            string np = string.Format("{0}{1}{2}{3}"
+                , time.Year.ToString("0000").Substring(2, 2)
+                , time.Month.ToString("00")
+                , time.Day.ToString("00")
+                , tNp.ToString("000"));
+
+            ICreatePackage<LotteryOfJaw> pfc = LotteryOfJawManager.Factory
+                .CreatePackageForCreate(p, value);
+            new LotteryOfJawManager(db).Create(pfc);
+            new MainOfJawManager(db).ChangeNextPhases(1, np);
 
             #endregion
         }

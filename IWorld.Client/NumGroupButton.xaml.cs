@@ -44,11 +44,6 @@ namespace IWorld.Client
 
         public static void IsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            NumGroupButton button = (NumGroupButton)d;
-            button.bg.Style = (bool)e.NewValue == true ? (Style)button.Resources["selected"]
-                : (Style)button.Resources["normal"];
-            button.text_content.Foreground = (bool)e.NewValue == false
-                ? new SolidColorBrush(Colors.White) : new SolidColorBrush(Colors.White);
         }
 
         public string Text

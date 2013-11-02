@@ -222,6 +222,7 @@ namespace IWorld.BLL
             {
                 string timeValue = string.Format("{0}:{1}", k[0], k[1]);
                 LotteryTimeOfJaw ltoj = new LotteryTimeOfJaw(k[2], timeValue);
+                times.Add(ltoj);
                 k[1] += 5;
                 if (k[1] >= 60)
                 {

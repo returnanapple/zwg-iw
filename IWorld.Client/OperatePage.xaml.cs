@@ -1310,7 +1310,7 @@ namespace IWorld.Client
             if (e.Result.Success)
             {
                 int t = 0;
-                e.Result.Content.ForEach(x =>
+                e.Result.Content.Take(5).ToList().ForEach(x =>
                     {
                         TextBlock tb1 = new TextBlock();
                         long _t = x.IsRealBetting ? 10727110010 : 10727210010;
