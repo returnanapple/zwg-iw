@@ -101,7 +101,7 @@ namespace IWorld.BLL
                     #region 加载位的初始化数值
                     int valueOfFirst = Convert.ToInt32(_ticket.Element("valueOfFirst").Value);
                     int countOfValues = Convert.ToInt32(_ticket.Element("values").Value);
-                    int halfOfValues = countOfValues % 2 == 0 
+                    int halfOfValues = countOfValues % 2 == 0
                         ? countOfValues / 2 + valueOfFirst : countOfValues / 2 + (valueOfFirst + 1);
                     for (int i = valueOfFirst; i < valueOfFirst + countOfValues; i++)
                     {
@@ -209,6 +209,124 @@ namespace IWorld.BLL
             db.SaveChanges();
 
             #endregion
+
+            InsertJawInfo();
+        }
+
+        void InsertJawInfo()
+        {
+            #region 主要信息
+            List<LotteryTimeOfJaw> times = new List<LotteryTimeOfJaw>();
+            List<int> k = new List<int> { 0, 0, 1 };
+            while (k[0] < 24)
+            {
+                string timeValue = string.Format("{0}:{1}", k[0], k[1]);
+                LotteryTimeOfJaw ltoj = new LotteryTimeOfJaw(k[2], timeValue);
+                k[1] += 5;
+                if (k[1] >= 60)
+                {
+                    k[1] -= 60;
+                    k[0]++;
+                }
+                k[2]++;
+            }
+            MainOfJaw moj = new MainOfJaw(times);
+            db.Set<MainOfJaw>().Add(moj);
+            #endregion
+            #region 标记
+            List<IconOfJaw> icons = new List<IconOfJaw>
+            {
+                IconOfJaw.金色鲨鱼,
+                IconOfJaw.燕子,
+                IconOfJaw.鸽子,
+                IconOfJaw.通杀,
+                IconOfJaw.孔雀,
+                IconOfJaw.老鹰,
+                IconOfJaw.蓝色鲨鱼,
+                IconOfJaw.狮子,
+                IconOfJaw.熊猫,
+                IconOfJaw.通赔,
+                IconOfJaw.猴子,
+                IconOfJaw.兔子,
+                IconOfJaw.飞禽,
+                IconOfJaw.走兽
+            };
+            List<string> touchOffs = new List<string>
+            {
+                "0",//金色鲨鱼
+                "1,2,3",//燕子
+                "4,5,6",//鸽子
+                "7",//通杀
+                "8,9,10",//孔雀
+                "11,12,13",//老鹰
+                "14",//蓝色鲨鱼
+                "15,16,17",//狮子
+                "18,19,20",//熊猫
+                "21",//通赔
+                "22,23,24",//猴子
+                "25,26,27",//兔子
+                "",//飞禽
+                ""//走兽
+            };
+            List<string> openUps = new List<string>
+            {
+                "0,21",//金色鲨鱼
+                "1,2,3,21",//燕子
+                "4,5,6,21",//鸽子
+                "",//通杀
+                "8,9,10,21",//孔雀
+                "11,12,13,21",//老鹰
+                "14,21",//蓝色鲨鱼
+                "15,16,17,21",//狮子
+                "18,19,20,21",//熊猫
+                "",//通赔
+                "21,22,23,24",//猴子
+                "21,25,26,27",//兔子
+                "1,2,3,4,5,6,8,9,10,11,12,13,21",//飞禽
+                "15,16,17,18,19,20,21,22,23,24,25,26,27"//走兽
+            };
+            List<int> probabilities = new List<int>
+            {
+                108,//金色鲨鱼
+                1200,//燕子
+                900,//鸽子
+                180,//通杀
+                900,//孔雀
+                600,//老鹰
+                300,//蓝色鲨鱼
+                600,//狮子
+                900,//熊猫
+                72,//通赔
+                900,//猴子
+                1200,//兔子
+                0,//飞禽
+                0//走兽
+
+            };
+            List<double> odds = new List<double>
+            {
+                100,//金色鲨鱼
+                6,//燕子
+                8,//鸽子
+                0,//通杀
+                8,//孔雀
+                12,//老鹰
+                24,//蓝色鲨鱼
+                12,//狮子
+                8,//熊猫
+                0,//通赔
+                8,//猴子
+                6,//兔子
+                2,//飞禽
+                2//走兽
+            };
+            for (int i = 0; i < icons.Count; i++)
+            {
+                MarkOfJaw mark = new MarkOfJaw(icons[i], touchOffs[i], openUps[i], probabilities[i], odds[i]);
+                db.Set<MarkOfJaw>().Add(mark);
+            }
+            #endregion
+            db.SaveChanges();
         }
 
         #endregion
