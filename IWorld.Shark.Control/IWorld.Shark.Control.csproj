@@ -102,6 +102,12 @@
     <Compile Include="MainTool.xaml.cs">
       <DependentUpon>MainTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyButton.xaml.cs">
+      <DependentUpon>MyButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyButton2.xaml.cs">
+      <DependentUpon>MyButton2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NoBorderTextBox.xaml.cs">
       <DependentUpon>NoBorderTextBox.xaml</DependentUpon>
     </Compile>
@@ -143,6 +149,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyButton2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +232,11 @@
     <Resource Include="Images\通赔_note.png" />
     <Resource Include="Images\金色鲨鱼_note.png" />
     <Resource Include="Images\鸽子_note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Default.png" />
+    <Resource Include="Images\Down.png" />
+    <Resource Include="Images\On.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

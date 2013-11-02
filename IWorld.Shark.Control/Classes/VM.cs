@@ -38,6 +38,10 @@ namespace IWorld.Shark.Control.Classes
                 new OddsInfo(IconOfJaw.飞禽,2),
                 new OddsInfo(IconOfJaw.走兽,2)
             };
+            ClearCommand = new BaseCommand(Clear);
+            beted = false;
+            BetOrCancelCommand = new BaseCommand(BetOrCnacel);
+
             ResultNoteList = new ObservableCollection<ResultNote>
             {
                 new ResultNote(IconOfJaw.猴子,"a"),
@@ -71,6 +75,10 @@ namespace IWorld.Shark.Control.Classes
         /// 下注总额
         /// </summary>
         int betAll;
+        /// <summary>
+        /// 是否下注
+        /// </summary>
+        bool beted;
         #endregion
 
         #region 属性
@@ -98,7 +106,7 @@ namespace IWorld.Shark.Control.Classes
             {
                 betInfoList = value;
                 int sum = 0;
-                BetInfoList.ForEach(x => 
+                BetInfoList.ForEach(x =>
                 {
                     sum = sum + x.BetValue;
                 });
@@ -153,32 +161,56 @@ namespace IWorld.Shark.Control.Classes
                 OnPropertyChanged(this, "BetAll");
             }
         }
+        /// <summary>
+        /// 清除命令
+        /// </summary>
+        public ICommand ClearCommand { get; set; }
+        /// <summary>
+        /// 是否下注
+        /// </summary>
+        public bool Beted
+        {
+            get
+            { return beted; }
+            set
+            {
+                beted = value;
+                OnPropertyChanged(this, "Beted");
+            }
+        }
+        /// <summary>
+        /// 下注或者取消
+        /// </summary>
+        public ICommand BetOrCancelCommand { get; set; }
         #endregion
 
         #region 前台函数
         /// <summary>
         /// 清空下注信息
         /// </summary>
-        public void ClearBetSum()
+        public void Clear(object p)
         {
-            foreach (BetInfo i in BetInfoList)
-            {
-                BetInfoList.Clear();
-                OnPropertyChanged(this, "BetInfoList");
-            }
+            BetInfoList.Clear();
+            OnPropertyChanged(this, "BetInfoList");
+            BetAll = 0;
         }
         #endregion
 
         #region 后台函数
-        #region 下注
-
+        #region 下注或取消
+        public void BetOrCnacel(object p)
+        {
+            if (Beted)
+            {
+                Beted = false;
+            }
+            else
+            {
+                Beted = true;
+            }
+        }
         #endregion
-        #region 续投
 
-        #endregion
-        #region 撤单
-
-        #endregion
         #region 获得开奖结果
 
         #endregion
