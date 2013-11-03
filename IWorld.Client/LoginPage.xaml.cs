@@ -99,8 +99,6 @@ namespace IWorld.Client
             if (e.Result.Success)
             {
                 App.Token = e.Result.Token;
-                string dataKeyOfSelf = "Client_Self";
-                IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf] = e.Result.Token;
 
                 UsersServiceClient client = (UsersServiceClient)sender;
                 client.GetUserInfoCompleted += ManageGetUserInfoResult;
@@ -124,6 +122,8 @@ namespace IWorld.Client
             if (e.Result.Success)
             {
                 App.UserInfo = e.Result;
+                string dataKeyOfSelf = "Client_Self";
+                IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf] = e.Result.Username;
 
                 SystemSettingServiceClient client = new SystemSettingServiceClient();
                 client.GetWebSettingCompleted += ManageGetWebSettingResult;

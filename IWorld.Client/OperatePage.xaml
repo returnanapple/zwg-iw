@@ -318,20 +318,13 @@
                         <Border.Background>
                             <ImageBrush ImageSource="img/images/ballBg.png"/>
                         </Border.Background>
-                        <Grid x:Name="ballTool" Height="60"  Width="357">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <local:Ball x:Name="ball_red" Text="9" Color="Red" Grid.Column="0"/>
-                            <local:Ball x:Name="ball_yellow" Text="1" Color="Yellow" Grid.Column="1"/>
-                            <local:Ball x:Name="ball_grean" Text="7" Color="Green" Grid.Column="2"/>
-                            <local:Ball x:Name="ball_blue" Text="3" Color="Blue" Grid.Column="3"/>
-                            <local:Ball x:Name="ball_purple" Text="2" Color="Purple" Grid.Column="4"/>
-                        </Grid>
+                        <StackPanel x:Name="ballTool" Height="60" HorizontalAlignment="Center" Orientation="Horizontal">
+                            <local:Ball x:Name="ball_red" Text="9" Color="Red" Grid.Column="0" Margin="5,0"/>
+                            <local:Ball x:Name="ball_yellow" Text="1" Color="Yellow" Grid.Column="1" Margin="5,0"/>
+                            <local:Ball x:Name="ball_grean" Text="7" Color="Green" Grid.Column="2" Margin="5,0"/>
+                            <local:Ball x:Name="ball_blue" Text="3" Color="Blue" Grid.Column="3" Margin="5,0"/>
+                            <local:Ball x:Name="ball_purple" Text="2" Color="Purple" Grid.Column="4" Margin="5,0"/>
+                        </StackPanel>
                     </Border>
                     <Grid Height="57" Canvas.Top="175" Width="808">
                         <Border Height="33" VerticalAlignment="Top">
@@ -527,15 +520,14 @@
                 <Grid x:Name="sharkpage" Height="605" Width="807" Canvas.Top="115" Canvas.Left="215" Visibility="Collapsed"/>
 
                 <Image Name="hideBottomBar" Source="img/images/BottomBaseBar.png" Canvas.Left="213" Canvas.Top="721" Visibility="Visible"/>
-                <!--<TextBlock x:Name="bulletinBody" Canvas.Left="265" Canvas.Top="35" Cursor="Hand"
-                       MouseLeftButtonDown="ShowBulletin">
-                <i:Interaction.Triggers>
-                    <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
-                </i:Interaction.Triggers>
-                <Run x:Name="text_bulletin" Text="我是公告，我是可爱的公告"/>
-            </TextBlock>-->
+                <TextBlock x:Name="bulletinBody" Foreground="White"  FontSize="13" Height="30"
+                           Canvas.Left="250" Canvas.Top="26" Cursor="Hand" MouseLeftButtonDown="ShowBulletin">
+                    <i:Interaction.Triggers>
+                        <client:NButtonFeedbackTrigger NBTOffset="1" ReplyWhenClick="True"/>
+                    </i:Interaction.Triggers>
+                    <Run x:Name="text_bulletin" Text="我是公告，我是可爱的公告"/>
+                </TextBlock>
                 <Image Source="img/images/tishi.png" Height="20" Width="20" Canvas.Left="220" Canvas.Top="26"/>
-                <TextBlock	Text="欢迎使用迪赛安全平台!!" Foreground="White"  FontSize="13" Width="79" Height="30" Canvas.Left="250" Canvas.Top="26"   />
                 <!--<local:CustomerServiceButton 
             	ClickEventHandler="CallCustomerService" Height="30" Canvas.Left="882" Canvas.Top="731" Width="114"/>-->
                 <local:NoticeWindow x:Name="noticeTool" Canvas.Left="750" Canvas.Top="510" Visibility="Collapsed"/>
@@ -549,6 +541,6 @@
 
             </Canvas>
         </toolkit:ExpressionDarkTheme>
-        <kefu:TalkClient HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <kefu:TalkClient HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,30"/>
     </Grid>
 </UserControl>

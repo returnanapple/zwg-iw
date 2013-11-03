@@ -38,7 +38,7 @@ namespace Client.Client.Control
         int countOfOnlineFriends = 0;
         TalkingManModel talkingNow = null;
         string messageValue = "";
-        string self = "admin";
+        string self = "";
         List<UserInfoModel> allUsers = new List<UserInfoModel>();
         bool haveNewMessage = false;
         bool messageToolCanSee = false;
@@ -54,11 +54,8 @@ namespace Client.Client.Control
         {
             get
             {
-                if (self == "")
-                {
-                    string dataKeyOfSelf = "Client_Self";
-                    self = IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf].ToString();
-                }
+                string dataKeyOfSelf = "Client_Self";
+                self = IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf].ToString();
                 return self;
             }
         }
