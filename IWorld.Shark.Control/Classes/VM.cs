@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using IWorld.Shark.Control.JawService;
 using System.Windows.Threading;
+using IWorld.Shark.Control.SystemSettingService;
 
 namespace IWorld.Shark.Control.Classes
 {
@@ -21,16 +22,21 @@ namespace IWorld.Shark.Control.Classes
         #region 构造函数
         public VM()
         {
-            this.token = "app.token";
             jawClient = new JawServiceClient();
-            jawClient.BetCompleted += BetCompleted;
-            jawClient.RevocationCompleted += CancelCompleted;
+            jawClient.GetMainOfJawCompleted += GetMessageCompleted;
             jawClient.GetLotterysCompleted += GetNotesCompleted;
-            time.Tick += timeTick;
-            time.Interval = TimeSpan.Parse("0:0:3");
-            GetResult();
-            GetNotes();
-            time.Start();
+
+            systemSettingClient = new SystemSettingServiceClient();
+            systemSettingClient.GetWebSettingCompleted += systemSettingClientGetWebSettingCompleted;
+
+
+            timerOfSurplusTime = new DispatcherTimer { Interval = TimeSpan.Parse("0:0:1") };
+            timerOfSurplusTime.Tick += timerOfSurplusTimeTick;
+            timerOfSurplusTime.Start();
+
+            timeOfGetMessage = new DispatcherTimer { Interval = TimeSpan.Parse("0:0;3") };
+            timeOfGetMessage.Tick += timeOfGetMessageTick;
+            timeOfGetMessage.Start();
 
             BetInfoList = new List<BetInfo>();
             OddsInfoList = new List<OddsInfo> 
@@ -48,14 +54,13 @@ namespace IWorld.Shark.Control.Classes
                 new OddsInfo(IconOfJaw.走兽,2)
             };
             ClearCommand = new BaseCommand(Clear);
-            BetOrCancelCommand = new BaseCommand(BetOrCnacel);
+            BetOrCancelCommand = new BaseCommand(BetOrCancel);
         }
 
 
         #endregion
 
         #region 私有变量
-        #region 当期信息
         /// <summary>
         /// 当前期号
         /// </summary>
@@ -64,21 +69,15 @@ namespace IWorld.Shark.Control.Classes
         /// 结果
         /// </summary>
         int result;
-        #endregion
 
-        #region 下期信息
         /// <summary>
         /// 下期期号
         /// </summary>
         string nextNumber;
         /// <summary>
-        /// 下期开奖时间
-        /// </summary>
-        DateTime nextLotteryTime;
-        /// <summary>
         /// 剩余时间
         /// </summary>
-        DateTime surplusTime;
+        string surplusTime;
         /// <summary>
         /// 下注信息列表
         /// </summary>
@@ -91,9 +90,19 @@ namespace IWorld.Shark.Control.Classes
         /// 是否下注
         /// </summary>
         bool beted;
-        #endregion
+        /// <summary>
+        /// 是否封单
+        /// </summary>
+        bool closed;
+        /// <summary>
+        /// 下期开奖时间
+        /// </summary>
+        DateTime nextTime;
+        /// <summary>
+        /// 封单时间
+        /// </summary>
+        int closeTime;
 
-        #region 其他信息
         /// <summary>
         /// 赔率信息列表
         /// </summary>
@@ -107,16 +116,16 @@ namespace IWorld.Shark.Control.Classes
         /// </summary>
         int profit;
         #endregion
-        #endregion
 
         #region 服务变量
         string token;
         JawServiceClient jawClient;
-        DispatcherTimer time;
+        SystemSettingServiceClient systemSettingClient;
+        DispatcherTimer timerOfSurplusTime;
+        DispatcherTimer timeOfGetMessage;
         #endregion
 
         #region 属性
-        #region 当期信息
         /// <summary>
         /// 当前期号
         /// </summary>
@@ -127,7 +136,6 @@ namespace IWorld.Shark.Control.Classes
             set
             {
                 currentNumber = value;
-                GetNotes();
                 OnPropertyChanged(this, "CurrentNumber");
             }
         }
@@ -144,9 +152,7 @@ namespace IWorld.Shark.Control.Classes
                 OnPropertyChanged(this, "Result");
             }
         }
-        #endregion
 
-        #region 下期信息
         /// <summary>
         /// 下期期号
         /// </summary>
@@ -161,21 +167,9 @@ namespace IWorld.Shark.Control.Classes
             }
         }
         /// <summary>
-        /// 下期开奖时间
-        /// </summary>
-        public DateTime NextLotteryTime
-        {
-            get { return nextLotteryTime; }
-            set
-            {
-                nextLotteryTime = value;
-                OnPropertyChanged(this, "NextLotteryTime");
-            }
-        }
-        /// <summary>
         /// 剩余时间
         /// </summary>
-        public DateTime SurplusTime
+        public string SurplusTime
         {
             get
             {
@@ -231,9 +225,20 @@ namespace IWorld.Shark.Control.Classes
                 OnPropertyChanged(this, "Beted");
             }
         }
-        #endregion
+        /// <summary>
+        /// 是否封单
+        /// </summary>
+        public bool Closed
+        {
+            get
+            { return closed; }
+            set
+            {
+                closed = value;
+                OnPropertyChanged(this, "Closed");
+            }
+        }
 
-        #region 其他信息
         /// <summary>
         /// 赔率信息列表
         /// </summary>
@@ -269,9 +274,7 @@ namespace IWorld.Shark.Control.Classes
                 OnPropertyChanged(this, "Profit");
             }
         }
-        #endregion
 
-        #region 命令
         /// <summary>
         /// 清除命令
         /// </summary>
@@ -281,7 +284,6 @@ namespace IWorld.Shark.Control.Classes
         /// 下注或者取消命令
         /// </summary>
         public ICommand BetOrCancelCommand { get; set; }
-        #endregion
         #endregion
 
         #region 前台函数
@@ -297,83 +299,117 @@ namespace IWorld.Shark.Control.Classes
         #endregion
 
         #region 后台函数
-        #region 下注或取消
-        public void BetOrCnacel(object p)
-        {
-            if (Beted)
-            {
-                jawClient.RevocationAsync(token);
-            }
-            else
-            {
-                BetChildWindow bcw = new BetChildWindow();
-                bcw.DataContext = this;
-                bcw.OKButton.Click += Bet;
-                bcw.Show();
-            }
-        }
-        public void Bet(object sender, RoutedEventArgs e)
-        {
-            BettingOfJawImport bji = new BettingOfJawImport();
-            bji.Issue = NextNumber;
-            bji.Details = new List<BettingDetailOfJawImport>();
-            foreach (BetInfo i in BetInfoList)
-            {
-                bji.Details.Add(new BettingDetailOfJawImport { Icon = i.BetName, Sum = i.BetValue });
-            }
-            jawClient.BetAsync(bji, token);
-        }
-        void BetCompleted(object sender, BetCompletedEventArgs e)
-        {
-            GetResult();
-        }
-        void CancelCompleted(object sender, RevocationCompletedEventArgs e)
-        {
-            GetResult();
-        }
-        #endregion
-
-        #region 获得开奖结果
-        public void GetResult()
+        /// <summary>
+        /// 获取信息
+        /// </summary>
+        public void GetMessage()
         {
             jawClient.GetMainOfJawAsync(token);
-            jawClient.GetMainOfJawCompleted += GetResultCompleted;
         }
-
-        void GetResultCompleted(object sender, GetMainOfJawCompletedEventArgs e)
+        /// <summary>
+        /// 获取信息完成事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetMessageCompleted(object sender, GetMainOfJawCompletedEventArgs e)
         {
-            CurrentNumber = e.Result.Phases;
-            Result = e.Result.LoteryValue;
-
-            NextNumber = e.Result.NextPhases;
-            NextLotteryTime = e.Result.NextLotteryTime;
-            Beted = e.Result.HadLottery;
-
-            Profit = Convert.ToInt32(e.Result.Profit.ToString());
+            if (e.Result.Success)
+            {
+                if (CurrentNumber != e.Result.Phases)
+                {
+                    CurrentNumber = e.Result.Phases;
+                    Result = e.Result.LoteryValue;
+                    NextNumber = e.Result.NextPhases;
+                    nextTime = e.Result.NextLotteryTime;
+                    Beted = e.Result.HadLottery;
+                    Profit = Convert.ToInt32(e.Result.Profit);
+                    GetNotes();
+                }
+                else
+                {
+                    Beted = e.Result.HadLottery;
+                }
+            }
         }
-        #endregion
-
-        #region 获得历史开奖记录
+        /// <summary>
+        /// 获取开奖历史记录
+        /// </summary>
         public void GetNotes()
         {
             jawClient.GetLotterysAsync(token);
-
         }
-        void GetNotesCompleted(object sender, GetLotterysCompletedEventArgs e)
+        /// <summary>
+        /// 获取开奖历史记录完成事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetNotesCompleted(object sender, GetLotterysCompletedEventArgs e)
         {
             ResultNoteList.Clear();
-            foreach (LotteryOfJawResult i in e.Result)
+            e.Result.ForEach(x =>
             {
-                ResultNoteList.Add(new ResultNote(i.Icon, i.Issue));
+                ResultNoteList.Add(new ResultNote(x.Icon, x.Issue));
+            });
+        }
+        /// <summary>
+        /// 下注或者取消
+        /// </summary>
+        public void BetOrCancel(object p)
+        {
+            if (Beted == false && Closed == false)
+            {
+                BettingOfJawImport bji = new BettingOfJawImport();
+                bji.Issue = CurrentNumber;
+                bji.Details = new List<BettingDetailOfJawImport>();
+                BetInfoList.ForEach(x =>
+                {
+                    bji.Details.Add(new BettingDetailOfJawImport { Icon = x.BetName, Sum = x.BetValue });
+                });
+                jawClient.BetAsync(bji, token);
+            }
+            else if (Beted == true && Closed == false)
+            {
+                jawClient.RevocationAsync(token);
+            }
+            GetMessage();
+        }
+        /// <summary>
+        /// 获取封单时间完成事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void systemSettingClientGetWebSettingCompleted(object sender, GetWebSettingCompletedEventArgs e)
+        {
+            if (e.Result.Success)
+            {
+                closeTime = e.Result.ClosureSingleTime;
             }
         }
         #endregion
-        #endregion
 
         #region Tick事件
-        void timeTick(object sender, EventArgs e)
+        public void timerOfSurplusTimeTick(object sender, EventArgs e)
         {
-            GetResult();
+            systemSettingClient.GetWebSettingAsync(token);
+            double s = (nextTime - DateTime.Now).TotalSeconds;
+            if (Convert.ToInt32(s) <= closeTime)
+            {
+                Closed = true;
+            }
+
+            if (s >= 0)
+            {
+                SurplusTime = (nextTime - DateTime.Now).ToString("HH:mm:ss");
+            }
+
+            if (Convert.ToInt32(s) == 0)
+            {
+                GetMessage();
+            }
+        }
+        public void timeOfGetMessageTick(object sender, EventArgs e)
+        {
+            GetMessage();
         }
         #endregion
 

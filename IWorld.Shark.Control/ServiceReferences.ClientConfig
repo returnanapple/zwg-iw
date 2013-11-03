@@ -6,12 +6,19 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_ISystemSettingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
         </bindings>
         <client>
             <endpoint address="http://localhost:55635/Api/JawService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IJawService"
                 contract="JawService.IJawService" name="BasicHttpBinding_IJawService" />
+            <endpoint address="http://localhost:55635/Api/Admin/SystemSettingService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISystemSettingService"
+                contract="SystemSettingService.ISystemSettingService" name="BasicHttpBinding_ISystemSettingService" />
         </client>
     </system.serviceModel>
 </configuration>

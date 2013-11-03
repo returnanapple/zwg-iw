@@ -123,6 +123,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SystemSettingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ShowNotesTool.xaml.cs">
       <DependentUpon>ShowNotesTool.xaml</DependentUpon>
     </Compile>
@@ -215,7 +220,48 @@
     <None Include="Service References\JawService\JawService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.CollectionStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.OperateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.PaginationListOfBankAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.PaginationListOfEmailAccountResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.PaginationListOfEmailClientResultp9CVq9mK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\IWorld.Shark.Control.SystemSettingService.WebSettingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService.disco" />
+    <None Include="Service References\SystemSettingService\configuration91.svcinfo" />
+    <None Include="Service References\SystemSettingService\configuration.svcinfo" />
+    <None Include="Service References\SystemSettingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\SystemSettingService\SystemSettingService.wsdl" />
+    <None Include="Service References\SystemSettingService\SystemSettingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SystemSettingService\SystemSettingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\兔子.png" />
@@ -280,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\JawService\" />
+    <WCFMetadataStorage Include="Service References\SystemSettingService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\JawService\JawService.disco" />
