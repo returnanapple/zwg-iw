@@ -32,9 +32,9 @@
             <ColumnDefinition Width="40" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Border Name="bg" Background="#FFFDEBAB" Grid.ColumnSpan="2" Opacity="0"/>
-        <Border Height="1" VerticalAlignment="Bottom" Background="#FFC8C8C8" Grid.ColumnSpan="2"/>
-        <Image Name="img" Margin="5" Source="img/cs.png">
+        <Border Name="bg" Background="#BBCBF4" Grid.ColumnSpan="2" Opacity="0"/>
+        <Border Height="1" VerticalAlignment="Bottom" Background="#E9EEFC" Grid.ColumnSpan="2"/>
+        <Image Name="img" Margin="5" Source="img/images/talkIconUser.png" Width="18" Height="18">
             <Image.RenderTransform>
                 <CompositeTransform x:Name="_offset" TranslateX="0" TranslateY="0"/>
             </Image.RenderTransform>

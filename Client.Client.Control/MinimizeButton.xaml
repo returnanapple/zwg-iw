@@ -9,9 +9,9 @@
           MouseEnter="OnHover" MouseLeave="OnUnhover" MouseLeftButtonDown="OnClick">
         <Border Name="bg" Visibility="Collapsed">
             <Border.Background>
-                <SolidColorBrush Color="Black" Opacity="0.3"/>
+                <SolidColorBrush Color="Gray" />
             </Border.Background>
         </Border>
-        <Image Width="16" Source="img/icons_minimize.png"/>
+        <Image Width="16" Source="img/images/minBtn.png"/>
     </Grid>
 </UserControl>

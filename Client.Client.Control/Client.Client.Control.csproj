@@ -279,6 +279,26 @@
     <Resource Include="music\music_p.wma">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="img\images\talkRBg.png" />
+    <Resource Include="img\images\minBtn.png" />
+    <Resource Include="img\images\down.png" />
+    <Resource Include="img\images\sendBtn.png" />
+    <Resource Include="img\images\talkbarBg.png" />
+    <Resource Include="img\images\talkbtn1.png" />
+    <Resource Include="img\images\talkbtn2.png" />
+    <Resource Include="img\images\talkIco1.png" />
+    <Resource Include="img\images\talkIco2.png" />
+    <Resource Include="img\images\talkIco3.png" />
+    <Resource Include="img\images\talkIcoBtn.png" />
+    <Resource Include="img\images\talkIconUser.png" />
+    <Resource Include="img\images\talkLBg.png" />
+    <Resource Include="img\images\up.png" />
+    <Resource Include="img\images\footerbg.png" />
+    <Resource Include="img\images\talkIconUser_off.png" />
+    <Resource Include="img\images\talkIconUser_on.png" />
+    <Resource Include="img\images\itemDefault.png" />
+    <Resource Include="img\images\itemHover.png" />
+    <Resource Include="img\images\User.png" />
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\PicService\PicService.wsdl" />
     <None Include="Service References\PicService\PicService.xsd">

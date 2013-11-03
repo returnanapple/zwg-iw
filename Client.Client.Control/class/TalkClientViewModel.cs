@@ -54,8 +54,11 @@ namespace Client.Client.Control
         {
             get
             {
-                string dataKeyOfSelf = "Client_Self";
-                self = IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf].ToString();
+                if (self == "")
+                {
+                    string dataKeyOfSelf = "Client_Self";
+                    self = IsolatedStorageSettings.ApplicationSettings[dataKeyOfSelf].ToString();
+                }
                 return self;
             }
         }
@@ -491,10 +494,10 @@ namespace Client.Client.Control
         /// <param name="parameter"></param>
         void ShowScreenshotWindow(object parameter)
         {
-            TalkClient.Myself.Visibility = Visibility.Collapsed;
+            //TalkClient.Myself.Visibility = Visibility.Collapsed;
             UIElement ui = Application.Current.RootVisual;
             WriteableBitmap wb = new WriteableBitmap(ui, null);
-            TalkClient.Myself.Visibility = Visibility.Visible;
+           // TalkClient.Myself.Visibility = Visibility.Visible;
             int width = wb.PixelWidth;
             int height = wb.PixelHeight;
             int bands = 3;
@@ -593,8 +596,8 @@ namespace Client.Client.Control
             HaveNewMessage = c > 0;
             if (HaveNewMessage)
             {
-                TalkClient.Myself._music.Stop();
-                TalkClient.Myself._music.Play();
+                //TalkClient.Myself._music.Stop();
+                //TalkClient.Myself._music.Play();
             }
         }
 

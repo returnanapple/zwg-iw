@@ -258,7 +258,18 @@ namespace IWorld.Client
 
         private void SeletePoints(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            HowToPlayResult howToPlay = App.Ticktes.First(x => x.TicketId == ticketIdNowShow)
+                   .Tags.First(x => x.PlayTagId == playTagIdNowShow)
+                   .HowToPlays.First(x => x.HowToPlayId == howToPlayIdNowShow);
             usedPoints = Math.Round(e.NewValue, 1);
+            if (howToPlay.Interface == LotteryInterface.任N不定位)
+            {
+                App.u_porn = usedPoints;
+            }
+            else
+            {
+                App.n_porn = usedPoints;
+            }
             ShowPoints();
         }
 
@@ -860,7 +871,9 @@ namespace IWorld.Client
             HowToPlayResult howToPlay = App.Ticktes.First(x => x.TicketId == ticketIdNowShow)
                 .Tags.First(x => x.PlayTagId == playTagIdNowShow)
                 .HowToPlays.First(x => x.HowToPlayId == howToPlayIdNowShow);
-            usedPoints = 0;
+            usedPoints = howToPlay.Interface == LotteryInterface.任N不定位
+                ? App.u_porn
+                : App.n_porn;
             input_point.Minimum = 0;
             if (howToPlay.Interface == LotteryInterface.任N不定位)
             {
@@ -870,7 +883,9 @@ namespace IWorld.Client
             {
                 input_point.Maximum = App.UserInfo.NormalReturnPoints;
             }
-            input_point.Value = 0;
+            input_point.Value = howToPlay.Interface == LotteryInterface.任N不定位
+                ? App.u_porn
+                : App.n_porn;
             input_multiple.Text = "1";
             ShowBettingInfo();
             ShowPoints();

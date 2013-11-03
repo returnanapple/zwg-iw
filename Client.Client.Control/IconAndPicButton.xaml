@@ -5,6 +5,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <UserControl.Resources>
+        <Style x:Key="MGrid" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="img/images/talkIcoBtn.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <SolidColorBrush x:Key="normalColor" Color="#333333"/>
     </UserControl.Resources>
 
@@ -19,7 +26,7 @@
                 <SolidColorBrush Color="White" Opacity="0.4"/>
             </Border.Background>
         </Border>
-        <Image Name="_img" Source="img/openIcon.png" Stretch="Uniform" MaxHeight="20" MaxWidth="20" Grid.Column="0"/>
+        <Image Name="_img" Source="img/images/talkIco1.png" Stretch="Uniform" MaxHeight="20" MaxWidth="20" Grid.Column="0"/>
         <TextBlock Name="_text" Text="表情" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"
                    Foreground="#333333"/>
     </Grid>

@@ -4,21 +4,24 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid x:Name="LayoutRoot" Width="98" Height="30">
+    <Grid x:Name="LayoutRoot" Width="150" Height="30">
         <Grid.Background>
-            <SolidColorBrush Color="Black" Opacity="0"/>
+            <ImageBrush ImageSource="img/images/itemDefault.png"/>
         </Grid.Background>
-        <Border Name="bg" Background="White" Visibility="Collapsed"/>
-        <Border Height="1" VerticalAlignment="Bottom" Background="#FFC8C8C8"/>
-        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-            <TextBlock Name="text_username" Width="45" FontFamily="SimSun" Margin="0,3,0,0"
+        <Border Name="bg" Visibility="Collapsed">
+            <Border.Background>
+                <ImageBrush ImageSource="img/images/itemHover.png"/>
+            </Border.Background>
+        </Border>
+        <Grid Margin="10,0,0,0"  >
+            <Image Source="img/images/User.png" Margin="0,3,0,0" Height="15" Width="15"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock Name="text_username" Width="45" FontFamily="SimSun" Margin="25,3,0,0"
                        HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF333333" 
                        MouseLeftButtonDown="OnChoose"/>
-            <Control:UserOnlineStatusIcon Online="{Binding Online}" Margin="10,0,0,0" />
-            <TextBlock Name="button_x" Text="×" FontFamily="SimSun" Margin="6,3,0,0" Cursor="Hand"
+            <Control:UserOnlineStatusIcon Online="{Binding Online}" Margin="80,0,0,0" />
+            <TextBlock Name="button_x" Text="×" FontFamily="SimSun" Margin="120,3,0,0" Cursor="Hand"
                        HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF8C8C8C"
                        MouseLeftButtonDown="OnRemove"/>
-        </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

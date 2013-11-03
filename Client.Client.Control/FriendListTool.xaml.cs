@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Client.Control.ChatService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -19,7 +20,7 @@ namespace Client.Client.Control
         {
             InitializeComponent();
         }
-
+  
         #region 打开/关闭动画
 
         void HideRow(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace Client.Client.Control
 
         void ShowRow()
         {
-            r1.Height = new GridLength(25);
+            r1.Height = new GridLength(40);
             r2.Height = new GridLength(30);
         }
 

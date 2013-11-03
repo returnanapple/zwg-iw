@@ -6,9 +6,9 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Horizontal">
-        <Control:TalkTool VerticalAlignment="Bottom" CanSee="{Binding MessageToolCanSee}"/>
+        <Control:TalkTool VerticalAlignment="Bottom"  CanSee="{Binding MessageToolCanSee}"/>
         <Control:FriendListTool HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                Grid.Column="1" Margin="0,0,10,0" HaveUnreadMessage="{Binding HaveNewMessage}" />
-        <MediaElement Name="_music" Height="0" Width="0" Source="music/music_p.wma" Volume="1" AutoPlay="False"/>
+                                Grid.Column="1" Margin="15,0,10,0" HaveUnreadMessage="{Binding HaveNewMessage}" />
+        <MediaElement x:Name="_music" Height="0" Width="0" Source="music/music_p.wma" Volume="1" AutoPlay="False"/>
     </StackPanel>
 </UserControl>

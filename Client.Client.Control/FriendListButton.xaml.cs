@@ -35,15 +35,15 @@ namespace Client.Client.Control
             , new PropertyMetadata(UserShowStatus.客服, (d, e) =>
             {
                 FriendListButton tool = (FriendListButton)d;
-                string path = "img/cs.png";
+                string path = "img/images/talkIconUser.png";
                 UserShowStatus newStatus = (UserShowStatus)e.NewValue;
                 if (newStatus == UserShowStatus.在线)
                 {
-                    path = "img/user_on.png";
+                    path = "img/images/talkIconUser_on.png";
                 }
                 else if (newStatus == UserShowStatus.离线)
                 {
-                    path = "img/user_off.png";
+                    path = "img/images/talkIconUser_off.png";
                 }
                 BitmapImage bi = new BitmapImage(new Uri(path, UriKind.Relative));
                 tool.img.Source = bi;

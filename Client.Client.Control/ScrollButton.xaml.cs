@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Client.Client.Control
@@ -37,13 +38,11 @@ namespace Client.Client.Control
                 TEnum orientation = (TEnum)e.NewValue;
                 if (orientation == TEnum.up)
                 {
-                    tool.line.VerticalAlignment = VerticalAlignment.Bottom;
-                    tool.rotation.Rotation = -90;
+                    tool.img.Source = new BitmapImage(new Uri("img/images/up.png", UriKind.Relative));
                 }
                 else
                 {
-                    tool.line.VerticalAlignment = VerticalAlignment.Top;
-                    tool.rotation.Rotation = 90;
+                    tool.img.Source = new BitmapImage(new Uri("img/images/down.png", UriKind.Relative));
                 }
             }));
 
@@ -93,12 +92,12 @@ namespace Client.Client.Control
 
         private void OnHover(object sender, MouseEventArgs e)
         {
-            bg.Visibility = System.Windows.Visibility.Visible;
+            root.Margin = new Thickness(1, 1, 1, 1);
         }
 
         private void OnUnhover(object sender, MouseEventArgs e)
         {
-            bg.Visibility = System.Windows.Visibility.Collapsed;
+            root.Margin = new Thickness(0, 0, 0, 0);
         }
 
         private void OnClick(object sender, MouseButtonEventArgs e)

@@ -21,6 +21,6 @@ namespace Client.Client.Control
             this.DataContext = vm;
             Myself = this;
         }
-        public static TalkClient Myself { get; set; }
+       public static TalkClient Myself { get; set; }
     }
 }

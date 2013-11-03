@@ -23,6 +23,8 @@ namespace IWorld.Client
         public static double LeftOfInitia = 0;
         public static double TopOfInitial = 0;
         public static bool HadSetSize = false;
+        public static double u_porn = 0;
+        public static double n_porn = 0;
 
         /// <summary>
         /// 身份标识

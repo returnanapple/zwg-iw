@@ -109,5 +109,6 @@ namespace Client.Client.Control
             if (!ChooseTalkingUserCommand.CanExecute(Username)) { return; }
             ChooseTalkingUserCommand.Execute(Username);
         }
+
     }
 }
