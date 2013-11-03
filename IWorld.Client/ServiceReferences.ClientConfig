@@ -74,6 +74,10 @@
           maxReceivedMessageSize="2147483647">
           <security mode="None" />
         </binding>
+        <binding name="BasicHttpBinding_IJawService" maxBufferSize="2147483647"
+            maxReceivedMessageSize="2147483647">
+          <security mode="None" />
+        </binding>
       </basicHttpBinding>
       <customBinding>
         <binding name="NetTcpBinding_IChatService">
@@ -116,6 +120,9 @@
       <endpoint address="net.tcp://lovevrlsq.oicp.net:4512/ChatService"
         binding="customBinding" bindingConfiguration="NetTcpBinding_IChatService"
         contract="ChatService.IChatService" name="NetTcpBinding_IChatService" />
+      <endpoint address="../Api/JawService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IJawService"
+          contract="JawService.IJawService" name="BasicHttpBinding_IJawService" />
     </client>
   </system.serviceModel>
 </configuration>

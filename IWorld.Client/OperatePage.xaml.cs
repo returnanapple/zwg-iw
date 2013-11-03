@@ -15,6 +15,8 @@ using IWorld.Client.Class;
 using IWorld.Client.GamingService;
 using IWorld.Client.UsersService;
 using IWorld.Client.BulletinService;
+using IWorld.Shark.Control;
+using IWorld.Shark.Control.Classes;
 
 namespace IWorld.Client
 {
@@ -1904,7 +1906,9 @@ namespace IWorld.Client
             sharkpage.Visibility = Visibility.Visible;
 
             #endregion
-            SharksOperationPage shark = new SharksOperationPage();
+            //SharksOperationPage shark = new SharksOperationPage();
+            MainTool shark = new MainTool();
+            shark.DataContext = new VM();
             sharkpage.Children.Clear();
             sharkpage.Children.Add(shark);
         }

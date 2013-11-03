@@ -1,0 +1,79 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:IWorld.Shark.Control" x:Class="IWorld.Shark.Control.ShowResultTool"
+    mc:Ignorable="d"
+    x:Name="UserControlX" Width="813" Height="390">
+
+    <UserControl.Resources>
+        <local:TurnConverter x:Key="TurnConverter"/>
+
+        <Storyboard x:Key="StoryboardX">
+            <DoubleAnimation Storyboard.TargetName="UserControlX"
+                             Storyboard.TargetProperty="Turn"
+                             Duration="0:0:1.5" By="28" RepeatBehavior="Forever"
+                             FillBehavior="HoldEnd"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Canvas x:Name="CanvasX" Width="813" Height="390">
+        <local:Icon Canvas.Left="377" Canvas.Top="7" ImagePath="Images/金鲨鱼.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=0}"/>
+        <local:Icon Canvas.Left="437" Canvas.Top="10" ImagePath="Images/燕子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=1}"/>
+        <local:Icon Canvas.Left="497" Canvas.Top="17" ImagePath="Images/燕子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=2}"/>
+        <local:Icon Canvas.Left="556" Canvas.Top="28" ImagePath="Images/燕子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=3}"/>
+        <local:Icon Canvas.Left="613" Canvas.Top="45" ImagePath="Images/鸽子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=4}"/>
+        <local:Icon Canvas.Left="669" Canvas.Top="71" ImagePath="Images/鸽子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=5}"/>
+        <local:Icon Canvas.Left="715" Canvas.Top="109" ImagePath="Images/鸽子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=6}"/>
+        <local:Icon Canvas.Left="735" Canvas.Top="163" ImagePath="Images/通杀.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=7}"/>
+        <local:Icon Canvas.Left="715" Canvas.Top="217" ImagePath="Images/孔雀.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=8}"/>
+        <local:Icon Canvas.Left="669" Canvas.Top="254" ImagePath="Images/孔雀.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=9}"/>
+        <local:Icon Canvas.Left="613" Canvas.Top="279" ImagePath="Images/孔雀.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=10}"/>
+        <local:Icon Canvas.Left="556" Canvas.Top="297" ImagePath="Images/老鹰.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=11}"/>
+        <local:Icon Canvas.Left="497" Canvas.Top="309" ImagePath="Images/老鹰.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=12}"/>
+        <local:Icon Canvas.Left="437" Canvas.Top="316" ImagePath="Images/老鹰.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=13}"/>
+        <local:Icon Canvas.Left="375" Canvas.Top="318" ImagePath="Images/蓝鲨鱼.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=14}"/>
+        <local:Icon Canvas.Left="316" Canvas.Top="316" ImagePath="Images/狮子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=15}"/>
+        <local:Icon Canvas.Left="256" Canvas.Top="309" ImagePath="Images/狮子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=16}"/>
+        <local:Icon Canvas.Left="196" Canvas.Top="297" ImagePath="Images/狮子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=17}"/>
+        <local:Icon Canvas.Left="140" Canvas.Top="279" ImagePath="Images/熊猫.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=18}"/>
+        <local:Icon Canvas.Left="85" Canvas.Top="254" ImagePath="Images/熊猫.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=19}"/>
+        <local:Icon Canvas.Left="37" Canvas.Top="217" ImagePath="Images/熊猫.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=20}"/>
+        <local:Icon Canvas.Left="17" Canvas.Top="163" ImagePath="Images/通赔.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=21}"/>
+        <local:Icon Canvas.Left="37" Canvas.Top="109" ImagePath="Images/猴子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=22}"/>
+        <local:Icon Canvas.Left="85" Canvas.Top="71" ImagePath="Images/猴子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=23}"/>
+        <local:Icon Canvas.Left="140" Canvas.Top="45" ImagePath="Images/猴子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=24}"/>
+        <local:Icon Canvas.Left="196" Canvas.Top="28" ImagePath="Images/兔子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=25}"/>
+        <local:Icon Canvas.Left="256" Canvas.Top="17" ImagePath="Images/兔子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=26}"/>
+        <local:Icon Canvas.Left="316" Canvas.Top="10" ImagePath="Images/兔子.png"
+                    IsAt="{Binding Turn, ElementName=UserControlX,Converter={StaticResource TurnConverter}, ConverterParameter=27}"/>
+    </Canvas>
+</UserControl>

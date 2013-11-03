@@ -1,0 +1,70 @@
+﻿<controls:ChildWindow x:Class="IWorld.Shark.Control.BetChildWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:localclass="clr-namespace:IWorld.Shark.Control.Classes"
+           Width="400" Height="300" 
+           HasCloseButton="False">
+    <controls:ChildWindow.Background>
+        <ImageBrush ImageSource="Images/BackGround.png"/>
+    </controls:ChildWindow.Background>
+
+    <controls:ChildWindow.Resources>
+        <localclass:BetChildWindowConverter x:Key="BetChildWindowConverter"/>
+    </controls:ChildWindow.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,13,0,209" Foreground="#FFE4BF67">
+            <Run Text="燕子："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=燕子, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,33,0,189" Foreground="#FFE4BF67">
+            <Run Text="鸽子："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=鸽子, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,53,0,169" Foreground="#FFE4BF67">
+            <Run Text="孔雀："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=孔雀, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,73,0,149" Foreground="#FFE4BF67">
+            <Run Text="老鹰："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=老鹰, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="22,93,0,129" Foreground="#FFE4BF67">
+            <Run Text="蓝色鲨鱼："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=蓝色鲨鱼, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,113,0,109" Foreground="#FFE4BF67"> 
+            <Run Text="狮子："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=狮子, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,133,0,89" Foreground="#FFE4BF67">
+            <Run Text="熊猫："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=熊猫, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,153,0,69" Foreground="#FFE4BF67">
+            <Run Text="猴子："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=猴子, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,173,0,49" Foreground="#FFE4BF67">
+            <Run Text="兔子："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=兔子, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,193,0,29" Foreground="#FFE4BF67">
+            <Run Text="飞禽："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=飞禽, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Height="20" FontSize="15" Margin="52,213,0,9" Foreground="#FFE4BF67">
+            <Run Text="走兽："/>
+            <Run Text="{Binding BetInfoList, ConverterParameter=走兽, Converter={StaticResource BetChildWindowConverter}}"/>
+        </TextBlock>
+
+        <Button x:Name="CancelButton" Content="取消" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="确定" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+    </Grid>
+</controls:ChildWindow>

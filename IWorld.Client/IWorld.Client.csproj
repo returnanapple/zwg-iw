@@ -1012,6 +1012,10 @@
       <Project>{6e56c45e-b5cd-478f-9a47-9a3a041f5e31}</Project>
       <Name>IWorld.Client.Class</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IWorld.Shark.Control\IWorld.Shark.Control.csproj">
+      <Project>{9ab9a04b-2b0a-4158-bc63-c0247410b5fb}</Project>
+      <Name>IWorld.Shark.Control</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,6 +33,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.Contract.Client", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.DataCall", "IWorld.DataCall\IWorld.DataCall.csproj", "{563DF8FC-B60A-40B2-826B-E67FEE046CEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IWorld.Shark.Control", "IWorld.Shark.Control\IWorld.Shark.Control.csproj", "{9AB9A04B-2B0A-4158-BC63-C0247410B5FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{610A37D9-C2D2-4248-8802-CE1E34DC3B87} = {610A37D9-C2D2-4248-8802-CE1E34DC3B87}
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Client.Control", "Client.Client.Control\Client.Client.Control.csproj", "{106498C3-E6CC-4F90-AB22-9C730A7099A2}"
 EndProject
 Global
@@ -93,6 +98,10 @@ Global
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{563DF8FC-B60A-40B2-826B-E67FEE046CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB9A04B-2B0A-4158-BC63-C0247410B5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB9A04B-2B0A-4158-BC63-C0247410B5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB9A04B-2B0A-4158-BC63-C0247410B5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB9A04B-2B0A-4158-BC63-C0247410B5FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106498C3-E6CC-4F90-AB22-9C730A7099A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
