@@ -1716,10 +1716,11 @@ namespace IWorld.Client
                 if (_index >= App.Bulletins.Count) { _index = 0; }
                 BulletinResult _bulletin = App.Bulletins[_index];
                 BulletinIdNowShow = _bulletin.BulletinId;
+                bulletinBody.Text = _bulletin.Title;
             }
             else
             {
-                //bulletinBody.Visibility = System.Windows.Visibility.Collapsed;
+                bulletinBody.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
 
