@@ -49,7 +49,7 @@ namespace IWorld.BLL
             }
 
             if (b.Status == newStatus) { return; }
-            ChangeStatusEventArgs e = new ChangeStatusEventArgs(db, b, b.Status, newStatus);
+            ChangeStatusEventArgs e = new ChangeStatusEventArgs(db, b, b.Status, newStatus, bonus);
 
             if (ChangingStatusEventHandler != null)
             {
@@ -326,6 +326,11 @@ namespace IWorld.BLL
             /// </summary>
             public BettingStatus NewStatus { get; set; }
 
+            /// <summary>
+            /// 奖金
+            /// </summary>
+            public double Bonus { get; set; }
+
             #endregion
 
             #region 构造方法
@@ -337,11 +342,14 @@ namespace IWorld.BLL
             /// <param name="state">参数实体</param>
             /// <param name="oldStatus">原状态</param>
             /// <param name="newStatus">新状态</param>
-            public ChangeStatusEventArgs(DbContext db, object state, BettingStatus oldStatus, BettingStatus newStatus)
+            /// <param name="bonus">奖金</param>
+            public ChangeStatusEventArgs(DbContext db, object state, BettingStatus oldStatus
+                , BettingStatus newStatus, double bonus)
                 : base(db, state)
             {
                 this.OldStatus = oldStatus;
                 this.NewStatus = newStatus;
+                this.Bonus = bonus;
             }
 
             #endregion
@@ -373,6 +381,58 @@ namespace IWorld.BLL
         /// 改变订单状态之后将触发的事件
         /// </summary>
         public static event ChangeStatusDelegate ChangedStatusEventHandler;
+
+        #endregion
+
+        #region 静态方法
+
+        /// <summary>
+        /// 更新投注记录的状态
+        /// </summary>
+        /// <param name="sender">触发对象</param>
+        /// <param name="e">监视对象</param>
+        public static void UpdateBettingStatus(object sender, NEventArgs e)
+        {
+            WebSetting webSetting = new WebSetting();
+            MainOfJaw main = e.Db.Set<MainOfJaw>().First();
+            if (main.NextLotteryTime.AddSeconds(-webSetting.ClosureSingleTime) < DateTime.Now)
+            {
+                BettingOfJawManager manager = new BettingOfJawManager(e.Db);
+                e.Db.Set<BettingOfJaw>().Where(x => x.Issue == main.NextPhases
+                    && x.Status == BettingStatus.等待开奖)
+                    .ToList()
+                    .ForEach(x =>
+                        {
+                            manager.ChangeStatus(x.Id, BettingStatus.即将开奖);
+                        });
+            }
+        }
+
+        /// <summary>
+        /// 反馈开奖结果
+        /// </summary>
+        /// <param name="sender">触发对象</param>
+        /// <param name="e">监视对象</param>
+        public static void GetResultOfLottery(object sender, NEventArgs e)
+        {
+            LotteryOfJaw lottery = (LotteryOfJaw)e.State;
+            BettingOfJawManager manager = new BettingOfJawManager(e.Db);
+            e.Db.Set<BettingOfJaw>().Where(x => x.Issue == lottery.Issue
+                && (x.Status == BettingStatus.即将开奖 || x.Status == BettingStatus.等待开奖))
+                .ToList()
+                .ForEach(betting =>
+                    {
+                        double bonus = betting.GetBonus(lottery);
+                        if (bonus > 0)
+                        {
+                            manager.ChangeStatus(betting.Id, BettingStatus.中奖, bonus);
+                        }
+                        else
+                        {
+                            manager.ChangeStatus(betting.Id, BettingStatus.未中奖);
+                        }
+                    });
+        }
 
         #endregion
     }

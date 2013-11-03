@@ -73,7 +73,7 @@
   <Class Name="IWorld.BLL.AuthorManager" Collapsed="true" HideInheritanceLine="true">
     <Position X="0.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgECBwJAIAAAAgAUMAQEIAEAgAgAgEBAAJASAAAEACA=</HashCode>
+      <HashCode>AgECBwJAIAAAAgA0MAQEIAEAgAgAgEBAAJASAAAEACA=</HashCode>
       <FileName>AuthorManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -306,7 +306,7 @@
   <Class Name="IWorld.BLL.DefaultManager" Collapsed="true">
     <Position X="5.75" Y="19.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAACAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DefaultManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -422,7 +422,7 @@
   <Class Name="IWorld.BLL.BettingOfJawManager" Collapsed="true" HideInheritanceLine="true">
     <Position X="4" Y="18.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAQAAAAAAAABAAAABQAAAAAAAAIAAAAAAA=</HashCode>
       <FileName>BettingOfJawManager.cs</FileName>
     </TypeIdentifier>
   </Class>

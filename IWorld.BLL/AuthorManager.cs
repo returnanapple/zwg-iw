@@ -1253,6 +1253,33 @@ namespace IWorld.BLL
             e.Db.SaveChanges();
         }
 
+        public static void PayForJaw(object sender, NEventArgs e)
+        {
+            BettingOfJaw b = (BettingOfJaw)e.State;
+            Author owner = e.Db.Set<Author>().Find(b.Owner.Id);
+            owner.Money -= b.Pay;
+            owner.Consumption += b.Pay;
+        }
+
+        public static void GetResultOfJaw(object sender, BettingOfJawManager.ChangeStatusEventArgs e)
+        {
+            BettingOfJaw b = (BettingOfJaw)e.State;
+            Author owner = e.Db.Set<Author>().Find(b.Owner.Id);
+            switch (e.NewStatus)
+            {
+                case BettingStatus.中奖:
+                    owner.Money += e.Bonus;
+                    break;
+                case BettingStatus.用户撤单:
+                    if (e.OldStatus == BettingStatus.等待开奖)
+                    {
+                        owner.Money += b.Pay;
+                        owner.Consumption -= b.Pay;
+                    }
+                    break;
+            }
+        }
+
         #endregion
     }
 }
