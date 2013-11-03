@@ -29,20 +29,6 @@ namespace IWorld.Shark.Control
         public static readonly DependencyProperty TurnProperty =
             DependencyProperty.Register("Turn", typeof(double), typeof(ShowResultTool), new PropertyMetadata(0.0, (d, e) =>
             {
-                ShowResultTool tempd = (ShowResultTool)d;
-                Storyboard tempStoryboard = (Storyboard)tempd.Resources["Storyboard"];
-                double tempe = (double)e.NewValue;
-                if (tempe > 28)
-                {
-                    tempd.Turn = tempd.Turn % 28;
-                }
-                if (tempd.canStop)
-                {
-                    if (tempe == Convert.ToDouble(tempd.Result))
-                    {
-                        tempStoryboard.Pause();
-                    }
-                }
             }));
 
         public bool Closed
@@ -60,6 +46,11 @@ namespace IWorld.Shark.Control
                 {
                     tempStoryboard.Begin();
                 }
+                else
+                {
+                    tempStoryboard.Stop();
+                    tempd.Turn = tempd.Result;
+                }
             }));
 
         public int Result
@@ -68,17 +59,12 @@ namespace IWorld.Shark.Control
             set { SetValue(ResultProperty, value); }
         }
         public static readonly DependencyProperty ResultProperty =
-            DependencyProperty.Register("Result", typeof(int), typeof(ShowResultTool), new PropertyMetadata(-1, (d, e) =>
+            DependencyProperty.Register("Result", typeof(int), typeof(ShowResultTool), new PropertyMetadata(0, (d, e) => 
             {
                 ShowResultTool tempd = (ShowResultTool)d;
-                int tempe = (int)e.OldValue;
-                if (tempe == -1)
+                if (!tempd.Closed)
                 {
-                    tempd.Turn = (double)e.NewValue;
-                }
-                else
-                {
-                    tempd.canStop = true;
+                    tempd.Turn = tempd.Result;
                 }
             }));
     }

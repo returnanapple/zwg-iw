@@ -90,6 +90,9 @@
     <Compile Include="BetTool3.xaml.cs">
       <DependentUpon>BetTool3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CancelChildWindow.xaml.cs">
+      <DependentUpon>CancelChildWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classes\BaseCommand.cs" />
     <Compile Include="Classes\BetChildWindowConverter.cs" />
     <Compile Include="Classes\BetInfo.cs" />
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BetTool3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CancelChildWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

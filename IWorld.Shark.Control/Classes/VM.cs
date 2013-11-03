@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using IWorld.Shark.Control.JawService;
 using System.Windows.Threading;
 using IWorld.Shark.Control.SystemSettingService;
+using System.IO.IsolatedStorage;
 
 namespace IWorld.Shark.Control.Classes
 {
@@ -22,7 +23,8 @@ namespace IWorld.Shark.Control.Classes
         #region 构造函数
         public VM()
         {
-            token = "app.token";
+            string key = "sb01Key";
+            token = IsolatedStorageSettings.ApplicationSettings[key].ToString();
             jawClient = new JawServiceClient();
             jawClient.GetMainOfJawCompleted += GetMessageCompleted;
             jawClient.GetLotterysCompleted += GetNotesCompleted;
@@ -39,6 +41,7 @@ namespace IWorld.Shark.Control.Classes
             timeOfGetMessage.Tick += timeOfGetMessageTick;
             timeOfGetMessage.Start();
 
+            ResultNoteList = new ObservableCollection<ResultNote>();
             BetInfoList = new List<BetInfo>();
             OddsInfoList = new List<OddsInfo> 
             { 
@@ -324,7 +327,9 @@ namespace IWorld.Shark.Control.Classes
                     nextTime = e.Result.NextLotteryTime;
                     Beted = e.Result.HadLottery;
                     Profit = Convert.ToInt32(e.Result.Profit);
+                    Closed = false;
                     GetNotes();
+                    Clear(null);
                 }
                 else
                 {
@@ -347,10 +352,10 @@ namespace IWorld.Shark.Control.Classes
         public void GetNotesCompleted(object sender, GetLotterysCompletedEventArgs e)
         {
             ResultNoteList.Clear();
-            e.Result.ForEach(x =>
+            for (int i = e.Result.Count - 1; i >= 0; i--)
             {
-                ResultNoteList.Add(new ResultNote(x.Icon, x.Issue));
-            });
+                ResultNoteList.Add(new ResultNote(e.Result[i].Icon, e.Result[i].Issue));
+            }
         }
         /// <summary>
         /// 下注或者取消
@@ -360,17 +365,28 @@ namespace IWorld.Shark.Control.Classes
             if (Beted == false && Closed == false)
             {
                 BettingOfJawImport bji = new BettingOfJawImport();
-                bji.Issue = CurrentNumber;
+                bji.Issue = NextNumber;
                 bji.Details = new List<BettingDetailOfJawImport>();
                 BetInfoList.ForEach(x =>
                 {
                     bji.Details.Add(new BettingDetailOfJawImport { Icon = x.BetName, Sum = x.BetValue });
                 });
-                jawClient.BetAsync(bji, token);
+
+                BetChildWindow y = new BetChildWindow();
+                y.OKButton.Click += (d, e) =>
+                {
+                    jawClient.BetAsync(bji, token);
+                    GetMessage();
+                };
+                y.DataContext = this;
+                y.Show();
             }
             else if (Beted == true && Closed == false)
             {
-                jawClient.RevocationAsync(token);
+                CancelChildWindow z = new CancelChildWindow();
+                z.OKButton.Click += (d, e) => { jawClient.RevocationAsync(token); };
+                z.Show();
+
             }
             GetMessage();
         }
@@ -400,7 +416,7 @@ namespace IWorld.Shark.Control.Classes
 
             if (s >= 0)
             {
-                SurplusTime = (nextTime - DateTime.Now).ToString("HH:mm:ss");
+                SurplusTime = string.Format("{0}:{1}", (nextTime - DateTime.Now).Minutes.ToString("00"), (nextTime - DateTime.Now).Seconds.ToString("00"));
             }
 
             if (Convert.ToInt32(s) == 0)

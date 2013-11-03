@@ -11,7 +11,7 @@
         <localclass:BetInfoListConverter x:Key="BetInfoListConverter"/>
         <localclass:OddsInfoListConverter x:Key="OddsInfoListConverter"/>
     </UserControl.Resources>
-    
+
     <Canvas Width="813" Height="591">
         <Canvas.Background>
             <ImageBrush Stretch="Fill" ImageSource="Images/Background.png"/>
@@ -52,7 +52,7 @@
                        Odds="{Binding OddsInfoList, ConverterParameter=兔子, Converter={StaticResource OddsInfoListConverter}}"/>
 
         <local:ShowTool Canvas.Left="34" Canvas.Top="548" Label="投注总额" Count="{Binding BetAll}"/>
-        <local:ShowTool Canvas.Left="500" Canvas.Top="548" Label="历史盈亏" Count="{Binding Profit}"/>
+        <local:ShowTool Canvas.Left="500" Canvas.Top="548" Label="历史盈利" Count="{Binding Profit}"/>
 
         <local:ShowNotesTool Canvas.Left="182" Canvas.Top="170"/>
 
@@ -61,7 +61,7 @@
             <Run Text="{Binding CurrentNumber}"/>
         </TextBlock>
 
-        <TextBlock Text="下期期号：" Canvas.Left="341" Canvas.Top="388" FontSize="15">
+        <TextBlock Canvas.Left="315" Canvas.Top="390" FontSize="15">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4BF67"/>
@@ -71,7 +71,7 @@
             <Run Text="下期期号："/>
             <Run Text="{Binding NextNumber}"/>
         </TextBlock>
-        
+
         <TextBlock Canvas.Left="341" Canvas.Top="413" FontSize="15">
             <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
