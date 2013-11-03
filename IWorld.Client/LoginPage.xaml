@@ -143,91 +143,91 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    
-        <Grid x:Name="root" Width="241" Height="541" Background="Transparent">
-            <!--<Grid.Background>
+
+    <Grid x:Name="root" Width="241" Height="541" Background="Transparent">
+        <!--<Grid.Background>
                 <ImageBrush ImageSource="img/images/login_bg.png"/>
             </Grid.Background>-->
-            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="241" Height="541">
-                <Border.Background>
-                    <ImageBrush ImageSource="img/images/login_actualbg.png"/>
-                </Border.Background>
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="139"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="66"/>
-                    </Grid.RowDefinitions>
-                    <Border Margin="1,1,1,0" >
-                        <Border.Background>
-                            <ImageBrush ImageSource="img/images/login_headbg.png"/>
-                        </Border.Background>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,2,0">
-                            <Grid Name="button_minimize" Width="28" Height="20" 
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="241" Height="541">
+            <Border.Background>
+                <ImageBrush ImageSource="img/images/login_actualbg.png"/>
+            </Border.Background>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="139"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="66"/>
+                </Grid.RowDefinitions>
+                <Border Margin="1,1,1,0" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="img/images/login_headbg.png"/>
+                    </Border.Background>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,2,0">
+                        <Grid Name="button_minimize" Width="28" Height="20" 
                                 MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
-                                <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="7,6,7,2"/>
-                            </Grid>
-                            <Grid Name="button_close" Width="28" Height="20" 
-                                    MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="CloseMainWindow">
-                                <Image Width="16" Height="16" Source="img/icons_x.png"/>
-                            </Grid>
-                        </StackPanel>
-                    </Border>
-                    <Grid Grid.Row="1" Margin="1,0">
-                        <Grid.Background>
-                            <ImageBrush ImageSource="img/images/login_headbg01.png"/>
-                        </Grid.Background>
-                        <Image Source="img/images/login_font1.png" Margin="10,0,0,0" HorizontalAlignment="Left"
-                               Width="146" Height="16"/>
-                        <Image Source="img/images/login_icon1.png" Width="11" Height="11" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6,6,0"/>
-                    </Grid>
-                    <Border Grid.Row="2" BorderBrush="#494B4E" BorderThickness="0,1,0,0" Margin="1,0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <!--<TextBox Name="input_username" Height="41" Width="218" Opacity="0.7" Margin="0,15,0,0" Style="{StaticResource MyTextBoxStyle}"/>-->
-                            <ComboBox Width="218" Name="login_Comb" DropDownClosed="login_Comb_DropDownClosed" Height="41"  Margin="0,15,0,0" Style="{StaticResource loginComboBoxStyle}">
-                                <ComboBoxItem>admin</ComboBoxItem>
-                            </ComboBox>
-                            <TextBox Name="input_username" Height="41" Width="178" Opacity="0.7" HorizontalAlignment="Left"  Margin="11,15,0,0" Style="{StaticResource MyTextBoxStyle}"/>
-                            <PasswordBox Name="input_password" Grid.Row="1" Height="41" Width="218" Margin="0,15,0,0"
-                                KeyDown="input_password_KeyDown" Opacity="0.7" Style="{StaticResource MyPasswordBoxStyle}"/>
-                            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,24,0,0" HorizontalAlignment="Left">
-                                <Button Content="系统登陆" Style="{StaticResource loginBtnStyle}" Width="110" FontSize="15" Height="41" Click="Login">
-
-                                </Button>
-                                <Button Content="找回密码" Style="{StaticResource pwdBtnStyle}" Width="110" FontSize="15" Height="41" Margin="-2,0,0,0">
-                                </Button>
-                            </StackPanel>
-
-                            <Grid Grid.Row="3" Margin="15,22,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                <Image Width="71" Height="72" Source="img/images/login_icon2.png" />
-                                <Image Source="img/images/login_light.png" Width="71" Height="72" >
-                                    <Image.RenderTransform>
-                                        <RotateTransform x:Name="rotate_light" CenterX="35.5" CenterY="36" Angle="0"></RotateTransform>
-                                    </Image.RenderTransform>
-                                </Image>
-                            </Grid>
-
-                            <Image Grid.Row="3" Source="img/images/login_font2.png" Width="132" Height="58" Margin="0,28,8,0"
-                                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                            <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="7,6,7,2"/>
                         </Grid>
-                    </Border>
-
-                    <Border Grid.Row="3" Margin="1,0,1,1">
-                        <Border.Background>
-                            <ImageBrush ImageSource="img/images/login_footerbg.png"/>
-                        </Border.Background>
-                    </Border>
+                        <Grid Name="button_close" Width="28" Height="20" 
+                                    MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="CloseMainWindow">
+                            <Image Width="16" Height="16" Source="img/icons_x.png"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Grid Grid.Row="1" Margin="1,0">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="img/images/login_headbg01.png"/>
+                    </Grid.Background>
+                    <Image Source="img/images/login_font1.png" Margin="10,0,0,0" HorizontalAlignment="Left"
+                               Width="146" Height="16"/>
+                    <Image Source="img/images/login_icon1.png" Width="11" Height="11" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6,6,0"/>
                 </Grid>
-            </Border>
+                <Border Grid.Row="2" BorderBrush="#494B4E" BorderThickness="0,1,0,0" Margin="1,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <!--<TextBox Name="input_username" Height="41" Width="218" Opacity="0.7" Margin="0,15,0,0" Style="{StaticResource MyTextBoxStyle}"/>-->
+                        <ComboBox Width="218" Name="login_Comb" DropDownClosed="login_Comb_DropDownClosed" Height="41"  Margin="0,15,0,0" Style="{StaticResource loginComboBoxStyle}">
+                            <ComboBoxItem>admin</ComboBoxItem>
+                        </ComboBox>
+                        <TextBox Name="input_username" Height="41" Width="178" Opacity="0.7" HorizontalAlignment="Left"  Margin="11,15,0,0" Style="{StaticResource MyTextBoxStyle}"/>
+                        <PasswordBox Name="input_password" Grid.Row="1" Height="41" Width="218" Margin="0,15,0,0"
+                                KeyDown="input_password_KeyDown" Opacity="0.7" Style="{StaticResource MyPasswordBoxStyle}"/>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10,24,0,0" HorizontalAlignment="Left">
+                            <Button Content="系统登陆" Style="{StaticResource loginBtnStyle}" Width="110" FontSize="15" Height="41" Click="Login">
 
-            <!--<Grid Name="button_minimize" Width="30" Height="20" Canvas.Left="250" Canvas.Top="10"
+                            </Button>
+                            <Button Content="找回密码" Style="{StaticResource pwdBtnStyle}" Width="110" FontSize="15" Height="41" Margin="-2,0,0,0">
+                            </Button>
+                        </StackPanel>
+
+                        <Grid Grid.Row="3" Margin="15,22,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Image Width="71" Height="72" Source="img/images/login_icon2.png" />
+                            <Image Source="img/images/login_light.png" Width="71" Height="72" >
+                                <Image.RenderTransform>
+                                    <RotateTransform x:Name="rotate_light" CenterX="35.5" CenterY="36" Angle="0"></RotateTransform>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+
+                        <Image Grid.Row="3" Source="img/images/login_font2.png" Width="132" Height="58" Margin="0,28,8,0"
+                                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="3" Margin="1,0,1,1">
+                    <Border.Background>
+                        <ImageBrush ImageSource="img/images/login_footerbg.png"/>
+                    </Border.Background>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--<Grid Name="button_minimize" Width="30" Height="20" Canvas.Left="250" Canvas.Top="10"
                 MouseEnter="ButtonXHover" MouseLeave="ButtonXUnhover" MouseLeftButtonDown="MinimizeMainWindow">
                 <Image Width="16" Height="10" Source="img/icons_minimize.png" Margin="7,8,7,2"/>
             </Grid>
@@ -264,8 +264,8 @@
                         HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10"></TextBlock>
                 </Grid>
             </Canvas>
-            <MediaElement Source="music/music-bg.wma" Volume="0.15"></MediaElement>
             <TextBlock Canvas.Left="37" Text="Logo" Canvas.Top="19" FontSize="18.667"/>
             -->
-        </Grid>
+        <MediaElement Source="music/music-bg.wma" Volume="0.3"></MediaElement>
+    </Grid>
 </UserControl>

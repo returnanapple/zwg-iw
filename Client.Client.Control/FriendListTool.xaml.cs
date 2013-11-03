@@ -82,11 +82,11 @@ namespace Client.Client.Control
                 Storyboard s = (Storyboard)tool.Resources["prompt"];
                 if ((bool)e.NewValue == true)
                 {
-                    s.Begin();
+                    //s.Begin();
                 }
                 else
                 {
-                    s.Stop();
+                    //s.Stop();
                 }
             }));
 

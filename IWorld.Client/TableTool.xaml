@@ -30,7 +30,7 @@
     <Grid x:Name="root" Width="912">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="270"></RowDefinition>
+            <RowDefinition ></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Name="title" Text="xx"></TextBlock>
@@ -48,13 +48,14 @@
                 <Grid Name="body_bg" VerticalAlignment="Top"></Grid>
                 <!--<Grid Name="body_bgLine" VerticalAlignment="Top" HorizontalAlignment="Left"></Grid>-->
                 <Grid Name="body" VerticalAlignment="Top"></Grid>
-                
+
             </Grid>
             <Grid Grid.Row="1">
                 <Path VerticalAlignment="Top"  Name="body_bgLine" Stroke="#9cbff9" StrokeThickness="0.5"></Path>
             </Grid>
         </Grid>
         <Grid Name="pageTool" Height="30" Grid.Row="2" HorizontalAlignment="Left">
+
         </Grid>
     </Grid>
 </UserControl>
