@@ -83,8 +83,7 @@
             <Run Text="{Binding SurplusTime}"/>
         </TextBlock>
 
-        <local:MyButton Canvas.Left="36" Canvas.Top="320" Command="{Binding BetOrCancelCommand}" Beted="{Binding Beted}"/>
-        <local:MyButton2 Canvas.Left="36" Canvas.Top="350" Command="{Binding ClearCommand}"/>
+        <local:MyButton Canvas.Left="34" Canvas.Top="331" Command="{Binding BetOrCancelCommand}" Beted="{Binding Beted}"/>
 
     </Canvas>
 </UserControl>

@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Websetting>
-  <CountOfSetUp>1</CountOfSetUp>
-  <AmountOfBets>14</AmountOfBets>
-  <ReturnPoints>173.4</ReturnPoints>
-  <Bonus>16897.4</Bonus>
+  <CountOfSetUp>0</CountOfSetUp>
+  <AmountOfBets>0</AmountOfBets>
+  <ReturnPoints>0</ReturnPoints>
+  <Bonus>0</Bonus>
+  <CountOfSetUp>0</CountOfSetUp>
+  <AmountOfBets>0</AmountOfBets>
+  <ReturnPoints>0</ReturnPoints>
+  <Bonus>0</Bonus>
   <Expenditures>0</Expenditures>
-  <Recharge>111000</Recharge>
+  <Recharge>0</Recharge>
+  <Recharge>0</Recharge>
   <Withdrawal>0</Withdrawal>
   <Transfer>0</Transfer>
 </Websetting>
