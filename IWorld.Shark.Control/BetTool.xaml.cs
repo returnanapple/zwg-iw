@@ -68,9 +68,13 @@ namespace IWorld.Shark.Control
             {
                 BetTool tempd = (BetTool)d;
                 int tempe = (int)e.NewValue;
-                if (tempe < 0)
+                 if (tempe == 0)
                 {
                     tempd.TextBoxX.Text = "";
+                }
+                else
+                {
+                    tempd.TextBoxX.Text = tempe.ToString();
                 }
             }));
         #endregion
@@ -167,7 +171,16 @@ namespace IWorld.Shark.Control
         /// <param name="e"></param>
         private void MouseLeftButtonDownFun(object sender, MouseButtonEventArgs e)
         {
-            TextBoxX.Focus();
+            if (TextBoxX.IsEnabled == true)
+            {
+                TextBoxX.Focus();
+            }
+            else
+            {
+                TipChildWindow x = new TipChildWindow();
+                x.OKButton.Click += (_d, _e) => { this.bd.Effect = null; };
+                x.Show();
+            }
         }
         #endregion
 

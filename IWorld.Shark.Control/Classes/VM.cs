@@ -37,7 +37,7 @@ namespace IWorld.Shark.Control.Classes
             timerOfSurplusTime.Tick += timerOfSurplusTimeTick;
             timerOfSurplusTime.Start();
 
-            timeOfGetMessage = new DispatcherTimer { Interval = TimeSpan.Parse("0:0:3") };
+            timeOfGetMessage = new DispatcherTimer { Interval = TimeSpan.Parse("0:0:1") };
             timeOfGetMessage.Tick += timeOfGetMessageTick;
             timeOfGetMessage.Start();
 
@@ -64,6 +64,11 @@ namespace IWorld.Shark.Control.Classes
 
         #endregion
 
+        #region 静态字段
+        static string sNumber;
+        static int sBetAll;
+        static List<BetInfo> sBetInfoList = new List<BetInfo>();
+        #endregion
         #region 私有变量
         /// <summary>
         /// 当前期号
@@ -330,6 +335,16 @@ namespace IWorld.Shark.Control.Classes
                     Closed = false;
                     GetNotes();
                     Clear(null);
+
+                    if (sNumber == e.Result.NextPhases && Beted == true && BetInfoList.Count == 0)
+                    {
+                        BetAll = sBetAll;
+                        sBetInfoList.ForEach(x =>
+                        {
+                            BetInfoList.Add(x);
+                        });
+                        OnPropertyChanged(this, "BetInfoList");
+                    }
                 }
                 else
                 {
@@ -377,6 +392,15 @@ namespace IWorld.Shark.Control.Classes
                 {
                     jawClient.BetAsync(bji, token);
                     GetMessage();
+
+
+                    sNumber = NextNumber;
+                    sBetAll = BetAll;
+                    sBetInfoList.Clear();
+                    BetInfoList.ForEach(x =>
+                    {
+                        sBetInfoList.Add(x);
+                    });
                 };
                 y.DataContext = this;
                 y.Show();

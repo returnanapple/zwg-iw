@@ -22,7 +22,16 @@ namespace IWorld.Shark.Control.Classes
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             BetInfoList = (List<BetInfo>)value;
-            return -1;
+            IconOfJaw tempp = (IconOfJaw)Enum.Parse(typeof(IconOfJaw), parameter.ToString(), false);
+            bool had = BetInfoList.Any(x => x.BetName == tempp);
+            if (had)
+            {
+                return BetInfoList.Where(x => x.BetName == tempp).First().BetValue;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

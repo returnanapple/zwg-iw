@@ -141,6 +141,9 @@
     <Compile Include="ShowTool.xaml.cs">
       <DependentUpon>ShowTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TipChildWindow.xaml.cs">
+      <DependentUpon>TipChildWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -200,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ShowTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TipChildWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
