@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="IWorld.Shark.Control.ShowTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" x:Name="UserControlX"
+    d:DesignHeight="44" d:DesignWidth="290" Foreground="White" Width="280" Height="38">
+
+    <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="10">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/shark_betbg.png"/>
+            </Grid.Background>
+            <TextBlock  Width="50" Text="{Binding ElementName=UserControlX,Path=Label}"  FontSize="12"  Margin="6,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Opacity="0.95"/>
+            <TextBlock Width="190" Text="{Binding ElementName=UserControlX,Path=Count}" FontSize="13" Margin="80,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Opacity="0.95"/>
+        </Grid>
+    </Border>
+</UserControl>

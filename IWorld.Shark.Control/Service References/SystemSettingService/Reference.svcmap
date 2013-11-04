@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b7e3880a-40d6-47d9-8f6c-7eb0126ae328" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/Admin/SystemSettingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemSettingService.wsdl" MetadataType="Wsdl" ID="427464af-44a0-4696-b56c-c107dc3823e0" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?wsdl" />
+    <MetadataFile FileName="SystemSettingService.xsd" MetadataType="Schema" ID="cb05afeb-4bdd-40a2-9231-43e599dff543" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemSettingService1.xsd" MetadataType="Schema" ID="e2bbeaf8-7bd1-4bd5-a88e-671352fa8863" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SystemSettingService2.xsd" MetadataType="Schema" ID="96d4e13b-9b40-42ed-8088-97504c9f0466" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemSettingService3.xsd" MetadataType="Schema" ID="67bdf060-222e-43ad-9082-437d9319a53e" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemSettingService4.xsd" MetadataType="Schema" ID="e014b15c-a744-4467-96bc-6d9508691c9e" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SystemSettingService.disco" MetadataType="Disco" ID="0d5e8f51-d3a0-47b8-a5d5-115164085f62" SourceId="1" SourceUrl="http://localhost:55635/Api/Admin/SystemSettingService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -13,6 +13,7 @@ using IWorld.Client.UsersService;
 using IWorld.Client.SystemSettingService;
 using IWorld.Client.GamingService;
 using IWorld.Client.BulletinService;
+using System.IO.IsolatedStorage;
 
 namespace IWorld.Client
 {
@@ -25,11 +26,21 @@ namespace IWorld.Client
         public static bool HadSetSize = false;
         public static double u_porn = 0;
         public static double n_porn = 0;
+        static string _token = "";
 
         /// <summary>
         /// 身份标识
         /// </summary>
-        public static string Token { get; set; }
+        public static string Token
+        {
+            get { return _token; }
+            set
+            {
+                _token = value;
+                string key = "sb01Key";
+                IsolatedStorageSettings.ApplicationSettings[key] = value;
+            }
+        }
 
         /// <summary>
         /// 用户信息

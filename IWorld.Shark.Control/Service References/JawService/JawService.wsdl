@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="JawService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55635/Api/JawService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/JawService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/JawService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IWorld.Contract.Client" />
+      <xsd:import schemaLocation="http://localhost:55635/Api/JawService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IWorld.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IJawService_GetMainOfJaw_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMainOfJaw" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_GetMainOfJaw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMainOfJawResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_GetLotterys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotterys" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_GetLotterys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLotterysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_Bet_InputMessage">
+    <wsdl:part name="parameters" element="tns:Bet" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_Bet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_Revocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Revocation" />
+  </wsdl:message>
+  <wsdl:message name="IJawService_Revocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevocationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IJawService">
+    <wsdl:operation name="GetMainOfJaw">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJawService/GetMainOfJaw" message="tns:IJawService_GetMainOfJaw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJawService/GetMainOfJawResponse" message="tns:IJawService_GetMainOfJaw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotterys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJawService/GetLotterys" message="tns:IJawService_GetLotterys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJawService/GetLotterysResponse" message="tns:IJawService_GetLotterys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Bet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJawService/Bet" message="tns:IJawService_Bet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJawService/BetResponse" message="tns:IJawService_Bet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Revocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IJawService/Revocation" message="tns:IJawService_Revocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IJawService/RevocationResponse" message="tns:IJawService_Revocation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IJawService" type="tns:IJawService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMainOfJaw">
+      <soap:operation soapAction="http://tempuri.org/IJawService/GetMainOfJaw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotterys">
+      <soap:operation soapAction="http://tempuri.org/IJawService/GetLotterys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Bet">
+      <soap:operation soapAction="http://tempuri.org/IJawService/Bet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Revocation">
+      <soap:operation soapAction="http://tempuri.org/IJawService/Revocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="JawService">
+    <wsdl:port name="BasicHttpBinding_IJawService" binding="tns:BasicHttpBinding_IJawService">
+      <soap:address location="http://localhost:55635/Api/JawService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

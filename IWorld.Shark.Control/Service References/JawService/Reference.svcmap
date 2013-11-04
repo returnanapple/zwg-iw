@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69076067-ce55-458b-9585-c7b7fde6c99b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55635/Api/JawService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JawService.disco" MetadataType="Disco" ID="05476561-e8d8-4d89-a432-9fe8c6b581a3" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?disco" />
+    <MetadataFile FileName="JawService.wsdl" MetadataType="Wsdl" ID="27ec1eeb-b2d8-4e95-bcae-79a94a9b2bf8" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?wsdl" />
+    <MetadataFile FileName="JawService.xsd" MetadataType="Schema" ID="c7363d64-3f37-4a07-b1ce-04beaf4087db" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?xsd=xsd3" />
+    <MetadataFile FileName="JawService1.xsd" MetadataType="Schema" ID="29139879-fdb8-4941-81ae-d7d461a98b6b" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?xsd=xsd2" />
+    <MetadataFile FileName="JawService2.xsd" MetadataType="Schema" ID="b0f85d5b-33a9-4dd4-aa76-e0eeeeb0a2c6" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?xsd=xsd1" />
+    <MetadataFile FileName="JawService3.xsd" MetadataType="Schema" ID="05f0215e-67d6-47a1-96f6-d54f350cb209" SourceId="1" SourceUrl="http://localhost:55635/Api/JawService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

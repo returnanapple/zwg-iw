@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="IWorld.Shark.Control.MyButton2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="60" Height="25"
+    MouseEnter="MouseEnterFun" MouseLeave="MouseLeaveFun" MouseLeftButtonDown="MouseLeftButtonDownFun"
+    MouseLeftButtonUp="MouseLeftButtonUpFun">
+
+    <UserControl.Resources>
+        <ImageBrush x:Key="Default" ImageSource="Images/Default.png"/>
+        <ImageBrush x:Key="On" ImageSource="Images/On.png"/>
+        <ImageBrush x:Key="Down" ImageSource="Images/Down.png"/>
+    </UserControl.Resources>
+
+    <Border x:Name="BorderX" Width="60" Height="25" Background="{StaticResource Default}">
+        <TextBlock x:Name="TextBlockX" Text="清除" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+    </Border>
+</UserControl>

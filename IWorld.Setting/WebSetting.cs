@@ -425,6 +425,15 @@ namespace IWorld.Setting
             set { SetValue("ProfitabilityOfAllDayLottery", value); }
         }
 
+        /// <summary>
+        /// 大白鲨盈利率
+        /// </summary>
+        public double ProfitabilityOfJaw
+        {
+            get { return GetDoubleValue("ProfitabilityOfJaw", 50); }
+            set { SetValue("ProfitabilityOfJaw", value); }
+        }
+
         #endregion
 
         #endregion

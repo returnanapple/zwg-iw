@@ -219,6 +219,11 @@ namespace IWorld.BLL
                             MarkOfJaw moj = db.Set<MarkOfJaw>().First(x => x.Icon == d.Icon);
                             return new BettingDetailOfJaw(moj, d.Sum);
                         });
+                    var sb01 = bdojs.FirstOrDefault(x => x.Mark.Icon == IconOfJaw.蓝色鲨鱼);
+                    if (sb01 != null)
+                    {
+                        bdojs.Add(new BettingDetailOfJaw(db.Set<MarkOfJaw>().First(x => x.Icon == IconOfJaw.金色鲨鱼), sb01.Sum));
+                    }
                     Author owner = db.Set<Author>().Find(this.OwnerId);
                     return new BettingOfJaw(owner, this.Issue, bdojs);
                 }

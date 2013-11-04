@@ -1,0 +1,33 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:IWorld.Shark.Control" x:Class="IWorld.Shark.Control.BetTool3"
+    mc:Ignorable="d" x:Name="UserControlX"
+    d:DesignHeight="44" d:DesignWidth="290" Foreground="White" Width="280" Height="38"
+    MouseEnter="MouseEnterFun" MouseLeave="MouseLeaveFun" MouseLeftButtonDown="MouseLeftButtonDownFun">
+
+    <UserControl.Resources>
+        <!--<DropShadowEffect x:Key="selectEffect" Color="#4BD8E6" BlurRadius="20" Direction="360" ShadowDepth="0"/>-->
+        <DropShadowEffect x:Key="selectEffect" Color="Red" BlurRadius="20" Direction="360" ShadowDepth="0"/>
+    </UserControl.Resources>
+
+    <Border x:Name="bd" BorderBrush="Transparent" BorderThickness="1" CornerRadius="10">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/shark_betbg.png"/>
+            </Grid.Background>
+            <TextBlock Width="50" FontSize="13" Margin="6,0,0,0" VerticalAlignment="Center"
+				HorizontalAlignment="Left" Opacity="0.95" TextAlignment="Left">
+				<Run Text="{Binding Label, ElementName=UserControlX}"/>
+				<Run Text="x"/>
+				<Run Text="{Binding Odds, ElementName=UserControlX}"/>
+            </TextBlock>
+            <local:NoBorderTextBox x:Name="TextBoxX"  Width="190"  FontSize="13" Margin="80,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                   Opacity="0.95" BorderThickness="0" Background="Transparent" Foreground="White" CaretBrush="White"
+                                   MaxLength="7"
+                                   KeyDown="KeyDownFun" TextChanged="TextChangedFun" GotFocus="GotFocusFun" LostFocus="LostFocusFun"/>
+        </Grid>
+    </Border>
+</UserControl>
