@@ -20,12 +20,13 @@ namespace IWorld.Shark.Control
         }
         public override void OnApplyTemplate()
         {
-            foreach (string s in "FocusVisualElement,MouseOverBorder".Split(','))
+            foreach (string s in "FocusVisualElement,MouseOverBorder,DisabledVisualElement".Split(','))
             {
                 var bdr = GetTemplateChild(s) as Border;
                 if (bdr != null)
                 {
                     bdr.BorderThickness = new Thickness(0);
+                    bdr.Background = new SolidColorBrush(Colors.Transparent);
                 }
             }
             base.OnApplyTemplate();

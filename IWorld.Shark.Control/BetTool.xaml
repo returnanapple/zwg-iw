@@ -7,6 +7,7 @@
     mc:Ignorable="d" x:Name="UserControlX"  xmlns:localclass="clr-namespace:IWorld.Shark.Control.Classes"
     d:DesignHeight="115" d:DesignWidth="68" Foreground="White" Width="70" Height="115"
     MouseEnter="MouseEnterFun" MouseLeave="MouseLeaveFun" MouseLeftButtonDown="MouseLeftButtonDownFun">
+    
 
     <UserControl.Resources>
         <!--<DropShadowEffect x:Key="selectEffect" Color="#4BD8E6" BlurRadius="20" Direction="360" ShadowDepth="0"/>-->
