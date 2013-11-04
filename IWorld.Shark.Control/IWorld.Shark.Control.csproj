@@ -97,6 +97,7 @@
     <Compile Include="Classes\BetChildWindowConverter.cs" />
     <Compile Include="Classes\BetInfo.cs" />
     <Compile Include="Classes\BetInfoListConverter.cs" />
+    <Compile Include="Classes\IsEnabledConverter.cs" />
     <Compile Include="Classes\OddsInfoListConverter.cs" />
     <Compile Include="Classes\ResultNote.cs" />
     <Compile Include="Classes\ResultNoteNameConverter.cs" />

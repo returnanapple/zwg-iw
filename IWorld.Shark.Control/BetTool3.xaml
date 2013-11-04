@@ -4,13 +4,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:IWorld.Shark.Control" x:Class="IWorld.Shark.Control.BetTool3"
-    mc:Ignorable="d" x:Name="UserControlX"
+    mc:Ignorable="d" x:Name="UserControlX" xmlns:localclass="clr-namespace:IWorld.Shark.Control.Classes"
     d:DesignHeight="44" d:DesignWidth="290" Foreground="White" Width="280" Height="38"
     MouseEnter="MouseEnterFun" MouseLeave="MouseLeaveFun" MouseLeftButtonDown="MouseLeftButtonDownFun">
 
     <UserControl.Resources>
         <!--<DropShadowEffect x:Key="selectEffect" Color="#4BD8E6" BlurRadius="20" Direction="360" ShadowDepth="0"/>-->
         <DropShadowEffect x:Key="selectEffect" Color="Red" BlurRadius="20" Direction="360" ShadowDepth="0"/>
+        <localclass:IsEnabledConverter x:Key="IsEnabledConverter"/>
     </UserControl.Resources>
 
     <Border x:Name="bd" BorderBrush="Transparent" BorderThickness="1" CornerRadius="10">
@@ -26,7 +27,7 @@
             </TextBlock>
             <local:NoBorderTextBox x:Name="TextBoxX"  Width="190"  FontSize="13" Margin="80,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" 
                                    Opacity="0.95" BorderThickness="0" Background="Transparent" Foreground="White" CaretBrush="White"
-                                   MaxLength="7"
+                                   MaxLength="7" IsEnabled="{Binding Beted, Converter={StaticResource IsEnabledConverter}}"
                                    KeyDown="KeyDownFun" TextChanged="TextChangedFun" GotFocus="GotFocusFun" LostFocus="LostFocusFun"/>
         </Grid>
     </Border>

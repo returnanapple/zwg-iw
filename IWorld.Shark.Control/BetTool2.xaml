@@ -4,7 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:IWorld.Shark.Control" x:Class="IWorld.Shark.Control.BetTool2"
-    mc:Ignorable="d" x:Name="UserControlX"
+    mc:Ignorable="d" x:Name="UserControlX" xmlns:localclass="clr-namespace:IWorld.Shark.Control.Classes"
     d:DesignHeight="146" d:DesignWidth="146" Width="146" Height="146" Foreground="White"
     MouseEnter="MouseEnterFun" MouseLeave="MouseLeaveFun" MouseLeftButtonDown="MouseLeftButtonDownFun">
 
@@ -12,6 +12,7 @@
         <!--<DropShadowEffect x:Key="selectEffect" Color="#4BD8E6" BlurRadius="20" Direction="360" ShadowDepth="0"/>-->
         <DropShadowEffect x:Key="selectEffect" Color="Red" BlurRadius="20" Direction="360" ShadowDepth="0"/>
         <DropShadowEffect x:Key="fontEffect" Color="Black" BlurRadius="15" Direction="90" ShadowDepth="3"/>
+        <localclass:IsEnabledConverter x:Key="IsEnabledConverter"/>
     </UserControl.Resources>
 
     <Border x:Name="bd" BorderBrush="Transparent" BorderThickness="1" CornerRadius="10">
@@ -28,7 +29,7 @@
             <!--<TextBlock Text="}Binding ElementName=selectShowInfo,Path=Details}" FontSize="12" Margin="0,0,0,6" VerticalAlignment="Bottom" HorizontalAlignment="Center" Opacity="0.95"/>-->
             <local:NoBorderTextBox x:Name="TextBoxX" FontSize="12" Margin="0,0,0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
                                    Opacity="0.95" BorderThickness="0" Background="Transparent" Foreground="White" CaretBrush="White" 
-                                   MaxLength="7" Width="70" TextAlignment="Center"
+                                   MaxLength="7" Width="70" TextAlignment="Center" IsEnabled="{Binding Beted, Converter={StaticResource IsEnabledConverter}}"
                                    KeyDown="KeyDownFun" TextChanged="TextChangedFun" GotFocus="GotFocusFun" LostFocus="LostFocusFun"/>
 
         </Grid>

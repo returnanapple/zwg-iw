@@ -384,7 +384,11 @@ namespace IWorld.Shark.Control.Classes
             else if (Beted == true && Closed == false)
             {
                 CancelChildWindow z = new CancelChildWindow();
-                z.OKButton.Click += (d, e) => { jawClient.RevocationAsync(token); };
+                z.OKButton.Click += (d, e) =>
+                {
+                    jawClient.RevocationAsync(token);
+                    Clear(null);
+                };
                 z.Show();
 
             }
